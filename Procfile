@@ -1,1 +1,1 @@
-web: gunicorn DEX.wsgi
+web: gunicorn Soft2.wsgi
