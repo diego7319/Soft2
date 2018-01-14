@@ -1,1 +1,1 @@
-web: gunicorn Soft2.wsgi
+web: python manage.py runserver 0.0.0.0:8000
