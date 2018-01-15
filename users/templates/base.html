@@ -11,7 +11,7 @@
           integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <h1>Proyecto de curso</h1>
     {% if user.is_authenticated %}
-      Hi {{ user.username }}!
+      Bienvenido  {{ user.username }}!
       <a class="btn btn-info" href="{% url 'logout' %}">Desconectarse</a>
     {% else %}
       <a class="btn btn-info" href="{% url 'login' %}">login</a>
