@@ -7,7 +7,9 @@ html {
 }
 
 body {
-  background: #c1bdba;
+  background-image: url('img/bg.jpg'');
+      background-repeat: repeat-y;
+
   font-family: 'Titillium Web', sans-serif;
 }
 
@@ -175,4 +177,9 @@ textarea {
 .forgot {
   margin-top: -20px;
   text-align: right;
+}
+
+body {
+    background-image: url("");
+    background-repeat: repeat-y;
 }
