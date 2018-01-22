@@ -39,9 +39,9 @@ t.value=t.value.replace(/\s/g,'');
       <div class="tab-content">
         <div id="signup">   
           <h1>Registrate gratis</h1>
-          {% csrf_token %}
+
           <form action="/signup" method="post">
-          
+             {% csrf_token %}
           <div class="field-wrap">
         
               <label>

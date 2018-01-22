@@ -8,6 +8,10 @@ from django.contrib.auth.forms import UserCreationForm
 def index(request):
     return render(request, 'index.html')
 
+def login(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+
 
 def signup(request):
     if request.method == 'POST':
