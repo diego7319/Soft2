@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  background-image: url("../img/bb.jpg");
+  background-image: url("../img/u.jpg");
      position: fixed;
   top: 0;
   left: 0;
@@ -23,7 +23,7 @@ body {
       justify-content: center;
           margin: auto;
     width: 50%;
-    border: 3px solid green;
+
     padding: 10px;
 
 }
@@ -166,6 +166,7 @@ textarea {
 }
 
 .button {
+
   border: 0;
   outline: none;
   border-radius: 0;
@@ -181,7 +182,7 @@ textarea {
   -webkit-appearance: none;
 }
 .button:hover, .button:focus {
-  background: #179b77;
+  background: rgb(141, 35, 38);
 }
 
 .button-block {
