@@ -7,8 +7,12 @@ html {
 }
 
 body {
-  background-image: url("../img/bg.jpg");
-    background-repeat: repeat-y;
+  background-image: url("../img/bb.jpg");
+     position: fixed;
+  top: 0;
+  left: 0;
+   min-width: 100%;
+  min-height: 100%;
 }
 
 a {
