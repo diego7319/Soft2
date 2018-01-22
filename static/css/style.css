@@ -7,10 +7,8 @@ html {
 }
 
 body {
-  background-image: url('img/bg.jpg'');
-      background-repeat: repeat-y;
-
-  font-family: 'Titillium Web', sans-serif;
+  background-image: url("../img/bg.jpg");
+    background-repeat: repeat-y;
 }
 
 a {
@@ -177,9 +175,4 @@ textarea {
 .forgot {
   margin-top: -20px;
   text-align: right;
-}
-
-body {
-    background-image: url("");
-    background-repeat: repeat-y;
 }
