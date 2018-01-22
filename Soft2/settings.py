@@ -79,8 +79,8 @@ WSGI_APPLICATION = 'Soft2.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'localdb',
-        'USER': 'diego',
+        'NAME': 'django',
+        'USER': 'postgres',
         'PASSWORD': 'root',
         'HOST': 'localhost',
         'PORT': 5432
