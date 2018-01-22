@@ -39,7 +39,7 @@ t.value=t.value.replace(/\s/g,'');
       <div class="tab-content">
         <div id="signup">   
           <h1>Registrate gratis</h1>
-
+{% block content %}
           <form action="/signup" method="post">
              {% csrf_token %}
           <div class="field-wrap">
@@ -62,7 +62,7 @@ t.value=t.value.replace(/\s/g,'');
           <div id="cd"> 
               
           </div>
-          </form>
+          </form>{% endblock %}
 
         </div>
         
