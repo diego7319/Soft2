@@ -25,7 +25,7 @@ SECRET_KEY = 'boe!7cjuwcj&qeqw(7q%dczd0#w(yq98##0y&nqzf&t9*=d5-%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','ingsoft2.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','localhost','ingsoft2.herokuapp.com']
 
 
 # Application definition
@@ -74,18 +74,22 @@ WSGI_APPLICATION = 'Soft2.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dblsrhhtmborgr',
-        'USER': 'amsohvzikeflij',
-        'PASSWORD':'b39fcc59216bcf1f75bed2c955dd6b5ff0b01ba6d25cc75cd06230747accc498',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'localdb',
+        'USER': 'diego',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
         'PORT': 5432
 
     }
 
 }
-
+import dj_database_url
+DATABASES['default'] = dj_database_url.config()
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
