@@ -15,7 +15,11 @@ def index(request):
         'formaL': formaLogin,
         'formaS': formaSignup
     }
-    return render(request, 'index.html', context)
+    if request.method == "POST":
+
+    else:
+        return render(request, 'index.html', context)
+
 
 def login(request):
     formaLogin = Login(request.POST or None)
