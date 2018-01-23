@@ -20,23 +20,23 @@ def index(request):
 def login(request):
     formaLogin = Login(request.POST or None)
     if formaLogin.is_valid():
+
         datos = formaLogin.cleaned_data
-        user=datos.get('user')
-        password= datos.get('password')
-        sesion = Usuario.objects.all()
-        for i in sesion:
-            if i.user== user and i.password==password:
-                login(request, user)
-                return redirect('home')
-            else:
-                return (index())
+        rusername=datos.get('user')
+        rpassword= datos.get('password')
+        user = authenticate(username=rusername, password=rpassword)
+        login(request, user)
+        return redirect('home')
+    else:
+        return redirect('/index')
+
 
 
 
     pass
 
 def signup(request):
-     
+
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():

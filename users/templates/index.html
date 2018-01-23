@@ -32,14 +32,14 @@ t.value=t.value.replace(/\s/g,'');
 
 <body >
   <div class="form">
-      
+
       <ul class="tab-group">
         <li class="tab active"><a href="#signup">Registro</a></li>
         <li class="tab"><a href="#login">Log In</a></li>
       </ul>
-      
+
       <div class="tab-content">
-        <div id="signup">   
+        <div id="signup">
           <h1>Registrate gratis</h1>
 
           <form action="/signup/" method="post">
@@ -51,9 +51,9 @@ t.value=t.value.replace(/\s/g,'');
               </label>
               {{formaS.user}}
             <!--  <input id="ruser" type="text" required  maxlength="10"  onkeyup="nospaces(this)" />-->
-       
-         
-          </div>        
+
+
+          </div>
           <div class="field-wrap">
             <label>
               Escribe tu contraseña<span class="req">*</span>
@@ -61,20 +61,20 @@ t.value=t.value.replace(/\s/g,'');
               {{formaS.password}}
            <!-- <input type="password" id="rpass" required  maxlength="10" onkeyup="nospaces(this)" />-->
           </div>
-          
-          <button id="btnregistrarse" onclick="reg();return false;" type="submit" class="button button-block "/>Get Started</button>
-          <div id="cd"> 
-              
+
+          <button id="btnregistrarse" type="submit" class="button button-block "/>Get Started</button>
+          <div id="cd">
+
           </div>
           </form>
 
         </div>
-        
-        <div id="login">   
+
+        <div id="login">
           <h1>Bienvenido!</h1>
-          
+
           <form action="/login/" method="post">
-          
+
             <div class="field-wrap">
             <label>
               Usuario<span class="req">*</span>
@@ -82,7 +82,7 @@ t.value=t.value.replace(/\s/g,'');
 {{formaL.user}}
             <!--<input id ="user" type="text" required=""  maxlength="10" onkeyup="nospaces(this)" />-->
           </div>
-          
+
           <div class="field-wrap" >
             <label>
               Contraseña<span class="req">*</span>
@@ -90,18 +90,18 @@ t.value=t.value.replace(/\s/g,'');
               {{formaL.password}}
             <!--<input type="password" required id="pass"  maxlength="10" onkeyup="nospaces(this)"  />-->
           </div>
-          
-                     
-              <button class="button button-block" onclick="logind();return false" id="login" />Log In</button>
-           <div id="cd2"> 
-              
+
+
+              <button class="button button-block"  id="login" />Log In</button>
+           <div id="cd2">
+
           </div>
           </form>
 
         </div>
-        
+
       </div><!-- tab-content -->
-      
+
 </div> <!-- /form -->
  <script src= "{% static '/js/index.js' %}"></script>
 <!--
