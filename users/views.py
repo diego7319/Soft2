@@ -16,7 +16,7 @@ def index(request):
         'formaS': formaSignup
     }
     if request.method == "POST":
-
+        pass
     else:
         return render(request, 'index.html', context)
 
