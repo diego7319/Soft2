@@ -45,11 +45,12 @@ t.value=t.value.replace(/\s/g,'');
           <form action="/signup/" method="post">
              {% csrf_token %}
           <div class="field-wrap">
-        
+
               <label>
                 Ingresa tu usuario<span class="req">*</span>
               </label>
-              <input id="ruser" type="text" required  maxlength="10"  onkeyup="nospaces(this)" />
+              {{formaS.user}}
+            <!--  <input id="ruser" type="text" required  maxlength="10"  onkeyup="nospaces(this)" />-->
        
          
           </div>        
@@ -57,7 +58,8 @@ t.value=t.value.replace(/\s/g,'');
             <label>
               Escribe tu contraseña<span class="req">*</span>
             </label>
-            <input type="password" id="rpass" required  maxlength="10" onkeyup="nospaces(this)" />
+              {{formaS.password}}
+           <!-- <input type="password" id="rpass" required  maxlength="10" onkeyup="nospaces(this)" />-->
           </div>
           
           <button id="btnregistrarse" onclick="reg();return false;" type="submit" class="button button-block "/>Get Started</button>
