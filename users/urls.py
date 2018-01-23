@@ -13,6 +13,4 @@ urlpatterns = [
     #path('logout/', auth_views.logout, {'next_page': '/'}, name='logout'),
     #path('signup/', core_views.signup, name='signup'),
     path('index/', index, name='index')
-
-
-]
+    ]
