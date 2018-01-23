@@ -2,18 +2,29 @@ from django.shortcuts import render,  redirect
 from django.http import HttpResponse
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
+from users.forms import Login, Signup
 
 
-# Create your views here.
+
+
 def index(request):
-    return render(request, 'index.html')
-
+    formaLogin = Login(request.POST or None)
+    formaSignup = Signup(request.POST or None)
+    context = {
+        'formaL': formaLogin,
+        'formaS': formaSignup
+    }
+    return render(request, 'index.html',context)
+'''
 def login(request):
+   
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
 
+        form = UserCreationForm(request.POST)
+    pass
 
 def signup(request):
+     
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
@@ -26,3 +37,4 @@ def signup(request):
     else:
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})
+'''
