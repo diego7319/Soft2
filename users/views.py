@@ -15,12 +15,12 @@ def index(request):
         'formaS': formaSignup
     }
     return render(request, 'index.html',context)
-
+"""
 def login(request):
-    '''
-    if request.method == 'POST':
 
-        form = UserCreationForm(request.POST)'''
+   if request.method == 'POST':
+
+        form = UserCreationForm(request.POST) 
     pass
 
 def signup(request):
@@ -37,4 +37,4 @@ def signup(request):
     else:
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})
-'''
+"""
