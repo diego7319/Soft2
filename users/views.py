@@ -19,46 +19,6 @@ def index(request):
             }
         return render(request, 'index.html', context)
 
-
-        """
-        if request.POST.get('submit') == 'login':
-            print ('LOGINN')
-            formaLogin = Login(request.POST)
-            if formaLogin.is_valid():
-                datos = formaLogin.cleaned_data
-                username = datos.get('user')
-                password = datos.get('password')
-                print(username)
-                print(password)
-                user = authenticate(request,username=username,password=password)
-                print (user)
-                if user is not None:
-                    login(request, user)
-                    request.session.set_expiry(100)
-                    return redirect('perfil/')
-                else:
-                    return HttpResponse('usuario no existe')
-            else:
-                return HttpResponse('error al loguear')
-        else:
-            pRegistro(request)
-
-        elif request.POST.get('submit') == 'signup':
-            formaRegistro = Signup(request.POST)
-            if formaRegistro.is_valid():
-                datos = formaRegistro.cleaned_data
-                raw_username = datos.get('user')
-                raw_password= datos.get('password');
-                try:
-                    user = User.objects.create_user(username=raw_username,password=raw_password)
-                    user.save();
-                    return HttpResponse('registrado')
-
-                except:
-                    return HttpResponse('username duplicado')
-                return HttpResponse('error al registrar' )"""
-
-
 def perfil(request):
     if not request.user.is_authenticated:
         return redirect('index')
@@ -68,6 +28,8 @@ def perfil(request):
 def log_out(request):
     logout(request)
     return redirect('index')
+
+
 
 """ Funciones de apoyo """
 def pLogin(request):
