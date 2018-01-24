@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
 from users.forms import Login, Signup
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
@@ -24,7 +25,7 @@ def index(request):
                 if user is not None:
                     login(request, user)
                     request.session.set_expiry(30)
-                    return HttpResponse('login')
+                    return redirect('perfil/')
                 else:
                     return HttpResponse('usuario no existe')
             else:
@@ -51,5 +52,14 @@ def index(request):
         }
         return render(request, 'index.html', context)
 
+
 def perfil(request):
-    return render(request, 'hom.html')
+    if not request.user.is_authenticated:
+        return redirect('index')
+    else:
+        return render(request,'hom.html')
+
+
+def logout_view(request):
+    logout(request)
+    # Redirect to a success page.
