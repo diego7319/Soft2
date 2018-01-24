@@ -19,10 +19,14 @@ def index(request):
                 datos = formaLogin.cleaned_data
                 raw_username = datos.get('user')
                 raw_password= datos.get('password')
-
                 user = authenticate(username=raw_username, password=raw_password)
-                login(request, user)
-                return HttpResponse('login')
+                if user is not None:
+                    login(request, user)
+                    return HttpResponse('login')
+                else:
+                    return HttpResponse('usuario no existe')
+            else:
+                return HttpResponse('error al loguear')
 
         elif request.POST.get('submit') == 'signup':
             formaRegistro = Signup(request.POST)
@@ -31,8 +35,10 @@ def index(request):
                 datos = formaRegistro.cleaned_data
                 user = User.objects.create_user(username=datos.get('user'),password=datos.get('password'))
                 user.save()
+                return HttpResponse('registrado')
+            else:
+                return HttpResponse('error al registrar' )
 
-                return  HttpResponse('dad')
 
     else:
 
