@@ -18,7 +18,9 @@ def index(request):
             if formaLogin.is_valid():
                 datos = formaLogin.cleaned_data
                 raw_username = datos.get('user')
-                raw_password= datos.get('password')
+                raw_password = datos.get('password')
+                print(raw_username)
+                print(raw_password)
                 user = authenticate(request,username=raw_username,password=raw_password)
                 print (user)
                 if user is not None:
