@@ -33,7 +33,7 @@ def index(request):
             print ('registro')
             print ('registro')
             print ('registro')
-            print ('formaRegistro.is_valid()')
+            print (formaRegistro.is_valid())
             if formaRegistro.is_valid():
                 datos = formaRegistro.cleaned_data
                 user = User.objects.create_user(username=datos.get('user'),
