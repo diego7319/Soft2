@@ -19,9 +19,10 @@ def index(request):
                 datos = formaLogin.cleaned_data
                 raw_username = datos.get('user')
                 raw_password= datos.get('password')
-                user = authenticate(username=raw_username, password=raw_password)
+                user = authenticate(raw_username,raw_password)
                 if user is not None:
                     login(request, user)
+                    request.session.set_expiry(300)
                     return HttpResponse('login')
                 else:
                     return HttpResponse('usuario no existe')
