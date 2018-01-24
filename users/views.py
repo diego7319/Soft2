@@ -23,7 +23,7 @@ def index(request):
                 print (user)
                 if user is not None:
                     login(request, user)
-                    request.session.set_expiry(300)
+                    request.session.set_expiry(30)
                     return HttpResponse('login')
                 else:
                     return HttpResponse('usuario no existe')
