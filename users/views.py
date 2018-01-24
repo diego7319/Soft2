@@ -17,7 +17,7 @@ def index(request):
             'formaL': formaLogin,
             'formaS': formaRegistro
             }
-        return render(request, 'index.html', context)
+        return render(request,'index.html', context)
 
 def perfil(request):
     if not request.user.is_authenticated:
