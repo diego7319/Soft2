@@ -11,6 +11,16 @@ def index(request):
     formaLogin = Login()
     formaRegistro = Signup()
     if request.method == 'POST':
+        return (pLogin(request))
+    else:
+        context = {
+            'formaL': formaLogin,
+            'formaS': formaRegistro
+            }
+        return render(request, 'index.html', context)
+
+
+        """
         if request.POST.get('submit') == 'login':
             print ('LOGINN')
             formaLogin = Login(request.POST)
@@ -30,6 +40,9 @@ def index(request):
                     return HttpResponse('usuario no existe')
             else:
                 return HttpResponse('error al loguear')
+        else:
+            pRegistro(request)
+
         elif request.POST.get('submit') == 'signup':
             formaRegistro = Signup(request.POST)
             if formaRegistro.is_valid():
@@ -43,14 +56,8 @@ def index(request):
 
                 except:
                     return HttpResponse('username duplicado')
+                return HttpResponse('error al registrar' )"""
 
-                return HttpResponse('error al registrar' )
-    else:
-        context = {
-        'formaL': formaLogin,
-        'formaS': formaRegistro
-        }
-        return render(request, 'index.html', context)
 
 def perfil(request):
     if not request.user.is_authenticated:
@@ -63,8 +70,25 @@ def log_out(request):
     return redirect('index')
 
 """ Funciones de apoyo """
-def pLogin():
-    pass
+def pLogin(request):
+    if request.POST.get('submit') == 'login':
+        formaLogin = Login(request.POST)
+        if formaLogin.is_valid():
+            print ('LOGINN')
+            datos = formaLogin.cleaned_data
+            username = datos.get('user')
+            password = datos.get('password')
+            user = authenticate(request,username=username,password=password)
+
+            if user is not None:
+                login(request, user)
+                request.session.set_expiry(100)
+                return redirect('perfil/')
+            else:
+                print ('asd')
+                return HttpResponse('usuario no existe')
+    else:
+        return pRegistro(request)
 
 def pRegistro(request):
     if request.POST.get('submit') == 'signup':
@@ -81,3 +105,5 @@ def pRegistro(request):
                 return HttpResponse('username duplicado')
         else:
             return HttpResponse('error al registrar' )
+    else:
+        return HttpResponse('no es un post aceptado')
