@@ -20,6 +20,7 @@ def index(request):
                 raw_username = datos.get('user')
                 raw_password= datos.get('password')
                 user = authenticate(request,username=raw_username,password=raw_password)
+                print (user)
                 if user is not None:
                     login(request, user)
                     request.session.set_expiry(300)
