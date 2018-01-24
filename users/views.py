@@ -39,7 +39,7 @@ def index(request):
                     user.save();
                     return HttpResponse('registrado')
 
-                except 	IntegrityError:
+                except:
                     return HttpResponse('username duplicado')
 
                 return HttpResponse('error al registrar' )
