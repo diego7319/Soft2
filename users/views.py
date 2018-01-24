@@ -33,12 +33,15 @@ def index(request):
             if formaRegistro.is_valid():
                 datos = formaRegistro.cleaned_data
                 raw_username = datos.get('user')
-                raw_password= datos.get('password')
+                raw_password= datos.get('password');
+                try:
                 user = User.objects.create_user(raw_username,raw_password)
-
-                user.save()
+                user.save();
                 return HttpResponse('registrado')
-            else:
+
+                except 	IntegrityError:
+                    return HttpResponse('username duplicado')
+
                 return HttpResponse('error al registrar' )
 
 
