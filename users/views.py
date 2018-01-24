@@ -45,7 +45,7 @@ def pLogin(request):
 
             if user is not None:
                 login(request, user)
-                request.session.set_expiry(100)
+                request.session.set_expiry(3600)
                 return redirect('perfil/')
             else:
                 print ('asd')
