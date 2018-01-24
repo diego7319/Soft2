@@ -44,12 +44,11 @@ def index(request):
                     return HttpResponse('username duplicado')
 
                 return HttpResponse('error al registrar' )
-
-
     else:
-
         context = {
         'formaL': formaLogin,
         'formaS': formaRegistro
         }
         return render(request, 'index.html', context)
+def perfil(request):
+    return render(request,'hom.html')
