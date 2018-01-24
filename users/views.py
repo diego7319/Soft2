@@ -33,7 +33,8 @@ def index(request):
             print ('REGISTRO')
             if formaRegistro.is_valid():
                 datos = formaRegistro.cleaned_data
-                user = User.objects.create_user(username=datos.get('user'),password=datos.get('password'))
+                user = User.objects.create_user(username=datos.get('user'),
+                password=datos.get('password'))
                 user.save()
                 return HttpResponse('registrado')
             else:
