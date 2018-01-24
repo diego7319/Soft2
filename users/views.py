@@ -24,7 +24,7 @@ def index(request):
                 print (user)
                 if user is not None:
                     login(request, user)
-                    request.session.set_expiry(30)
+                    request.session.set_expiry(100)
                     return redirect('perfil/')
                 else:
                     return HttpResponse('usuario no existe')
