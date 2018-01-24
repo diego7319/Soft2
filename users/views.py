@@ -8,11 +8,6 @@ from users.models import Usuario
 
 def index(request):
     lista = Usuario.objects.all()
-    print ("");print ("");print ("");print ("");print("");print ("");print ("")
-
-    for i in lista:
-        print (i.user)
-
     formaLogin = Login()
     formaRegistro = Signup()
     if request.method == 'POST':
@@ -21,12 +16,12 @@ def index(request):
             formaLogin = Login(request.POST)
             if formaLogin.is_valid():
                 datos = formaLogin.cleaned_data
-                rusername=datos.get('user')
-                rpassword= datos.get('password')
-
-                user = authenticate(username=rusername, password=rpassword)
+                username =datos.get('user')
+                raw_password=datos.get('password')
+                user = authenticate(username=username, password=raw_password)
                 login(request, user)
-                return redirect('home')
+                return HttpResponse('dasdasdsad')
+
 
         elif request.POST.get('submit') == 'signup':
             formaRegistro = Signup(request.POST)
@@ -36,16 +31,15 @@ def index(request):
             if formaRegistro.is_valid():
                 datos = formaRegistro.cleaned_data
                 formaRegistro.save()
+                """
                 rusername=datos.get('user')
                 rpassword= datos.get('password')
-
                 print (rusername+"  "+rpassword)
                 user = authenticate(request, username=rusername, password=rpassword)
-
-
                 if user is not None:
                     #login(request, user)
-                    return render(request, 'guard')
+                    return render(request, 'guard')"""
+                return  HttpResponse('dad')
 
     else:
 

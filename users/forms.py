@@ -1,4 +1,5 @@
 from django import forms
+from users.models import Usuario
 
 
 class Login(forms.Form):
@@ -6,19 +7,17 @@ class Login(forms.Form):
 	'maxlength': "30", 'onkeyup': "nospaces(this)"}), required=True);
 	password = forms.CharField(widget=forms.TextInput(attrs={'id' :"password", 'type':"text", 'required': "",
 	'maxlength': "30", 'onkeyup': "nospaces(this)"}), required=True)
+	class Meta:
+		model = Usuario;
+		fields = ['user','password']
 
 
-class Signup(forms.Form):
 
+class Signup(forms.ModelForm):
 	user = forms.CharField(widget=forms.TextInput(attrs={'id':"ruser", 'type':"text" , 'maxlength':"10"
 		, 'onkeyup':"nospaces(this)"}), required=True);
 	password = forms.CharField(widget=forms.TextInput(attrs={'id':"password", 'type':"text" , 'maxlength':"10"
 		, 'onkeyup':"nospaces(this)"}), required=True);
-
-	def save(self, commit=True):
-		instance = super(Usuario, self).save(commit=False);
-		instance.user= self.user;
-		instance.password = self.password;
-		if commit:
-			instance.save();
-		return instance
+	class Meta:
+		model = Usuario;
+		fields = ['user','password']
