@@ -1,5 +1,4 @@
 from django import forms
-from users.models import Usuario
 from django.contrib.auth.models import User
 
 class Login(forms.Form):
