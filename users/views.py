@@ -35,9 +35,9 @@ def index(request):
                 raw_username = datos.get('user')
                 raw_password= datos.get('password');
                 try:
-                user = User.objects.create_user(raw_username,raw_password)
-                user.save();
-                return HttpResponse('registrado')
+                    user = User.objects.create_user(raw_username,raw_password)
+                    user.save();
+                    return HttpResponse('registrado')
 
                 except 	IntegrityError:
                     return HttpResponse('username duplicado')
