@@ -32,6 +32,7 @@ def log_out(request):
 
 
 """ Funciones de apoyo """
+""" Funcion de login"""
 def pLogin(request):
     if request.POST.get('submit') == 'login':
         formaLogin = Login(request.POST)
@@ -52,6 +53,8 @@ def pLogin(request):
     else:
         return pRegistro(request)
 
+
+""" Funcion de Registro"""
 def pRegistro(request):
     if request.POST.get('submit') == 'signup':
         formaRegistro = Signup(request.POST)
