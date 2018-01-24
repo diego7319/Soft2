@@ -50,5 +50,6 @@ def index(request):
         'formaS': formaRegistro
         }
         return render(request, 'index.html', context)
+
 def perfil(request):
-    return render(request,'hom.html')
+    return render(request, 'hom.html')

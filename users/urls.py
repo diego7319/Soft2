@@ -1,8 +1,8 @@
 from . import views
 from django.urls import path
-from users.views import index
+from users.views import index,perfil
 from django.contrib.auth import views as auth_views
-from users.views import index
+
 from django.views.generic.base import TemplateView
 
 
@@ -13,5 +13,5 @@ urlpatterns = [
     #path('logout/', auth_views.logout, {'next_page': '/'}, name='logout'),
     #path('signup/', core_views.signup, name='signup'),
     path('', index, name='index'),
-    path('perfil/', index, name='perfil')
+    path('perfil/', perfil, name='perfil')
     ]
