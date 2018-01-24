@@ -24,7 +24,7 @@ def index(request):
                 print (user)
                 if user is not None:
                     login(request, user)
-                    request.session.set_expiry(30)
+                    request.session.set_expiry(100)
                     return redirect('perfil/')
                 else:
                     return HttpResponse('usuario no existe')
@@ -52,14 +52,15 @@ def index(request):
         }
         return render(request, 'index.html', context)
 
-
 def perfil(request):
     if not request.user.is_authenticated:
         return redirect('index')
     else:
         return render(request,'hom.html')
 
-
-def logout_view(request):
+def logout(request):
     logout(request)
+    return redirect('index')
     # Redirect to a success page.
+
+""""" Funciones de apoyo""""""""""""""""""""""
