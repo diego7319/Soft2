@@ -4,6 +4,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from users.forms import Login, Signup
 from users.models import Usuario
+from django.contrib.auth.models import User
 
 
 def index(request):
@@ -16,29 +17,21 @@ def index(request):
             formaLogin = Login(request.POST)
             if formaLogin.is_valid():
                 datos = formaLogin.cleaned_data
-                username =datos.get('user')
-                raw_password=datos.get('password')
-                user = authenticate(username=username, password=raw_password)
-                login(request, user)
-                return HttpResponse('dasdasdsad')
+                raw_username = datos.get('user')
+                raw_password= datos.get('password')
 
+                user = authenticate(username=raw_username, password=raw_password)
+                login(request, user)
+                return HttpResponse('login')
 
         elif request.POST.get('submit') == 'signup':
             formaRegistro = Signup(request.POST)
             print ('REGISTRO')
-            #datos = formaLogin.cleaned_data
-            print (formaRegistro)
             if formaRegistro.is_valid():
                 datos = formaRegistro.cleaned_data
-                formaRegistro.save()
-                """
-                rusername=datos.get('user')
-                rpassword= datos.get('password')
-                print (rusername+"  "+rpassword)
-                user = authenticate(request, username=rusername, password=rpassword)
-                if user is not None:
-                    #login(request, user)
-                    return render(request, 'guard')"""
+                user = User.objects.create_user(username=datos.get('user'),password=datos.get('password'))
+                user.save()
+
                 return  HttpResponse('dad')
 
     else:
@@ -48,33 +41,3 @@ def index(request):
         'formaS': formaRegistro
         }
         return render(request, 'index.html', context)
-
-"""
-def login(request):
-    formaLogin = Login(request.POST or None)
-    if formaLogin.is_valid():
-
-        datos = formaLogin.cleaned_data
-        rusername=datos.get('user')
-        rpassword= datos.get('password')
-        user = authenticate(username=rusername, password=rpassword)
-        login(request, user)
-        return redirect('home')
-    else:
-        return redirect('/index')
-
-
-def signup(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
-            login(request, user)
-            return redirect('home')
-    else:
-        form = UserCreationForm()
-    return render(request, 'signup.html', {'form': form})
-"""

@@ -1,6 +1,6 @@
 from django import forms
 from users.models import Usuario
-
+from django.contrib.auth.models import User
 
 class Login(forms.Form):
 	user = forms.CharField(widget=forms.TextInput(attrs={'id' :"user", 'type':"text", 'required': "",
@@ -8,9 +8,8 @@ class Login(forms.Form):
 	password = forms.CharField(widget=forms.TextInput(attrs={'id' :"password", 'type':"text", 'required': "",
 	'maxlength': "30", 'onkeyup': "nospaces(this)"}), required=True)
 	class Meta:
-		model = Usuario;
-		fields = ['user','password']
-
+		model = User
+		fields = "__all__"
 
 
 class Signup(forms.ModelForm):
@@ -19,5 +18,5 @@ class Signup(forms.ModelForm):
 	password = forms.CharField(widget=forms.TextInput(attrs={'id':"password", 'type':"text" , 'maxlength':"10"
 		, 'onkeyup':"nospaces(this)"}), required=True);
 	class Meta:
-		model = Usuario;
-		fields = ['user','password']
+		model = User
+		fields = "__all__"
