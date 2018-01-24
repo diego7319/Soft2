@@ -12,11 +12,11 @@ class Login(forms.Form):
 		fields = "__all__"
 
 
-class Signup(forms.ModelForm):
+class Signup(forms.Form):
 	user = forms.CharField(widget=forms.TextInput(attrs={'id':"ruser", 'type':"text" , 'maxlength':"10"
-		, 'onkeyup':"nospaces(this)"}), required=True);
+	, 'onkeyup':"nospaces(this)",'maxlength': "30"}), required=True);
 	password = forms.CharField(widget=forms.TextInput(attrs={'id':"password", 'type':"text" , 'maxlength':"10"
-		, 'onkeyup':"nospaces(this)"}), required=True);
+	, 'onkeyup':"nospaces(this)",'maxlength': "30"}), required=True);
 	class Meta:
 		model = User
 		fields = "__all__"

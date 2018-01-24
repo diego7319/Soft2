@@ -30,18 +30,15 @@ def index(request):
 
         elif request.POST.get('submit') == 'signup':
             formaRegistro = Signup(request.POST)
-            print ('registro')
-            print ('registro')
-            print ('registro')
-            print (formaRegistro.is_valid())
             if formaRegistro.is_valid():
                 datos = formaRegistro.cleaned_data
-                user = User.objects.create_user(username=datos.get('user'),
-                password=datos.get('password'))
+                raw_username = datos.get('user')
+                raw_password= datos.get('password')
+                user = User.objects.create_user(raw_username,raw_password)
+
                 user.save()
                 return HttpResponse('registrado')
             else:
-
                 return HttpResponse('error al registrar' )
 
 
