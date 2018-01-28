@@ -6,6 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{% static '/css/perfil.css' %}">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
 body {font-size:16px;}
@@ -23,9 +25,9 @@ body {font-size:16px;}
   <div class="w3-bar-block">
     <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
     <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Grupos</a>
-    <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Equipo Ideal</a>
-    <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Polla</a>
-    <a href="#packages" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Trivia</a>
+    <a href="#equipoIdeal" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Equipo Ideal</a>
+    <a href="#polla" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Polla</a>
+    <a href="#trivia" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Trivia</a>
     <a href="/logout" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Desconectarse</a>
   </div>
 </nav>
@@ -67,7 +69,12 @@ body {font-size:16px;}
 <label>Invitar a: </label>
 <input type="text" size=15 name="invitado" id="invitado" maxlength="25" onkeyup="nospaces(this)" required="">
 <br><label>Grupo: </label>
-<input type="text" size=15 name="grupo" id="grupo" maxlength="25" onkeyup="nospaces(this)" required="">
+<select id="grupo" class="reg_input" size="1" name="grupo" required>
+
+{% for t in grupos %}
+<option value={{t}}> {{t}} </option>
+{% endfor %}
+</select>
 <br>
 <button type="submit" class="button button-block " name='submit' value="signup"/>Enviar invitacion</button>
 </form>
@@ -80,13 +87,13 @@ body {font-size:16px;}
 <td>   <form action = "../responderinvitacion/" method = "post">
    {% csrf_token %}
    <input type="hidden" name="grupo" value="{{i}}">
-   <input type="hidden" name="rpta" value="{{aceptado}}">
+   <input type="hidden" name="rpta" value="aceptado">
         <input type="submit" name="upvote" value="Aceptar" />
     </form></td>
     <td>  <form action = "../responderinvitacion/" method = "post">
              {% csrf_token %}
              <input type="hidden" name="grupo" value="{{i}}">
-             <input type="hidden" name="rpta" value="{{rechazado}}">
+             <input type="hidden" name="rpta" value="rechazado">
         <input type="submit" name="upvote" value="Rechazar" />
 
     </form></td>
@@ -105,6 +112,23 @@ body {font-size:16px;}
     <br>
     <button type="submit" class="button button-block " name='submit' value="signup"/>Crear Grupo</button>
     </form>
+    <br>
+    <p> Tus grupos</p>
+    <form method="post" action='/perfil/' >
+      {% csrf_token %}
+    <select name="sometext" id='sometext' >
+      {% for x in misgrupos %}
+        <option>{{x}}</option>
+              {% endfor %}</select>
+  <button type="submit" class="button button-block " name='submit' value="Consultar"/>Consultar usuarios</button>
+  </form>
+
+  <select>
+    {% for f in listausuarios %}
+      <option>{{f}}</option>
+    {% endfor %}
+  </select>
+
     </div>
 
 
@@ -116,6 +140,7 @@ body {font-size:16px;}
       <p id="caption"></p>
     </div>
   </div>
+<div style='margin-bottom: 1px;'><br></div>
 
   <!-- Equipo Ideal -->
   <div class="w3-container" id="equipoIdeal" style="margin-top:75px">
@@ -127,7 +152,7 @@ body {font-size:16px;}
   </div>
 
   <!-- Polla -->
-  <div class="w3-container" id="polla" style="margin-top:75px">
+  <div class="w3-container" id="polla" style="margin-top:75px" >
     <h1 class="w3-xxxlarge w3-text-red"><b>Polla</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
     <img src="https://www.oscfondesarrollo.com/pollaeliminatorias/resources/img/laptop-futbol-apuestas.png" width="650" height="400">
@@ -195,5 +220,6 @@ x='{{ message }}'
 if (x=='{{ message }}') {} else (alert('{{ message }}'))
 
 </script>
+<script>$("select:empty").hide();</script>
 </body>
 </html>

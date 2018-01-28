@@ -20,12 +20,27 @@ def index(request):
         return render(request,'index.html', context)
 
 def perfil(request):
+    usern=request.user.username
     if not request.user.is_authenticated:
         return redirect('index')
-    else:
-        context = {'Invitaciones': views.invitaciones(request.user.username)}
-        return render(request,'hom.html',context)
 
+    else:
+        if request.method=='POST':
+
+            print (request)
+            context = {'Invitaciones': views.invitaciones(usern),
+            'grupos': views.useradmingroup(request.user.username),
+            'misgrupos':views.misgrupos(request.user.username),
+            'listausuarios':views.usuariosgrupo(request.POST.get('sometext'),)
+            }
+            return render(request,'hom.html',context)
+        else:
+
+            context = {'Invitaciones': views.invitaciones(request.user.username),
+            'grupos': views.useradmingroup(request.user.username),
+            'misgrupos':views.misgrupos(request.user.username)
+            }
+            return render(request,'hom.html',context)
 def log_out(request):
     logout(request)
     return redirect('index')
@@ -38,7 +53,6 @@ def pLogin(request):
     if request.POST.get('submit') == 'login':
         formaLogin = Login(request.POST)
         if formaLogin.is_valid():
-            print ('LOGINN')
             datos = formaLogin.cleaned_data
             username = datos.get('user')
             password = datos.get('password')

@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.contrib.auth.models import User #, Group
 from grupos.models import grupo,Invitacion
 from django.shortcuts import redirect
-from django.contrib import messages
 from users import views
 
 
@@ -12,18 +11,20 @@ from django.http import HttpResponse,HttpResponseRedirect
 #document.location.href="/";
 def invitarusuario(request):
     info = request.POST
-
     invi=info.get('invitado','')
     grp=info.get('grupo','')
     username = request.user.username
     invitadoexiste= User.objects.filter(username=invi).count()
-    obj = Invitacion.objects.get(grupo=grp,invitado=invi).count()
-    if admingrupos(username,grp)==True and invitadoexiste==1:
+    obj= 0
+    obj = Invitacion.objects.filter(grupo=grp,invitado=invi).count()
+    print ('asdaskdnojas')
+    print (obj)
+    if obj>=1:
+        return HttpResponse("<script>alert('invitacion ya existe');document.location.href='/perfil';</script>")
+    elif admingrupos(username,grp)==True and invitadoexiste==1:
         invit=Invitacion(invitado=invi,grupo=grp)
         invit.save()
         return HttpResponse("<script>alert('Se envio invitacion');document.location.href='/perfil';</script>")
-    elif obj>=1:
-        return HttpResponse("<script>alert('invitacion ya existe');document.location.href='/perfil';</script>")
     else:
         return HttpResponse("<script>alert('Usuario o grupo no existe');document.location.href='/perfil';</script>")
 
@@ -40,34 +41,24 @@ def agregargrupo(request):
     else:
         db_registro = grupo(nombre=gr,owner=username);
         db_registro.save()
-        messages.info(request, 'Grupo creado')
+        inv= Invitacion(invitado=username,owner=username,estado='aceptado',grupo=gr)
+        inv.save()
         #return views.perfil(request)
         return HttpResponse("<script>alert('Grupo creado');document.location.href='/perfil';</script>")
 
 
+def grupousuarios(grp):
 
-
-
-
-
-
-
-
-
+    return None
 
 """ Funcionaes de apoyo"""
-#Crea un grupo
-
 
 #lista de usuarios de un grupo
 def listausuarios(rgrupo):
-    lista = Invitacion.objects.filter(invitado=nombre)
-    gp = grupo.objects.filter(nombre=rgrup).count()
-    invitaciones=[]
-    grupos=[]
-    for i in lista:
-        if i.estado=='aceptado':
-            print (0)
+    nombre='aceptado'
+    lista = Invitacion.objects.filter(group=rgrupo,invitado=nombre)
+    #gp = grupo.objects.filter(nombre=rgrup).count()
+    usuarios=[]
     pass
     #return HttpResponse()
 
@@ -79,25 +70,48 @@ def admingrupos(nombre,rgrupo):
     else:
         return False
 
-#se envia el pedido de
+#retorna invitaciones pendientes
 def invitaciones(ruser):
     p=Invitacion.objects.filter(invitado=ruser,estado='pendiente')
     datos=[]
     for i in p:
         datos.append(i.grupo)
     return datos
-
+#aceptar o rechazar invitacion
 def responderinvitacion(request):
     info = request.POST
     rgrupo=info.get('grupo')
     ruser=request.user.username
     rpta=info.get('rpta')
-    obj = Invitacion.objects.get(grupo=rgrupo,invitado=ruser,)
-    print (obj.estado)
+    obj = Invitacion.objects.get(grupo=rgrupo,invitado=ruser)
     obj.estado=rpta
     obj.save()
-    print (obj.estado)
     if rpta=='aceptado':
         return HttpResponse("<script>alert('Grupo aceptado');document.location.href='/perfil';</script>")
     else:
         return HttpResponse("<script>alert('Grupo rechazado');document.location.href='/perfil';</script>")
+#retorna los grupos donde el usaurio es admin
+def useradmingroup(ruser):
+    rpta=[]
+    lista= grupo.objects.filter(owner=ruser)
+    for i in lista:
+        rpta.append(i.nombre)
+    return rpta
+
+#retorna una lista de los grupos a los que pertenece un usuario
+def misgrupos(ruser):
+    rpta=[]
+    lista= Invitacion.objects.filter(invitado=ruser,estado='aceptado')
+    for i in lista:
+        if i.estado=='aceptado':
+
+            rpta.append(i.grupo)
+    return rpta
+#retorna usuarios de un grupo
+def usuariosgrupo(rgrupo):
+    rpta=[]
+    lista = Invitacion.objects.filter(grupo=rgrupo)
+    for i in lista:
+        if i.estado=='aceptado':
+            rpta.append(i.invitado)
+    return rpta
