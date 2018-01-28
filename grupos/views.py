@@ -77,14 +77,23 @@ def admingrupos(nombre,rgrupo):
 
 #se envia el pedido de
 def invitaciones(ruser):
-    p=Invitacion.objects.filter(username=ruser,estado='pendiente')
+    p=Invitacion.objects.filter(invitado=ruser,estado='pendiente')
     datos=[]
     for i in p:
         datos.append(i.grupo)
     return datos
 
-def responderinvitacion(rpta,rgrupo,ruser):
+def responderinvitacion(request):
+    info = request.POST
+    rgrupo=info.get('grupo')
+    ruser=request.user.username
+    rpta=info.get('rpta')
     obj = Invitacion.objects.get(grupo=rgrupo,invitado=ruser)
-    obj.set(estado=rpta)
+    print (obj.estado)
+    obj.estado=rpta
     obj.save()
-    
+    print (obj.estado)
+    if rpta='aceptado':
+        return HttpResponse("<script>alert('Grupo aceptado');document.location.href='/perfil';</script>")
+    else:
+        return HttpResponse("<script>alert('Grupo rechazado');document.location.href='/perfil';</script>")

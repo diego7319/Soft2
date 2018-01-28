@@ -70,13 +70,22 @@ body {font-size:16px;}
 <p>Notificaciones<p>
 <table>
 {% for i in Invitaciones %}
+<tr>
 <td>Grupo: {{i}}</td>
-<td>   <form action = "" method = "post">
+<td>   <form action = "../responderinvitacion/" method = "post">
+   {% csrf_token %}
+   <input type="hidden" name="grupo" value="{{i}}">
+   <input type="hidden" name="rpta" value="{{aceptado}}">
         <input type="submit" name="upvote" value="Aceptar" />
     </form></td>
-    <td>  <form action = "" method = "post">
+    <td>  <form action = "../responderinvitacion/" method = "post">
+             {% csrf_token %}
+             <input type="hidden" name="grupo" value="{{i}}">
+             <input type="hidden" name="rpta" value="{{rechazado}}">
         <input type="submit" name="upvote" value="Rechazar" />
+
     </form></td>
+  </tr>
 {% endfor %}
 </table>
 
