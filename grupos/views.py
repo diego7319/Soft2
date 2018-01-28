@@ -16,13 +16,16 @@ def invitarusuario(request):
     grp=info.get('grupo','')
     username = request.user.username
     invitadoexiste= User.objects.filter(username=invi).count()
-    obj = Invitacion.objects.get(grupo=grp,invitado=invi).count()
-    if admingrupos(username,grp)==True and invitadoexiste==1:
+    obj= 0
+    obj = Invitacion.objects.filter(grupo=grp,invitado=invi).count()
+    print ('asdaskdnojas')
+    print (obj)
+    if obj>=1:
+        return HttpResponse("<script>alert('invitacion ya existe');document.location.href='/perfil';</script>")
+    elif admingrupos(username,grp)==True and invitadoexiste==1:
         invit=Invitacion(invitado=invi,grupo=grp)
         invit.save()
         return HttpResponse("<script>alert('Se envio invitacion');document.location.href='/perfil';</script>")
-    elif obj>=1:
-        return HttpResponse("<script>alert('invitacion ya existe');document.location.href='/perfil';</script>")
     else:
         return HttpResponse("<script>alert('Usuario o grupo no existe');document.location.href='/perfil';</script>")
 
@@ -91,12 +94,17 @@ def responderinvitacion(request):
     rgrupo=info.get('grupo')
     ruser=request.user.username
     rpta=info.get('rpta')
-    obj = Invitacion.objects.get(grupo=rgrupo,invitado=ruser,)
-    print (obj.estado)
+    obj = Invitacion.objects.get(grupo=rgrupo,invitado=ruser)
     obj.estado=rpta
     obj.save()
-    print (obj.estado)
     if rpta=='aceptado':
         return HttpResponse("<script>alert('Grupo aceptado');document.location.href='/perfil';</script>")
     else:
         return HttpResponse("<script>alert('Grupo rechazado');document.location.href='/perfil';</script>")
+#retorna los grupos donde el usaurio es admin
+def useradmingroup(ruser):
+    rpta=[]
+    lista= grupo.objects.filter(owner=ruser)
+    for i in lista:
+        rpta.append(i.nombre)
+    return rpta

@@ -62,7 +62,12 @@ body {font-size:16px;}
 <label>Invitar a: </label>
 <input type="text" size=15 name="invitado" id="invitado" maxlength="25" onkeyup="nospaces(this)" required="">
 <br><label>Grupo: </label>
-<input type="text" size=15 name="grupo" id="grupo" maxlength="25" onkeyup="nospaces(this)" required="">
+<select id="grupo" class="reg_input" size="1" name="grupo" required>
+
+{% for t in grupos %}
+<option value={{t}}> {{t}} </option>
+{% endfor %}
+</select>
 <br>
 <button type="submit" class="button button-block " name='submit' value="signup"/>Enviar invitacion</button>
 </form>
@@ -75,13 +80,13 @@ body {font-size:16px;}
 <td>   <form action = "../responderinvitacion/" method = "post">
    {% csrf_token %}
    <input type="hidden" name="grupo" value="{{i}}">
-   <input type="hidden" name="rpta" value="{{aceptado}}">
+   <input type="hidden" name="rpta" value="aceptado">
         <input type="submit" name="upvote" value="Aceptar" />
     </form></td>
     <td>  <form action = "../responderinvitacion/" method = "post">
              {% csrf_token %}
              <input type="hidden" name="grupo" value="{{i}}">
-             <input type="hidden" name="rpta" value="{{rechazado}}">
+             <input type="hidden" name="rpta" value="rechazado">
         <input type="submit" name="upvote" value="Rechazar" />
 
     </form></td>

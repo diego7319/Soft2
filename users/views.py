@@ -23,7 +23,9 @@ def perfil(request):
     if not request.user.is_authenticated:
         return redirect('index')
     else:
-        context = {'Invitaciones': views.invitaciones(request.user.username)}
+        context = {'Invitaciones': views.invitaciones(request.user.username),
+        'grupos': views.useradmingroup(request.user.username)
+        }
         return render(request,'hom.html',context)
 
 def log_out(request):
