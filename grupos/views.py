@@ -12,7 +12,6 @@ from django.http import HttpResponse,HttpResponseRedirect
 #document.location.href="/";
 def invitarusuario(request):
     info = request.POST
-
     invi=info.get('invitado','')
     grp=info.get('grupo','')
     username = request.user.username
