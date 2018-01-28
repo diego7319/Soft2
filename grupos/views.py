@@ -39,7 +39,7 @@ def agregargrupo(request):
 
     else:
         db_registro = grupo(nombre=gr,owner=username);
-        db_registro.savee()
+        db_registro.save()
         messages.info(request, 'Grupo creado')
         #return views.perfil(request)
         return HttpResponse("<script>alert('Grupo creado');document.location.href='/perfil';</script>")
