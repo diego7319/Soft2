@@ -1,13 +1,21 @@
 from django import forms
-from django.forms import ModelForm, TextInput
-
+from django.contrib.auth.models import User
 
 class Login(forms.Form):
-    email = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}), required=True)
-    password = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'type': 'password'}), required=True)
+	user = forms.CharField(widget=forms.TextInput(attrs={'id' :"user", 'type':"text", 'required': "",
+	'maxlength': "30", 'onkeyup': "nospaces(this)"}), required=True);
+	password = forms.CharField(widget=forms.TextInput(attrs={'id' :"password", 'type':"text", 'required': "",
+	'maxlength': "30", 'onkeyup': "nospaces(this)"}), required=True)
+	class Meta:
+		model = User
+		fields = "__all__"
 
 
-class Registro(forms.Form):
-    email = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}), required=True)
-    password = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'type': 'password'}),
-                               required=True)
+class Signup(forms.Form):
+	user = forms.CharField(widget=forms.TextInput(attrs={'id':"ruser", 'type':"text" , 'maxlength':"10"
+	, 'onkeyup':"nospaces(this)",'maxlength': "30"}), required=True);
+	password = forms.CharField(widget=forms.TextInput(attrs={'id':"password", 'type':"text" , 'maxlength':"10"
+	, 'onkeyup':"nospaces(this)",'maxlength': "30"}), required=True);
+	class Meta:
+		model = User
+		fields = "__all__"

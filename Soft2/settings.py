@@ -25,7 +25,7 @@ SECRET_KEY = 'boe!7cjuwcj&qeqw(7q%dczd0#w(yq98##0y&nqzf&t9*=d5-%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','ingsoft2.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','localhost','ingsoft2.herokuapp.com']
 
 
 # Application definition
@@ -37,9 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users',
+    'juegos',
+    'grupos'
 ]
 
 MIDDLEWARE = [
+    'django.middleware.gzip.GZipMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -74,13 +78,27 @@ WSGI_APPLICATION = 'Soft2.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'HOST':"ec2-54-83-59-144.compute-1.amazonaws.com",
+        'NAME': 'dblsrhhtmborgr',
+        'USER': 'amsohvzikeflij',
+        'PASSWORD': 'b39fcc59216bcf1f75bed2c955dd6b5ff0b01ba6d25cc75cd06230747accc498',
 
+        'PORT': 5432
+
+
+    }
+
+}
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+#DATABASES['default'] = dj_database_url.config()
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -114,7 +132,10 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+#Authentication backends
+AUTHENTICATION_BACKENDS = (
+        'django.contrib.auth.backends.ModelBackend',
+    )
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
