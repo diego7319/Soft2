@@ -53,13 +53,7 @@ def agregargrupo(request):
 
 
 
-
-
-
-
 """ Funcionaes de apoyo"""
-#Crea un grupo
-
 
 #lista de usuarios de un grupo
 def listausuarios(rgrupo):
@@ -73,6 +67,7 @@ def listausuarios(rgrupo):
     pass
     #return HttpResponse()
 
+
 #si el nombre es administrador de grupo retorna true
 def admingrupos(nombre,rgrupo):
     lista= grupo.objects.filter(owner=nombre,nombre=rgrupo).count()
@@ -81,14 +76,14 @@ def admingrupos(nombre,rgrupo):
     else:
         return False
 
-#se envia el pedido de
+#retorna invitaciones pendientes
 def invitaciones(ruser):
     p=Invitacion.objects.filter(invitado=ruser,estado='pendiente')
     datos=[]
     for i in p:
         datos.append(i.grupo)
     return datos
-
+#aceptar o rechazar invitacion
 def responderinvitacion(request):
     info = request.POST
     rgrupo=info.get('grupo')
