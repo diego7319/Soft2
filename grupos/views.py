@@ -12,14 +12,18 @@ from django.http import HttpResponse,HttpResponseRedirect
 #document.location.href="/";
 def invitarusuario(request):
     info = request.POST
+
     invi=info.get('invitado','')
     grp=info.get('grupo','')
     username = request.user.username
     invitadoexiste= User.objects.filter(username=invi).count()
+    obj = Invitacion.objects.get(grupo=grp,invitado=invi).count()
     if admingrupos(username,grp)==True and invitadoexiste==1:
         invit=Invitacion(invitado=invi,grupo=grp)
         invit.save()
         return HttpResponse("<script>alert('Se envio invitacion');document.location.href='/perfil';</script>")
+    elif obj>=1:
+        return HttpResponse("<script>alert('invitacion ya existe');document.location.href='/perfil';</script>")
     else:
         return HttpResponse("<script>alert('Usuario o grupo no existe');document.location.href='/perfil';</script>")
 
@@ -35,7 +39,7 @@ def agregargrupo(request):
 
     else:
         db_registro = grupo(nombre=gr,owner=username);
-        db_registro.save()
+        db_registro.savee()
         messages.info(request, 'Grupo creado')
         #return views.perfil(request)
         return HttpResponse("<script>alert('Grupo creado');document.location.href='/perfil';</script>")
@@ -57,7 +61,7 @@ def agregargrupo(request):
 
 #lista de usuarios de un grupo
 def listausuarios(rgrupo):
-    lista = Invitacion.objects.filter(invitado=nombre,)
+    lista = Invitacion.objects.filter(invitado=nombre)
     gp = grupo.objects.filter(nombre=rgrup).count()
     invitaciones=[]
     grupos=[]
@@ -88,12 +92,12 @@ def responderinvitacion(request):
     rgrupo=info.get('grupo')
     ruser=request.user.username
     rpta=info.get('rpta')
-    obj = Invitacion.objects.get(grupo=rgrupo,invitado=ruser)
+    obj = Invitacion.objects.get(grupo=rgrupo,invitado=ruser,)
     print (obj.estado)
     obj.estado=rpta
     obj.save()
     print (obj.estado)
-    if rpta='aceptado':
+    if rpta=='aceptado':
         return HttpResponse("<script>alert('Grupo aceptado');document.location.href='/perfil';</script>")
     else:
         return HttpResponse("<script>alert('Grupo rechazado');document.location.href='/perfil';</script>")
