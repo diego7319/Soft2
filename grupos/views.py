@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.contrib.auth.models import User #, Group
 from grupos.models import grupo,Invitacion
 from django.shortcuts import redirect
-from django.contrib import messages
 from users import views
 
 
@@ -42,31 +41,26 @@ def agregargrupo(request):
     else:
         db_registro = grupo(nombre=gr,owner=username);
         db_registro.save()
-        messages.info(request, 'Grupo creado')
+        inv= Invitacion(invitado=username,owner=username,estado='aceptado',grupo=gr)
+        inv.save()
         #return views.perfil(request)
         return HttpResponse("<script>alert('Grupo creado');document.location.href='/perfil';</script>")
 
 
+def grupousuarios(grp):
 
-
-
-
-
+    return None
 
 """ Funcionaes de apoyo"""
 
 #lista de usuarios de un grupo
 def listausuarios(rgrupo):
-    lista = Invitacion.objects.filter(invitado=nombre)
-    gp = grupo.objects.filter(nombre=rgrup).count()
-    invitaciones=[]
-    grupos=[]
-    for i in lista:
-        if i.estado=='aceptado':
-            print (0)
+    nombre='aceptado'
+    lista = Invitacion.objects.filter(group=rgrupo,invitado=nombre)
+    #gp = grupo.objects.filter(nombre=rgrup).count()
+    usuarios=[]
     pass
     #return HttpResponse()
-
 
 #si el nombre es administrador de grupo retorna true
 def admingrupos(nombre,rgrupo):
@@ -102,4 +96,22 @@ def useradmingroup(ruser):
     lista= grupo.objects.filter(owner=ruser)
     for i in lista:
         rpta.append(i.nombre)
+    return rpta
+
+#retorna una lista de los grupos a los que pertenece un usuario
+def misgrupos(ruser):
+    rpta=[]
+    lista= Invitacion.objects.filter(invitado=ruser,estado='aceptado')
+    for i in lista:
+        if i.estado=='aceptado':
+
+            rpta.append(i.grupo)
+    return rpta
+#retorna usuarios de un grupo
+def usuariosgrupo(rgrupo):
+    rpta=[]
+    lista = Invitacion.objects.filter(grupo=rgrupo)
+    for i in lista:
+        if i.estado=='aceptado':
+            rpta.append(i.invitado)
     return rpta

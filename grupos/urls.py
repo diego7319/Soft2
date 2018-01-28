@@ -1,6 +1,6 @@
 from . import views
 from django.urls import path
-from grupos.views import invitarusuario,agregargrupo,responderinvitacion,useradmingroup
+from grupos.views import invitarusuario,usuariosgrupo,misgrupos,grupousuarios,agregargrupo,responderinvitacion,useradmingroup
 
 urlpatterns = [
     #path('', TemplateView.as_view(template_name='home.html'), name='home'),
@@ -10,6 +10,7 @@ urlpatterns = [
     path('invitarusuario/', invitarusuario, name='invitarusuario'),
     path('agregargrupo/', agregargrupo, name='agregargrupo'),
     path('responderinvitacion/', responderinvitacion, name='responderinvitacion'),
-    path('useradmingroup/', useradmingroup, name='useradmingroup')
-
-    ]
+    path('useradmingroup/', useradmingroup, name='useradmingroup'),
+    path('misgrupos/', misgrupos, name='misgrupos'),
+    path('grupousuarios/', grupousuarios, name='grupousuarios'),
+    path('usuariosgrupo/', usuariosgrupo, name='usuariosgrupo')  ]

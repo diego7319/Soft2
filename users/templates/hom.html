@@ -6,6 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{% static '/css/perfil.css' %}">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
 body {font-size:16px;}
@@ -112,13 +114,21 @@ body {font-size:16px;}
     </form>
     <br>
     <p> Tus grupos</p>
-    <select name="sometext" >
-  <option>text1</option>
-  <option>text2</option>
-  <option>text3</option>
-  <option>text4</option>
-  <option>text5</option>
-</select>
+    <form method="post" action='/perfil/' >
+      {% csrf_token %}
+    <select name="sometext" id='sometext' >
+      {% for x in misgrupos %}
+        <option>{{x}}</option>
+              {% endfor %}</select>
+  <button type="submit" class="button button-block " name='submit' value="Consultar"/>Consultar usuarios</button>
+  </form>
+
+  <select>
+    {% for f in listausuarios %}
+      <option>{{f}}</option>
+    {% endfor %}
+  </select>
+
     </div>
 
 
@@ -130,6 +140,7 @@ body {font-size:16px;}
       <p id="caption"></p>
     </div>
   </div>
+<div style='margin-bottom: 1px;'><br></div>
 
   <!-- Equipo Ideal -->
   <div class="w3-container" id="equipoIdeal" style="margin-top:75px">
@@ -262,5 +273,6 @@ x='{{ message }}'
 if (x=='{{ message }}') {} else (alert('{{ message }}'))
 
 </script>
+<script>$("select:empty").hide();</script>
 </body>
 </html>
