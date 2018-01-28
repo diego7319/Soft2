@@ -22,7 +22,7 @@ body {font-size:16px;}
   </div>
   <div class="w3-bar-block">
     <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
-    <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"></a>
+    <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Grupos</a>
     <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Equipo Ideal</a>
     <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Polla</a>
     <a href="#packages" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Trivia</a>
@@ -44,25 +44,55 @@ body {font-size:16px;}
 
   <!-- Header -->
   <div class="w3-container" style="margin-top:80px" id="showcase">
-    <h1 class="w3-jumbo"><b>Interior Design</b></h1>
-    <h1 class="w3-xxxlarge w3-text-red"><b>Showcase.</b></h1>
+    <h1 class="w3-jumbo"><b>Grupos</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b>Invitaciones /                       Mis grupos</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
   </div>
 
   <!-- Photo grid (modal) -->
   <div class="w3-row-padding">
     <div class="w3-half">
+      <!--
       <img src="/w3images/kitchenconcrete.jpg" style="width:100%" onclick="onClick(this)" alt="Concrete meets bricks">
       <img src="/w3images/livingroom.jpg" style="width:100%" onclick="onClick(this)" alt="Light, white and tight scandinavian design">
-      <img src="/w3images/diningroom.jpg" style="width:100%" onclick="onClick(this)" alt="White walls with designer chairs">
-    </div>
+      <img src="/w3images/diningroom.jpg" style="width:100%" onclick="onClick(this)" alt="White walls with designer chairs">-->
+<div id = 'invitarusuarioagrupo' >
+  <form method="post" action='../invitarusuario/' >
+     {% csrf_token %}
+<label>Invitar a: </label>
+<input type="text" size=15 name="invitado" id="invitado" maxlength="25" onkeyup="nospaces(this)" required="">
+<br><label>Grupo: </label>
+<input type="text" size=15 name="grupo" id="grupo" maxlength="25" onkeyup="nospaces(this)" required="">
+<br>
+<button type="submit" class="button button-block " name='submit' value="signup"/>Enviar invitacion</button>
+</form>
+<br>
+<p>Notificaciones<p>
+<table>
+{% for i in Invitaciones %}
+<td>Grupo: {{i}}</td>
+<td>   <form action = "" method = "post">
+        <input type="submit" name="upvote" value="Aceptar" />
+    </form></td>
+    <td>  <form action = "" method = "post">
+        <input type="submit" name="upvote" value="Rechazar" />
+    </form></td>
+{% endfor %}
+</table>
 
-    <div class="w3-half">
-      <img src="/w3images/atrium.jpg" style="width:100%" onclick="onClick(this)" alt="Windows for the atrium">
-      <img src="/w3images/bedroom.jpg" style="width:100%" onclick="onClick(this)" alt="Bedroom and office in one space">
-      <img src="/w3images/livingroom2.jpg" style="width:100%" onclick="onClick(this)" alt="Scandinavian design">
+
     </div>
   </div>
+    <div class="w3-half">
+      <form method="post" action='../agregargrupo/' >
+         {% csrf_token %}
+    <label>Nombre de grupo</label>
+    <input type="text" size=15 name="nombregrupo" id="nombregrupo" maxlength="25" onkeyup="nospaces(this)" required="">
+    <br>
+    <button type="submit" class="button button-block " name='submit' value="signup"/>Crear Grupo</button>
+    </form>
+    </div>
+
 
   <!-- Modal for full size images on click-->
   <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
@@ -203,6 +233,10 @@ function onClick(element) {
   captionText.innerHTML = element.alt;
 }
 </script>
+<script>
+x='{{ message }}'
+if (x=='{{ message }}') {} else (alert('{{ message }}'))
 
+</script>
 </body>
 </html>

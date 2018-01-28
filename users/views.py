@@ -5,7 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from users.forms import Login, Signup
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-
+from grupos import views
 
 def index(request):
     formaLogin = Login()
@@ -23,7 +23,8 @@ def perfil(request):
     if not request.user.is_authenticated:
         return redirect('index')
     else:
-        return render(request,'hom.html')
+        context = {'Invitaciones':request.user.username}
+        return render(request,'hom.html',context)
 
 def log_out(request):
     logout(request)
