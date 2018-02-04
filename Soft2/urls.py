@@ -25,6 +25,7 @@ from django.contrib import admin
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('users.urls')),
-    path('', include('grupos.urls'))
+    path('', include('grupos.urls'),
+    path('', include('trivia.urls'))
 
 ]
