@@ -122,12 +122,12 @@ body {font-size:16px;}
               {% endfor %}</select>
   <button type="submit" class="button button-block " name='submit' value="Consultar"/>Consultar usuarios</button>
   </form>
-
-  <select>
+<!-- Mostrar usuarios del grupo en formato lista-->
+  <ul>
     {% for f in listausuarios %}
-      <option>{{f}}</option>
+      <li>{{f}}</li>
     {% endfor %}
-  </select>
+  </ul>
 
     </div>
 
