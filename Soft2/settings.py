@@ -59,7 +59,7 @@ ROOT_URLCONF = 'Soft2.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['users/templates'],
+        'DIRS': ['users/templates', 'trivia/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

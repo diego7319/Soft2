@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <title>Trivia</title>
+</head>
+
+  <body class="container">
+  <!-- Mostrar usuarios del grupo en formato lista-->
+  <form method="POST" action="score/">
+    {% csrf_token %}
+  {% for pregunta in listapreguntas %}
+  {{pregunta.descripcion}}
+  <div>
+    <select name={{pregunta.id}}>
+      {% for respuesta in pregunta.opciones %}
+        <option value={{respuesta}}>{{respuesta}}</option>
+      {% endfor %}
+    </select>
+  </div>
+  {% endfor %}
+  <input type="submit" value="enviar"/>
+</form>
+
+  </body>
+</html>
