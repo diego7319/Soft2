@@ -8,4 +8,4 @@ class PreguntaTrivia(models.Model):
     incorrecta2=models.CharField(max_length=150)
     incorrecta3=models.CharField(max_length=150)
     def __str__(self):
-        return "%s %s" % (self.nombre)
+        return "%s %s" % (self.descPregunta)
