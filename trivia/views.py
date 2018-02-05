@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import JsonResponse
+from trivia.models import PreguntaTrivia
+from random import randint,shuffle
+
 # Create your views here.
 def trivia(request):
     context = {
@@ -32,3 +35,20 @@ def preguntas():
         }
     ]
     return preguntas
+
+
+
+def mostrarpregunta(request):
+    username = request.GET.get('username', None)
+    cantidad = PreguntaTrivia.objects.count()
+    pregunta=PreguntaTrivia.objects.filter(idPregunta=randint(1, cantidad))
+    #pregjson se retorna al html
+    pregjson['pregunta']=pregunta.descPregunta,
+    alternativasrandom=[pregunta.incorrecta1,pregunta.incorrecta2,
+    pregunta.incorrecta3,pregunta.respuesta]
+    alternativasrandom=shuffle(alternativasrandom)
+    for i in alternativasrandom:
+        tmp=d+str(i)
+        pregjson[tmp]=alternativasrandom[i]
+    return JsonResponse(pregjson)
+def
