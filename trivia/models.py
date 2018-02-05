@@ -1,5 +1,5 @@
 from django.db import models
-
+#Preguntas
 class PreguntaTrivia(models.Model):
     idPregunta = models.CharField(max_length=2, unique=True)
     descPregunta = models.CharField(max_length=250)
