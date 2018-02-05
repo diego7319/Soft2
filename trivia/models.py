@@ -1,5 +1,5 @@
 from django.db import models
-from grupos import models
+
 
 #Preguntas
 class PreguntaTrivia(models.Model):
