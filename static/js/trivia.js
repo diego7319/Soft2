@@ -65,4 +65,4 @@ parametros={'pregunta':pregunta,'respuesta':respuesta}
             document.getElementById("rpta").innerHTML=data.resultado
               }
           });
-       };
+       }
