@@ -16,3 +16,5 @@ class scoretrivia(models.Model):
     grupo=models.CharField(max_length=30)
     idPregunta = models.CharField(max_length=1000)
     user=models.CharField(max_length=20)
+    #1 respuestacorrecta, 0 incorrecta
+    puntaje=models.charField(max_length=1)
