@@ -2,6 +2,12 @@ from django.db import models
 
 
 #Preguntas
+#idPregunta se genera automaticamente
+'''para agregar pregunta:
+>> from trivia.models import PreguntaTrivia
+>> pregunta1 = PreguntaTrivia(descPregunta='¿Qué número de Mundial será Rusia 2018',respuesta='21',incorrecta1='18',incorrecta2='24',incorrecta3='20')
+>> pregunta1.save()
+'''
 class PreguntaTrivia(models.Model):
     idPregunta = models.AutoField(primary_key=True)
     descPregunta = models.CharField(max_length=250)
@@ -12,9 +18,10 @@ class PreguntaTrivia(models.Model):
     def __str__(self):
         return "%s %s" % (self.descPregunta)
 
+
 class scoretrivia(models.Model):
     grupo=models.CharField(max_length=30)
     idPregunta = models.CharField(max_length=1000)
     user=models.CharField(max_length=20)
     #1 respuestacorrecta, 0 incorrecta
-    puntaje=models.charField(max_length=1)
+    puntaje=models.CharField(max_length=1)
