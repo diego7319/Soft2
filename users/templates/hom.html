@@ -76,7 +76,7 @@ body {font-size:16px;}
 <option value={{t}}> {{t}} </option>
 {% endfor %}
 </select>
-<br>
+<br><br>
 <button type="submit" class="button button-block " name='submit' value="signup"/>Enviar invitacion</button>
 </form>
 <br>
@@ -110,7 +110,7 @@ body {font-size:16px;}
          {% csrf_token %}
     <label>Nombre de grupo</label>
     <input type="text" size=15 name="nombregrupo" id="nombregrupo" maxlength="25" onkeyup="nospaces(this)" required="">
-    <br>
+    <br><br>
     <button type="submit" class="button button-block " name='submit' value="signup"/>Crear Grupo</button>
     </form>
     <br>
