@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.http import JsonResponse
 from trivia.models import PreguntaTrivia
@@ -61,7 +61,9 @@ def mostrarpregunta(request):
         pregjson[tmp]=str(alternativasrandom[i])
     return JsonResponse(pregjson)
 
-def respuestapregunta(request):
-    respuesta=request.POST.get()
-    pregunta=request.POST.get()
+#guarda la respuesta en la base de datos
+def score(request):
+    respuesta=request.POST.get('pregunta')
+    pregunta=request.POST.get('respuesta')
+    print (respuesta)
     pass
