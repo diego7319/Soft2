@@ -1,0 +1,11 @@
+.option {
+  padding: 1em 2em;
+  margin: 1em;
+  width: 15em;
+}
+.center{
+  text-align: center;
+}
+body{
+  padding-top: 2em;
+}
