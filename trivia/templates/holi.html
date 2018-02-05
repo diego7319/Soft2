@@ -1,9 +1,13 @@
+{%load staticfiles %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <html >
   <head>
     <title>Trivia</title>
   </head>
 
   <body>
+    <div><button id='nuevo' onclick='obtenerpregunta();return false;'>Nueva Pregunta</div></div>
     <p id='pregunta'></p>
     <p><br>Escoja una respuesta</p>
 
@@ -12,4 +16,7 @@
     <button id='alter2'></button>
     <button id='alter4'></button>
   </body>
+
+  <script src= "{% static '/js/trivia.js' %}"></script>
+
 </html>
