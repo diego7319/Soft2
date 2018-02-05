@@ -1,18 +1,8 @@
-$.ajax({
-  url: form.attr(""),
-  data: form.serialize(),
-  dataType: 'json',
-  success: function (data) {
-    if (data.is_taken) {
-      alert(data.error_message);
-    }
-  }
-});
+function obtenerpregunta(){
 
-$("nuevapregunta").click(function(){
-    $.get("mostrarpregunta/",
+    $.get("../mostrarpregunta/",
 
-    function(data, status){
+    function(data){
         console.log(data)
     });
-});
+};

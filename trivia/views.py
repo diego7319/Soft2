@@ -37,21 +37,26 @@ def preguntas():
     return preguntas
 
 
+def templated(request):
+    return render(request,'holi.html')
 
 def mostrarpregunta(request):
     username = request.GET.get('username', None)
     cantidad = PreguntaTrivia.objects.count()
-    pregjson['1']=1
-    #pregunta=PreguntaTrivia.objects.filter(idPregunta=randint(1, cantidad))
+
+    pregjson={}
+
+    pregunta=PreguntaTrivia.objects.filter(idPregunta=0)#randint(0, cantidad))
     #pregjson se retorna al html
-    #pregjson['pregunta']=pregunta.descPregunta,
-    #alternativasrandom=[pregunta.incorrecta1,pregunta.incorrecta2,
-    #pregunta.incorrecta3,pregunta.respuesta]
-    #alternativasrandom=shuffle(alternativasrandom)
-    #for i in alternativasrandom:
-    #    tmp=d+str(i)
-    #    pregjson[tmp]=alternativasrandom[i]
+    pregjson['pregunta']=pregunta.descPregunta,
+    alternativasrandom=[pregunta.incorrecta1,pregunta.incorrecta2,
+    pregunta.incorrecta3,pregunta.respuesta]
+    alternativasrandom=shuffle(alternativasrandom)
+    for i in alternativasrandom:
+        tmp=d+str(i)
+        pregjson[tmp]=alternativasrandom[i]
     return JsonResponse(pregjson)
 
 def respuestapregunta(request):
     respuesta=request.POST
+    pass
