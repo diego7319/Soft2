@@ -1,28 +1,37 @@
 {%load staticfiles %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha384-a1fJ5ppVJ3J5OscI8CmYpZH6XRnafYX7sXnA9uVadDWXox/IU9IIk9zz5zNE5HPL" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static '/css/estilos.css' %}"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 
 <html >
   <head>
     <title>Trivia</title>
   </head>
 
-  <body onload='obtenerpregunta()'>
-    <div><button id='nuevo' onclick='obtenerpregunta();return false;'>Nueva Pregunta</div></div>
+  <body class="container center"  onload='obtenerpregunta()'>
 
 
 <h1 id ='pregunta'></h1>
 <p><br>Escoja una respuesta</p>
 <br>
-    <button id='d1' onClick="reply_click(this.id);return false;"></button>
+    <button id='d1' class="btn btn-primary option" onClick="reply_click(this.id);return false;"></button>
     <br>
-    <button id='d3' onClick="reply_click(this.id);return false;"></button>
+    <button id='d3' class="btn btn-primary option" onClick="reply_click(this.id);return false;"></button>
     <br>
-    <button id='d2' onClick="reply_click(this.id);return false;"></button>
+    <button id='d2' class="btn btn-primary option"  onClick="reply_click(this.id);return false;"></button>
     <br>
-    <button id='d0' onClick="reply_click(this.id);return false;"></button>
+    <button id='d0' class="btn btn-primary option" onClick="reply_click(this.id);return false;"></button>
 
     <p id='rpta'></p>
+
+
+    <div><button id='nuevo' class="btn btn-success option" onclick='obtenerpregunta();return false;'>Siguiente</div></div>
   </body>
+
+
 <script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
   <script src= "{% static '/js/trivia.js' %}"></script>
 
