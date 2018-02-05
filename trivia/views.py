@@ -45,16 +45,17 @@ def mostrarpregunta(request):
     cantidad = PreguntaTrivia.objects.count()
 
     pregjson={}
-
-    pregunta=PreguntaTrivia.objects.filter(idPregunta=0)#randint(0, cantidad))
+    it=randint(1, cantidad)
+    pregunta=PreguntaTrivia.objects.get(idPregunta=it)
     #pregjson se retorna al html
+    print (pregunta.incorrecta1)
     pregjson['pregunta']=pregunta.descPregunta,
     alternativasrandom=[pregunta.incorrecta1,pregunta.incorrecta2,
     pregunta.incorrecta3,pregunta.respuesta]
-    alternativasrandom=shuffle(alternativasrandom)
-    for i in alternativasrandom:
-        tmp=d+str(i)
-        pregjson[tmp]=alternativasrandom[i]
+    shuffle(alternativasrandom)
+    for i in range(0,4):
+        tmp='d'+str(i)
+        pregjson[tmp]=str(alternativasrandom[i])
     return JsonResponse(pregjson)
 
 def respuestapregunta(request):
