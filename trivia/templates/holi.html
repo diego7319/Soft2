@@ -20,8 +20,10 @@
     <button id='d2' onClick="reply_click(this.id)"></button>
     <br>
     <button id='d0' onClick="reply_click(this.id)"></button>
-  </body>
 
+    <p id='rpta'></p>
+  </body>
+<script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
   <script src= "{% static '/js/trivia.js' %}"></script>
 
 </html>
