@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from grupos import models
+from django.http import JsonResponse
 # Create your views here.
 def trivia(request):
     context = {
         'listapreguntas': preguntas
     }
-    return render(request, 'main.html', context)
+    return render(request, 'main.html')#, context)
 
 def score(request):
     acum = 0
