@@ -69,7 +69,7 @@ body {font-size:16px;}
      {% csrf_token %}
 <label>Invitar a: </label>
 <input type="text" size=15 name="invitado" id="invitado" maxlength="25" onkeyup="nospaces(this)" required="">
-<br><label>Grupo: </label>
+<br><br><label>Grupo: </label>
 <select id="grupo" class="reg_input" size="1" name="grupo" required>
 
 {% for t in grupos %}
