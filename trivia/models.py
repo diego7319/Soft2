@@ -21,6 +21,5 @@ class PreguntaTrivia(models.Model):
 class scoretrivia(models.Model):
     idPregunta = models.AutoField(primary_key=True)
     grupo=models.CharField(max_length=30)
-    idPregunta = models.CharField(max_length=1000)
     user=models.CharField(max_length=20)
     puntaje=models.CharField(max_length=2)

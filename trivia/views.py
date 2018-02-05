@@ -5,6 +5,7 @@ from trivia.models import PreguntaTrivia
 from random import randint,shuffle
 
 # Create your views here.
+"""
 def trivia(request):
     context = {
         'listapreguntas': preguntas
@@ -36,14 +37,16 @@ def preguntas():
     ]
     return preguntas
 
-
+"""
 def templated(request):
-    return render(request,'holi.html')
+    if not request.user.is_authenticated:
+        return redirect('index')
+    else:
+        return render(request,'holi.html')
 
 def mostrarpregunta(request):
     username = request.GET.get('username', None)
     cantidad = PreguntaTrivia.objects.count()
-
     pregjson={}
     it=randint(1, cantidad)
     pregunta=PreguntaTrivia.objects.get(idPregunta=it)
@@ -59,5 +62,6 @@ def mostrarpregunta(request):
     return JsonResponse(pregjson)
 
 def respuestapregunta(request):
-    respuesta=request.POST
+    respuesta=request.POST.get()
+    pregunta=request.POST.get()
     pass
