@@ -31,11 +31,11 @@ def mostrarpregunta(request):
 
 #guarda la respuesta en la base de datos
 def score(request):
-    print(request.user.username)
+
     respuesta=request.POST.get('respuesta')
     pregunta=request.POST.get('pregunta')
     objpregunta=PreguntaTrivia.objects.get(descPregunta=pregunta)
-    print ('PREGUNTA DE DB  '+ objpregunta.descPregunta)
+
     rpuntaje='0'
     jsonrespuesta={'resultado':'Respuesta incorrecta'}
     if objpregunta.respuesta==respuesta:

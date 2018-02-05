@@ -4,33 +4,22 @@
 <html >
   <head>
     <title>Trivia</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha384-a1fJ5ppVJ3J5OscI8CmYpZH6XRnafYX7sXnA9uVadDWXox/IU9IIk9zz5zNE5HPL" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static '/css/estilos.css' %}"/>
   </head>
 
-  <body class="container center"  onload='obtenerpregunta()'>
+  <body onload='obtenerpregunta()'>
+    <div><button id='nuevo' onclick='obtenerpregunta();return false;'>Nueva Pregunta</div></div>
+
 
 <h1 id ='pregunta'></h1>
-<<<<<<< HEAD
 <p><br>Escoja una respuesta</p>
 <br>
-    <button id='d1' onClick="reply_click(this.id)"></button>
+    <button id='d1' onClick="reply_click(this.id);return false;"></button>
     <br>
-    <button id='d3' onClick="reply_click(this.id)"></button>
+    <button id='d3' onClick="reply_click(this.id);return false;"></button>
     <br>
-    <button id='d2' onClick="reply_click(this.id)"></button>
+    <button id='d2' onClick="reply_click(this.id);return false;"></button>
     <br>
-    <button id='d0' onClick="reply_click(this.id)"></button>
-=======
-
-    <button class="btn btn-primary option" id='d1'></button>
-    <button class="btn btn-primary option" id='d3'></button>
-    <button class="btn btn-primary option" id='d2'></button>
-    <button class="btn btn-primary option" id='d0'></button>
-    <div><button id='nuevo' class="btn btn-success option" onclick='obtenerpregunta();return false;'>Siguiente</div></div>
-</body>
-
->>>>>>> 57832e269dd1e55f5ba38382e06ee7720c4b6d37
+    <button id='d0' onClick="reply_click(this.id);return false;"></button>
 
     <p id='rpta'></p>
   </body>
