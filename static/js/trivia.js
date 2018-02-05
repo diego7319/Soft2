@@ -12,3 +12,23 @@ function obtenerpregunta(){
         document.getElementById("d3").innerHTML=data.d3
     });
 };
+
+
+
+function reply_click(id){
+
+pregunta=$('#pregunta').html();
+id='#'+id
+respuesta=$(id).html();
+parametros={'pregunta':pregunta,'respuesta':respuesta}
+
+    $.ajax({
+              type: "POST",
+              url: '../score/',
+              data: parametros,
+              success: function(data)
+              {
+                'haer algo data'
+              }
+          });
+       });
