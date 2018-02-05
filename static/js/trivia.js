@@ -51,8 +51,9 @@ function reply_click(id){
 
 pregunta=$('#pregunta').html();
 id='#'+id
+grupo=$( "#grupotrivia option:selected" ).text();
 respuesta=$(id).html();
-parametros={'pregunta':pregunta,'respuesta':respuesta}
+parametros={'pregunta':pregunta,'respuesta':respuesta,'grupo':grupo}
 
     $.ajax({
               type: "POST",

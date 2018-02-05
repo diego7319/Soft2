@@ -3,14 +3,15 @@ from django.http import HttpResponse
 from django.http import JsonResponse
 from trivia.models import PreguntaTrivia,scoretrivia
 from random import randint,shuffle
-
+from grupos.views import misgrupos
 # Create your views here.
 
 def templated(request):
     if not request.user.is_authenticated:
         return redirect('index')
     else:
-        return render(request,'holi.html')
+        context={'misgrupos':misgrupos(request.user.username)}
+        return render(request,'holi.html',context)
 
 def mostrarpregunta(request):
     username = request.GET.get('username', None)
@@ -31,19 +32,17 @@ def mostrarpregunta(request):
 
 #guarda la respuesta en la base de datos
 def score(request):
-
     respuesta=request.POST.get('respuesta')
     pregunta=request.POST.get('pregunta')
+    rgrupo=request.POST.get('grupo')
     objpregunta=PreguntaTrivia.objects.get(descPregunta=pregunta)
-
     rpuntaje='0'
     jsonrespuesta={'resultado':'Respuesta incorrecta'}
     if objpregunta.respuesta==respuesta:
         print('CORRECTA')
         rpuntaje='1'
         jsonrespuesta['resultado']='Respuesta correcta'
-    nuevoscore=scoretrivia(idPregunta=objpregunta.idPregunta,
-    user=request.user.username,puntaje=rpuntaje);
+    nuevoscore=scoretrivia(idpreguntaTrivia=objpregunta.idPregunta,
+    user=request.user.username,puntaje=rpuntaje,grupo=rgrupo);
     nuevoscore.save()
-
     return JsonResponse(jsonrespuesta)
