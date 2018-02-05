@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from grupos import models
 # Create your views here.
 def trivia(request):
     context = {
