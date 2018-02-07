@@ -38,14 +38,17 @@ function obtenerpregunta(){
         console.log()
 
         document.getElementById("pregunta").innerHTML = data.pregunta;
-   document.getElementById("d0").innerHTML=data.d0
+        document.getElementById("d0").innerHTML=data.d0
         document.getElementById("d1").innerHTML=data.d1
         document.getElementById("d2").innerHTML=data.d2
         document.getElementById("d3").innerHTML=data.d3
     });document.getElementById("rpta").innerHTML=''
 };
 
+function tiemporestante(segundo){
 
+  document.getElementById("tiemporestante").innerHTML=segundo
+}
 
 function reply_click(id){
 
