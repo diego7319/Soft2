@@ -63,7 +63,6 @@ def pLogin(request):
                 request.session.set_expiry(3600)
                 return redirect('perfil/')
             else:
-                print ('asd')
                 return HttpResponse('usuario no existe')
     else:
         return pRegistro(request)
@@ -77,18 +76,23 @@ def pRegistro(request):
             datos = formaRegistro.cleaned_data
             raw_username = datos.get('user')
             raw_password= datos.get('password');
+            context = {
+                'formaL': formaLogin,
+                'formaS': formaRegistro
+                }
             try:
                 user = User.objects.create_user(username=raw_username,password=raw_password)
                 user.save();
-                return HttpResponse(Registrado)
+                return render(request,'index.html',context)
             except:
-                return HttpResponse(Usuarioyaexiste)
+                return render(Usuarioyaexiste)
         else:
-            return HttpResponse('error al registrar' )
+            return render('error al registrar' )
     else:
         return HttpResponse('no es un post aceptado')
 
 
 #Strings respuesta de registro
-Registrado='<script>document.getElementById("cd2").innerHTML="Usuario registrado correctamente"</script>'
-Usuarioyaexiste='<script>document.getElementById("cd2").innerHTML="Usuario ya existe"</script>'
+Registrado='<script>alert("reg");window.location.href='';document.getElementById("cd2").innerHTML="Usuario registrado correctamente"</script>'
+Usuarioyaexiste='<script>alert("exist");window.location.href='';document.getElementById("cd2").innerHTML="Usuario ya existe"</script>'
+LogIncorrecto='<script>window.location.href='';document.getElementById("cd2").innerHTML="Usuario o contraseña incorrecto"</script>'
