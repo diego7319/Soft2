@@ -80,10 +80,15 @@ def pRegistro(request):
             try:
                 user = User.objects.create_user(username=raw_username,password=raw_password)
                 user.save();
-                return HttpResponse('registrado')
+                return HttpResponse(Registrado)
             except:
-                return HttpResponse('username duplicado')
+                return HttpResponse(Usuarioyaexiste)
         else:
             return HttpResponse('error al registrar' )
     else:
         return HttpResponse('no es un post aceptado')
+
+
+#Strings respuesta de registro
+Registrado='<script>document.getElementById("cd2").innerHTML="Usuario registrado correctamente"</script>'
+Usuarioyaexiste='<script>document.getElementById("cd2").innerHTML="Usuario ya existe"</script>'
