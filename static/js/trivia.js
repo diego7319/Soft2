@@ -2,7 +2,11 @@
  * setup JQuery's AJAX methods to setup CSRF token in the request before sending it off.
  * http://stackoverflow.com/questions/5100539/django-csrf-check-failing-with-an-ajax-post-request
  */
-
+ //5 preguntas por jueg
+ cantidadPreguntas=0
+ // tiempo-->Llega a 0 y cambia de pregunta
+ tiempo=10
+ segundo=1000
 function getCookie(name)
 {
     var cookieValue = null;
@@ -31,24 +35,25 @@ $.ajaxSetup({
 });
 
 function obtenerpregunta(){
-
     $.get("../mostrarpregunta/",
-
     function(data){
-        console.log()
-
-        document.getElementById("pregunta").innerHTML = data.pregunta;
+    console.log()
+    document.getElementById("pregunta").innerHTML = data.pregunta;
         document.getElementById("d0").innerHTML=data.d0
         document.getElementById("d1").innerHTML=data.d1
         document.getElementById("d2").innerHTML=data.d2
         document.getElementById("d3").innerHTML=data.d3
+cantidadPreguntas=cantidadPreguntas+1;tiempo=10;
     });document.getElementById("rpta").innerHTML=''
+
 };
 
 function tiemporestante(segundo){
 
   document.getElementById("tiemporestante").innerHTML=segundo
+
 }
+
 
 function reply_click(id){
 
@@ -66,7 +71,23 @@ parametros={'pregunta':pregunta,'respuesta':respuesta,'grupo':grupo}
               success: function(data)
               {
 
-            document.getElementById("rpta").innerHTML=data.resultado
+            document.getElementById("rpta").innerHTML=data.resultado;
+            tiempo=1
               }
           });
        }
+
+x=setInterval(function() {
+console.log(tiempo)
+
+tiemporestante(tiempo)
+tiempo=tiempo-1;
+if (tiempo==-1){
+      if (cantidadPreguntas==5){clearInterval(x);
+
+        document.getElementById("tiemporestante").innerHTML="Juego terminado"
+        }else{
+          tiempo=10 ;obtenerpregunta() }
+        }else {}
+
+}, segundo);
