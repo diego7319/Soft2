@@ -70,6 +70,8 @@ def pLogin(request):
 
 """ Funcion de Registro"""
 def pRegistro(request):
+    formaLogin = Login()
+    formaRegistro = Signup()
     if request.POST.get('submit') == 'signup':
         formaRegistro = Signup(request.POST)
         if formaRegistro.is_valid():
@@ -83,11 +85,14 @@ def pRegistro(request):
             try:
                 user = User.objects.create_user(username=raw_username,password=raw_password)
                 user.save();
+                context['estadoregistro']='Registrado correctamente'
                 return render(request,'index.html',context)
             except:
-                return render(Usuarioyaexiste)
+                context['estadoregistro']='Usuario ya existe'
+                return render(request,'index.html',context)
         else:
-            return render('error al registrar' )
+            context['estadoregistro']='Error de servidor.'
+            return render(request,'index.html',context)
     else:
         return HttpResponse('no es un post aceptado')
 
