@@ -57,7 +57,6 @@ def pLogin(request):
             username = datos.get('user')
             password = datos.get('password')
             user = authenticate(request,username=username,password=password)
-
             if user is not None:
                 login(request, user)
                 request.session.set_expiry(3600)
@@ -70,8 +69,6 @@ def pLogin(request):
 
 """ Funcion de Registro"""
 def pRegistro(request):
-    if not request.user.is_authenticated:
-        return redirect('index')    
     formaLogin = Login()
     formaRegistro = Signup()
     if request.POST.get('submit') == 'signup':
@@ -93,7 +90,7 @@ def pRegistro(request):
                 context['estadoregistro']='Usuario ya existe'
                 return render(request,'index.html',context)
         else:
-            context['estadoregistro']='Error de servidor.'
+            context['estado']='Error de servidor.'
             return render(request,'index.html',context)
     else:
         return HttpResponse('no es un post aceptado')
