@@ -95,9 +95,3 @@ def pRegistro(request):
             return render(request,'index.html',context)
     else:
         return HttpResponse('no es un post aceptado')
-
-
-#Strings respuesta de registro
-Registrado='<script>alert("reg");window.location.href='';document.getElementById("cd2").innerHTML="Usuario registrado correctamente"</script>'
-Usuarioyaexiste='<script>alert("exist");window.location.href='';document.getElementById("cd2").innerHTML="Usuario ya existe"</script>'
-LogIncorrecto='<script>window.location.href='';document.getElementById("cd2").innerHTML="Usuario o contraseña incorrecto"</script>'
