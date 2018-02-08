@@ -62,7 +62,12 @@ def pLogin(request):
                 request.session.set_expiry(3600)
                 return redirect('perfil/')
             else:
-                return HttpResponse('usuario no existe')
+                context = {
+                'formaL': formaLogin,
+                'formaS': formaRegistro,
+                'estadologin':'Usuario o contraseña incorrecto'
+                }
+                return render(request,'index.html',context)
     else:
         return pRegistro(request)
 
