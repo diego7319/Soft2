@@ -10,6 +10,8 @@ from users import views
 from django.http import HttpResponse,HttpResponseRedirect
 #document.location.href="/";
 def invitarusuario(request):
+    if not request.user.is_authenticated:
+        return redirect('index')
     info = request.POST
     invi=info.get('invitado','')
     grp=info.get('grupo','')
@@ -29,6 +31,8 @@ def invitarusuario(request):
         return HttpResponse("<script>alert('Usuario o grupo no existe');document.location.href='/perfil';</script>")
 
 def agregargrupo(request):
+    if not request.user.is_authenticated:
+        return redirect('index')
     username = request.user.username
     info = request.POST
     gr=info.get('nombregrupo','')
@@ -46,10 +50,22 @@ def agregargrupo(request):
         #return views.perfil(request)
         return HttpResponse("<script>alert('Grupo creado');document.location.href='/perfil';</script>")
 
+#aceptar o rechazar invitacion
+def responderinvitacion(request):
+    if not request.user.is_authenticated:
+        return redirect('index')
+    info = request.POST
+    rgrupo=info.get('grupo')
+    ruser=request.user.username
+    rpta=info.get('rpta')
+    obj = Invitacion.objects.get(grupo=rgrupo,invitado=ruser)
+    obj.estado=rpta
+    obj.save()
+    if rpta=='aceptado':
+        return HttpResponse("<script>alert('Grupo aceptado');document.location.href='/perfil';</script>")
+    else:
+        return HttpResponse("<script>alert('Grupo rechazado');document.location.href='/perfil';</script>")
 
-def grupousuarios(grp):
-
-    return None
 
 """ Funcionaes de apoyo"""
 
@@ -77,19 +93,7 @@ def invitaciones(ruser):
     for i in p:
         datos.append(i.grupo)
     return datos
-#aceptar o rechazar invitacion
-def responderinvitacion(request):
-    info = request.POST
-    rgrupo=info.get('grupo')
-    ruser=request.user.username
-    rpta=info.get('rpta')
-    obj = Invitacion.objects.get(grupo=rgrupo,invitado=ruser)
-    obj.estado=rpta
-    obj.save()
-    if rpta=='aceptado':
-        return HttpResponse("<script>alert('Grupo aceptado');document.location.href='/perfil';</script>")
-    else:
-        return HttpResponse("<script>alert('Grupo rechazado');document.location.href='/perfil';</script>")
+
 #retorna los grupos donde el usaurio es admin
 def useradmingroup(ruser):
     rpta=[]

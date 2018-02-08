@@ -14,6 +14,8 @@ def templated(request):
         return render(request,'holi.html',context)
 
 def mostrarpregunta(request):
+    if not request.user.is_authenticated:
+        return redirect('index')
     username = request.GET.get('username', None)
     cantidad = PreguntaTrivia.objects.count()
     pregjson={}
@@ -32,6 +34,8 @@ def mostrarpregunta(request):
 
 #guarda la respuesta en la base de datos
 def score(request):
+    if not request.user.is_authenticated:
+        return redirect('index')
     respuesta=request.POST.get('respuesta')
     pregunta=request.POST.get('pregunta')
     rgrupo=request.POST.get('grupo')

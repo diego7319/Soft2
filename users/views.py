@@ -70,6 +70,8 @@ def pLogin(request):
 
 """ Funcion de Registro"""
 def pRegistro(request):
+    if not request.user.is_authenticated:
+        return redirect('index')    
     formaLogin = Login()
     formaRegistro = Signup()
     if request.POST.get('submit') == 'signup':
