@@ -50,8 +50,11 @@ def log_out(request):
 """ Funciones de apoyo """
 """ Funcion de login"""
 def pLogin(request):
+        formaLogin = Login()
+        formaRegistro = Signup()
     if request.POST.get('submit') == 'login':
         formaLogin = Login(request.POST)
+
         if formaLogin.is_valid():
             datos = formaLogin.cleaned_data
             username = datos.get('user')
