@@ -7,3 +7,5 @@
   display: flex;
   padding: 0;
   width: 1200%;
+  animation: cambio 60s infinite alternate linear;
+}
