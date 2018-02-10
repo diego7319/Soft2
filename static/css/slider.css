@@ -10,3 +10,4 @@
   animation: cambio 60s infinite alternate linear;
 }
 .slider li {
+  width: 100%;
