@@ -1,4 +1,5 @@
 .slider{
   width: 1920px;
   margin: auto;
+  overflow: hidden;
 }
