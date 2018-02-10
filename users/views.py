@@ -93,9 +93,10 @@ def pRegistro(request):
             try:
                 user = User.objects.create_user(username=raw_username,password=raw_password)
                 user.save();
-                cuenta=usuariocuenta.objects.create_user(username=raw_username,dinerocuenta=10)
-                cuenta.save()
+                cuenta=usuariocuenta(usuario=raw_username,dinerocuenta=10)
+                cuenta.save();
                 context['estadoregistro']='Registrado correctamente'
+                print('dd')
                 return render(request,'index.html',context)
             except:
                 context['estadoregistro']='Usuario ya existe'
