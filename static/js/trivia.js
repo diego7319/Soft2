@@ -24,7 +24,20 @@ function getCookie(name)
     }
     return cookieValue;
 }
-
+function botonactivado(){
+  console.log('activando');
+  document.getElementById("d0").style.pointerEvents = 'auto';
+  document.getElementById("d1").style.pointerEvents = 'auto';
+  document.getElementById("d2").style.pointerEvents = 'auto';
+  document.getElementById("d3").style.pointerEvents = 'auto';
+}
+function botondesactivado(){
+  console.log('desactivando')
+  document.getElementById("d0").style.pointerEvents = 'none';
+  document.getElementById("d1").style.pointerEvents = 'none';
+  document.getElementById("d2").style.pointerEvents = 'none';
+  document.getElementById("d3").style.pointerEvents = 'none';
+}
 $.ajaxSetup({
      beforeSend: function(xhr, settings) {
          if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
@@ -44,7 +57,8 @@ function obtenerpregunta(){
         document.getElementById("d2").innerHTML=data.d2
         document.getElementById("d3").innerHTML=data.d3
 cantidadPreguntas=cantidadPreguntas+1;tiempo=10;
-    });document.getElementById("rpta").innerHTML=''
+});document.getElementById("rpta").innerHTML='';
+botonactivado()
 
 };
 
@@ -72,9 +86,10 @@ parametros={'pregunta':pregunta,'respuesta':respuesta,'grupo':grupo}
               {
 
             document.getElementById("rpta").innerHTML=data.resultado;
-            tiempo=1
+            tiempo=1;
+
               }
-          });
+          });botondesactivado();
        }
 
 x=setInterval(function() {
@@ -84,10 +99,10 @@ tiemporestante(tiempo)
 tiempo=tiempo-1;
 if (tiempo==-1){
       if (cantidadPreguntas==5){clearInterval(x);
-
+        botondesactivado();
         document.getElementById("tiemporestante").innerHTML="Juego terminado"
         }else{
-          tiempo=10 ;obtenerpregunta() }
+          tiempo=10 ;obtenerpregunta(); }
         }else {}
 
 }, segundo);

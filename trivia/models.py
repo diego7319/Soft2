@@ -24,3 +24,10 @@ class scoretrivia(models.Model):
     user=models.CharField(max_length=20)
     puntaje=models.CharField(max_length=2)
     idpreguntaTrivia=models.CharField(max_length=10)
+
+class juegostrivia(models.Model):
+    idjuego=models.AutoField(primary_key=True)
+    nombreJuego=models.CharField(max_length=30)
+    grupo=models.CharField(max_length=30)
+    #activo o desactivado
+    estado=models.CharField(max_length=11)
