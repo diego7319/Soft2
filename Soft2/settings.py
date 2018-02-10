@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'users',
     'juegos',
     'grupos',
-    'trivia'
+    'trivia',
+    'equipoIdeal',
+    'polla'
 ]
 
 MIDDLEWARE = [
