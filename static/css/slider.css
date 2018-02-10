@@ -11,3 +11,5 @@
 }
 .slider li {
   width: 100%;
+  list-style: none;
+}
