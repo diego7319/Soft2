@@ -50,3 +50,6 @@ def score(request):
     user=request.user.username,puntaje=rpuntaje,grupo=rgrupo);
     nuevoscore.save()
     return JsonResponse(jsonrespuesta)
+
+def crearjuego(request):
+    pass

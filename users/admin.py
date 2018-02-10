@@ -1,4 +1,8 @@
 from django.contrib import admin
 from .models import usuariocuenta
 # Register your models here.
-admin.site.register(usuariocuenta)
+from django.contrib import admin
+
+class usuariocuentaAdmin(admin.ModelAdmin):
+    list_display = ('usuario','dinerocuenta')
+admin.site.register(usuariocuenta,usuariocuentaAdmin)
