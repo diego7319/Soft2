@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'juegos',
     'grupos',
     'trivia',
-    'equipoIdeal',
+    'equipoideal',
     'polla'
 ]
 
