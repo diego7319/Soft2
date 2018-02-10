@@ -6,6 +6,7 @@ from users.forms import Login, Signup
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from grupos import views
+from users.models import usuariocuenta
 
 def index(request):
     formaLogin = Login()
@@ -92,6 +93,7 @@ def pRegistro(request):
             try:
                 user = User.objects.create_user(username=raw_username,password=raw_password)
                 user.save();
+                cuenta=usuariocuenta.objects,create_user(username=raw_username)
                 context['estadoregistro']='Registrado correctamente'
                 return render(request,'index.html',context)
             except:
