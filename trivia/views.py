@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.http import JsonResponse
-from trivia.models import PreguntaTrivia,scoretrivia
+from trivia.models import PreguntaTrivia,scoretrivia,salatrivia
 from random import randint,shuffle
 from grupos.views import misgrupos
 # Create your views here.
@@ -52,7 +52,14 @@ def score(request):
     return JsonResponse(jsonrespuesta)
 
 def crearjuego(request):
-    pass
+    if not request.user.is_authenticated:
+        return redirect('index')
+
+    else:
+
+        request.Post
+        context={'misgrupos':misgrupos(request.user.username)}
+        return render(request,'holi.html',context)
 
 def templatetrivia(request):
     context={

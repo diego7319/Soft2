@@ -1,18 +1,30 @@
-
 {%load staticfiles %}
 <html>
 <body>
   <div>
     <div >Crear y configurar trivia</div>
+    <br>
+
     <form method="POST" action="score/">
       {% csrf_token %}
+    <label>Nombre de sala</label>
+    <input size=15></input>
+      <label>Grupo </label>
       <select>
         {% for t in misgrupos %}
         <option value={{t}}> {{t}} </option>
         {% endfor %}
       </select>
+<label>  Cantidad de preguntas  </label>
+<select>
+      <option value=5> 5 preguntas </option>
+      <option value=5> 10 preguntas </option>
+      <option value=5> 15 preguntas </option>
+</select>
 
-<input type="submit" value="enviar"/>
+
+
+<input type="submit" value="Crear sala"/>
 </form>
 </div>
 </html>
