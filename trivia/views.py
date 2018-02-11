@@ -80,7 +80,12 @@ def templatetrivia(request):
     }
     return render(request,'configurartrivia.html',context)
 
-#funciones
+def iniciarjuego(request):
+
+
+    return (request,'holi.html',context)
+
+#funciones de apoyo
 def grupoexiste(nombre):
     existe=''
     cant=salatrivia.objects.filter(nombreJuego=nombre).count()
@@ -88,3 +93,6 @@ def grupoexiste(nombre):
         existe='El nombre de la sala ya existe'
     print (existe)
     return (existe)
+
+def getsalasjuego(usuario):
+    pass

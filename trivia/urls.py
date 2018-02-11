@@ -1,4 +1,4 @@
-from trivia.views import  score,mostrarpregunta,crearjuego,templated,templatetrivia
+from trivia.views import  score,mostrarpregunta,iniciarjuego,crearjuego,templated,templatetrivia
 from django.urls import path
 
 urlpatterns = [
@@ -6,5 +6,7 @@ urlpatterns = [
 path('score/', score, name='Score'),
     path('mostrarpregunta/',mostrarpregunta,name='mostrarpregunta'),
     path('creartrivia/',templatetrivia,name='creartrivia'),
-    path('crearjuego/',crearjuego,name='crearjuego')
+    path('crearjuego/',crearjuego,name='crearjuego'),
+    path('iniciarjuego/',iniciarjuego,name='iniciarjuego')
+
     ]
