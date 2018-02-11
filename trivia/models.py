@@ -18,6 +18,7 @@ class PreguntaTrivia(models.Model):
     def __str__(self):
         return "%s %s" % (self.idPregunta, self.descPregunta)
 
+#DB para puntaje global
 class scoretrivia(models.Model):
     idPregunta = models.AutoField(primary_key=True)
     grupo=models.CharField(max_length=30)
@@ -25,9 +26,10 @@ class scoretrivia(models.Model):
     puntaje=models.CharField(max_length=2)
     idpreguntaTrivia=models.CharField(max_length=10)
 
-class juegostrivia(models.Model):
+class salatrivia(models.Model):
     idjuego=models.AutoField(primary_key=True)
     nombreJuego=models.CharField(max_length=30)
     grupo=models.CharField(max_length=30)
+    cantpreguntas=models.IntegerField(max_length=2)
     #activo o desactivado
     estado=models.CharField(max_length=11)

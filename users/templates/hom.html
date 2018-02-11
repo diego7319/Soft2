@@ -29,7 +29,7 @@ body {font-size:16px;}
     <a href="#grupos" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Grupos</a>
     <a href="#equipoIdeal" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Equipo Ideal</a>
     <a href="#polla" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Polla</a>
-    <a href="/trivia" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Trivia</a>
+    <a href="../creartrivia/" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Trivia</a>
     <a href="/logout" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Desconectarse</a>
   </div>
 </nav>
@@ -77,18 +77,14 @@ body {font-size:16px;}
   <!-- Photo grid (modal) -->
   <div class="w3-row-padding">
     <div class="w3-half">
-      <!--
-      <img src="/w3images/kitchenconcrete.jpg" style="width:100%" onclick="onClick(this)" alt="Concrete meets bricks">
-      <img src="/w3images/livingroom.jpg" style="width:100%" onclick="onClick(this)" alt="Light, white and tight scandinavian design">
-      <img src="/w3images/diningroom.jpg" style="width:100%" onclick="onClick(this)" alt="White walls with designer chairs">-->
+
 <div id = 'invitarusuarioagrupo' >
   <form method="post" action='../invitarusuario/' >
      {% csrf_token %}
-<label>Invitar a: </label>
+<label>Enviar invitacion al siguiente usuario: </label>
 <input type="text" size=15 name="invitado" id="invitado" maxlength="25" onkeyup="nospaces(this)" required="">
-<br><br><label>Grupo: </label>
+<br><br><label>Invitar al grupo: </label>
 <select id="grupo" class="reg_input" size="1" name="grupo" required>
-
 {% for t in grupos %}
 <option value={{t}}> {{t}} </option>
 {% endfor %}
@@ -97,35 +93,18 @@ body {font-size:16px;}
 <button type="submit" class="button button-block " name='submit' value="signup"/>Enviar invitacion</button>
 </form>
 <br>
-<p>Notificaciones<p>
-<table>
-{% for i in Invitaciones %}
-<tr>
-<td>Grupo: {{i}}</td>
-<td>   <form action = "../responderinvitacion/" method = "post">
-   {% csrf_token %}
-   <input type="hidden" name="grupo" value="{{i}}">
-   <input type="hidden" name="rpta" value="aceptado">
-        <input type="submit" name="upvote" value="Aceptar" />
-    </form></td>
-    <td>  <form action = "../responderinvitacion/" method = "post">
-             {% csrf_token %}
-             <input type="hidden" name="grupo" value="{{i}}">
-             <input type="hidden" name="rpta" value="rechazado">
-        <input type="submit" name="upvote" value="Rechazar" />
 
-    </form></td>
-  </tr>
-{% endfor %}
-</table>
 
 
     </div>
   </div>
+
+
     <div class="w3-half">
+      <div>Crear grupo</div><br>
       <form method="post" action='../agregargrupo/' >
          {% csrf_token %}
-    <label>Nombre de grupo</label>
+    <label>Nombre de grupo a crear:</label>
     <input type="text" size=15 name="nombregrupo" id="nombregrupo" maxlength="25" onkeyup="nospaces(this)" required="">
     <br><br>
     <button type="submit" class="button button-block " name='submit' value="signup"/>Crear Grupo</button>
@@ -148,17 +127,38 @@ body {font-size:16px;}
   </ul>
 
     </div>
-<div>Saldo en cuenta: {{saldo}}</div>
+  <p>Notificaciones<p>
+  <table>
+  {% for i in Invitaciones %}
+  <tr>
+  <td>Grupo: {{i}}</td>
+  <td>   <form action = "../responderinvitacion/" method = "post">
+     {% csrf_token %}
+     <input type="hidden" name="grupo" value="{{i}}">
+     <input type="hidden" name="rpta" value="aceptado">
+          <input type="submit" name="upvote" value="Aceptar" />
+      </form></td>
+      <td>  <form action = "../responderinvitacion/" method = "post">
+               {% csrf_token %}
+               <input type="hidden" name="grupo" value="{{i}}">
+               <input type="hidden" name="rpta" value="rechazado">
+          <input type="submit" name="upvote" value="Rechazar" />
 
-  <!-- Modal for full size images on click-->
-  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
-    <span class="w3-button w3-black w3-xxlarge w3-display-topright">&times;</span>
-    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-      <img id="img01" class="w3-image">
-      <p id="caption"></p>
-    </div>
-  </div>
-<div style='margin-bottom: 1px;'><br></div>
+      </form></td>
+    </tr>
+  {% endfor %}
+</table><br><br>
+
+
+<div><p>Saldo en cuenta: {{saldo}}<p><br>
+  <form method="post" action='/recargarcuenta' >
+    {% csrf_token %}
+ <label>Saldo a recargar en su cuenta:</label><br>
+ <input type="number"  id='cantidadarecargar' name="cantidadarecargar">
+<br>
+<button type="submit" class="button button-block " name='submit' value="Recargar"/>Recargar</button>
+</form>
+</div>
 
   <!-- Equipo Ideal -->
   <div class="w3-container" id="equipoIdeal" style="margin-top:75px">

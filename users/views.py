@@ -25,16 +25,18 @@ def perfil(request):
     if not request.user.is_authenticated:
         return redirect('index')
     else:
+        saldo= usuariocuenta.objects.get(usuario=request.user.username)
         if request.method=='POST':
             print (request)
             context = {'Invitaciones': views.invitaciones(usern),
             'grupos': views.useradmingroup(request.user.username),
             'misgrupos':views.misgrupos(request.user.username),
-            'listausuarios':views.usuariosgrupo(request.POST.get('sometext'),)
+            'listausuarios':views.usuariosgrupo(request.POST.get('sometext')),
+            'saldo':saldo.dinerocuenta
             }
             return render(request,'hom.html',context)
         else:
-            saldo= usuariocuenta.objects.get(usuario=request.user.username)
+
             context = {'Invitaciones': views.invitaciones(request.user.username),
             'grupos': views.useradmingroup(request.user.username),
             'misgrupos':views.misgrupos(request.user.username),
@@ -45,6 +47,17 @@ def perfil(request):
 def log_out(request):
     logout(request)
     return redirect('index')
+
+#recargarcuenta
+def recargarcuenta(request):
+    user= usuariocuenta.objects.get(usuario=request.user.username)
+    saldoactual=user.dinerocuenta
+    cantidadrecarga=float(request.POST.get('cantidadarecargar'))
+    print (cantidadrecarga)
+    user.dinerocuenta=(saldoactual+cantidadrecarga)
+    user.save()
+    return redirect('perfil')
+
 
 """ Funciones de apoyo """
 """ Funcion de login"""
@@ -61,7 +74,7 @@ def pLogin(request):
             user = authenticate(request,username=username,password=password)
             if user is not None:
                 login(request, user)
-                request.session.set_expiry(3600)
+                #request.session.set_expiry(3600)
                 return redirect('perfil/')
             else:
                 context = {

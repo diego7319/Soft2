@@ -7,11 +7,12 @@
     <form method="POST" action="score/">
       {% csrf_token %}
       <select>
-        {% for t in grupos %}
+        {% for t in misgrupos %}
         <option value={{t}}> {{t}} </option>
         {% endfor %}
       </select>
-</div>
+
 <input type="submit" value="enviar"/>
 </form>
+</div>
 </html>
