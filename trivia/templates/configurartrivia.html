@@ -2,12 +2,14 @@
 {%load staticfiles %}
 <html>
 <body>
-<form method="POST" action="score/">
-  {% csrf_token %}
-<select>
-{{}}
-  </select
-
+  <div>
+    <div >Configurar juego grupal</div>
+    <form method="POST" action="score/">
+      {% csrf_token %}
+      <select>
+        {{}}
+      </select>
+</div>
 <input type="submit" value="enviar"/>
 </form>
 </html>
