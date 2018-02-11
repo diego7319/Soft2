@@ -102,7 +102,7 @@ console.log(tiempo)
 tiemporestante(tiempo)
 tiempo=tiempo-1;
 if (tiempo==-1){
-      if (cantidadPreguntas==5){clearInterval(x);
+      if (cantidadPreguntas==cantpreg()){clearInterval(x);
         botondesactivado();
         document.getElementById("tiemporestante").innerHTML="Juego terminado"
         preguntasequivocadas=cantidadPreguntas-preguntasacertadas

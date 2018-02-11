@@ -14,11 +14,14 @@ def index(request):
     if request.method == 'POST':
         return (pLogin(request))
     else:
-        context = {
+        if not request.user.is_authenticated:
+            return redirect('index')
+        else:
+            context = {
             'formaL': formaLogin,
             'formaS': formaRegistro
             }
-        return render(request,'index.html', context)
+            return render(request,'index.html', context)
 
 def perfil(request):
     usern=request.user.username

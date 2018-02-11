@@ -15,7 +15,7 @@
     <input id='nombresala' name='nombresala' size=20></input>
 <br>
       <label>Grupo: </label>
-      <select id='grupo' name='grupo'>
+      <select id='grupo' name='grupo' required>
         {% for t in misgrupos %}
         <option value={{t}}> {{t}} </option>
         {% endfor %}
@@ -39,7 +39,6 @@
 <button id='home' value='' class="btn btn-primary option"  onClick="window.location.href='../'">Regresar a tu perfil</button>
 
 <script>
-document.getElementById("Resultado").innerHTML={{existe}}
-
+document.getElementById("Resultado").innerHTML='{{existe}}'
 </script>
 </html>

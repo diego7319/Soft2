@@ -58,21 +58,20 @@ def crearjuego(request):
         info=request.POST
         estado='activo'
         nombresala=info.get('nombresala')
-        print (nombresala)
-        nombregrupo=info.get('nombregrupo')
-        print (nombregrupo)
+        nombregrupo=info.get('grupo','')
         cantpreg=int(info.get('cantpreg'))
+        nombreusado={}
         if grupoexiste(nombresala)=='El nombre de la sala ya existe':
             nombreusado['existe']='El nombre de la sala ya existe,use otro nombre'
-            return render(request,'holi.html',nombreusado)
+            nombreusado['misgrupos']=misgrupos(request.user.username)
+            return render(request,'configurartrivia.html',nombreusado)
         else:
             salaobj=salatrivia(nombreJuego=nombresala,grupo=nombregrupo,cantpreguntas=cantpreg,
             estado='activo')
             salaobj.save()
-            '''
             context={'misgrupos':misgrupos(request.user.username),
-            'creado':'Juego Creado',
-            'cantpreguntas=cantpreg'}'''
+            'existe':'Juego Creado',
+            }
             return render(request,'configurartrivia.html',context)
 
 def templatetrivia(request):
