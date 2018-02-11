@@ -4,15 +4,17 @@
 
 <body>
   <div>
-    <div >Crear y configurar trivia</div>
+    <h1><div >Crear y configurar trivia</div></h1>
+
+    <p>Solo podras crear una sala en el grupo que eres administrador</p>
     <br>
-<p>{{existe}}</p>
-    <form method="POST" action="score/">
+<p id='Resultado'></p>
+     <form method="POST" action="score/">
       {% csrf_token %}
     <label>Nombre de sala: </label>
     <input id='nombresala' size=15></input>
-
-      <label>Grupo </label>
+<br>
+      <label>Grupo: </label>
       <select id='grupo'>
         {% for t in misgrupos %}
         <option value={{t}}> {{t}} </option>
@@ -25,9 +27,21 @@
       <option value=15> 15 preguntas </option>
 </select>
 
-
+<br>
 
 <input type="submit" value="Crear sala"/>
 </form>
 </div>
+
+<!-- Salas creadas -->
+<div>
+
+
+
+</div>
+
+<script>
+document.getElementById("Resultado").innerHTML={{existe}}
+
+</script>
 </html>

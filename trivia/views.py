@@ -64,13 +64,13 @@ def crearjuego(request):
             nombreusado['existe']='El nombre de la sala ya existe,use otro nombre'
             return render(request,'holi.html',nombreusado)
         context={'misgrupos':misgrupos(request.user.username),
-        'existegrupo':grupoexiste()}
-        return render(request,'holi.html',context)
+        'creado':grupoexiste()}
+
+        return render(request,'configurartrivia.html',context)
 
 def templatetrivia(request):
     context={
     'misgrupos':misgrupos(request.user.username)
-
     }
     return render(request,'configurartrivia.html',context)
 
