@@ -31,6 +31,6 @@ class salatrivia(models.Model):
     idjuego=models.AutoField(primary_key=True)
     nombreJuego=models.CharField(max_length=30)
     grupo=models.CharField(max_length=30)
-    cantpreguntas=models.IntegerField(max_length=2)
+    cantpreguntas=models.IntegerField()
     #activo o desactivado
     estado=models.CharField(max_length=11)
