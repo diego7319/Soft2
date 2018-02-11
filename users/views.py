@@ -26,7 +26,6 @@ def perfil(request):
         return redirect('index')
     else:
         if request.method=='POST':
-
             print (request)
             context = {'Invitaciones': views.invitaciones(usern),
             'grupos': views.useradmingroup(request.user.username),
