@@ -53,3 +53,10 @@ def score(request):
 
 def crearjuego(request):
     pass
+
+def templatetrivia(request):
+    context={
+    'misgrupos':misgrupos(request.user.username)
+
+    }
+    return render(request,'configurartrivia.html',context)

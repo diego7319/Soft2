@@ -3,11 +3,13 @@
 <html>
 <body>
   <div>
-    <div >Configurar juego grupal</div>
+    <div >Crear y configurar trivia</div>
     <form method="POST" action="score/">
       {% csrf_token %}
       <select>
-        {{}}
+        {% for t in grupos %}
+        <option value={{t}}> {{t}} </option>
+        {% endfor %}
       </select>
 </div>
 <input type="submit" value="enviar"/>
