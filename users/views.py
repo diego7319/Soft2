@@ -46,8 +46,6 @@ def log_out(request):
     logout(request)
     return redirect('index')
 
-
-
 """ Funciones de apoyo """
 """ Funcion de login"""
 def pLogin(request):
