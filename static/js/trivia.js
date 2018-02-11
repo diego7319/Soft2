@@ -7,6 +7,9 @@
  // tiempo-->Llega a 0 y cambia de pregunta
  tiempo=10
  segundo=1000
+ preguntasacertadas=0
+ document.getElementById('home').style.visibility='hidden';
+
 function getCookie(name)
 {
     var cookieValue = null;
@@ -87,6 +90,7 @@ parametros={'pregunta':pregunta,'respuesta':respuesta,'grupo':grupo}
 
             document.getElementById("rpta").innerHTML=data.resultado;
             tiempo=1;
+            if(data.resultado=='Respuesta correcta'){preguntasacertadas+=1}else {}
 
               }
           });botondesactivado();
@@ -101,6 +105,10 @@ if (tiempo==-1){
       if (cantidadPreguntas==5){clearInterval(x);
         botondesactivado();
         document.getElementById("tiemporestante").innerHTML="Juego terminado"
+        preguntasequivocadas=cantidadPreguntas-preguntasacertadas
+        document.getElementById("rpta").innerHTML='Respuestas correctas: '+preguntasacertadas +'     -----'+'             Respuestas equivocadas: '+preguntasequivocadas
+        document.getElementById('home').style.visibility='';
+
         }else{
           tiempo=10 ;obtenerpregunta(); }
         }else {}
