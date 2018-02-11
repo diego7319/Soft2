@@ -54,11 +54,15 @@ def score(request):
 def crearjuego(request):
     if not request.user.is_authenticated:
         return redirect('index')
-
     else:
-
+        info=request.POST
+        estado='activo'
+        nombresala=info.get('nombresala')
+        nombregrupo=info.get('nombregrupo')
+        cantpreg=int(info.get('cantpreg'))
         request.Post
-        context={'misgrupos':misgrupos(request.user.username)}
+        context={'misgrupos':misgrupos(request.user.username),
+        'existegrupo':grupoexiste()}
         return render(request,'holi.html',context)
 
 def templatetrivia(request):
@@ -67,3 +71,10 @@ def templatetrivia(request):
 
     }
     return render(request,'configurartrivia.html',context)
+
+#funciones
+def grupoexiste(nombre):
+    existe=''
+    if salatrivia.objects.get(nombreJuego=nombre).count()==1:
+        existe=True
+    return ('El nombre de la sala ya existe')
