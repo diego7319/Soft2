@@ -20,11 +20,12 @@ class PreguntaTrivia(models.Model):
 
 #DB para puntaje global
 class scoretrivia(models.Model):
-    idPregunta = models.AutoField(primary_key=True)
+    idtrivia= models.AutoField(primary_key=True)
     grupo=models.CharField(max_length=30)
     user=models.CharField(max_length=20)
     puntaje=models.CharField(max_length=2)
     idpreguntaTrivia=models.CharField(max_length=10)
+    idjueg=models.ForeignKey('salatrivia', on_delete=models.CASCADE)
 
 class salatrivia(models.Model):
     idjuego=models.AutoField(primary_key=True)

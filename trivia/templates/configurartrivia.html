@@ -9,7 +9,7 @@
     <p>Solo podras crear una sala en el grupo que eres administrador</p>
     <br>
 <p id='Resultado'></p>
-     <form method="POST" action="score/">
+     <form method="POST" action="../score/">
       {% csrf_token %}
     <label>Nombre de sala: </label>
     <input id='nombresala' size=15></input>
@@ -20,7 +20,7 @@
         <option value={{t}}> {{t}} </option>
         {% endfor %}
       </select><br>
-<label>  Cantidad de preguntas  </label>
+<label>Cantidad de preguntas</label>
 <select id='cantpreg'>
       <option value=5> 5 preguntas </option>
       <option value=10> 10 preguntas </option>

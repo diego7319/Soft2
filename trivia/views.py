@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.http import JsonResponse
-from trivia.models import PreguntaTrivia,scoretrivia,salatrivia
+#from trivia.models import PreguntaTrivia,scoretrivia,salatrivia
 from random import randint,shuffle
 from grupos.views import misgrupos
 # Create your views here.
@@ -63,8 +63,9 @@ def crearjuego(request):
         if grupoexiste(nombresala)=='El nombre de la sala ya existe':
             nombreusado['existe']='El nombre de la sala ya existe,use otro nombre'
             return render(request,'holi.html',nombreusado)
-        context={'misgrupos':misgrupos(request.user.username),
-        'creado':grupoexiste()}
+        else:
+            context={'misgrupos':misgrupos(request.user.username),
+            'creado':'Juego Creado'}
 
         return render(request,'configurartrivia.html',context)
 
