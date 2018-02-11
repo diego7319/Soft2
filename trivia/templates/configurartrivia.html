@@ -12,23 +12,21 @@
      <form method="POST" action="../crearjuego/">
       {% csrf_token %}
     <label>Nombre de sala: </label>
-    <input id='nombresala' size=15></input>
+    <input id='nombresala' name='nombresala' size=20></input>
 <br>
       <label>Grupo: </label>
-      <select id='grupo'>
+      <select id='grupo' name='grupo'>
         {% for t in misgrupos %}
         <option value={{t}}> {{t}} </option>
         {% endfor %}
       </select><br>
 <label>Cantidad de preguntas</label>
-<select id='cantpreg'>
+<select id='cantpreg' name='cantpreg' class="reg_input" required>
       <option value=5> 5 preguntas </option>
       <option value=10> 10 preguntas </option>
       <option value=15> 15 preguntas </option>
 </select>
-
 <br>
-
 <input type="submit" value="Crear sala"/>
 </form>
 </div>
@@ -38,6 +36,7 @@
 <h1>Salas activas </h1>
 
 </div>
+<button id='home' value='' class="btn btn-primary option"  onClick="window.location.href='../'">Regresar a tu perfil</button>
 
 <script>
 document.getElementById("Resultado").innerHTML={{existe}}

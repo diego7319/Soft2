@@ -58,7 +58,9 @@ def crearjuego(request):
         info=request.POST
         estado='activo'
         nombresala=info.get('nombresala')
+        print (nombresala)
         nombregrupo=info.get('nombregrupo')
+        print (nombregrupo)
         cantpreg=int(info.get('cantpreg'))
         if grupoexiste(nombresala)=='El nombre de la sala ya existe':
             nombreusado['existe']='El nombre de la sala ya existe,use otro nombre'
@@ -82,6 +84,8 @@ def templatetrivia(request):
 #funciones
 def grupoexiste(nombre):
     existe=''
-    if salatrivia.objects.get(nombreJuego=nombre).count()==1:
+    cant=salatrivia.objects.filter(nombreJuego=nombre).count()
+    if cant>=1:
         existe='El nombre de la sala ya existe'
+    print (existe)
     return (existe)

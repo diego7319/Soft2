@@ -19,8 +19,7 @@ def invitarusuario(request):
     invitadoexiste= User.objects.filter(username=invi).count()
     obj= 0
     obj = Invitacion.objects.filter(grupo=grp,invitado=invi).count()
-    print ('asdaskdnojas')
-    print (obj)
+
     if obj>=1:
         return HttpResponse("<script>alert('invitacion ya existe');document.location.href='/perfil';</script>")
     elif admingrupos(username,grp)==True and invitadoexiste==1:
