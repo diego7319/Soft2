@@ -60,7 +60,9 @@ def crearjuego(request):
         nombresala=info.get('nombresala')
         nombregrupo=info.get('nombregrupo')
         cantpreg=int(info.get('cantpreg'))
-        request.Post
+        if grupoexiste(nombresala)=='El nombre de la sala ya existe':
+            nombreusado['existe']='El nombre de la sala ya existe,use otro nombre'
+            return render(request,'holi.html',nombreusado)
         context={'misgrupos':misgrupos(request.user.username),
         'existegrupo':grupoexiste()}
         return render(request,'holi.html',context)

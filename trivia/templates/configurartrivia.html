@@ -6,12 +6,12 @@
   <div>
     <div >Crear y configurar trivia</div>
     <br>
-<p>{{}}</p>
+<p>{{existe}}</p>
     <form method="POST" action="score/">
       {% csrf_token %}
-    <label>Nombre de sala</label>
+    <label>Nombre de sala: </label>
     <input id='nombresala' size=15></input>
-    <br>
+
       <label>Grupo </label>
       <select id='grupo'>
         {% for t in misgrupos %}
