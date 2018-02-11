@@ -1,25 +1,28 @@
 {%load staticfiles %}
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <body>
   <div>
     <div >Crear y configurar trivia</div>
     <br>
-
+<p>{{}}</p>
     <form method="POST" action="score/">
       {% csrf_token %}
     <label>Nombre de sala</label>
-    <input size=15></input>
+    <input id='nombresala' size=15></input>
+    <br>
       <label>Grupo </label>
-      <select>
+      <select id='grupo'>
         {% for t in misgrupos %}
         <option value={{t}}> {{t}} </option>
         {% endfor %}
-      </select>
+      </select><br>
 <label>  Cantidad de preguntas  </label>
-<select>
+<select id='cantpreg'>
       <option value=5> 5 preguntas </option>
-      <option value=5> 10 preguntas </option>
-      <option value=5> 15 preguntas </option>
+      <option value=10> 10 preguntas </option>
+      <option value=15> 15 preguntas </option>
 </select>
 
 
