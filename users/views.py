@@ -24,7 +24,6 @@ def perfil(request):
     usern=request.user.username
     if not request.user.is_authenticated:
         return redirect('index')
-
     else:
         if request.method=='POST':
 
@@ -36,10 +35,12 @@ def perfil(request):
             }
             return render(request,'hom.html',context)
         else:
-
+            saldo= usuariocuenta.objects.get(usuario=request.user.username)
             context = {'Invitaciones': views.invitaciones(request.user.username),
             'grupos': views.useradmingroup(request.user.username),
-            'misgrupos':views.misgrupos(request.user.username)
+            'misgrupos':views.misgrupos(request.user.username),
+            'saldo':saldo.dinerocuenta
+
             }
             return render(request,'hom.html',context)
 def log_out(request):
