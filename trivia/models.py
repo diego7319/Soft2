@@ -36,7 +36,8 @@ class salatrivia(models.Model):
     #activo o desactivado
     estado=models.CharField(max_length=11)
     pago=models.IntegerField(default=0)
-
+    def __str__(self):
+        return "%s %s" % (self.nombreJuego, self.descPregunta)
 class PagoSala(models.Model):
     nombreJuego=models.CharField(max_length=30)
     grupo=models.CharField(max_length=30)
