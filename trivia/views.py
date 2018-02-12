@@ -61,18 +61,19 @@ def crearjuego(request):
         nombresala=info.get('nombresala')
         nombregrupo=info.get('grupo','')
         cantpreg=int(info.get('cantpreg'))
+        rpago=int(info.get('pago'))
         nombreusado={}
         if grupoexiste(nombresala)=='El nombre de la sala ya existe':
             nombreusado['existe']='El nombre de la sala ya existe,use otro nombre'
-            nombreusado['misgrupos']=misgrupos(request.user.username)
+            nombreusado['misgrupos']=useradmingroup(request.user.username)
             nombreusado['usuario']=request.user.username
             return render(request,'configurartrivia.html',nombreusado)
         else:
             salaobj=salatrivia(nombreJuego=nombresala,grupo=nombregrupo,cantpreguntas=cantpreg,
-            estado='activo')
+            estado='activo',pago=rpago)
             salaobj.save()
 
-            context={'misgrupos':misgrupos(request.user.username),
+            context={'misgrupos':useradmingroup(request.user.username),
             'existe':'Sala de juego creada',
             'usuario':request.user.username
             }
@@ -80,7 +81,7 @@ def crearjuego(request):
 
 def templatetrivia(request):
     context={
-    'misgrupos':misgrupos(request.user.username),
+    'misgrupos':useradmingroup(request.user.username),
     'usuario':request.user.username
     }
     return render(request,'configurartrivia.html',context)
@@ -131,8 +132,11 @@ def getSalasdeGrupo(rgrupos):
             dato=i.nombreJuego+'-'+j
             rpta.append(dato)
     return rpta
-
-def GenerarPago(usuario,sala):
+#genera los pedidos de pago al usuario al crear una sala
+def GenerarPago(usuario,sala,pago):
+    ruser=usuario;rsala=sala;
+    gpago=()
     pass
 
-def MayorPuntaje(sala)
+def MayorPuntaje(sala):
+    pass

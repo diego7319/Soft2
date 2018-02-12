@@ -54,8 +54,8 @@
 <label style="
   font-family:  monospace; font-size:18px;
 ">Apuesta Minima</label>
-<input min="0" id='nombresala' type='number' required class="form-control"
-name='nombresala' size=20></input></div>
+<input min="0" id='pago' type='number' required class="form-control"
+name='pago' size=10></input></div>
 
 <input class="btn btn-primary"  type="submit" value="Crear sala" style="
     color: w3-hover-white;
@@ -101,7 +101,7 @@ font-family: sans-serif;
 document.getElementById("Resultado").innerHTML='{{existe}}';
 function user(){
   return '{{usuario}}'
-}
+  }
 </script>
 <script src= "{% static '/js/configurartrivia.js' %}"></script>
 <style>
