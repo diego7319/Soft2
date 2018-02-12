@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.http import JsonResponse
-from trivia.models import PreguntaTrivia,scoretrivia,salatrivia
+from trivia.models import PreguntaTrivia,scoretrivia,salatrivia,PagoSala
 from random import randint,shuffle
 from grupos.views import misgrupos
 # Create your views here.
@@ -70,7 +70,7 @@ def crearjuego(request):
             estado='activo')
             salaobj.save()
             context={'misgrupos':misgrupos(request.user.username),
-            'existe':'Juego Creado',
+            'existe':'Sala de juego creada',
             }
             return render(request,'configurartrivia.html',context)
 
@@ -91,8 +91,19 @@ def iniciarjuego(request):
     }
     return (request,'holi.html',context)
 
-def pagarsala(request):
+def pagar_sala(request):
     pass
+
+def obtenerSalas(usuario):
+    jsonrespuesta={}
+    ruser=usuario
+    listagrupos=misgrupos(ruser)
+    for i in listagrupos:
+        fila=listagrupos[i]
+        dictdato[fila.split('-')[0]]=fila.split('-')[1]
+        jsonrespuesta[i]=dictdato
+    return JsonResponse(jsonrespuesta)
+
 #funciones de apoyo
 def grupoexiste(nombre):
     existe=''
@@ -101,5 +112,13 @@ def grupoexiste(nombre):
         existe='El nombre de la sala ya existe'
     return (existe)
 
-def getsalasjuego(usuario):
-    pass
+def getSalasdeGrupo(rgrupos):
+    rpta=[]
+    #'sala-grupo'
+    for j in rgrupos:
+        salas=salatrivia.objects.filter(grupo=j)
+        for i in salas:
+            dato=salas[i].nombreJuego+'-'+rgrupos[j]
+            rpta.append(dato)
+    print (rpta)
+    return rpta
