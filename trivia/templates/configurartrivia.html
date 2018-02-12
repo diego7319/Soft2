@@ -1,26 +1,40 @@
 {%load staticfiles %}
-<html>
+<html style="
+    background-image: url('https://www.9to5animations.com/wp-content/uploads/2017/05/2018-FIFA-World-Cup-Russia-Wallpapers.jpg');
+    background-size: 100%;
+    background-repeat:  no-repeat;
+">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <body>
   <div>
-    <h1><div >Crear y configurar trivia</div></h1>
+    <h1><div style="
+    font-family: sans-serif;
+">Crear y configurar trivia</div></h1>
 
-    <p>Solo podras crear una sala en el grupo que eres administrador</p>
+    <p style="
+    font-family:  monospace;
+">Solo podras crear una sala en el grupo que eres administrador</p>
     <br>
 <p id='Resultado'></p>
      <form method="POST" action="../crearjuego/">
       {% csrf_token %}
-    <label>Nombre de sala: </label>
+    <label style="
+    font-family:  monospace;
+">Nombre de sala: </label>
     <input id='nombresala' name='nombresala' size=20></input>
 <br>
-      <label>Grupo: </label>
+      <label style="
+    font-family:  monospace;
+">Grupo: </label>
       <select id='grupo' name='grupo' required>
         {% for t in misgrupos %}
         <option value={{t}}> {{t}} </option>
         {% endfor %}
       </select><br>
-<label>Cantidad de preguntas</label>
+<label style="
+    font-family:  monospace;
+">Cantidad de preguntas</label>
 <select id='cantpreg' name='cantpreg' class="reg_input" required>
       <option value=5> 5 preguntas </option>
       <option value=10> 10 preguntas </option>
@@ -33,7 +47,9 @@
 
 <!-- Salas creadas -->
 <div>
-<h1>Salas activas </h1>
+<h1 style="
+font-family: sans-serif;
+">Salas activas </h1>
 <br>
 <table >
   <tr>
@@ -56,7 +72,9 @@
 
 <div>
 
-<h1>Salas donde eres Administrador</h1>
+<h1 style="
+font-family: sans-serif;
+">Salas donde eres Administrador</h1>
 </div>
 <button id='home' value='' class="btn btn-primary option"  onClick="window.location.href='../'">Regresar a tu perfil</button>
 
