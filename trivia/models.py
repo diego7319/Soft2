@@ -19,11 +19,13 @@ class PreguntaTrivia(models.Model):
         return "%s %s" % (self.idPregunta, self.descPregunta)
 
 #DB para puntaje global
+
 class scoretrivia(models.Model):
     idtrivia= models.AutoField(primary_key=True)
     grupo=models.CharField(max_length=30)
     user=models.CharField(max_length=20)
-    puntaje=models.CharField(max_length=2)
+    sala=models.CharField(max_length=20)
+    puntaje=models.FloatField()
     idpreguntaTrivia=models.CharField(max_length=10)
     idjueg=models.ForeignKey('salatrivia', on_delete=models.CASCADE)
 
@@ -34,3 +36,11 @@ class salatrivia(models.Model):
     cantpreguntas=models.IntegerField()
     #activo o desactivado
     estado=models.CharField(max_length=11)
+    pago=models.IntegerField(default=0)
+
+class PagoSala(models.Model):
+    nombreJuego=models.CharField(max_length=30)
+    grupo=models.CharField(max_length=30)
+    user=models.CharField(max_length=20)
+    #Pagado o deuda
+    estadopago=models.CharField(max_length=10)

@@ -86,7 +86,8 @@ def iniciarjuego(request):
     cantpreg=salatrivia.objects.get(nombreJuego=nombrejuego).cantpreguntas
     context={
     'cantpreg':cantpreg,
-    'salatrivia':nombrejuego
+    'salatrivia':nombrejuego,
+    'user':request.user.username
     }
     return (request,'holi.html',context)
 
@@ -99,4 +100,4 @@ def grupoexiste(nombre):
     return (existe)
 
 def getsalasjuego(usuario):
-    return
+    pass

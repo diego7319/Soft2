@@ -11,24 +11,24 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
-<body onload='obtenerpregunta()' style="background-image:url('http://superk800.com/wp-content/uploads/2017/10/unnamed-1.png'); text-align:center;">
+<body onload='obtenerpregunta()'>
 
 <!-- Top menu on small screens -->
 
 <!-- Overlay effect when opening sidebar on small screens -->
-  <br><br>
+
   <h1  id ='pregunta'></h1>
-  <h3><br>Escoja una respuesta</h3>
+  <p><br>Escoja una respuesta</p>
   <br>
-  <h2 id='tiemporestante'></h2>
+  <p id='tiemporestante'></p>
   <div style="w3-center;align-items: center;" >
-   <button id='d1' class="btn btn-primary option" onClick="reply_click(this.id);return false;" style="width:200px; background-color: green; border-color:green;"></button>
-   <br><br>
-   <button id='d3' class="btn btn-primary option" onClick="reply_click(this.id);return false;" style="width:200px;background-color: green; border-color:green;"></button>
-   <br><br>
-   <button id='d2' class="btn btn-primary option"  onClick="reply_click(this.id);return false;" style="width:200px;background-color: green; border-color:green;"></button>
-   <br><br>
-   <button id='d0' class="btn btn-primary option" onClick="reply_click(this.id);return false;" style="width:200px;background-color: green; border-color:green;"></button>
+   <button id='d1' class="btn btn-primary option" onClick="reply_click(this.id);return false;"></button>
+   <br>
+   <button id='d3' class="btn btn-primary option" onClick="reply_click(this.id);return false;"></button>
+   <br>
+   <button id='d2' class="btn btn-primary option"  onClick="reply_click(this.id);return false;"></button>
+   <br>
+   <button id='d0' class="btn btn-primary option" onClick="reply_click(this.id);return false;"></button>
 
    <p id='rpta'></p>
 
@@ -39,7 +39,13 @@
 
  </body>
 
+<script>
+function cantpreg(){
+return {{cantpreg}}
 
+}
+
+</script>
   <script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
   <script src= "{% static '/js/trivia.js' %}"></script>
 
