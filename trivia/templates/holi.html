@@ -11,7 +11,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
-<body onload='obtenerpregunta()' style="background-image:url('http://superk800.com/wp-content/uploads/2017/10/unnamed-1.png'); text-align:center;">
+<body onload='gestionjuego()' style="background-image:url('http://superk800.com/wp-content/uploads/2017/10/unnamed-1.png'); text-align:center;">
 
 <!-- Top menu on small screens -->
 
@@ -30,7 +30,11 @@
    <br><br>
    <button id='d0' class="btn btn-primary option" onClick="reply_click(this.id);return false;" style="width:200px; background-color: green; border-color:green;"></button>
 
-   <p id='rpta'></p>
+<br>
+     <strong id='home'> <p class="alert alert-success" id='rpta'></p></strong>
+
+
+
 
 
    </div>
@@ -42,11 +46,10 @@
 <script>
 function cantpreg(){
 return {{cantpreg}}
-
 }
-function user(){return {{user}}}
-function sala(){return {{salatrivia}}}
-function grupo(){return {{grupo}}}
+function user(){return '{{user}}'}
+function sala(){return '{{salatrivia}}'}
+function grupo(){return '{{grupo}}'}
 </script>
   <script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
   <script src= "{% static '/js/trivia.js' %}"></script>

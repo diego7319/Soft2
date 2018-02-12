@@ -39,17 +39,12 @@ def score(request):
         return redirect('index')
     respuesta=request.POST.get('respuesta')
     pregunta=request.POST.get('pregunta')
-    rgrupo=request.POST.get('grupo')
     objpregunta=PreguntaTrivia.objects.get(descPregunta=pregunta)
-    rpuntaje='0'
     jsonrespuesta={'resultado':'Respuesta incorrecta'}
     if objpregunta.respuesta==respuesta:
         print('CORRECTA')
         rpuntaje='1'
         jsonrespuesta['resultado']='Respuesta correcta'
-    nuevoscore=scoretrivia(idpreguntaTrivia=objpregunta.idPregunta,
-    user=request.user.username,puntaje=rpuntaje,grupo=rgrupo);
-    nuevoscore.save()
     return JsonResponse(jsonrespuesta)
 
 def crearjuego(request):
@@ -89,15 +84,16 @@ def templatetrivia(request):
 
 def iniciarjuego(request):
     info=request.POST
-    nombrejuego=info.get('salajuego')
-    grupo=info.get('grupo')
-    cantpreg=salatrivia.objects.get(nombreJuego=nombrejuego).cantpreguntas
+    usuario=info['jugarusuario']
+    nombrejuego=info['jugarsala']
+    grupo=info['jugargrupo']
+    cantpreg=salatrivia.objects.get(nombreJuego=nombrejuego,grupo=grupo).cantpreguntas
     context={
     'cantpreg':cantpreg,
     'salatrivia':nombrejuego,
-    'user':request.user.username
+    'user':usuario
     }
-    return (request,'holi.html',context)
+    return render(request,'holi.html',context)
 
 def pagar_sala(request):
     pass

@@ -51,6 +51,7 @@ $.ajaxSetup({
 });
 
 function obtenerpregunta(){
+  cantidadPreguntas=cantidadPreguntas+1;
     $.get("../mostrarpregunta/",
     function(data){
     console.log()
@@ -59,7 +60,7 @@ function obtenerpregunta(){
         document.getElementById("d1").innerHTML=data.d1
         document.getElementById("d2").innerHTML=data.d2
         document.getElementById("d3").innerHTML=data.d3
-cantidadPreguntas=cantidadPreguntas+1;tiempo=10;
+tiempo=10;
 });document.getElementById("rpta").innerHTML='';
 botonactivado()
 
@@ -79,7 +80,7 @@ id='#'+id
 grupo=$( "#grupotrivia option:selected" ).text();
 respuesta=$(id).html();
 parametros={'pregunta':pregunta,'respuesta':respuesta,'grupo':grupo}
-
+tiempo=1;
     $.ajax({
               type: "POST",
               url: '../score/',
@@ -90,7 +91,7 @@ parametros={'pregunta':pregunta,'respuesta':respuesta,'grupo':grupo}
 
             document.getElementById("rpta").innerHTML=data.resultado;
             tiempo=1;
-            if(data.resultado=='Respuesta correcta'){preguntasacertadas+=1}else {}
+    if(data.resultado=='Respuesta correcta'){preguntasacertadas+=1}else {}
 
               }
           });botondesactivado();
