@@ -14,8 +14,8 @@ def index(request):
     if request.method == 'POST':
         return (pLogin(request))
     else:
-        if not request.user.is_authenticated:
-            return redirect('index')
+        if request.user.is_authenticated:
+            return redirect('perfil')
         else:
             context = {
             'formaL': formaLogin,
