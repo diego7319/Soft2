@@ -103,7 +103,7 @@ def obtenerSalas(request):
     jsonrespuesta={}
     ruser=request.POST.get('usuario')
     listagrupos=misgrupos(ruser)
-    salagrupo= getSalasdeGrupo(ruser)
+    salagrupo= getSalasdeGrupo(listagrupos)
     cont=0
     for i in salagrupo:
         jsonrespuesta[str(cont)]={i.split('-')[0]:i.split('-')[1]}
@@ -125,6 +125,5 @@ def getSalasdeGrupo(rgrupos):
         salas=salatrivia.objects.filter(grupo=j)
         for i in salas:
             dato=i.nombreJuego+'-'+j
-            print (dato)
             rpta.append(dato)
     return rpta

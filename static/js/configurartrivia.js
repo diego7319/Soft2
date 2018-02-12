@@ -15,24 +15,39 @@ function getCookie(name)
     }
     return cookieValue;
 }
+$.ajaxSetup({
+     beforeSend: function(xhr, settings) {
+         if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
+             // Only send the token to relative URLs i.e. locally.
+             xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+         }
+     }
+});
+function llenartabla(json){
+  for (i in json)
+  {
+    console.log(json(i))
+  }
+}
 
 function Ajaxobtenersalas(){
   parametros={'usuario':user()};
   $.ajax({
 
             type: "POST",
-            url: '../getSalas/',
+            url: '../obtenerSalas/',
             data: parametros,
 
             success: function(data)
             {
 
-          console.log(data)
+          llenartabla(data)
 
             }
-        })
+        });
 
 
 }
+
 
 function pagar(){}

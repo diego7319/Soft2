@@ -110,7 +110,7 @@ if (tiempo==-1){
         document.getElementById('home').style.visibility='';
 
         }else{
-          tiempo=10 ;obtenerpregunta(); }
+         ;obtenerpregunta();   tiempo=10}
         }else {}
 
 }, segundo);
