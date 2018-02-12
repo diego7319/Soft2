@@ -9,46 +9,60 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <body onload='Ajaxobtenersalas()'>
-  <div>
-    <h1><div style="
-    font-family: sans-serif;
-">Crear y configurar trivia</div></h1>
+  <div class='row'>
+    <div class='row col-md-4'></div>
+    <div class='col-md-4' style="
+        font-family: sans-serif;"><h2>Crear y configurar trivia</h2> <br>
+<p style="font-family:  monospace; class"="text-muted">
+     Solo podras crear una sala en el grupo que eres administrador</p></div>
+</div>
+</b>
 
-    <b style="
-    font-family:  monospace;
-">Solo podras crear una sala en el grupo que eres administrador</b>
-    <br>
 <p id='Resultado'></p>
+<div class='row'>
+<div class='row col-md-4'></div><div class='row col-md-4'>
+
      <form method="POST" action="../crearjuego/">
       {% csrf_token %}
-    <b style="
+      <div class="form-group">
+        <label style="
+        font-family:  monospace; font-size:18px;">Nombre de sala: </label>
+        <input required id='nombresala'  class="form-control"
+        name='nombresala' size=20></input></div>
+
+        <div class="form-group">
+          <label style=style="
+        font-family:  monospace; font-size:18px;">Grupo </label>
+        <select class="form-control" id='grupo' name='grupo' required>
+          {% for t in misgrupos %}
+          <option value={{t}}> {{t}} </option>
+          {% endfor %}
+        </select></div>
+  <div class="form-group">
+
+<label style="
     font-family:  monospace; font-size:18px;
-">Nombre de sala: </b>
-    <input id='nombresala' name='nombresala' size=20></input>
-<br>
-      <b style="
-    font-family:  monospace; font-size:18px;
-">Grupo: </b>
-      <select id='grupo' name='grupo' required>
-        {% for t in misgrupos %}
-        <option value={{t}}> {{t}} </option>
-        {% endfor %}
-      </select><br>
-<b style="
-    font-family:  monospace; font-size:18px;
-">Cantidad de preguntas</b>
-<select id='cantpreg' name='cantpreg' class="reg_input" required>
+">Cantidad de preguntas</label>
+<select class="form-control" id='cantpreg' name='cantpreg' class="reg_input" required>
       <option value=5> 5 preguntas </option>
       <option value=10> 10 preguntas </option>
       <option value=15> 15 preguntas </option>
-</select>
-<br><br>
+</select></div>
+
+<div class="form-group">
+
+<label style="
+  font-family:  monospace; font-size:18px;
+">Apuesta Minima</label>
+<input min="0" id='nombresala' type='number' required class="form-control"
+name='nombresala' size=20></input></div>
+
 <input class="btn btn-primary"  type="submit" value="Crear sala" style="
-    background: white;
-    color: #795548;
+    color: w3-hover-white;
     border:  none;
 "/>
 </form>
+</div>
 </div>
 
 <!-- Salas creadas -->
@@ -76,10 +90,11 @@
 font-family: sans-serif;
 ">Salas donde eres Administrador</h1>
 </div>
-<button id='home' value='' class="btn btn-primary"  onClick="window.location.href='../'" style="
-    background: white;
-    color: #795548;
+<button id='home' value='' class="btn btn-success"  onClick="window.location.href='../'" style="
+
+    color: white;
     border:  none;
+
 ">Regresar a tu perfil</button>
 </body>
 <script>

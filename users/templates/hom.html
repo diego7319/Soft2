@@ -163,7 +163,7 @@ border:  none;"/>Enviar invitacion</button>
   <form method="post" action='/recargarcuenta' >
     {% csrf_token %}
  <label>Saldo a recargar en su cuenta:</label><br>
- <input type="number"  id='cantidadarecargar' name="cantidadarecargar">
+ <input  min="0" type="number"  id='cantidadarecargar' name="cantidadarecargar">
 <br>
 <button type="submit" class="button button-block " name='submit' value="Recargar" style="
 color: #004085;

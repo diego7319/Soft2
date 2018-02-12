@@ -4,7 +4,7 @@ from django.http import JsonResponse
 
 from trivia.models import PreguntaTrivia,scoretrivia,salatrivia,PagoSala
 from random import randint,shuffle
-from grupos.views import misgrupos
+from grupos.views import misgrupos,useradmingroup
 # Create your views here.
 
 def templated(request):
@@ -109,7 +109,11 @@ def obtenerSalas(request):
         jsonrespuesta[str(cont)]={i.split('-')[0]:i.split('-')[1]}
         cont+=1
     return JsonResponse(jsonrespuesta)
-
+#devuelve las salas donde es administrador
+def getsalasadmin(request):
+    jsonrespuesta={}
+    usuario=request.POST.get('usuario')
+    useradmingroup()
 #funciones de apoyo
 def grupoexiste(nombre):
     existe=''
@@ -127,3 +131,8 @@ def getSalasdeGrupo(rgrupos):
             dato=i.nombreJuego+'-'+j
             rpta.append(dato)
     return rpta
+
+def GenerarPago(usuario,sala):
+    pass
+
+def MayorPuntaje(sala)
