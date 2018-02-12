@@ -15,6 +15,7 @@ function getCookie(name)
     }
     return cookieValue;
 }
+
 $.ajaxSetup({
      beforeSend: function(xhr, settings) {
          if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
@@ -23,10 +24,25 @@ $.ajaxSetup({
          }
      }
 });
-function llenartabla(json){
-  for (i in json)
+var table = document.getElementById("missalas");
+function agregarrow(sala,grupo,posic){
+  var row = table.insertRow(posic);
+
+cell1=row.insertCell(0).innerHTML=sala;
+cell1=row.insertCell(1).innerHTML=grupo;
+
+}
+
+function llenartabla(datos){
+  for (i in datos)
   {
-    console.log(json(i))
+    for (h in datos[i]){
+            sala=h
+            grupo=datos[i][h]
+agregarrow(grupo,sala,i)
+
+
+                }
   }
 }
 

@@ -1,12 +1,12 @@
 {%load staticfiles %}
 <html style="
-    background-image: url('http://enteratecali.net/wp-content/uploads/2017/10/2018-fifa-world-cup-russia-2018-emblem-logo-soccer.jpg');
-    background-size: 100%;
-    background-repeat:  no-repeat;
+
 ">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <body onload='Ajaxobtenersalas()'>
   <div>
@@ -43,7 +43,7 @@
       <option value=15> 15 preguntas </option>
 </select>
 <br><br>
-<input type="submit" value="Crear sala" style="
+<input class="btn btn-primary"  type="submit" value="Crear sala" style="
     background: white;
     color: #795548;
     border:  none;
@@ -53,27 +53,21 @@
 
 <!-- Salas creadas -->
 <div>
-<h1 style="
-font-family: sans-serif;
-">Salas activas </h1>
+
+<h1 style="font-family: sans-serif;">Salas activas </h1>
 <br>
-<table >
-  <tr>
+<div>
+<table class='table table-hover' >
+  <thead>
+<tr> <th>Grupo</th>
     <th>Sala</th>
     <th>Estado</th>
     <th>Jugar</th>
-  </tr>
-  <tr>
-    <td>Jill</td>
-    <td>Smith</td>
-    <td>50</td>
-  </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td>
-    <td>94</td>
-  </tr>
+<tr>
+</thead>
+<tbody id='missalas' ></tbody>
 </table>
+
 </div>
 
 <div>
@@ -82,12 +76,12 @@ font-family: sans-serif;
 font-family: sans-serif;
 ">Salas donde eres Administrador</h1>
 </div>
-<button id='home' value='' class="btn btn-primary option"  onClick="window.location.href='../'" style="
+<button id='home' value='' class="btn btn-primary"  onClick="window.location.href='../'" style="
     background: white;
     color: #795548;
     border:  none;
 ">Regresar a tu perfil</button>
-
+</body>
 <script>
 document.getElementById("Resultado").innerHTML='{{existe}}';
 function user(){
@@ -95,5 +89,10 @@ function user(){
 }
 </script>
 <script src= "{% static '/js/configurartrivia.js' %}"></script>
-
+<style>
+body{
+background-image: url('http://enteratecali.net/wp-content/uploads/2017/10/2018-fifa-world-cup-russia-2018-emblem-logo-soccer.jpg');
+background-size: 100%;
+background-repeat:  no-repeat; background-size:cover;}
+</style>
 </html>
