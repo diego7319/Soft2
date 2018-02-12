@@ -38,6 +38,7 @@ class salatrivia(models.Model):
     pago=models.IntegerField(default=0)
 
 class PagoSala(models.Model):
+    idjuego=models.AutoField(primary_key=True)
     nombreJuego=models.CharField(max_length=30)
     grupo=models.CharField(max_length=30)
     user=models.CharField(max_length=20)

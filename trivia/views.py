@@ -72,7 +72,8 @@ def crearjuego(request):
             salaobj=salatrivia(nombreJuego=nombresala,grupo=nombregrupo,cantpreguntas=cantpreg,
             estado='activo',pago=rpago)
             salaobj.save()
-
+            gpago=PagoSala(nombreJuego=nombresala,grupo=nombregrupo,estadopago='deuda',user=request.user.username)
+            gpago.save()
             context={'misgrupos':useradmingroup(request.user.username),
             'existe':'Sala de juego creada',
             'usuario':request.user.username
@@ -133,10 +134,14 @@ def getSalasdeGrupo(rgrupos):
             rpta.append(dato)
     return rpta
 #genera los pedidos de pago al usuario al crear una sala
-def GenerarPago(usuario,sala,pago):
-    ruser=usuario;rsala=sala;
-    gpago=()
-    pass
+def GenerarPago(usuario,sala,pago,grupo):
+    ruser=usuario;rsala=sala;rgrupo=grupo;
+    gpago=PagoSala(nombreJuego=rsala,grupo=rgrupo,estadopago='deuda',user=ruser)
+    try:
+        gpago.save()
+        return True
+    except:
+        return 'Error'
 
 def MayorPuntaje(sala):
     pass
