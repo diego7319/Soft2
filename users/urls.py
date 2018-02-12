@@ -14,5 +14,5 @@ urlpatterns = [
     path('', index, name='index'),
     path('perfil/', perfil, name='perfil'),
     path('logout/', log_out, name='logout'),
-    path('recargarcuenta',recargarcuenta,name='recargarcuenta')
+    path('recargarcuenta',recargarcuenta,name='recargarcuenta') 
     ]
