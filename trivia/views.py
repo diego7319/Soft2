@@ -90,6 +90,7 @@ def templatetrivia(request):
 def iniciarjuego(request):
     info=request.POST
     nombrejuego=info.get('salajuego')
+    grupo=info.get('grupo')
     cantpreg=salatrivia.objects.get(nombreJuego=nombrejuego).cantpreguntas
     context={
     'cantpreg':cantpreg,
