@@ -5,8 +5,9 @@
     background-repeat:  no-repeat;
 ">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<body>
+<body onload='Ajaxobtenersalas()'>
   <div>
     <h1><div style="
     font-family: sans-serif;
@@ -85,8 +86,14 @@ font-family: sans-serif;
     color: #795548;
     border:  none;
 ">Regresar a tu perfil</button>
+<script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
 
 <script>
-document.getElementById("Resultado").innerHTML='{{existe}}'
+document.getElementById("Resultado").innerHTML='{{existe}}';
+function user(){
+  return '{{usuario}}'
+}
 </script>
+<script src= "{% static '/js/configurartrivia.js' %}"></script>
+
 </html>

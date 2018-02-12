@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.http import JsonResponse
 
-from trivia.models import PreguntaTrivia,scoretrivia,PagoSala
+from trivia.models import PreguntaTrivia,scoretrivia,salatrivia,PagoSala
 from random import randint,shuffle
 from grupos.views import misgrupos
 # Create your views here.
@@ -65,19 +65,23 @@ def crearjuego(request):
         if grupoexiste(nombresala)=='El nombre de la sala ya existe':
             nombreusado['existe']='El nombre de la sala ya existe,use otro nombre'
             nombreusado['misgrupos']=misgrupos(request.user.username)
+            nombreusado['usuario']=request.user.username
             return render(request,'configurartrivia.html',nombreusado)
         else:
             salaobj=salatrivia(nombreJuego=nombresala,grupo=nombregrupo,cantpreguntas=cantpreg,
             estado='activo')
             salaobj.save()
+
             context={'misgrupos':misgrupos(request.user.username),
             'existe':'Sala de juego creada',
+            'usuario':request.user.username
             }
             return render(request,'configurartrivia.html',context)
 
 def templatetrivia(request):
     context={
-    'misgrupos':misgrupos(request.user.username)
+    'misgrupos':misgrupos(request.user.username),
+    'usuario':request.user.username
     }
     return render(request,'configurartrivia.html',context)
 
@@ -95,14 +99,15 @@ def iniciarjuego(request):
 def pagar_sala(request):
     pass
 
-def obtenerSalas(usuario):
+def obtenerSalas(request):
     jsonrespuesta={}
-    ruser=usuario
+    ruser=request.POST.get('usuario')
     listagrupos=misgrupos(ruser)
-    for i in listagrupos:
-        fila=listagrupos[i]
-        dictdato[fila.split('-')[0]]=fila.split('-')[1]
-        jsonrespuesta[i]=dictdato
+    salagrupo= getSalasdeGrupo(ruser)
+    cont=0
+    for i in salagrupo:
+        jsonrespuesta[str(cont)]={i.split('-')[0]:i.split('-')[1]}
+        cont+=1
     return JsonResponse(jsonrespuesta)
 
 #funciones de apoyo
