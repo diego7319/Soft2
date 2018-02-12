@@ -1,7 +1,8 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.http import JsonResponse
-from trivia.models import PreguntaTrivia,scoretrivia,salatrivia,PagoSala
+
+from trivia.models import PreguntaTrivia,scoretrivia,PagoSala
 from random import randint,shuffle
 from grupos.views import misgrupos
 # Create your views here.
