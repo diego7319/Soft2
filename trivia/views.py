@@ -82,7 +82,12 @@ def templatetrivia(request):
 
 def iniciarjuego(request):
     info=request.POST
-
+    nombrejuego=info.get('salajuego')
+    cantpreg=salatrivia.objects.get(nombreJuego=nombrejuego).cantpreguntas
+    context={
+    'cantpreg':cantpreg,
+    'salatrivia':nombrejuego
+    }
     return (request,'holi.html',context)
 
 #funciones de apoyo
@@ -94,4 +99,4 @@ def grupoexiste(nombre):
     return (existe)
 
 def getsalasjuego(usuario):
-    pass
+    return
