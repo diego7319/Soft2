@@ -9,7 +9,7 @@
  segundo=1000
  preguntasacertadas=0
  document.getElementById('home').style.visibility='hidden';
-
+preguntas=['']
 function getCookie(name)
 {
     var cookieValue = null;
@@ -51,20 +51,26 @@ $.ajaxSetup({
 });
 
 function obtenerpregunta(){
-  cantidadPreguntas=cantidadPreguntas+1;
     $.get("../mostrarpregunta/",
     function(data){
-    console.log()
-    document.getElementById("pregunta").innerHTML = data.pregunta;
+ if (preguntas.includes(data.pregunta[0])==true){
+console.log('repetida ');obtenerpregunta()}
+
+else{
+  console.log(preguntas)
+console.log('Nueva')
+      document.getElementById("pregunta").innerHTML = data.pregunta;
         document.getElementById("d0").innerHTML=data.d0
         document.getElementById("d1").innerHTML=data.d1
         document.getElementById("d2").innerHTML=data.d2
         document.getElementById("d3").innerHTML=data.d3
 tiempo=10;
-});document.getElementById("rpta").innerHTML='';
-botonactivado()
+;document.getElementById("rpta").innerHTML='';
+botonactivado()}
+cantidadPreguntas=cantidadPreguntas+1;preguntas.push(data.pregunta)
+})};
 
-};
+
 
 function tiemporestante(segundo){
 
@@ -74,7 +80,6 @@ function tiemporestante(segundo){
 
 
 function reply_click(id){
-
 pregunta=$('#pregunta').html();
 id='#'+id
 grupo=$( "#grupotrivia option:selected" ).text();
@@ -94,7 +99,7 @@ tiempo=1;
     if(data.resultado=='Respuesta correcta'){preguntasacertadas+=1}else {}
 
               }
-          });botondesactivado();
+          });botondesactivado();obtenerpregunta()
        }
 
 x=setInterval(function() {
@@ -103,7 +108,7 @@ console.log(tiempo)
 tiemporestante(tiempo)
 tiempo=tiempo-1;
 if (tiempo==-1){
-      if (cantidadPreguntas==cantpreg()){clearInterval(x);
+      if (cantidadPreguntas==cantpreg()){clearInterval(x);console.log('fin');
         botondesactivado();
         document.getElementById("tiemporestante").innerHTML="Juego terminado"
         preguntasequivocadas=cantidadPreguntas-preguntasacertadas
@@ -111,7 +116,7 @@ if (tiempo==-1){
         document.getElementById('home').style.visibility='';
 
         }else{
-         ;obtenerpregunta();   tiempo=10}
+          botonactivado();  tiempo=10}
         }else {}
 
 }, segundo);
