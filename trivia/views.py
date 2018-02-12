@@ -91,6 +91,8 @@ def iniciarjuego(request):
     }
     return (request,'holi.html',context)
 
+def pagarsala(request):
+    pass
 #funciones de apoyo
 def grupoexiste(nombre):
     existe=''

@@ -26,7 +26,6 @@ class scoretrivia(models.Model):
     user=models.CharField(max_length=20)
     sala=models.CharField(max_length=20)
     puntaje=models.FloatField()
-    idpreguntaTrivia=models.CharField(max_length=10)
     idjueg=models.ForeignKey('salatrivia', on_delete=models.CASCADE)
 
 class salatrivia(models.Model):
