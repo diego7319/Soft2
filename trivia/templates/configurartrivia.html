@@ -12,36 +12,40 @@
     font-family: sans-serif;
 ">Crear y configurar trivia</div></h1>
 
-    <p style="
+    <b style="
     font-family:  monospace;
-">Solo podras crear una sala en el grupo que eres administrador</p>
+">Solo podras crear una sala en el grupo que eres administrador</b>
     <br>
 <p id='Resultado'></p>
      <form method="POST" action="../crearjuego/">
       {% csrf_token %}
-    <label style="
-    font-family:  monospace;
-">Nombre de sala: </label>
+    <b style="
+    font-family:  monospace; font-size:18px;
+">Nombre de sala: </b>
     <input id='nombresala' name='nombresala' size=20></input>
 <br>
-      <label style="
-    font-family:  monospace;
-">Grupo: </label>
+      <b style="
+    font-family:  monospace; font-size:18px;
+">Grupo: </b>
       <select id='grupo' name='grupo' required>
         {% for t in misgrupos %}
         <option value={{t}}> {{t}} </option>
         {% endfor %}
       </select><br>
-<label style="
-    font-family:  monospace;
-">Cantidad de preguntas</label>
+<b style="
+    font-family:  monospace; font-size:18px;
+">Cantidad de preguntas</b>
 <select id='cantpreg' name='cantpreg' class="reg_input" required>
       <option value=5> 5 preguntas </option>
       <option value=10> 10 preguntas </option>
       <option value=15> 15 preguntas </option>
 </select>
 <br>
-<input type="submit" value="Crear sala"/>
+<input type="submit" value="Crear sala" style="
+    background: white;
+    color: #795548;
+    border:  none;
+"/>
 </form>
 </div>
 
@@ -76,7 +80,11 @@ font-family: sans-serif;
 font-family: sans-serif;
 ">Salas donde eres Administrador</h1>
 </div>
-<button id='home' value='' class="btn btn-primary option"  onClick="window.location.href='../'">Regresar a tu perfil</button>
+<button id='home' value='' class="btn btn-primary option"  onClick="window.location.href='../'" style="
+    background: white;
+    color: #795548;
+    border:  none;
+">Regresar a tu perfil</button>
 
 <script>
 document.getElementById("Resultado").innerHTML='{{existe}}'
