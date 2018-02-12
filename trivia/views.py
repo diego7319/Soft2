@@ -118,7 +118,7 @@ def getSalasdeGrupo(rgrupos):
     for j in rgrupos:
         salas=salatrivia.objects.filter(grupo=j)
         for i in salas:
-            dato=salas[i].nombreJuego+'-'+rgrupos[j]
+            dato=i.nombreJuego+'-'+j
+            print (dato)
             rpta.append(dato)
-    print (rpta)
     return rpta
