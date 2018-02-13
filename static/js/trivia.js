@@ -118,6 +118,7 @@ if (tiempo<=0){
         document.getElementById('home').style.visibility='';
 
         }else{
+          document.getElementById("rpta").innerHTML='No se marco nada.Incorrecto';
         tiempo=10;obtenerpregunta();}
         }
 
