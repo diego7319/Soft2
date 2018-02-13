@@ -5,6 +5,7 @@ from users.models import usuariocuenta
 from trivia.models import PreguntaTrivia,scoretrivia,salatrivia,PagoSala
 from random import randint,shuffle
 from grupos.views import misgrupos,useradmingroup
+from grupos.models import Invitacion
 # Create your views here.
 from rest_framework.decorators import api_view
 
@@ -54,6 +55,7 @@ def crearjuego(request):
         estado='activo'
         nombresala=info.get('nombresala')
         nombregrupo=info.get('grupo','')
+        print (info.get('cantpreg'))
         cantpreg=int(info.get('cantpreg'))
         rpago=int(info.get('pago'))
         nombreusado={}
@@ -96,23 +98,26 @@ def iniciarjuego(request):
     }
     return render(request,'holi.html',context)
 
+
 def pagar_sala(request):
     info=request.POST
     rusuario=info['jugarusuario']
     rnombrejuego=info['jugarsala']
     rgrupo=info['jugargrupo']
     cantpagar=salatrivia.objects.get(nombreJuego=rnombrejuego,grupo=rgrupo).pago
-    saldouser=usuariocuenta.objects.get(usuario=rusuario).dinerocuenta
-    if cantpagar>saldouser:
-        crearjuego(request)
+    saldouser=usuariocuenta.objects.get(usuario=rusuario)
+    if int(cantpagar) > int(saldouser.dinerocuenta):
+        print (int(cantpagar) > int(saldouser.dinerocuenta))
+        return JsonResponse({"rpta": "No hay saldo suficiente en tu cuenta"})
     else:
-        nuevosaldouser=saldouser.cantpagar()
-        cambiarestado=PagoSala.objects.get(nombreJuego=nombrejuego,grupo=rgrupo,user=usuario).estadopago
+        nuevosaldouser=saldouser.dinerocuenta-cantpagar
+        cambiarestado=PagoSala.objects.get(nombreJuego=rnombrejuego,grupo=rgrupo,user=rusuario)
         saldouser.dinerocuenta=nuevosaldouser
         saldouser.save()
         cambiarestado.estadopago='pagado'
         cambiarestado.save()
-        return crearjuego(request)
+        return JsonResponse({"rpta": "Pago realizado"})
+
 
 
 def obtenerSalas(request):
@@ -151,7 +156,10 @@ def getSalasdeGrupo(rgrupos):
 #genera los pedidos de pago al usuario al crear una sala
 def GenerarPago(usuario,sala,pago,grupo):
     ruser=usuario;rsala=sala;rgrupo=grupo;
-    gpago=PagoSala(nombreJuego=rsala,grupo=rgrupo,estadopago='deuda',user=ruser)
+    usuarios=Invitaciones.objects.filter(grupo=rgrupo,estado='aceptado')
+    for i in usuarios.invitado:
+        gpago=PagoSala(nombreJuego=rsala,grupo=rgrupo,estadopago='deuda',user=i)
+        print ('creadndo pago sala'+ rsala+"-Grupo"+grupo+"-usuario"+i)
     try:
         gpago.save()
         return True

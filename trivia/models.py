@@ -44,3 +44,8 @@ class PagoSala(models.Model):
     user=models.CharField(max_length=20)
     #Pagado o deuda
     estadopago=models.CharField(max_length=10)
+#Guarda el dinero de las apuestas
+class SalaApuestas(models.Model):
+    idjuego=models.AutoField(primary_key=True)
+    nombreJuego=models.CharField(max_length=30)
+    grupo=models.CharField(max_length=30)
