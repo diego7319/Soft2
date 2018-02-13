@@ -9,7 +9,7 @@
  segundo=1000
  preguntasacertadas=0
  document.getElementById('home').style.visibility='hidden';
-preguntas=['']
+preguntas=''
 function getCookie(name)
 {
     var cookieValue = null;
@@ -50,28 +50,27 @@ $.ajaxSetup({
      }
 });
 
-function obtenerpregunta(){
-    $.get("../mostrarpregunta/",
-    function(data){
- if (preguntas.includes(data.pregunta[0])==true){
-console.log('repetida ');obtenerpregunta()}
+function obtenerpregunta(){tiempo=10;
+  parametros={'usado':preguntas}
+  $.ajax({
+            type: "POST",
+            url: '../mostrarpregunta/',
+            data: parametros,
 
-else{
-  console.log(data.pregunta[0])
-  console.log(preguntas)
-console.log('Nueva')
+            success: function(data)
+            {console.log(data);
+              preguntas=preguntas+"-"+data.id
       document.getElementById("pregunta").innerHTML = data.pregunta;
         document.getElementById("d0").innerHTML=data.d0
         document.getElementById("d1").innerHTML=data.d1
         document.getElementById("d2").innerHTML=data.d2
         document.getElementById("d3").innerHTML=data.d3
 tiempo=10;
-
 botonactivado();cantidadPreguntas=cantidadPreguntas+1;
-preguntas.push(data.pregunta[0]);document.getElementById("rpta").innerHTML='';
-}
+document.getElementById("rpta").innerHTML='';
+}}
 
-})};
+)}
 
 
 
@@ -83,25 +82,26 @@ function tiemporestante(segundo){
 
 
 function reply_click(id){
-pregunta=$('#pregunta').html();
-id='#'+id
-grupo=$( "#grupotrivia option:selected" ).text();
-respuesta=$(id).html();
-parametros={'pregunta':pregunta,'respuesta':respuesta,'grupo':grupo}
-tiempo=3;
-    $.ajax({
-              type: "POST",
-              url: '../score/',
-              data: parametros,
 
-              success: function(data)
-              {
-;botondesactivado();
-            document.getElementById("rpta").innerHTML=data.resultado;
-    if(data.resultado=='Respuesta correcta'){preguntasacertadas+=1}else {}
-  obtenerpregunta()
-              }
-          })
+ pregunta=$('#pregunta').html();
+ id='#'+id
+ grupo=$( "#grupotrivia option:selected" ).text();
+ respuesta=$(id).html();
+ parametros={'pregunta':pregunta,'respuesta':respuesta,'grupo':grupo}
+
+     $.ajax({
+               type: "POST",
+               url: '../score/',
+               data: parametros,
+
+               success: function(data)
+               {
+
+              document.getElementById("rpta").innerHTML=data.resultado;
+              tiempo=1;  if(data.resultado=='Respuesta correcta'){preguntasacertadas+=1}else {}
+
+                }
+            });botondesactivado();
        }
 
 x=setInterval(function() {
@@ -109,7 +109,7 @@ console.log(tiempo)
 
 tiemporestante(tiempo)
 tiempo=tiempo-1;
-if (tiempo==-1){
+if (tiempo<=0){
       if (cantidadPreguntas==cantpreg()){clearInterval(x);console.log('fin');
         botondesactivado();
         document.getElementById("tiemporestante").innerHTML="Juego terminado"
@@ -118,7 +118,7 @@ if (tiempo==-1){
         document.getElementById('home').style.visibility='';
 
         }else{
-          botondesactivado();obtenerpregunta();}
+        tiempo=10;obtenerpregunta();}
         }
 
 }, segundo);

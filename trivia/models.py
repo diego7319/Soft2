@@ -49,3 +49,10 @@ class SalaApuestas(models.Model):
     idjuego=models.AutoField(primary_key=True)
     nombreJuego=models.CharField(max_length=30)
     grupo=models.CharField(max_length=30)
+
+class GanadorPozo(models.Model):
+    idjuego=models.AutoField(primary_key=True)
+    nombreJuego=models.CharField(max_length=30)
+    grupo=models.CharField(max_length=30)
+    user=models.CharField(max_length=20)
+    pago=models.IntegerField()

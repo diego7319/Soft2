@@ -17,9 +17,7 @@
 </b>
 
 <p id='Resultado'></p>
-<div class='row'>
-<div class='row col-md-4'></div><div class='row col-md-4'>
-
+<div style='margin:10%'>
      <form method="POST" action="../crearjuego/">
       {% csrf_token %}
       <div class="form-group">
@@ -60,15 +58,15 @@ name='pago' size=10></input></div>
     border:  none;
 "/>
 </form>
-</div>
-</div>
 
+</div>
 <!-- Salas creadas -->
-<div>
 
-<h1 style="font-family: sans-serif;">Salas activas </h1>
+
+
 <br>
-<div>
+<div style='margin:auto'>
+  <h1 style="font-family: sans-serif;">Salas activas </h1>
 <table class='table table-responsive table-inverse' >
   <thead>
 <tr> <th>Grupo</th>

@@ -38,7 +38,7 @@ t0='<input class="btn btn-primary" id='+"id"+' type="submit" value="Pagar Aqui" 
 }
 
 function restPago(usuario,grupo,sala){
-alert(usuario+grupo+sala);
+id=usuario+grupo+sala
 parametros={'jugarusuario':usuario,'jugarsala':sala,'jugargrupo':grupo}
 $.ajax({
           type: "POST",
@@ -47,12 +47,14 @@ $.ajax({
 
           success: function(data)
           {
-            console.log(data)
+
+            if (data.rpta=='No hay saldo suficiente en tu cuenta'){}
           }
       });
 
 }
-function datosPOSTJuego(usuario,grupo,sala){
+function datosPOSTJuego(usuario,grupo,sala,habilitado){
+  if (habilitado=='si'){
   csrftoken = getCookie('csrftoken');
 t0=" <form method='POST' action='../iniciarjuego/'>";
 t0=t0+"<input type='hidden' name='csrfmiddlewaretoken' value='" + csrftoken + "'>";
@@ -60,9 +62,12 @@ t1="<input value='"+usuario+ "' id='jugarusuario' name='jugarusuario' hidden></i
 t2="<input  value='"+grupo+ "' id='jugargrupo' name='jugargrupo' hidden></input>";
 t3="<input  value='"+sala+ "' id='jugarsala' name='jugarsala' hidden></input>";
 t4="<input class='btn btn-primary'  type='submit' value='Jugar'></form>";
-
-
 return t0+t1+t2+t3+t4
+}
+else {
+
+return  "<input class='btn btn-primary'  type='submit' value='Jugar' disabled='disabled'>"
+}
 }
 
 
@@ -74,10 +79,22 @@ function agregarrow(grupo,sala,posic,contador,estado){
 
 cell1=row.insertCell(0).innerHTML=grupo;
 cell1=row.insertCell(1).innerHTML=sala;
-cell1=row.insertCell(2).innerHTML=botondeuda(estado,user(),grupo,sala);
-console.log(botondeuda(estado,user(),grupo,sala))
-cell1=row.insertCell(3).innerHTML=datosPOSTJuego(user(),grupo,sala);
+
+x=botondeuda(estado,user(),grupo,sala);
+if(x=='Habilitado para Jugar'){
+cell1=row.insertCell(2).innerHTML=x;
+habilitado='si'
+cell1=row.insertCell(3).innerHTML=datosPOSTJuego(user(),grupo,sala,habilitado);}
+else {
+habilitado='no'
+cell1=row.insertCell(2).innerHTML=x;
+cell1=row.insertCell(3).innerHTML=datosPOSTJuego(user(),grupo,sala,habilitado);}
+
 }
+
+
+
+
 function llenartabla(datos){
   contador=0
   for (i in datos)

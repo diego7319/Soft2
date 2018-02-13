@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.http import JsonResponse
 from users.models import usuariocuenta
 from trivia.models import PreguntaTrivia,scoretrivia,salatrivia,PagoSala
-from random import randint,shuffle
+from random import randint,shuffle,choice
 from grupos.views import misgrupos,useradmingroup
 from grupos.models import Invitacion
 # Create your views here.
@@ -19,19 +19,30 @@ def templated(request):
 def mostrarpregunta(request):
     if not request.user.is_authenticated:
         return redirect('index')
-    username = request.GET.get('username', None)
-    cantidad = PreguntaTrivia.objects.count()
+    username = request.POST.get('username', None)
+    arreglousado=request.POST.get('usado')
+    print (arreglousado)
     pregjson={}
-    it=randint(1, cantidad)
-    pregunta=PreguntaTrivia.objects.get(idPregunta=it)
+    records = PreguntaTrivia.objects.all()
     #pregjson se retorna al html
-    pregjson['pregunta']=pregunta.descPregunta,
-    alternativasrandom=[pregunta.incorrecta1,pregunta.incorrecta2,
-    pregunta.incorrecta3,pregunta.respuesta]
-    shuffle(alternativasrandom)
-    for i in range(0,4):
-        tmp='d'+str(i)
-        pregjson[tmp]=str(alternativasrandom[i])
+    repetido=True
+    while repetido==True:
+        random_record = choice(records)
+        if random_record.idPregunta in arreglousado.split('-'):
+            repetido=True
+        else:
+            pregunta=random_record
+            idp=random_record.idPregunta
+            pregjson['pregunta']=pregunta.descPregunta,
+            alternativasrandom=[pregunta.incorrecta1,pregunta.incorrecta2,
+            pregunta.incorrecta3,pregunta.respuesta]
+            shuffle(alternativasrandom)
+            for i in range(0,4):
+                tmp='d'+str(i)
+                pregjson[tmp]=str(alternativasrandom[i])
+                repetido=False
+                pregjson['id']=idp
+
     return JsonResponse(pregjson)
 
 #guarda la respuesta en la base de datos
