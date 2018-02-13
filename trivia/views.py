@@ -1,11 +1,12 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.http import JsonResponse
-
+from users.models import usuariocuenta
 from trivia.models import PreguntaTrivia,scoretrivia,salatrivia,PagoSala
 from random import randint,shuffle
 from grupos.views import misgrupos,useradmingroup
 # Create your views here.
+from rest_framework.decorators import api_view
 
 def templated(request):
     if not request.user.is_authenticated:
@@ -23,7 +24,6 @@ def mostrarpregunta(request):
     it=randint(1, cantidad)
     pregunta=PreguntaTrivia.objects.get(idPregunta=it)
     #pregjson se retorna al html
-    print (pregunta.incorrecta1)
     pregjson['pregunta']=pregunta.descPregunta,
     alternativasrandom=[pregunta.incorrecta1,pregunta.incorrecta2,
     pregunta.incorrecta3,pregunta.respuesta]
@@ -42,7 +42,6 @@ def score(request):
     objpregunta=PreguntaTrivia.objects.get(descPregunta=pregunta)
     jsonrespuesta={'resultado':'Respuesta incorrecta'}
     if objpregunta.respuesta==respuesta:
-        print('CORRECTA')
         rpuntaje='1'
         jsonrespuesta['resultado']='Respuesta correcta'
     return JsonResponse(jsonrespuesta)
@@ -75,12 +74,14 @@ def crearjuego(request):
             }
             return render(request,'configurartrivia.html',context)
 
+
 def templatetrivia(request):
     context={
     'misgrupos':useradmingroup(request.user.username),
     'usuario':request.user.username
     }
     return render(request,'configurartrivia.html',context)
+
 
 def iniciarjuego(request):
     info=request.POST
@@ -96,7 +97,23 @@ def iniciarjuego(request):
     return render(request,'holi.html',context)
 
 def pagar_sala(request):
-    pass
+    info=request.POST
+    rusuario=info['jugarusuario']
+    rnombrejuego=info['jugarsala']
+    rgrupo=info['jugargrupo']
+    cantpagar=salatrivia.objects.get(nombreJuego=rnombrejuego,grupo=rgrupo).pago
+    saldouser=usuariocuenta.objects.get(usuario=rusuario).dinerocuenta
+    if cantpagar>saldouser:
+        crearjuego(request)
+    else:
+        nuevosaldouser=saldouser.cantpagar()
+        cambiarestado=PagoSala.objects.get(nombreJuego=nombrejuego,grupo=rgrupo,user=usuario).estadopago
+        saldouser.dinerocuenta=nuevosaldouser
+        saldouser.save()
+        cambiarestado.estadopago='pagado'
+        cambiarestado.save()
+        return crearjuego(request)
+
 
 def obtenerSalas(request):
     jsonrespuesta={}
@@ -105,7 +122,7 @@ def obtenerSalas(request):
     salagrupo= getSalasdeGrupo(listagrupos)
     cont=0
     for i in salagrupo:
-        jsonrespuesta[str(cont)]={i.split('-')[0]:i.split('-')[1]}
+        jsonrespuesta[str(cont)]={'sala':i.split('-')[0],'grupo':i.split('-')[1],'estado':estadopago(i.split('-')[0],i.split('-')[1],ruser)}
         cont+=1
     return JsonResponse(jsonrespuesta)
 #devuelve las salas donde es administrador
@@ -125,11 +142,12 @@ def getSalasdeGrupo(rgrupos):
     rpta=[]
     #'sala-grupo'
     for j in rgrupos:
-        salas=salatrivia.objects.filter(grupo=j)
+        salas=salatrivia.objects.filter(grupo=j,estado='activo')
         for i in salas:
             dato=i.nombreJuego+'-'+j
             rpta.append(dato)
     return rpta
+
 #genera los pedidos de pago al usuario al crear una sala
 def GenerarPago(usuario,sala,pago,grupo):
     ruser=usuario;rsala=sala;rgrupo=grupo;
@@ -140,5 +158,9 @@ def GenerarPago(usuario,sala,pago,grupo):
     except:
         return 'Error'
 
-def MayorPuntaje(sala):
+def MayorPuntaje(rsala,rgrupo):
     pass
+
+def estadopago(rsala,rgrupo,ruser):
+    estado=PagoSala.objects.get(nombreJuego=rsala,grupo=rgrupo,user=ruser).estadopago
+    return estado

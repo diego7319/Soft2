@@ -10,7 +10,7 @@ admin.site.register(PreguntaTrivia,PreguntaTriviaAdmin)
 
 
 class salatriviaadmin(admin.ModelAdmin):
-    list_display = ('nombreJuego','grupo','estado','cantpreguntas')
+    list_display = ('nombreJuego','grupo','estado','cantpreguntas','estado')
 admin.site.register(salatrivia,salatriviaadmin)
 
 class PagoSaladmin(admin.ModelAdmin):

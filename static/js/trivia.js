@@ -57,6 +57,7 @@ function obtenerpregunta(){
 console.log('repetida ');obtenerpregunta()}
 
 else{
+  console.log(data.pregunta[0])
   console.log(preguntas)
 console.log('Nueva')
       document.getElementById("pregunta").innerHTML = data.pregunta;
@@ -65,9 +66,11 @@ console.log('Nueva')
         document.getElementById("d2").innerHTML=data.d2
         document.getElementById("d3").innerHTML=data.d3
 tiempo=10;
-;document.getElementById("rpta").innerHTML='';
-botonactivado()}
-cantidadPreguntas=cantidadPreguntas+1;preguntas.push(data.pregunta)
+
+botonactivado();cantidadPreguntas=cantidadPreguntas+1;
+preguntas.push(data.pregunta[0]);document.getElementById("rpta").innerHTML='';
+}
+
 })};
 
 
@@ -85,7 +88,7 @@ id='#'+id
 grupo=$( "#grupotrivia option:selected" ).text();
 respuesta=$(id).html();
 parametros={'pregunta':pregunta,'respuesta':respuesta,'grupo':grupo}
-tiempo=1;
+tiempo=3;
     $.ajax({
               type: "POST",
               url: '../score/',
@@ -93,13 +96,12 @@ tiempo=1;
 
               success: function(data)
               {
-
+;botondesactivado();
             document.getElementById("rpta").innerHTML=data.resultado;
-            tiempo=1;
     if(data.resultado=='Respuesta correcta'){preguntasacertadas+=1}else {}
-
+  obtenerpregunta()
               }
-          });botondesactivado();obtenerpregunta()
+          })
        }
 
 x=setInterval(function() {
@@ -112,11 +114,11 @@ if (tiempo==-1){
         botondesactivado();
         document.getElementById("tiemporestante").innerHTML="Juego terminado"
         preguntasequivocadas=cantidadPreguntas-preguntasacertadas
-        document.getElementById("rpta").innerHTML='Respuestas correctas: '+preguntasacertadas +'     -----'+'             Respuestas equivocadas: '+preguntasequivocadas
+        document.getElementById("rpta").innerHTML='Respuestas correctas: '+preguntasacertadas +'     -----'+'       Respuestas equivocadas: '+preguntasequivocadas
         document.getElementById('home').style.visibility='';
 
         }else{
-          botonactivado();  tiempo=10}
-        }else {}
+          botondesactivado();obtenerpregunta();}
+        }
 
 }, segundo);
