@@ -68,8 +68,7 @@ def crearjuego(request):
             salaobj=salatrivia(nombreJuego=nombresala,grupo=nombregrupo,cantpreguntas=cantpreg,
             estado='activo',pago=rpago)
             salaobj.save()
-            gpago=PagoSala(nombreJuego=nombresala,grupo=nombregrupo,estadopago='deuda',user=request.user.username)
-            gpago.save()
+            GenerarPago(nombresala,rpago,nombregrupo)
             context={'misgrupos':useradmingroup(request.user.username),
             'existe':'Sala de juego creada',
             'usuario':request.user.username
@@ -154,18 +153,15 @@ def getSalasdeGrupo(rgrupos):
     return rpta
 
 #genera los pedidos de pago al usuario al crear una sala
-def GenerarPago(usuario,sala,pago,grupo):
-    ruser=usuario;rsala=sala;rgrupo=grupo;
-    usuarios=Invitaciones.objects.filter(grupo=rgrupo,estado='aceptado')
-    for i in usuarios.invitado:
-        gpago=PagoSala(nombreJuego=rsala,grupo=rgrupo,estadopago='deuda',user=i)
-        print ('creadndo pago sala'+ rsala+"-Grupo"+grupo+"-usuario"+i)
-    try:
+def GenerarPago(sala,pago,grupo):
+    rsala=sala;rgrupo=grupo;
+    usuarios=Invitacion.objects.filter(grupo=rgrupo,estado='aceptado')
+    print ('cant'+str(usuarios.count()))
+    for i in usuarios:
+        gpago=PagoSala(nombreJuego=rsala,grupo=rgrupo,estadopago='deuda',user=i.invitado)
+        print ('creadndo pago sala'+ rsala+"-Grupo"+rgrupo+"-usuario"+i.invitado)
         gpago.save()
-        return True
-    except:
-        return 'Error'
-
+    return None
 def MayorPuntaje(rsala,rgrupo):
     pass
 

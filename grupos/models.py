@@ -16,4 +16,4 @@ class Invitacion(models.Model):
     #grupo = models.ManyToManyField(grupo)
     #estados rechazado y aceptado
     def __str__(self):
-        return (invitado)
+        return (self.invitado)
