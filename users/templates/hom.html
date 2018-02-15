@@ -47,7 +47,10 @@ body {font-size:16px;}
 <div class="w3-main" style="margin-left:340px;margin-right:40px">
 <!-- Home -->
   <div class="w3-container" style="margin-top:80px" id="showcase">
-    <h1 class="w3-jumbo"><b>¡Hola </b>{{ user.get_username }}<b>!</b></h1>
+    <h1 class="w3-jumbo" style="
+    font-family:  cursive;
+    color: #5868c1;
+"><b>¡Hola </b>{{ user.get_username }}<b>!</b></h1>
     <h2> Estos son los estadios en los que se jugarán los encuentros:</h2>
     <div class="slider" style="max-width: 100%;max-height: 100%;">
       <ul>
@@ -69,8 +72,13 @@ body {font-size:16px;}
   </div>
   <!-- Header -->
   <div class="w3-container" style="margin-top:80px" id="grupos">
-    <h1 class="w3-jumbo"><b>Grupos</b></h1>
-    <h1 class="w3-xxxlarge w3-text-red"><b>Invitaciones /                       Mis grupos</b></h1>
+    <h1 class="w3-jumbo" style="
+    font-family:  cursive;
+    color: #5868c1;
+"><b>Grupos</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red" style="
+    font-family: arial;
+"><b>Invitaciones /                       Mis grupos</b></h1>
     <hr>
   </div>
 
@@ -90,7 +98,7 @@ body {font-size:16px;}
 {% endfor %}
 </select>
 <br><br>
-<button type="submit" class="button button-block " name='submit' value="signup" style="
+<button type="submit" class="btn btn-primary option" name='submit' value="signup" style="
 color: #004085;
 background-color: #e9ecef;
 border:  none;"/>Enviar invitacion</button>
@@ -110,7 +118,7 @@ border:  none;"/>Enviar invitacion</button>
     <label>Nombre de grupo a crear:</label>
     <input type="text" size=15 name="nombregrupo" id="nombregrupo" maxlength="25" onkeyup="nospaces(this)" required="">
     <br><br>
-    <button type="submit" class="button button-block " name='submit' value="signup" style="
+    <button type="submit" class="btn btn-primary option" name='submit' value="signup" style="
     color: #004085;
     background-color: #e9ecef;
     border:  none;"/>Crear Grupo</button>
@@ -123,7 +131,7 @@ border:  none;"/>Enviar invitacion</button>
       {% for x in misgrupos %}
         <option>{{x}}</option>
               {% endfor %}</select>
-  <button type="submit" class="button button-block " name='submit' value="Consultar"  style="
+  <button type="submit" class="btn btn-primary option" name='submit' value="Consultar"  style="
   color: #004085;
   background-color: #e9ecef;
   border:  none;"/>Consultar miembros</button>
@@ -165,7 +173,7 @@ border:  none;"/>Enviar invitacion</button>
  <label>Saldo a recargar en su cuenta:</label><br>
  <input  min="0" type="number"  id='cantidadarecargar' name="cantidadarecargar">
 <br>
-<button type="submit" class="button button-block " name='submit' value="Recargar" style="
+<button type="submit" class="btn btn-primary option" name='submit' value="Recargar" style="
 color: #004085;
 background-color: #e9ecef;
 border:  none;"/>Recargar</button>
@@ -174,11 +182,14 @@ border:  none;"/>Recargar</button>
 
   <!-- Equipo Ideal -->
   <div class="w3-container" id="equipoIdeal" style="margin-top:75px">
-    <h1 class="w3-xxxlarge w3-text-red"><b>Equipo Ideal</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b style="
+    font-family:  cursive;
+    color: #5868c1;
+">Equipo Ideal</b></h1>
     <hr>
     <img src="http://www.elclasicofutbol5.com/wp-content/uploads/2015/06/cancha-dimensiones-futbol.jpg" width="400" height="400">
     <br><br>
-    <button class="button button-block" style="
+    <button class="btn btn-primary option" style="
     color: #004085;
     background-color: #e9ecef;
     border:  none;"/>Jugar</button>
@@ -186,11 +197,14 @@ border:  none;"/>Recargar</button>
 
   <!-- Polla -->
   <div class="w3-container" id="polla" style="margin-top:75px" >
-    <h1 class="w3-xxxlarge w3-text-red"><b>Polla</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b style="
+    font-family:  cursive;
+    color: #5868c1;
+">Polla</b></h1>
     <hr>
     <img src="https://www.oscfondesarrollo.com/pollaeliminatorias/resources/img/laptop-futbol-apuestas.png" width="650" height="400">
     <br><br>
-    <button class="button button-block" style="
+    <button class="btn btn-primary option" style="
     color: #004085;
     background-color: #e9ecef;
     border:  none;"/>Jugar</button>
@@ -203,11 +217,14 @@ border:  none;"/>Recargar</button>
 
   <!-- Packages / Pricing Tables -->
   <div class="w3-container" id="trivia" style="margin-top:75px">
-    <h1 class="w3-xxxlarge w3-text-red"><b>Trivia</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b style="
+    font-family:  cursive;
+    color: #5868c1;
+">Trivia</b></h1>
     <hr>
     <img src="https://thumbs.dreamstime.com/b/signo-de-interrogaci%C3%B3n-de-bolas-del-balompi%C3%A9-del-f%C3%BAtbol-24535862.jpg" width="400" height="400"><br><br>
 
-    <button class="button button-block" onclick="location.href='../trivia/'" style="
+    <button class="btn btn-primary option" onclick="location.href='../trivia/'" style="
     color: #004085;
     background-color: #e9ecef;
     border:  none;"> Jugar</button>
