@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="{% static '/css/home.css' %}">
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans" >
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -58,11 +59,12 @@ body {padding-top: 0; margin-top: 0}
 
   </div>
   -->
-  <!-- Header -->
+  <!-- Titulo -->
   <div class="w3-container w3-hide-peque" style="margin-top:20px" id="grupos">
       <h1 class="w3-jumbo" style="
           color: #263238;">
           <b>Mi perfil</b>
+          <br>
       </h1>
       <hr>
       <br>
@@ -70,7 +72,7 @@ body {padding-top: 0; margin-top: 0}
 
   </div>
 
-  <!-- Photo grid (modal) -->
+  <!-- Seccion Izquierda -->
   <div class="w3-row-padding">
       <div class="w3-half" style="padding-right:10%; padding-left:3%;">
         <h1 class="w3-xxxlarge w3-text-light" style="">
@@ -78,8 +80,8 @@ body {padding-top: 0; margin-top: 0}
         </h1>
         <br>
         <b> Invitaciones recibidas </b>
-        <hr>
-      <table>
+
+      <table class="table table-inverse">
       {% for i in Invitaciones %}
       <tr>
       <td>Grupo: {{i}}</td>
@@ -109,77 +111,77 @@ body {padding-top: 0; margin-top: 0}
           <div id = 'invitarusuarioagrupo' class="form-group">
               <form method="post" action='../invitarusuario/' >
                 {% csrf_token %}
-                <br>
                 <b>Enviar una Invitación</b>
                 <hr>
-                <label>Invitar al grupo: </label>
+                <label>Elige el grupo </label>
                 <select class="form-control" id="grupo" class="reg_input" size="1" name="grupo" required>
                     {% for t in grupos %}
                       <option value={{t}}> {{t}} </option>
                     {% endfor %}
                 </select>
-                <br>
-                <label>Enviar invitacion a: </label>
-                <input class="form-control" type="text" size=15 name="invitado" id="invitado" maxlength="25" onkeyup="nospaces(this)"
-                required="" placeholder="Ingrese el nombre del usuario">
-                <br>
-                <button type="submit" class="btn btn-info float-right" name='submit' value="signup"
-                style="color: #004085;
-                background-color: #e9ecef;
-                border: none;"/>
-                  Enviar invitacion
-                </button>
-              </form>
+                <label>Elige al usuario </label>
+                <div class="input-group mb-3">
+                  <input class="form-control" type="text" size=15 name="invitado" id="invitado" maxlength="25" onkeyup="nospaces(this)"
+                  required="" placeholder="Ingrese el nombre del usuario" style="padding-right:5px;">
+                  <div class="input-group-append">
+                  <button type="submit" class="btn btn-info btn-outline-secondary" name='submit' value="signup"
+                    style="color: #004085;
+                    background-color: #e9ecef;
+                    border: none;"/> <i class="fa fa-send"></i>
+                  </button>
+                  </div>
+                </div>
+                  </form>
               <br>
           </div>
 
       </div>
 
+    <!-- Seccion Derecha -->
     <div class="w3-half" style="padding-right:10%; padding-left:5%;">
       <h1 class="w3-xxxlarge w3-text-light" style="">
           <b>Mis grupos</b>
       </h1>
-
       <br>
         <b>Crear grupo</b>
         <hr>
             <form method="post" action='../agregargrupo/' >
                 {% csrf_token %}
-                <label>Nombre de grupo a crear:</label>
-                <div class="input-group">
+                <label>Ingresa el nombre</label>
+                <div class="input-group mb-3">
                 <input class="form-control" type="text" size=15 name="nombregrupo" id="nombregrupo" maxlength="25"
                   onkeyup="nospaces(this)" required="">
-                  <span class="input-group-btn">
-                    <button type="submit" class="btn btn-primary float-right" name='submit' value="signup"
+                    <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary btn-outline-secondary" name='submit' value="signup"
                       style="
                       color: #004085;
                       background-color: #e9ecef;
                       border:  none;"/>
-                      Crear Grupo
+                      Crear
                     </button>
-                  </span>
+                  </div>
                   </div>
             </form>
 
-          <br>
             <b> Tus grupos</b>
             <hr>
             <form method="post" action='/perfil/' >
                 {% csrf_token %}
+                <div class="input-group mb-3">
                 <select class="form-control" name="sometext" id='sometext' >
                   {% for x in misgrupos %}
                   <option>{{x}}</option>
                   {% endfor %}
                 </select>
-                <br>
-                <div class="Container">
-                  <button type="submit" class="btn btn-primary option float-right" name='submit' value="Consultar"  style="
+                <div class="input-group-append">
+                  <button type="submit" class="btn btn-primary btn-outline-secondary" name='submit' value="Consultar"  style="
                     color: #004085;
                     background-color: #e9ecef;
                     border:  none;"/>
                     Consultar miembros
                   </button>
                 </div>
+              </div>
             </form>
         <!-- Mostrar usuarios del grupo en formato lista-->
           <ul class="list-group">
@@ -189,19 +191,21 @@ body {padding-top: 0; margin-top: 0}
         </ul>
     </div>
 
+    <!-- SALDO  -->
 
-
-<div><p>Saldo en cuenta: S/.{{saldo}}<p><br>
-  <form method="post" action='/recargarcuenta' >
-    {% csrf_token %}
- <label>Saldo a recargar en su cuenta:</label><br>
- <input  min="0" type="number"  id='cantidadarecargar' name="cantidadarecargar">
-<br>
-<button type="submit" class="btn btn-primary option" name='submit' value="Recargar" style="
-color: #004085;
-background-color: #e9ecef;
-border:  none;"/>Recargar</button>
-</form>
+<div class="w3-container" id="miSaldo">
+    <p>Saldo en cuenta: S/.{{saldo}}<p><br>
+        <form method="post" action='/recargarcuenta' >
+          {% csrf_token %}
+          <label>Saldo a recargar en su cuenta:</label>
+          <br>
+          <input  class="form-control" min="0" type="number"  id='cantidadarecargar' name="cantidadarecargar">
+          <br>
+          <button type="submit" class="btn btn-primary option" name='submit' value="Recargar" style="
+          color: #004085;
+          background-color: #e9ecef;
+          border:  none;"/>Recargar</button>
+        </form>
 </div>
 
   <!-- Equipo Ideal -->
