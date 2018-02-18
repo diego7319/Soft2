@@ -6,20 +6,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{% static '/css/perfil.css' %}">
 <link rel="stylesheet" href="{% static '/css/slider.css' %}">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="stylesheet" href="{% static '/css/home.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans" >
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <style>
-body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body,h1,h2,h3,h4,h5 {font-family: "Noto Sans", sans-serif}
 body {font-size:16px;}
+body {background-color:#ffffff;}
+body {padding-top: 0; margin-top: 0}
 .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
 .w3-half img:hover{opacity:1}
 </style>
 <body>
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+<nav class="w3-sidebar w3-verde w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
   <div class="w3-container">
     <h3 class="w3-padding-64"><b>Bienvenido<br>{{ user.get_username }}</b></h3>
@@ -35,8 +40,8 @@ body {font-size:16px;}
 </nav>
 
 <!-- Top menu on small screens -->
-<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
-  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">&#9776;</a>
+<header class="w3-container w3-top w3-hide-large w3-verde w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-verde w3-margin-right" onclick="w3_open()">&#9776;</a>
   <span>MundialPlay</span>
 </header>
 
@@ -45,139 +50,167 @@ body {font-size:16px;}
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:340px;margin-right:40px">
-<!-- Home -->
+<!-- Home
   <div class="w3-container" style="margin-top:80px" id="showcase">
-    <h1 class="w3-jumbo" style="
-    font-family:  cursive;
-    color: #5868c1;
-"><b>¡Hola </b>{{ user.get_username }}<b>!</b></h1>
-    <h2> Estos son los estadios en los que se jugarán los encuentros:</h2>
-    <div class="slider" style="max-width: 100%;max-height: 100%;">
-      <ul>
-        <li><img src="{% static '/img/est1.jpg'%}" alt="" style=""></li>
-        <li><img src="{% static '/img/est2.jpg' %}" alt="" style=""></li>
-        <li><img src="{% static '/img/est3.jpg' %}" alt="" width=""></li>
-        <li><img src="{% static '/img/est4.jpg' %}" alt="" width="100%"></li>
-        <li><img src="{% static '/img/est5.jpg' %}" alt="" width="100%"></li>
-        <li><img src="{% static '/img/est6.jpg' %}" alt="" width="100%"></li>
-        <li><img src="{% static '/img/est7.jpg' %}" alt="" width="100%"></li>
-        <li><img src="{% static '/img/est8.jpg' %}" alt="" width="100%"></li>
-        <li><img src="{% static '/img/est9.jpg' %}" alt="" width="100%"></li>
-        <li><img src="{% static '/img/est10.jpg' %}" alt="" width="100%"></li>
-        <li><img src="{% static '/img/est11.jpg' %}" alt="" width="100%"></li>
-        <li><img src="{% static '/img/est12.jpg' %}" alt="" width="100%"></li>
-      </ul>
-</div>
-    <hr>
+    <h1 class="w3-jumbo";
+        color: #263238;">
+    <b>¡Hola </b>{{ user.get_username }}<b>!</b>
+    </h1>
+
   </div>
-  <!-- Header -->
-  <div class="w3-container" style="margin-top:80px" id="grupos">
-    <h1 class="w3-jumbo" style="
-    font-family:  cursive;
-    color: #5868c1;
-"><b>Grupos</b></h1>
-    <h1 class="w3-xxxlarge w3-text-red" style="
-    font-family: arial;
-"><b>Invitaciones /                       Mis grupos</b></h1>
-    <hr>
+  -->
+  <!-- Titulo -->
+  <div class="w3-container w3-hide-peque" style="margin-top:15px; margin-bottom:5px" id="grupos">
+      <h1 class="w3-jumbo" style="
+          color: #263238;">
+          <b>Mi perfil</b>
+      </h1>
+      <hr>
+      <!-- Subtiulos -->
+
   </div>
 
-  <!-- Photo grid (modal) -->
+  <!-- Seccion Izquierda -->
   <div class="w3-row-padding">
-    <div class="w3-half">
+      <div class="w3-half" style="padding-right:10%; padding-left:3%;">
+        <h1 class="w3-xxxlarge w3-text-light" style="">
+             <i class="fa fa-envelope-open-o"></i>
+        </h1>
+        <br>
+        <b> Invitaciones recibidas </b>
 
-<div id = 'invitarusuarioagrupo' >
-  <form method="post" action='../invitarusuario/' >
-     {% csrf_token %}
-<label>Enviar invitacion al siguiente usuario: </label>
-<input type="text" size=15 name="invitado" id="invitado" maxlength="25" onkeyup="nospaces(this)" required="">
-<br><br><label>Invitar al grupo: </label>
-<select id="grupo" class="reg_input" size="1" name="grupo" required>
-{% for t in grupos %}
-<option value={{t}}> {{t}} </option>
-{% endfor %}
-</select>
-<br><br>
-<button type="submit" class="btn btn-primary option" name='submit' value="signup" style="
-color: #004085;
-background-color: #e9ecef;
-border:  none;"/>Enviar invitacion</button>
-</form>
-<br>
-
-
-
-    </div>
-  </div>
-
-
-    <div class="w3-half">
-      <div>Crear grupo</div><br>
-      <form method="post" action='../agregargrupo/' >
+      <table class="table table-inverse">
+      {% for i in Invitaciones %}
+      <tr>
+      <td>Grupo: {{i}}</td>
+      <td>   <form action = "../responderinvitacion/" method = "post">
          {% csrf_token %}
-    <label>Nombre de grupo a crear:</label>
-    <input type="text" size=15 name="nombregrupo" id="nombregrupo" maxlength="25" onkeyup="nospaces(this)" required="">
-    <br><br>
-    <button type="submit" class="btn btn-primary option" name='submit' value="signup" style="
-    color: #004085;
-    background-color: #e9ecef;
-    border:  none;"/>Crear Grupo</button>
-    </form>
-    <br>
-    <p> Tus grupos</p>
-    <form method="post" action='/perfil/' >
-      {% csrf_token %}
-    <select name="sometext" id='sometext' >
-      {% for x in misgrupos %}
-        <option>{{x}}</option>
-              {% endfor %}</select>
-  <button type="submit" class="btn btn-primary option" name='submit' value="Consultar"  style="
-  color: #004085;
-  background-color: #e9ecef;
-  border:  none;"/>Consultar miembros</button>
-  </form>
-<!-- Mostrar usuarios del grupo en formato lista-->
-  <ul>
-    {% for f in listausuarios %}
-      <li>{{f}}</li>
-    {% endfor %}
-  </ul>
+         <input type="hidden" name="grupo" value="{{i}}">
+         <input type="hidden" name="rpta" value="aceptado">
+              <input type="submit" class="btn btn-success float-right" name="upvote" value="Aceptar"
+              style="color: #66bb6a;
+              background-color: #e9ecef;
+              border: none;" />
+          </form></td>
+          <td>  <form action = "../responderinvitacion/" method = "post">
+                   {% csrf_token %}
+                   <input type="hidden" name="grupo" value="{{i}}">
+                   <input type="hidden" name="rpta" value="rechazado">
+              <input type="submit" class="btn btn-danger float-right" name="upvote" value="Rechazar"
+              style="color: #c2185b;
+              background-color: #e9ecef;
+              border: none;" />
 
+          </form>
+        </td>
+        </tr>
+      {% endfor %}
+    </table><br>
+          <div id = 'invitarusuarioagrupo' class="form-group">
+              <form method="post" action='../invitarusuario/' >
+                {% csrf_token %}
+                <b>Enviar una Invitación</b>
+                <hr>
+                <label>Elige el grupo </label>
+                <select class="form-control" id="grupo" class="reg_input" size="1" name="grupo" required>
+                    {% for t in grupos %}
+                      <option value={{t}}> {{t}} </option>
+                    {% endfor %}
+                </select>
+                <label>Elige al usuario </label>
+                <div class="input-group mb-3">
+                  <input class="form-control" type="text" size=15 name="invitado" id="invitado" maxlength="25" onkeyup="nospaces(this)"
+                  required="" placeholder="Ingrese el nombre del usuario" style="padding-right:5px;">
+                  <div class="input-group-append">
+                  <button type="submit" class="btn btn-info btn-outline-secondary" name='submit' value="signup"
+                    style="color: #004085;
+                    background-color: #e9ecef;
+                    border: none;"/> <i class="fa fa-send"></i>
+                  </button>
+                  </div>
+                </div>
+                  </form>
+              <br>
+          </div>
+
+      </div>
+
+    <!-- Seccion Derecha -->
+    <div class="w3-half" style="padding-right:10%; padding-left:5%;">
+      <h1 class="w3-xxxlarge w3-text-light" style="">
+          <i class="fa fa-group"></i>
+      </h1>
+      <br>
+        <b>Crear grupo</b>
+        <hr>
+            <form method="post" action='../agregargrupo/' >
+                {% csrf_token %}
+                <label>Ingresa el nombre</label>
+                <div class="input-group mb-3">
+                <input class="form-control" type="text" size=15 name="nombregrupo" id="nombregrupo" maxlength="25"
+                  onkeyup="nospaces(this)" required="">
+                    <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary btn-outline-secondary" name='submit' value="signup"
+                      style="
+                      color: #004085;
+                      background-color: #e9ecef;
+                      border:  none;"/>
+                      Crear
+                    </button>
+                  </div>
+                  </div>
+            </form>
+
+            <b> Tus grupos</b>
+            <hr>
+            <form method="post" action='/perfil/' >
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                <select class="form-control" name="sometext" id='sometext' >
+                  {% for x in misgrupos %}
+                  <option>{{x}}</option>
+                  {% endfor %}
+                </select>
+                <div class="input-group-append">
+                  <button type="submit" class="btn btn-primary btn-outline-secondary" name='submit' value="Consultar"  style="
+                    color: #004085;
+                    background-color: #e9ecef;
+                    border:  none;"/>
+                    Consultar miembros
+                  </button>
+                </div>
+              </div>
+            </form>
+        <!-- Mostrar usuarios del grupo en formato lista-->
+          <ul class="list-group">
+              {% for f in listausuarios %}
+                <li class="list-group-item">{{f}}</li>
+                  {% endfor %}
+        </ul>
     </div>
-  <p>Notificaciones<p>
-  <table>
-  {% for i in Invitaciones %}
-  <tr>
-  <td>Grupo: {{i}}</td>
-  <td>   <form action = "../responderinvitacion/" method = "post">
-     {% csrf_token %}
-     <input type="hidden" name="grupo" value="{{i}}">
-     <input type="hidden" name="rpta" value="aceptado">
-          <input type="submit" name="upvote" value="Aceptar" />
-      </form></td>
-      <td>  <form action = "../responderinvitacion/" method = "post">
-               {% csrf_token %}
-               <input type="hidden" name="grupo" value="{{i}}">
-               <input type="hidden" name="rpta" value="rechazado">
-          <input type="submit" name="upvote" value="Rechazar" />
 
-      </form></td>
-    </tr>
-  {% endfor %}
-</table><br><br>
+    <!-- SALDO  -->
 
-
-<div><p>Saldo en cuenta: S/.{{saldo}}<p><br>
-  <form method="post" action='/recargarcuenta' >
-    {% csrf_token %}
- <label>Saldo a recargar en su cuenta:</label><br>
- <input  min="0" type="number"  id='cantidadarecargar' name="cantidadarecargar">
-<br>
-<button type="submit" class="btn btn-primary option" name='submit' value="Recargar" style="
-color: #004085;
-background-color: #e9ecef;
-border:  none;"/>Recargar</button>
-</form>
+<div class="w3-container" id="miSaldo" style="padding-right:10%; padding-left:3%;">
+  <h1 class="w3-xxxlarge w3-text-light" style="">
+      <i class="fa fa-money"></i>
+  </h1>
+    <b>Mi saldo : S/.{{saldo}}<b>
+      <hr>
+        <form method="post" action='/recargarcuenta' >
+          {% csrf_token %}
+          <label>Recargar:</label>
+          <br>
+          <div class="input-group mb-3">
+          <input  class="form-control" min="0" type="number"  id='cantidadarecargar' name="cantidadarecargar">
+          <div class="input-group-append">
+          <button type="submit" class="btn btn-primary btn-outline-secondary" name='submit' value="Recargar" style="
+          color: #004085;
+          background-color: #e9ecef;
+          border:  none;"/>Recargar</button>
+        </div>
+        </div>
+        </form>
 </div>
 
   <!-- Equipo Ideal -->
@@ -231,6 +264,24 @@ border:  none;"/>Recargar</button>
 
 
   </div>
+
+  <h2> Estos son los estadios en los que se jugarán los encuentros:</h2>
+  <div class="slider" style="max-width: 100%;max-height: 100%;">
+    <ul>
+      <li><img src="{% static '/img/est1.jpg'%}" alt="" style=""></li>
+      <li><img src="{% static '/img/est2.jpg' %}" alt="" style=""></li>
+      <li><img src="{% static '/img/est3.jpg' %}" alt="" width=""></li>
+      <li><img src="{% static '/img/est4.jpg' %}" alt="" width="100%"></li>
+      <li><img src="{% static '/img/est5.jpg' %}" alt="" width="100%"></li>
+      <li><img src="{% static '/img/est6.jpg' %}" alt="" width="100%"></li>
+      <li><img src="{% static '/img/est7.jpg' %}" alt="" width="100%"></li>
+      <li><img src="{% static '/img/est8.jpg' %}" alt="" width="100%"></li>
+      <li><img src="{% static '/img/est9.jpg' %}" alt="" width="100%"></li>
+      <li><img src="{% static '/img/est10.jpg' %}" alt="" width="100%"></li>
+      <li><img src="{% static '/img/est11.jpg' %}" alt="" width="100%"></li>
+      <li><img src="{% static '/img/est12.jpg' %}" alt="" width="100%"></li>
+    </ul>
+</div>
 
 
 
