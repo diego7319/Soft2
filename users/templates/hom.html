@@ -15,7 +15,8 @@
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Noto Sans", sans-serif}
 body {font-size:16px;}
-body {background-color:#fafafa}
+body {background-color:#ffffff;}
+body {padding-top: 0; margin-top: 0}
 .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
 .w3-half img:hover{opacity:1}
 </style>
@@ -58,26 +59,29 @@ body {background-color:#fafafa}
   </div>
   -->
   <!-- Header -->
-  <div class="w3-container" style="margin-top:80px" id="grupos">
+  <div class="w3-container w3-hide-peque" style="margin-top:20px" id="grupos">
       <h1 class="w3-jumbo" style="
           color: #263238;">
           <b>Mi perfil</b>
       </h1>
       <hr>
+      <br>
       <!-- Subtiulos -->
 
   </div>
 
   <!-- Photo grid (modal) -->
   <div class="w3-row-padding">
-      <div class="w3-half" style="padding-right:100px">
+      <div class="w3-half" style="padding-right:12%; padding-left:3%;">
         <h1 class="w3-xxxlarge w3-text-light" style="">
             <b>Invitaciones</b>
         </h1>
           <div id = 'invitarusuarioagrupo' class="form-group">
               <form method="post" action='../invitarusuario/' >
                 {% csrf_token %}
-                <br><br>
+                <br>
+                <b>Enviar una Invitación</b>
+                <hr>
                 <label>Invitar al grupo: </label>
                 <select class="form-control" id="grupo" class="reg_input" size="1" name="grupo" required>
                     {% for t in grupos %}
@@ -89,7 +93,7 @@ body {background-color:#fafafa}
                 <input class="form-control" type="text" size=15 name="invitado" id="invitado" maxlength="25" onkeyup="nospaces(this)"
                 required="" placeholder="Ingrese el nombre del usuario">
                 <br>
-                <button type="submit" class="btn btn-info option" name='submit' value="signup"
+                <button type="submit" class="btn btn-info float-right" name='submit' value="signup"
                 style="color: #004085;
                 background-color: #e9ecef;
                 border: none;"/>
@@ -98,13 +102,36 @@ body {background-color:#fafafa}
               </form>
               <br>
           </div>
+          <b> Notificaciones </b>
+          <hr>
+        <table>
+        {% for i in Invitaciones %}
+        <tr>
+        <td>Grupo: {{i}}</td>
+        <td>   <form action = "../responderinvitacion/" method = "post">
+           {% csrf_token %}
+           <input type="hidden" name="grupo" value="{{i}}">
+           <input type="hidden" name="rpta" value="aceptado">
+                <input type="submit" name="upvote" value="Aceptar" />
+            </form></td>
+            <td>  <form action = "../responderinvitacion/" method = "post">
+                     {% csrf_token %}
+                     <input type="hidden" name="grupo" value="{{i}}">
+                     <input type="hidden" name="rpta" value="rechazado">
+                <input type="submit" name="upvote" value="Rechazar" />
+
+            </form></td>
+          </tr>
+        {% endfor %}
+      </table><br><br>
       </div>
 
-    <div class="w3-half" style="padding-right:100px">
+    <div class="w3-half" style="padding-right:12%; padding-left:3%;">
       <h1 class="w3-xxxlarge w3-text-light" style="">
           <b>Mis grupos</b>
       </h1>
-        <div>Crear grupo</div>
+      <br>
+        <b>Crear grupo</b>
         <hr>
             <form method="post" action='../agregargrupo/' >
                 {% csrf_token %}
@@ -112,7 +139,7 @@ body {background-color:#fafafa}
                 <input class="form-control" type="text" size=15 name="nombregrupo" id="nombregrupo" maxlength="25"
                   onkeyup="nospaces(this)" required="">
                 <br>
-                <button type="submit" class="btn btn-primary option" name='submit' value="signup"
+                <button type="submit" class="btn btn-primary float-right" name='submit' value="signup"
                   style="
                   color: #004085;
                   background-color: #e9ecef;
@@ -121,50 +148,33 @@ body {background-color:#fafafa}
                 </button>
             </form>
           <br>
-            <p> Tus grupos</p>
+            <b> Tus grupos</b>
             <hr>
             <form method="post" action='/perfil/' >
                 {% csrf_token %}
                 <select class="form-control" name="sometext" id='sometext' >
                   {% for x in misgrupos %}
                   <option>{{x}}</option>
-                  {% endfor %}</select>
-                  <button type="submit" class="btn btn-primary option" name='submit' value="Consultar"  style="
+                  {% endfor %}
+                </select>
+                <br>
+                <div class="Container">
+                  <button type="submit" class="btn btn-primary option float-right" name='submit' value="Consultar"  style="
                     color: #004085;
                     background-color: #e9ecef;
                     border:  none;"/>
                     Consultar miembros
                   </button>
+                </div>
             </form>
         <!-- Mostrar usuarios del grupo en formato lista-->
-          <ul>
+          <ul class="list-group">
               {% for f in listausuarios %}
-                <li>{{f}}</li>
+                <li class="list-group-item">{{f}}</li>
                   {% endfor %}
         </ul>
     </div>
 
-  <p>Notificaciones<p>
-  <table>
-  {% for i in Invitaciones %}
-  <tr>
-  <td>Grupo: {{i}}</td>
-  <td>   <form action = "../responderinvitacion/" method = "post">
-     {% csrf_token %}
-     <input type="hidden" name="grupo" value="{{i}}">
-     <input type="hidden" name="rpta" value="aceptado">
-          <input type="submit" name="upvote" value="Aceptar" />
-      </form></td>
-      <td>  <form action = "../responderinvitacion/" method = "post">
-               {% csrf_token %}
-               <input type="hidden" name="grupo" value="{{i}}">
-               <input type="hidden" name="rpta" value="rechazado">
-          <input type="submit" name="upvote" value="Rechazar" />
-
-      </form></td>
-    </tr>
-  {% endfor %}
-</table><br><br>
 
 
 <div><p>Saldo en cuenta: S/.{{saldo}}<p><br>
