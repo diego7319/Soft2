@@ -6,6 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{% static '/css/perfil.css' %}">
 <link rel="stylesheet" href="{% static '/css/slider.css' %}">
+<link rel="stylesheet" href="{% static '/css/home.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans" >
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -57,77 +59,91 @@ body {background-color:#fafafa}
   -->
   <!-- Header -->
   <div class="w3-container" style="margin-top:80px" id="grupos">
-    <h1 class="w3-jumbo" style="
-    color: #263238;
-"><b>Grupos</b></h1>
-    <h1 class="w3-xxxlarge w3-text-light" style="
-    font-family: arial;
-"><b>Invitaciones /                       Mis grupos</b></h1>
-    <hr>
+      <h1 class="w3-jumbo" style="
+          color: #263238;">
+          <b>Mi perfil</b>
+      </h1>
+      <hr>
+      <!-- Subtiulos -->
+
   </div>
 
   <!-- Photo grid (modal) -->
   <div class="w3-row-padding">
-    <div class="w3-half">
+      <div class="w3-half" style="padding-right:100px">
+        <h1 class="w3-xxxlarge w3-text-light" style="">
+            <b>Invitaciones</b>
+        </h1>
+          <div id = 'invitarusuarioagrupo' class="form-group">
+              <form method="post" action='../invitarusuario/' >
+                {% csrf_token %}
+                <br><br>
+                <label>Invitar al grupo: </label>
+                <select class="form-control" id="grupo" class="reg_input" size="1" name="grupo" required>
+                    {% for t in grupos %}
+                      <option value={{t}}> {{t}} </option>
+                    {% endfor %}
+                </select>
+                <br>
+                <label>Enviar invitacion a: </label>
+                <input class="form-control" type="text" size=15 name="invitado" id="invitado" maxlength="25" onkeyup="nospaces(this)"
+                required="" placeholder="Ingrese el nombre del usuario">
+                <br>
+                <button type="submit" class="btn btn-info option" name='submit' value="signup"
+                style="color: #004085;
+                background-color: #e9ecef;
+                border: none;"/>
+                  Enviar invitacion
+                </button>
+              </form>
+              <br>
+          </div>
+      </div>
 
-<div id = 'invitarusuarioagrupo' >
-  <form method="post" action='../invitarusuario/' >
-     {% csrf_token %}
-<label>Enviar invitacion al siguiente usuario: </label>
-<input type="text" size=15 name="invitado" id="invitado" maxlength="25" onkeyup="nospaces(this)" required="">
-<br><br><label>Invitar al grupo: </label>
-<select id="grupo" class="reg_input" size="1" name="grupo" required>
-{% for t in grupos %}
-<option value={{t}}> {{t}} </option>
-{% endfor %}
-</select>
-<br><br>
-<button type="submit" class="btn btn-primary option" name='submit' value="signup" style="
-color: #004085;
-background-color: #e9ecef;
-border:  none;"/>Enviar invitacion</button>
-</form>
-<br>
-
-
-
+    <div class="w3-half" style="padding-right:100px">
+      <h1 class="w3-xxxlarge w3-text-light" style="">
+          <b>Mis grupos</b>
+      </h1>
+        <div>Crear grupo</div>
+        <hr>
+            <form method="post" action='../agregargrupo/' >
+                {% csrf_token %}
+                <label>Nombre de grupo a crear:</label>
+                <input class="form-control" type="text" size=15 name="nombregrupo" id="nombregrupo" maxlength="25"
+                  onkeyup="nospaces(this)" required="">
+                <br>
+                <button type="submit" class="btn btn-primary option" name='submit' value="signup"
+                  style="
+                  color: #004085;
+                  background-color: #e9ecef;
+                  border:  none;"/>
+                  Crear Grupo
+                </button>
+            </form>
+          <br>
+            <p> Tus grupos</p>
+            <hr>
+            <form method="post" action='/perfil/' >
+                {% csrf_token %}
+                <select class="form-control" name="sometext" id='sometext' >
+                  {% for x in misgrupos %}
+                  <option>{{x}}</option>
+                  {% endfor %}</select>
+                  <button type="submit" class="btn btn-primary option" name='submit' value="Consultar"  style="
+                    color: #004085;
+                    background-color: #e9ecef;
+                    border:  none;"/>
+                    Consultar miembros
+                  </button>
+            </form>
+        <!-- Mostrar usuarios del grupo en formato lista-->
+          <ul>
+              {% for f in listausuarios %}
+                <li>{{f}}</li>
+                  {% endfor %}
+        </ul>
     </div>
-  </div>
 
-
-    <div class="w3-half">
-      <div>Crear grupo</div><br>
-      <form method="post" action='../agregargrupo/' >
-         {% csrf_token %}
-    <label>Nombre de grupo a crear:</label>
-    <input type="text" size=15 name="nombregrupo" id="nombregrupo" maxlength="25" onkeyup="nospaces(this)" required="">
-    <br><br>
-    <button type="submit" class="btn btn-primary option" name='submit' value="signup" style="
-    color: #004085;
-    background-color: #e9ecef;
-    border:  none;"/>Crear Grupo</button>
-    </form>
-    <br>
-    <p> Tus grupos</p>
-    <form method="post" action='/perfil/' >
-      {% csrf_token %}
-    <select name="sometext" id='sometext' >
-      {% for x in misgrupos %}
-        <option>{{x}}</option>
-              {% endfor %}</select>
-  <button type="submit" class="btn btn-primary option" name='submit' value="Consultar"  style="
-  color: #004085;
-  background-color: #e9ecef;
-  border:  none;"/>Consultar miembros</button>
-  </form>
-<!-- Mostrar usuarios del grupo en formato lista-->
-  <ul>
-    {% for f in listausuarios %}
-      <li>{{f}}</li>
-    {% endfor %}
-  </ul>
-
-    </div>
   <p>Notificaciones<p>
   <table>
   {% for i in Invitaciones %}
