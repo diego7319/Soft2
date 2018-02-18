@@ -72,10 +72,40 @@ body {padding-top: 0; margin-top: 0}
 
   <!-- Photo grid (modal) -->
   <div class="w3-row-padding">
-      <div class="w3-half" style="padding-right:12%; padding-left:3%;">
+      <div class="w3-half" style="padding-right:10%; padding-left:3%;">
         <h1 class="w3-xxxlarge w3-text-light" style="">
             <b>Invitaciones</b>
         </h1>
+        <br>
+        <b> Invitaciones recibidas </b>
+        <hr>
+      <table>
+      {% for i in Invitaciones %}
+      <tr>
+      <td>Grupo: {{i}}</td>
+      <td>   <form action = "../responderinvitacion/" method = "post">
+         {% csrf_token %}
+         <input type="hidden" name="grupo" value="{{i}}">
+         <input type="hidden" name="rpta" value="aceptado">
+              <input type="submit" class="btn btn-success float-right" name="upvote" value="Aceptar"
+              style="color: #66bb6a;
+              background-color: #e9ecef;
+              border: none;" />
+          </form></td>
+          <td>  <form action = "../responderinvitacion/" method = "post">
+                   {% csrf_token %}
+                   <input type="hidden" name="grupo" value="{{i}}">
+                   <input type="hidden" name="rpta" value="rechazado">
+              <input type="submit" class="btn btn-danger float-right" name="upvote" value="Rechazar"
+              style="color: #c2185b;
+              background-color: #e9ecef;
+              border: none;" />
+
+          </form>
+        </td>
+        </tr>
+      {% endfor %}
+    </table><br>
           <div id = 'invitarusuarioagrupo' class="form-group">
               <form method="post" action='../invitarusuario/' >
                 {% csrf_token %}
@@ -102,51 +132,35 @@ body {padding-top: 0; margin-top: 0}
               </form>
               <br>
           </div>
-          <b> Notificaciones </b>
-          <hr>
-        <table>
-        {% for i in Invitaciones %}
-        <tr>
-        <td>Grupo: {{i}}</td>
-        <td>   <form action = "../responderinvitacion/" method = "post">
-           {% csrf_token %}
-           <input type="hidden" name="grupo" value="{{i}}">
-           <input type="hidden" name="rpta" value="aceptado">
-                <input type="submit" name="upvote" value="Aceptar" />
-            </form></td>
-            <td>  <form action = "../responderinvitacion/" method = "post">
-                     {% csrf_token %}
-                     <input type="hidden" name="grupo" value="{{i}}">
-                     <input type="hidden" name="rpta" value="rechazado">
-                <input type="submit" name="upvote" value="Rechazar" />
 
-            </form></td>
-          </tr>
-        {% endfor %}
-      </table><br><br>
       </div>
 
-    <div class="w3-half" style="padding-right:12%; padding-left:3%;">
+    <div class="w3-half" style="padding-right:10%; padding-left:5%;">
       <h1 class="w3-xxxlarge w3-text-light" style="">
           <b>Mis grupos</b>
       </h1>
+
       <br>
         <b>Crear grupo</b>
         <hr>
             <form method="post" action='../agregargrupo/' >
                 {% csrf_token %}
                 <label>Nombre de grupo a crear:</label>
+                <div class="input-group">
                 <input class="form-control" type="text" size=15 name="nombregrupo" id="nombregrupo" maxlength="25"
                   onkeyup="nospaces(this)" required="">
-                <br>
-                <button type="submit" class="btn btn-primary float-right" name='submit' value="signup"
-                  style="
-                  color: #004085;
-                  background-color: #e9ecef;
-                  border:  none;"/>
-                  Crear Grupo
-                </button>
+                  <span class="input-group-btn">
+                    <button type="submit" class="btn btn-primary float-right" name='submit' value="signup"
+                      style="
+                      color: #004085;
+                      background-color: #e9ecef;
+                      border:  none;"/>
+                      Crear Grupo
+                    </button>
+                  </span>
+                  </div>
             </form>
+
           <br>
             <b> Tus grupos</b>
             <hr>
