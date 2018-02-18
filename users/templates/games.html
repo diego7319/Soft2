@@ -1,0 +1,146 @@
+{%load staticfiles %}
+<!DOCTYPE html>
+<html>
+<title>Perfil de {{ user.get_username }}</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static '/css/perfil2.css' %}">
+<link rel="stylesheet" href="{% static '/css/slider.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Anton|Roboto" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Noto Sans", sans-serif}
+body {font-size:16px;}
+body {background-color:#ffffff;}
+body {padding-top: 0; margin-top: 0}
+.w3-third img{margin-bottom:-6px;margin-top:16px;opacity:0.9;cursor:pointer}
+.w3-third img:hover{opacity:1}
+</style>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-verde w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>Hola <br>{{ user.get_username }}</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="../perfil" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+    <a href="#grupos" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Grupos</a>
+    <a href="#equipoIdeal" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Equipo Ideal</a>
+    <a href="#polla" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Polla</a>
+    <a href="../creartrivia/" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Trivia</a>
+    <a href="/logout" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Desconectarse</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-verde w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-verde w3-margin-right" onclick="w3_open()">&#9776;</a>
+  <span>MundialPlay</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div style="margin-left:100px;margin-right:100px">
+
+  <!-- Titulo -->
+  <div class="w3-container w3-hide-peque" style="margin-top:100px; margin-bottom:5px" id="grupos">
+      <h1 class="w3-jumbo" style="color: #263238;">
+          <b>Juegos</b>
+      </h1>
+      <hr>
+  </div>
+
+<!-- Equipo Ideal -->
+  <div class="w3-third" style="padding-right:5%; padding-left:5%;">
+      <div class="w3-container text-center" id="equipoIdeal" style="margin-top:25px">
+          <h1 class="w3-xxxlarge">
+              <b>Equipo Ideal</b></h1>
+          <img class="img-thumbnail" src="https://image.flaticon.com/icons/svg/731/731875.svg" width="300" height="400">
+          <br><br>
+      </div>
+  </div>
+
+
+  <!-- Polla -->
+  <div class="w3-third" style="padding-right:5%; padding-left:5%;">
+      <div class="w3-container text-center" id="polla" style="margin-top:25px" >
+          <h1 class="w3-xxxlarge">
+            <b>Polla</b></h1>
+          <img class="img-thumbnail" src="https://image.flaticon.com/icons/svg/566/566295.svg" width="300" height="400">
+          <br><br>
+      </div>
+  </div>
+
+<!-- Trivia -->
+
+  <div class="w3-third" style="padding-right:5%; padding-left:5%;">
+      <div class="w3-container text-center" id="trivia" style="margin-top:25px">
+          <h1 class="w3-xxxlarge">
+            <b>Trivia</b></h1>
+          <img class="img-thumbnail" src="https://www.flaticon.com/premium-icon/icons/svg/732/732591.svg" width="300" height="400"
+          onclick="location.href='../trivia/'"><br><br>
+      </div>
+  </div>
+  <br>
+
+  </div>
+
+
+<div class="w3-container" style="padding-left:0;padding-right:0;margin-top:30em">
+  <h2> Estos son los estadios en los que se jugarán los encuentros:</h2>
+  <div class="slider" style="max-width: 100%;max-height: 100%;">
+    <ul>
+      <li><img src="{% static '/img/est1.jpg'%}" alt="" style=""></li>
+      <li><img src="{% static '/img/est2.jpg' %}" alt="" style=""></li>
+      <li><img src="{% static '/img/est3.jpg' %}" alt="" width=""></li>
+      <li><img src="{% static '/img/est4.jpg' %}" alt="" width="100%"></li>
+      <li><img src="{% static '/img/est5.jpg' %}" alt="" width="100%"></li>
+      <li><img src="{% static '/img/est6.jpg' %}" alt="" width="100%"></li>
+      <li><img src="{% static '/img/est7.jpg' %}" alt="" width="100%"></li>
+      <li><img src="{% static '/img/est8.jpg' %}" alt="" width="100%"></li>
+      <li><img src="{% static '/img/est9.jpg' %}" alt="" width="100%"></li>
+      <li><img src="{% static '/img/est10.jpg' %}" alt="" width="100%"></li>
+      <li><img src="{% static '/img/est11.jpg' %}" alt="" width="100%"></li>
+      <li><img src="{% static '/img/est12.jpg' %}" alt="" width="100%"></li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+<script>
+x='{{ message }}'
+if (x=='{{ message }}') {} else (alert('{{ message }}'))
+
+</script>
+<script>$("select:empty").hide();</script>
+</body>
+</html>

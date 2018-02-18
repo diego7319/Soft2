@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{% static '/css/perfil.css' %}">
 <link rel="stylesheet" href="{% static '/css/slider.css' %}">
-<link rel="stylesheet" href="{% static '/css/home.css' %}">
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans" >
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -31,7 +30,7 @@ body {padding-top: 0; margin-top: 0}
   </div>
   <div class="w3-bar-block">
     <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
-    <a href="#grupos" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Grupos</a>
+    <a href="../games" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Jugar</a>
     <a href="#equipoIdeal" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Equipo Ideal</a>
     <a href="#polla" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Polla</a>
     <a href="../creartrivia/" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Trivia</a>
@@ -213,57 +212,8 @@ body {padding-top: 0; margin-top: 0}
         </form>
 </div>
 
-  <!-- Equipo Ideal -->
-  <div class="w3-container" id="equipoIdeal" style="margin-top:75px">
-    <h1 class="w3-xxxlarge w3-text-red"><b style="
-    font-family:  cursive;
-    color: #5868c1;
-">Equipo Ideal</b></h1>
-    <hr>
-    <img src="http://www.elclasicofutbol5.com/wp-content/uploads/2015/06/cancha-dimensiones-futbol.jpg" width="400" height="400">
-    <br><br>
-    <button class="btn btn-primary option" style="
-    color: #004085;
-    background-color: #e9ecef;
-    border:  none;"/>Jugar</button>
-  </div>
-
-  <!-- Polla -->
-  <div class="w3-container" id="polla" style="margin-top:75px" >
-    <h1 class="w3-xxxlarge w3-text-red"><b style="
-    font-family:  cursive;
-    color: #5868c1;
-">Polla</b></h1>
-    <hr>
-    <img src="https://www.oscfondesarrollo.com/pollaeliminatorias/resources/img/laptop-futbol-apuestas.png" width="650" height="400">
-    <br><br>
-    <button class="btn btn-primary option" style="
-    color: #004085;
-    background-color: #e9ecef;
-    border:  none;"/>Jugar</button>
-  </div>
-
-  <!-- The Team -->
-  <div class="w3-row-padding w3-grayscale">
-
-  </div>
-
-  <!-- Packages / Pricing Tables -->
-  <div class="w3-container" id="trivia" style="margin-top:75px">
-    <h1 class="w3-xxxlarge w3-text-red"><b style="
-    font-family:  cursive;
-    color: #5868c1;
-">Trivia</b></h1>
-    <hr>
-    <img src="https://thumbs.dreamstime.com/b/signo-de-interrogaci%C3%B3n-de-bolas-del-balompi%C3%A9-del-f%C3%BAtbol-24535862.jpg" width="400" height="400"><br><br>
-
-    <button class="btn btn-primary option" onclick="location.href='../trivia/'" style="
-    color: #004085;
-    background-color: #e9ecef;
-    border:  none;"> Jugar</button>
 
 
-  </div>
 
   <h2> Estos son los estadios en los que se jugarán los encuentros:</h2>
   <div class="slider" style="max-width: 100%;max-height: 100%;">
