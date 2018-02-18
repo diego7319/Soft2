@@ -1,8 +1,112 @@
-<html>
+{%load staticfiles %}
+<html style="">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<body>
+<body onload='Ajaxobtenersalas()'>
+  <div class='row'>
+    <div class='row col-md-4'></div>
+    <div class='col-md-4' style="
+        font-family: sans-serif;"><h2 style="
+    color:  white;
+    font-family:  cursive;
+">Crear y configurar trivia</h2> <br>
+<p style="font-family:  Arial; class"="text-muted; color:white; font-size:20px;">
+     Solo podras crear una sala en el grupo que eres administrador</p></div>
+</div>
+</b>
+
+<p id='Resultado'></p>
+<div style='margin:10%'>
+     <form method="POST" action="../crearjuego/">
+      {% csrf_token %}
+      <div class="form-group">
+        <label style="
+        font-family:  monospace; font-size:18px; color:white;">Nombre de sala: </label>
+        <input required id='nombresala'  class="form-control"
+        name='nombresala' size=20></input></div>
+
+        <div class="form-group">
+          <label style="
+        font-family:  monospace; font-size:18px; color:white;">Grupo </label>
+        <select class="form-control" id='grupo' name='grupo' required>
+          {% for t in misgrupos %}
+          <option value={{t}}> {{t}} </option>
+          {% endfor %}
+        </select></div>
+  <div class="form-group">
+
+<label style="
+    font-family:  monospace; font-size:18px; color:white;
+">Cantidad de preguntas</label>
+<select class="form-control" id='cantpreg' name='cantpreg' class="reg_input" required>
+      <option value=5> 5 preguntas </option>
+      <option value=10> 10 preguntas </option>
+      <option value=15> 15 preguntas </option>
+</select></div>
+
+<div class="form-group">
+
+<label style="
+  font-family:  monospace; font-size:18px; color:white;
+">Apuesta Minima</label>
+<input min="0" id='pago' type='number' required class="form-control"
+name='pago' size=10></input></div>
+
+<input class="btn btn-primary"  type="submit" value="Crear sala" style="
+    color: w3-hover-white;
+    border:  none;
+"/>
+</form>
+
+</div>
+<!-- Salas creadas -->
 
 
+
+<br>
+<div style='margin:auto'>
+  <h1 style="font-family: sans-serif;color:  white;">Salas activas </h1>
+<table class='table table-responsive table-inverse' style="color:white;">
+  <thead>
+<tr> <th>Grupo</th>
+    <th>Sala</th>
+    <th>Estado</th>
+    <th>Jugar</th>
+<tr>
+</thead>
+<tbody id='missalas' ></tbody>
+</table>
+
+</div>
+
+<div>
+
+<h1 style="font-family: sans-serif;color:  white;">Salas donde eres Administrador</h1>
+</div>
+<button id='home' value='' class="btn btn-success"  onClick="window.location.href='../'" style="
+
+    color: white;
+    border:  none;
+
+">Regresar a tu perfil</button>
 </body>
+<script>
+document.getElementById("Resultado").innerHTML='{{existe}}';
+function user(){
+  return '{{usuario}}'
+  }
+</script>
+<script src= "{% static '/js/configurarequipoideal.js' %}"></script>
+<style>
+body{
+background-image: url('http://2.bp.blogspot.com/-Nho4hVMLUdc/UzRfD_kKMcI/AAAAAAAAgRQ/TfdofO5_tfg/s1600/Impresionantes+fondos+abstractos+%2528246%2529.Jpg');
+background-size: 100%;
+background-repeat:  repeat; }
+</style>
+
+
 </html>
