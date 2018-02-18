@@ -60,14 +60,12 @@ body {padding-top: 0; margin-top: 0}
   </div>
   -->
   <!-- Titulo -->
-  <div class="w3-container w3-hide-peque" style="margin-top:20px" id="grupos">
+  <div class="w3-container w3-hide-peque" style="margin-top:15px; margin-bottom:5px" id="grupos">
       <h1 class="w3-jumbo" style="
           color: #263238;">
           <b>Mi perfil</b>
-          <br>
       </h1>
       <hr>
-      <br>
       <!-- Subtiulos -->
 
   </div>
@@ -76,7 +74,7 @@ body {padding-top: 0; margin-top: 0}
   <div class="w3-row-padding">
       <div class="w3-half" style="padding-right:10%; padding-left:3%;">
         <h1 class="w3-xxxlarge w3-text-light" style="">
-            <b>Invitaciones</b>
+             <i class="fa fa-envelope-open-o"></i>
         </h1>
         <br>
         <b> Invitaciones recibidas </b>
@@ -140,7 +138,7 @@ body {padding-top: 0; margin-top: 0}
     <!-- Seccion Derecha -->
     <div class="w3-half" style="padding-right:10%; padding-left:5%;">
       <h1 class="w3-xxxlarge w3-text-light" style="">
-          <b>Mis grupos</b>
+          <i class="fa fa-group"></i>
       </h1>
       <br>
         <b>Crear grupo</b>
@@ -193,18 +191,25 @@ body {padding-top: 0; margin-top: 0}
 
     <!-- SALDO  -->
 
-<div class="w3-container" id="miSaldo">
-    <p>Saldo en cuenta: S/.{{saldo}}<p><br>
+<div class="w3-container" id="miSaldo" style="padding-right:10%; padding-left:3%;">
+  <h1 class="w3-xxxlarge w3-text-light" style="">
+      <i class="fa fa-money"></i>
+  </h1>
+    <b>Mi saldo : S/.{{saldo}}<b>
+      <hr>
         <form method="post" action='/recargarcuenta' >
           {% csrf_token %}
-          <label>Saldo a recargar en su cuenta:</label>
+          <label>Recargar:</label>
           <br>
+          <div class="input-group mb-3">
           <input  class="form-control" min="0" type="number"  id='cantidadarecargar' name="cantidadarecargar">
-          <br>
-          <button type="submit" class="btn btn-primary option" name='submit' value="Recargar" style="
+          <div class="input-group-append">
+          <button type="submit" class="btn btn-primary btn-outline-secondary" name='submit' value="Recargar" style="
           color: #004085;
           background-color: #e9ecef;
           border:  none;"/>Recargar</button>
+        </div>
+        </div>
         </form>
 </div>
 
