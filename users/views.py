@@ -8,6 +8,15 @@ from django.contrib.auth.decorators import login_required
 from grupos import views
 from users.models import usuariocuenta
 
+def games(request):
+    personas = [
+        { 'nombre' : 'Juanita', 'edad' : 20 },
+    ]
+    variables = {
+        'lista_personas' : personas
+    }
+    return render(request, 'games.html', variables)
+
 def index(request):
     formaLogin = Login()
     formaRegistro = Signup()
@@ -47,6 +56,7 @@ def perfil(request):
 
             }
             return render(request,'hom.html',context)
+
 def log_out(request):
     logout(request)
     return redirect('index')
