@@ -7,5 +7,5 @@ class jugpaisadmin(admin.ModelAdmin):
 admin.site.register(JugadorPais,jugpaisadmin)
 
 class Partidoadmin(admin.ModelAdmin):
-    list_dislay=('equipo1','equipo1','fecha')
+    list_dislay=('equipo1','equipo1','fecha','Grupo')
 admin.site.register(Partido,Partidoadmin)

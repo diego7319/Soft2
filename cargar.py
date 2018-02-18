@@ -12,9 +12,9 @@ def ingresardato():
 			mod.save()
 		except:
 			print ('no se agrego'+ a +"   -   "+b)
+
 def fixdate(fech):
 	p=fech.split("/")
-	print (p)
 	y,m,d=p[2],p[1],p[0]
 	return (y+"-"+m+"-"+d)
 
@@ -25,21 +25,21 @@ def ingresarpartidos():
 	gr=['A','B','C','D','E','F','G','H']
 	for i in corpus:
 		grpo=""
+		cont1=cont1+1
 		if cont1==6:
 			grpo=gr[cont2]
 			cont1=0
 			cont2=cont2+1
 		else:
-			grp=gr[cont2]
-		cont1=cont1+1
+			grpo=gr[cont2]
 		linea=i.split(",")
-		eq1=linea[1].split(" ")[0]
-		eq2=linea[3].split(" ")[0]
+		eq1=linea[1];
+		eq1=eq1.split(" ")[1]
+		eq2=linea[3];eq2=eq2.split(" ")[1]
 		dat=linea[0]
-		print (fixdate(dat))
 		mod=equipoideal.models.Partido(equipo1=eq1,equipo2=eq2
 		,fecha=fixdate(dat),Grupo=grpo)
-		mod.save()
+		print ('no se agrego'+ eq1 +"   -   "+eq2+"   -   "+grpo)
 		try:
 			mod.save()
 		except:
