@@ -6,20 +6,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{% static '/css/perfil.css' %}">
 <link rel="stylesheet" href="{% static '/css/slider.css' %}">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans" >
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <style>
-body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body,h1,h2,h3,h4,h5 {font-family: "Noto Sans", sans-serif}
 body {font-size:16px;}
+body {background-color:#fafafa}
 .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
 .w3-half img:hover{opacity:1}
 </style>
 <body>
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+<nav class="w3-sidebar w3-verde w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
   <div class="w3-container">
     <h3 class="w3-padding-64"><b>Bienvenido<br>{{ user.get_username }}</b></h3>
@@ -35,8 +36,8 @@ body {font-size:16px;}
 </nav>
 
 <!-- Top menu on small screens -->
-<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
-  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">&#9776;</a>
+<header class="w3-container w3-top w3-hide-large w3-verde w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-verde w3-margin-right" onclick="w3_open()">&#9776;</a>
   <span>MundialPlay</span>
 </header>
 
@@ -45,38 +46,21 @@ body {font-size:16px;}
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:340px;margin-right:40px">
-<!-- Home -->
+<!-- Home
   <div class="w3-container" style="margin-top:80px" id="showcase">
-    <h1 class="w3-jumbo" style="
-    font-family:  cursive;
-    color: #5868c1;
-"><b>¡Hola </b>{{ user.get_username }}<b>!</b></h1>
-    <h2> Estos son los estadios en los que se jugarán los encuentros:</h2>
-    <div class="slider" style="max-width: 100%;max-height: 100%;">
-      <ul>
-        <li><img src="{% static '/img/est1.jpg'%}" alt="" style=""></li>
-        <li><img src="{% static '/img/est2.jpg' %}" alt="" style=""></li>
-        <li><img src="{% static '/img/est3.jpg' %}" alt="" width=""></li>
-        <li><img src="{% static '/img/est4.jpg' %}" alt="" width="100%"></li>
-        <li><img src="{% static '/img/est5.jpg' %}" alt="" width="100%"></li>
-        <li><img src="{% static '/img/est6.jpg' %}" alt="" width="100%"></li>
-        <li><img src="{% static '/img/est7.jpg' %}" alt="" width="100%"></li>
-        <li><img src="{% static '/img/est8.jpg' %}" alt="" width="100%"></li>
-        <li><img src="{% static '/img/est9.jpg' %}" alt="" width="100%"></li>
-        <li><img src="{% static '/img/est10.jpg' %}" alt="" width="100%"></li>
-        <li><img src="{% static '/img/est11.jpg' %}" alt="" width="100%"></li>
-        <li><img src="{% static '/img/est12.jpg' %}" alt="" width="100%"></li>
-      </ul>
-</div>
-    <hr>
+    <h1 class="w3-jumbo";
+        color: #263238;">
+    <b>¡Hola </b>{{ user.get_username }}<b>!</b>
+    </h1>
+
   </div>
+  -->
   <!-- Header -->
   <div class="w3-container" style="margin-top:80px" id="grupos">
     <h1 class="w3-jumbo" style="
-    font-family:  cursive;
-    color: #5868c1;
+    color: #263238;
 "><b>Grupos</b></h1>
-    <h1 class="w3-xxxlarge w3-text-red" style="
+    <h1 class="w3-xxxlarge w3-text-light" style="
     font-family: arial;
 "><b>Invitaciones /                       Mis grupos</b></h1>
     <hr>
@@ -231,6 +215,24 @@ border:  none;"/>Recargar</button>
 
 
   </div>
+
+  <h2> Estos son los estadios en los que se jugarán los encuentros:</h2>
+  <div class="slider" style="max-width: 100%;max-height: 100%;">
+    <ul>
+      <li><img src="{% static '/img/est1.jpg'%}" alt="" style=""></li>
+      <li><img src="{% static '/img/est2.jpg' %}" alt="" style=""></li>
+      <li><img src="{% static '/img/est3.jpg' %}" alt="" width=""></li>
+      <li><img src="{% static '/img/est4.jpg' %}" alt="" width="100%"></li>
+      <li><img src="{% static '/img/est5.jpg' %}" alt="" width="100%"></li>
+      <li><img src="{% static '/img/est6.jpg' %}" alt="" width="100%"></li>
+      <li><img src="{% static '/img/est7.jpg' %}" alt="" width="100%"></li>
+      <li><img src="{% static '/img/est8.jpg' %}" alt="" width="100%"></li>
+      <li><img src="{% static '/img/est9.jpg' %}" alt="" width="100%"></li>
+      <li><img src="{% static '/img/est10.jpg' %}" alt="" width="100%"></li>
+      <li><img src="{% static '/img/est11.jpg' %}" alt="" width="100%"></li>
+      <li><img src="{% static '/img/est12.jpg' %}" alt="" width="100%"></li>
+    </ul>
+</div>
 
 
 
