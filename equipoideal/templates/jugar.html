@@ -1,10 +1,67 @@
 <!DOCTYPE html>
+{%load staticfiles %}
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static '/css/equipoideal.css' %}">
+
 <body>
 
-<div>
+<h1>Equipo Ideal</h1>
 
+<div class="row" >
+  <div class="col col-md-8" style='position:relative'>
+    <img src="{% static '/img/campo.png' %}"  style='width:70%;height:70%'>
+    <form>
+    <div id="arquero"><input name="selection" type="radio" id="radioButton" >Arquero</div>
+
+
+          <div id="central1"><input name="selection" type="radio" id="radioButton" >Central 1</div>
+          <div id="central2"><input name="selection" type="radio" id="radioButton" >Central 2</div>
+
+
+    <div id="lateralI"><input name="selection" type="radio" id="radioButton" >Lateral Izquierdo</div>
+    <div id="lateralD"><input name="selection" type="radio" id="radioButton" >Lateral Derecho</div>
+
+    <div id="volante1"><input name="selection" type="radio" id="radioButton" >Volante 1</div>
+    <div id="volante2"><input name="selection" type="radio" id="radioButton" >Volante 2</div>
+
+    <div id="carrileroI"><input name="selection" type="radio" id="radioButton" >Carrilero Izquierdo</div>
+    <div id="carrileroD"><input name="selection" type="radio" id="radioButton" >Carrilero Derecho</div>
+
+    <div id="mediapunta"><input name="selection" type="radio" id="radioButton" >Media Punta</div>
+    <div id="delantero"><input name="selection" type="radio" id="radioButton" >Delantero</div>
+
+</form>
+    </div>
+  </div>
+<div id='selecciondejugadores'>
+
+<select id='pais'>
+<option>----</option>
+</select>
+<select id='jugador'>
+<option>----</option>
+</select>
 </div>
+
+
 </body>
-<script></script>
+<script>
+
+</script>
+<style>
+.campo{
+  background-image: url('../static/img/campo.png');
+  width:50% ;
+  height:500px ;
+  text-align: center;
+  color: white;
+margin:1%;
+background-repeat: no-repeat;
+background-size: auto;
+}
+</style>
 </html>

@@ -141,11 +141,19 @@ def obtenerSalas(request):
         jsonrespuesta[str(cont)]={'sala':i.split('-')[0],'grupo':i.split('-')[1],'estado':estadopago(i.split('-')[0],i.split('-')[1],ruser)}
         cont+=1
     return JsonResponse(jsonrespuesta)
+
+
 #devuelve las salas donde es administrador
-def getsalasadmin(request):
+def obtenerSalasadmin(request):
     jsonrespuesta={}
-    usuario=request.POST.get('usuario')
-    useradmingroup()
+    ruser=request.POST.get('usuario')
+    listagrupos=misgrupos(ruser)
+    salagrupo= getSalasdeGrupo(listagrupos)
+    cont=0
+    for i in salagrupo:
+        jsonrespuesta[str(cont)]={'sala':i.split('-')[0],'grupo':i.split('-')[1],'estado':estadopago(i.split('-')[0],i.split('-')[1],ruser)}
+        cont+=1
+    return JsonResponse(jsonrespuesta)
 #funciones de apoyo
 def grupoexiste(nombre):
     existe=''
