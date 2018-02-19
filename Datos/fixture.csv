@@ -1,0 +1,49 @@
+﻿Numero;Grupo;DiaSemana;Fecha;Hora;ZonaHoraria;Equipo1;Equipo2;Estadio
+1;A;Jueves;6-14-2018;18:00;(UTC+3);Russia;Saudi Arabia;Luzhniki Stadium, Moscow 
+2;A;Viernes;6-15-2018;17:00;(UTC+5);Egypt;Uruguay;Central Stadium, Yekaterinburg 
+17;A;Martes;6-19-2018;21:00;(UTC+3);Russia;Egypt;Krestovsky Stadium, Saint Petersburg 
+18;A;Miercoles;6-20-2018;18:00;(UTC+3);Uruguay;Saudi Arabia;Rostov Arena, Rostov-on-Don 
+33;A;Lunes;6-25-2018;18:00;(UTC+4);Uruguay;Russia;Cosmos Arena, Samara 
+34;A;Lunes;6-25-2018;17:00;(UTC+3);Saudi Arabia;Egypt;Volgograd Arena, Volgograd 
+4;B;Viernes;6-15-2018;18:00;(UTC+3);Morocco;Iran    ;Krestovsky Stadium, Saint Petersburg 
+3;B;Viernes;6-15-2018;21:00;(UTC+3);Portugal;Spain   ;Fisht Olympic Stadium, Sochi 
+19;B;Miercoles;6-20-2018;15:00;(UTC+3);Portugal;Morocco  ;Luzhniki Stadium, Moscow 
+20;B;Miercoles;6-20-2018;21:00;(UTC+3);Iran;Spain    ;Kazan Arena, Kazan 
+35;B;Lunes;6-25-2018;21:00;(UTC+3);Iran;Portugal ;Mordovia Arena, Saransk 
+36;B;Lunes;6-25-2018;20:00;(UTC+2);Spain;Morocco  ;Kaliningrad Stadium, Kaliningrad 
+5;C;Sabado;6-16-2018;13:00;(UTC+3);France;Australia  ;Kazan Arena, Kazan 
+6;C;Sabado;6-16-2018;19:00;(UTC+3);Peru;Denmark    ;Mordovia Arena, Saransk 
+22;C;Jueves;6-21-2018;16:00;(UTC+4);Denmark;Australia  ;Cosmos Arena, Samara 
+21;C;Jueves;6-21-2018;20:00;(UTC+5);France;Peru       ;Central Stadium, Yekaterinburg 
+37;C;Martes;6-26-2018;17:00;(UTC+3);Denmark;France    ;Luzhniki Stadium, Moscow 
+38;C;Martes;6-26-2018;17:00;(UTC+3);Australia;Peru      ;Fisht Olympic Stadium, Sochi 
+7;D;Sabado;6-16-2018;16:00;(UTC+3);Argentina   ;Iceland    ;Otkrytiye Arena, Moscow 
+8;D;Sabado;6-16-2018;21:00;(UTC+2);Croatia     ;Nigeria    ;Kaliningrad Stadium, Kaliningrad 
+23;D;Jueves;6-21-2018;21:00;(UTC+3);Argentina   ;Croatia    ;Nizhny Novgorod Stadium, Nizhny Novgorod 
+24;D;Viernes;6-22-2018;18:00;(UTC+3);Nigeria     ;Iceland    ;Volgograd Arena, Volgograd 
+39;D;Martes;6-26-2018;21:00;(UTC+3);Nigeria     ;Argentina;Krestovsky Stadium, Saint Petersburg 
+40;D;Martes;6-26-2018;21:00;(UTC+3);Iceland     ;Croatia;Rostov Arena, Rostov-on-Don 
+10;E;Domingo;6-17-2018;16:00;(UTC+4);Costa Rica;Serbia;Cosmos Arena, Samara 
+9;E;Domingo;6-17-2018;21:00;(UTC+3);Brazil;Switzerland;Rostov Arena, Rostov-on-Don 
+25;E;Viernes;6-22-2018;15:00;(UTC+3);Brazil   ;Costa Rica;Krestovsky Stadium, Saint Petersburg 
+26;E;Viernes;6-22-2018;20:00;(UTC+2);Serbia   ;Switzerland;Kaliningrad Stadium, Kaliningrad 
+41;E;Miercoles;6-27-2018;21:00;(UTC+3);Serbia;Brazil;Otkrytiye Arena, Moscow 
+42;E;Miercoles;6-27-2018;21:00;(UTC+3);Switzerland;Costa Rica;Nizhny Novgorod Stadium, Nizhny Novgorod 
+11;F;Domingo;6-17-2018;18:00;(UTC+3);Germany   ;Mexico;Luzhniki Stadium, Moscow 
+12;F;Lunes;6-18-2018;15:00;(UTC+3);Sweden    ;South Korea;Nizhny Novgorod Stadium, Nizhny Novgorod 
+28;F;Sabado;6-23-2018;18:00;(UTC+3);South Korea;Mexico;Rostov Arena, Rostov-on-Don 
+27;F;Sabado;6-23-2018;21:00;(UTC+3);Germany;Sweden;Fisht Olympic Stadium, Sochi 
+43;F;Miercoles;6-27-2018;17:00;(UTC+3);South Korea;Germany;Kazan Arena, Kazan 
+44;F;Miercoles;6-27-2018;19:00;(UTC+5);Mexico;Sweden;Central Stadium, Yekaterinburg 
+13;G;Lunes;6-18-2018;18:00;(UTC+3);Belgium;Panama;Fisht Olympic Stadium, Sochi 
+14;G;Lunes;6-18-2018;21:00;(UTC+3);Tunisia;England;Volgograd Arena, Volgograd 
+29;G;Sabado;6-23-2018;15:00;(UTC+3);Belgium;Tunisia;Otkrytiye Arena, Moscow 
+30;G;Domingo;6-24-2018;15:00;(UTC+3);England;Panama;Nizhny Novgorod Stadium, Nizhny Novgorod 
+45;G;Jueves;6-28-2018;20:00;(UTC+2);England;Belgium;Kaliningrad Stadium, Kaliningrad 
+46;G;Jueves;6-28-2018;21:00;(UTC+3);Panama;Tunisia;Mordovia Arena, Saransk 
+16;H;Martes;6-19-2018;15:00;(UTC+3);Colombia;Japan;Mordovia Arena, Saransk 
+15;H;Martes;6-19-2018;18:00;(UTC+3);Poland;Senegal;Otkrytiye Arena, Moscow 
+32;H;Domingo;6-24-2018;20:00;(UTC+5);Japan;Senegal;Central Stadium, Yekaterinburg 
+31;H;Domingo;6-24-2018;21:00;(UTC+3);Poland;Colombia;Kazan Arena, Kazan 
+47;H;Jueves;6-28-2018;17:00;(UTC+3);Japan;Poland;Volgograd Arena, Volgograd 
+48;H;Jueves;6-28-2018;18:00;(UTC+4);Senegal;Colombia;Cosmos Arena, Samara 
