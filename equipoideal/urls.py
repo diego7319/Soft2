@@ -6,5 +6,6 @@ urlpatterns = [
 #    path('jugar/', vw, name='templated'),
 
     path('juegoequipoideal/', views.JuegoEquipoIdeal, name='juegoequipoideal'),
+    path('jugadores/', views.retornarjugadores, name='retornarjugadores'),
 
     ]
