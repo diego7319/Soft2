@@ -91,14 +91,13 @@ def guardarscore(request):
     rusuario=request.POST.get('usuario')
     rgrupo=request.POST.get('grupo')
     rresultado=request.POST.get('resultado')
-    print (rsala)
-    print (rusuario)
-    print (rgrupo)
-    print (rresultado)
-    d=Scorejuego(nombreJuego=rsala,grupo=rgrupo,user=rusuario,resultado=rresultado)
-    d.save()
-#            return JsonResponse({'rpta':'error en guardar score'})
-    return JsonResponse({'rpta':'Guardado correctamente'})
+    if (Scorejuego.objects.filter(nombreJuego=rsala,grupo=rgrupo,user=rusuario).count()>=1):
+        return JsonResponse("rpta":"Ya haz jugado esta sala")
+    else:
+        d=Scorejuego(nombreJuego=rsala,grupo=rgrupo,user=rusuario,resultado=rresultado)
+        d.save()
+#return JsonResponse({'rpta':'error en guardar score'})
+        return JsonResponse({'rpta':'Guardado correctamente'})
 
 def templatetrivia(request):
     context={
@@ -150,7 +149,13 @@ def pagar_sala(request):
         cambiarestado.save()
         return JsonResponse({"rpta": "Pago realizado"})
 
-
+def calcularganador(request):
+    rsala=requst.POST.get("sala")
+    sala_vacia=desactivarsala()
+    if sala_vacia==None:
+        return JsonResponse({'rpta':'sala vacia'})
+    else:
+        return (calcularGanador(rsala))
 
 def obtenerSalas(request):
     jsonrespuesta={}
@@ -172,7 +177,7 @@ def obtenerSalasadmin(request):
     salagrupo= getSalasdeGrupo(listagrupos)
     cont=0
     for i in salagrupo:
-        jsonrespuesta[str(cont)]={'sala':i.split('-')[0],'grupo':i.split('-')[1],'estado':estadopago(i.split('-')[0],i.split('-')[1],ruser)}
+        jsonrespuesta[str(cont)]={'sala':i.split('-')[0],'grupo':i.split('-')[1]}
         cont+=1
     return JsonResponse(jsonrespuesta)
 
@@ -222,7 +227,7 @@ def resultadoganador(sala):
         pass
 
 
-def desactivarsala(sala):
+def desactivarsala(request):
     rsala=salatrivia.objects.get(nombreJuego=sala)
     if rsala.count()==0:
         return None

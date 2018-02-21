@@ -133,7 +133,7 @@ if (tiempo<=0){
         porcentaje=(preguntasacertadas/cantpreg())*100
         guardarresultado(porcentaje)
         }else{
-          document.getElementById("rpta").innerHTML='No se marco nada.Incorrecto';
+          document.getElementById("rpta").innerHTML='';
         tiempo=10;obtenerpregunta();}
         }
 

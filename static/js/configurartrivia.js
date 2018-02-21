@@ -145,13 +145,13 @@ function Ajaxobtenersalasadmin(){
   parametros={'usuario':user()};
   $.ajax({
             type: "POST",
-            url: '../obtenerSalas/',
+            url: '../obtenerSalasadmin/',
             data: parametros,
 
             success: function(data)
             {
 console.log(data);
-llenartabla(data)
+
 
             }
         });

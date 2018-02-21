@@ -12,6 +12,6 @@ path('score/', score, name='Score'),
     path('pagar_sala/',pagar_sala,name='pagar_sala'),
     path('guardarscore/',guardarscore,name='guardarscore'),
     path('iniciarjuegopracticatrivia/',iniciarjuegopracticatrivia,name='iniciarjuegopracticatrivia'),
-    path('obtenerSalasadmintrivia/',obtenerSalasadmin,name='obtenerSalasadmintrivia')
+    path('obtenerSalasadmin/',obtenerSalasadmin,name='obtenerSalasadmintrivia')
 
     ]
