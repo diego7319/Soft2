@@ -92,7 +92,7 @@ def guardarscore(request):
     rgrupo=request.POST.get('grupo')
     rresultado=request.POST.get('resultado')
     if (Scorejuego.objects.filter(nombreJuego=rsala,grupo=rgrupo,user=rusuario).count()>=1):
-        return JsonResponse("rpta":"Ya haz jugado esta sala")
+        return JsonResponse({"rpta":"Ya haz jugado esta sala"})
     else:
         d=Scorejuego(nombreJuego=rsala,grupo=rgrupo,user=rusuario,resultado=rresultado)
         d.save()
