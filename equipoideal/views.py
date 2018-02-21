@@ -37,9 +37,6 @@ def jugador_paisToJson():
         lista_jugad_array=[]
         for ijugador in lista_jugad_object:
             lista_jugad_array.append(ijugador.nombre)
-#todos los paises terminan en \n, por eso el fix del len
-        fix_pais=ipais['pais'][0:len(ipais['pais'])-1]
-        pais_jugadordict[cont]={fix_pais:lista_jugad_array}
+        pais_jugadordict[cont]={ipais['pais']:lista_jugad_array}
         cont+=1
-    return HttpResponse(json.dumps(pais_jugadordict, ensure_ascii=False),
-    content_type="application/json")
+    return JsonResponse(pais_jugadordict)

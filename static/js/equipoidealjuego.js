@@ -1,8 +1,15 @@
 
 function obtenerdatos(){
-  fetch('../jugadores/') // Call the fetch function passing the url of the API as a parameter
-  .then(function() {
-      // Your code for handling the data you get from the API
+  fetch('../jugadores/')
+  .then((resp) => resp.json())  // Call the fetch function passing the url of the API as a parameter
+  .then(function(data) {
+paises=[]
+jugadores=[]
+console.log(data)
+    for (i in data){
+for (j in i){console.log(i)}
+
+};console.log(paises)
   })
   .catch(function() {
       // This is where you run code if the server returns any errors
@@ -10,13 +17,6 @@ function obtenerdatos(){
 
 
 }
-
-
-
-
-
-
-
 
 
 
