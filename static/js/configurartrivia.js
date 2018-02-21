@@ -48,7 +48,10 @@ $.ajax({
           success: function(data)
           {
 
-            if (data.rpta=='No hay saldo suficiente en tu cuenta'){}
+            if (data.rpta=='No hay saldo suficiente en tu cuenta'){
+
+            }else{location.reload();
+}
           }
       });
 

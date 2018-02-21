@@ -11,6 +11,10 @@ from django.http import HttpResponse
 
 
 # Create your views here.
+def configurarjuego(request):
+    return render(request,'configurarjuego.html')
+
+
 def JuegoEquipoIdeal(request):
     context={
     'usuario':request.user.username
@@ -23,8 +27,6 @@ def retornarjugadores(request):
     datos={}
     if request.method == 'GET':
         return jugador_paisToJson()
-
-
 
 
 #metodos de apoyo

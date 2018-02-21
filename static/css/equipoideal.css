@@ -1,7 +1,7 @@
 #arquero{
   position: absolute;
-top: 1%;
-left: 30%;
+top: 3%;
+left: 31%;
 padding: 5px;
 
 
@@ -9,67 +9,68 @@ padding: 5px;
 
 #central1{
   position: absolute;
-top: 7%;
-left: 13%;
+top: 10%;
+left: 18%;
 padding: 5px;
 }
 #central2{
   position: absolute;
-top: 7%;
+top: 10%;
 left: 40%;
 padding: 5px;
 }
+
 #lateralI{
   position: absolute;
-top: 15%;
-left: 44%;
+top: 20%;
+left: 50%;
 padding: 5px;
 }
 #lateralD{
 
     position: absolute;
-  top: 15%;
+  top: 20%;
   left: 5%;
   padding: 5px;
 }
 
 #volante1{
   position: absolute;
-top: 25%;
+top: 35%;
 left: 13%;
 padding: 5px;
 }
 #volante2{
   position: absolute;
-top: 25%;
+top: 35%;
 left: 40%;
 padding: 5px;
 }
 #carrileroI{
   position: absolute;
-top: 35%;
+top: 45%;
 left: 44%;
 padding: 5px;
 }
 #carrileroD{
 
     position: absolute;
-  top: 35%;
+  top: 45%;
   left: 5%;
   padding: 5px;
 }
 
 #mediapunta{
   position: absolute;
-top: 48%;
+top: 55%;
 left: 30%;
 padding: 5px;
 
-
+label {display: block; padding: 5px; position: relative; padding-left: 20px;}
 }
 #delantero{
   position: absolute;
-top:60%;
+top:78%;
 left: 30%;
 padding: 5px;
 

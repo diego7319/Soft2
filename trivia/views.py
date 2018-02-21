@@ -28,7 +28,6 @@ def mostrarpregunta(request):
     repetido=True
     while repetido==True:
         random_record = choice(records)
-        print (arreglousado.split('-'))
         if str(random_record.idPregunta) in arreglousado.split('-'):
             repetido=True
         else:
