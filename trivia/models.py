@@ -63,3 +63,4 @@ class Scorejuego(models.Model):
     user=models.CharField(max_length=20)
     grupo=models.CharField(max_length=30)
     nombreJuego=models.CharField(max_length=30)
+    resultado=models.FloatField(default=0)

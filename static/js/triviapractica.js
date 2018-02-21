@@ -80,7 +80,7 @@ function tiemporestante(segundo){
 
 }
 function guardarresultado(pocentaje){
-  parametros={'sala':sala(),'usuario':user(),'resultado':porcentaje,'grupo':rrgrupo()}
+  parametros={'sala':sala(),'usuario':user(),'resultado':porcentaje,'grupo':grupo()}
   $.ajax({
             type: "POST",
             url: '../guardarscore/',
@@ -89,6 +89,7 @@ function guardarresultado(pocentaje){
             success: function(data)
             {console.log(data);
 
+document.getElementById("rpta").innerHTML='';
 }}
 
 )
@@ -130,8 +131,7 @@ if (tiempo<=0){
         preguntasequivocadas=cantidadPreguntas-preguntasacertadas
         document.getElementById("rpta").innerHTML='Respuestas correctas: '+preguntasacertadas +'     -----'+'       Respuestas equivocadas: '+preguntasequivocadas
         document.getElementById('home').style.visibility='';
-        porcentaje=(preguntasacertadas/cantpreg())*100
-        guardarresultado(porcentaje)
+
         }else{
           document.getElementById("rpta").innerHTML='No se marco nada.Incorrecto';
         tiempo=10;obtenerpregunta();}

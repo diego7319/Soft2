@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.http import JsonResponse
 from users.models import usuariocuenta
-from trivia.models import PreguntaTrivia,scoretrivia,salatrivia,PagoSala
+from trivia.models import PreguntaTrivia,scoretrivia,salatrivia,PagoSala,Scorejuego
 from random import randint,shuffle,choice
 from grupos.views import misgrupos,useradmingroup
 from grupos.models import Invitacion
@@ -87,9 +87,18 @@ def crearjuego(request):
             return render(request,'configurartrivia.html',context)
 
 def guardarscore(request):
-    rpta={}
-
-    return JsonResponse(rpta)
+    rsala=request.POST.get('sala')
+    rusuario=request.POST.get('usuario')
+    rgrupo=request.POST.get('grupo')
+    rresultado=request.POST.get('resultado')
+    print (rsala)
+    print (rusuario)
+    print (rgrupo)
+    print (rresultado)
+    d=Scorejuego(nombreJuego=rsala,grupo=rgrupo,user=rusuario,resultado=rresultado)
+    d.save()
+#            return JsonResponse({'rpta':'error en guardar score'})
+    return JsonResponse({'rpta':'Guardado correctamente'})
 
 def templatetrivia(request):
     context={
@@ -108,7 +117,8 @@ def iniciarjuego(request):
     context={
     'cantpreg':cantpreg,
     'salatrivia':nombrejuego,
-    'user':usuario
+    'user':usuario,
+    'grupo':grupo
     }
     return render(request,'holi.html',context)
 
