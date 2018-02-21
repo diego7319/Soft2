@@ -168,7 +168,7 @@ def obtenerSalas(request):
 def obtenerSalasadmin(request):
     jsonrespuesta={}
     ruser=request.POST.get('usuario')
-    listagrupos=misgrupos(ruser)
+    listagrupos=useradmingroup(ruser)
     salagrupo= getSalasdeGrupo(listagrupos)
     cont=0
     for i in salagrupo:
@@ -203,6 +203,7 @@ def GenerarPago(sala,pago,grupo):
         print ('creadndo pago sala'+ rsala+"-Grupo"+rgrupo+"-usuario"+i.invitado)
         gpago.save()
     return None
+
 def MayorPuntaje(rsala,rgrupo):
     pass
 
