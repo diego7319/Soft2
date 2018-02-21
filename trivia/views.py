@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.http import JsonResponse
 from users.models import usuariocuenta
-from trivia.models import PreguntaTrivia,scoretrivia,salatrivia,PagoSala,Scorejuego
+from trivia.models import PreguntaTrivia,resultados,scoretrivia,salatrivia,PagoSala,Scorejuego
 from random import randint,shuffle,choice
 from grupos.views import misgrupos,useradmingroup
 from grupos.models import Invitacion
@@ -175,6 +175,8 @@ def obtenerSalasadmin(request):
         jsonrespuesta[str(cont)]={'sala':i.split('-')[0],'grupo':i.split('-')[1],'estado':estadopago(i.split('-')[0],i.split('-')[1],ruser)}
         cont+=1
     return JsonResponse(jsonrespuesta)
+
+
 #funciones de apoyo
 def grupoexiste(nombre):
     existe=''
@@ -204,9 +206,27 @@ def GenerarPago(sala,pago,grupo):
         gpago.save()
     return None
 
-def MayorPuntaje(rsala,rgrupo):
-    pass
+def MayorPuntaje(rsala):
+    jugadas=Scorejuego.objects.filter(nombreJuego=rsala)
+    for juego in jugadas:
+        pass
+
 
 def estadopago(rsala,rgrupo,ruser):
     estado=PagoSala.objects.get(nombreJuego=rsala,grupo=rgrupo,user=ruser).estadopago
     return estado
+
+def resultadoganador(sala):
+    monto=resultados.objects.filter(nombreJuego=sala)
+    for i in monto:
+        pass
+
+
+def desactivarsala(sala):
+    rsala=salatrivia.objects.get(nombreJuego=sala)
+    if rsala.count()==0:
+        return None
+    else:
+        estado.estado="desactivado"
+        rsala.save()
+        return "200"

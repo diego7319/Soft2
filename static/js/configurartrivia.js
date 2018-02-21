@@ -29,9 +29,10 @@ $.ajaxSetup({
 
 function botondeuda(estado,usuario,grupo,sala){
   if(estado=='deuda'){
+    id2=usuario+grupo+sala
     id=estado+usuario+grupo+sala
     func="restPago('"+usuario+"','"+grupo+"','"+sala+"');"
-t0='<input class="btn btn-primary" id='+"id"+' type="submit" value="Pagar Aqui" onclick="'+func+'">';
+t0='<input class="btn btn-primary" id='+id2+' type="submit" value="Pagar Aqui" onclick="'+func+'">';
   return t0}
   else {return 'Habilitado para Jugar'}
 
@@ -47,9 +48,9 @@ $.ajax({
 
           success: function(data)
           {
-
+console.log(data)
             if (data.rpta=='No hay saldo suficiente en tu cuenta'){
-
+              document.getElementById(id).setAttribute('value',"Saldo insuficiente")
             }else{location.reload();
 }
           }
@@ -110,6 +111,19 @@ agregarrow(grupo,sala,i,contador,estado)
 
 }
 
+
+function llenartablaadmin(datos){
+  contador=0
+  for (i in datos)
+  {contador=contador+1
+    sala=datos[i].sala
+    grupo=datos[i].grupo
+    estado=datos[i].estado
+agregarrow(grupo,sala,i,contador,estado)
+                }
+
+}
+
 function Ajaxobtenersalas(){
   parametros={'usuario':user()};
   $.ajax({
@@ -126,6 +140,25 @@ llenartabla(data)
         });
 
 }
+
+function Ajaxobtenersalasadmin(){
+  parametros={'usuario':user()};
+  $.ajax({
+            type: "POST",
+            url: '../obtenerSalas/',
+            data: parametros,
+
+            success: function(data)
+            {
+console.log(data);
+llenartabla(data)
+
+            }
+        });
+
+}
+
+
 
 
 function pagar(){}
