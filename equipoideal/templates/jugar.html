@@ -12,7 +12,7 @@
 <h1>Equipo Ideal</h1>
 
 <div class="row" >
-  <div class="col col-md-8" style='position:relative;height:60%'>
+  <div class="col-8" style='position:relative;height:60%'>
     <img src="{% static '/img/campo.png' %}"  style='width:70%;height:70%'>
     <form>
     <div id="arquero"><input name="selection" type="radio" id="radioButton" >Arquero</div>
@@ -36,16 +36,23 @@
 
 </form>
     </div>
-  </div>
-<div id='selecciondejugadores'>
+    <div class="col-4" >
 
-<select id='pais'>
-<option>----</option>
-</select>
-<select id='jugador'>
-<option>----</option>
-</select>
-</div>
+        <div id='selecciondejugadores'>
+<form>
+        <select id='pais' class="selectpicker">
+
+        </select>
+        <select id='jugador' class="selectpicker">
+
+        </select>
+        <button type="button" class="btn">Basic</button>
+
+        </div>
+  </form>
+    </div>
+  </div>
+
 
 
 </body>

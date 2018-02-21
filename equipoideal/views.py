@@ -6,6 +6,8 @@ from rest_framework.response import Response
 from rest_framework import permissions
 from django.core import serializers
 from django.http import JsonResponse
+import json
+from django.http import HttpResponse
 
 
 # Create your views here.
@@ -18,6 +20,26 @@ def JuegoEquipoIdeal(request):
 @api_view(['GET'])
 @permission_classes((permissions.AllowAny,))
 def retornarjugadores(request):
+    datos={}
     if request.method == 'GET':
-        datos = JugadorPais.objects.all()
-        return JsonResponse(datos,safe=False)
+        return jugador_paisToJson()
+
+
+
+
+#metodos de apoyo
+def jugador_paisToJson():
+    cont=0;
+    pais_jugadordict={}
+    lista_paises=JugadorPais.objects.values('pais').distinct()
+    for ipais in lista_paises:
+        lista_jugad_object=JugadorPais.objects.filter(pais=ipais['pais'])
+        lista_jugad_array=[]
+        for ijugador in lista_jugad_object:
+            lista_jugad_array.append(ijugador.nombre)
+#todos los paises terminan en \n, por eso el fix del len
+        fix_pais=ipais['pais'][0:len(ipais['pais'])-1]
+        pais_jugadordict[cont]={fix_pais:lista_jugad_array}
+        cont+=1
+    return HttpResponse(json.dumps(pais_jugadordict, ensure_ascii=False),
+    content_type="application/json")
