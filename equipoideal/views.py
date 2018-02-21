@@ -72,6 +72,15 @@ def obtenerSalasEI(request):
     return JsonResponse(jsonrespuesta)
 
 
+def iniciarjuegopracticaEIdeal(request):
+
+    #cantpreg=salatrivia.objects.get(nombreJuego=nombrejuego,grupo=grupo).cantpreguntas
+    context={
+    'cantpreg':10,
+    'user':request.user.username
+    }
+    return render(request,'equipoidealpractica.html',context)
+
 def pagar_salaEI(request):
     info=request.POST
     rusuario=info['jugarusuario']
