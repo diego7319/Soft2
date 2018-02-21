@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from grupos import views
 from users.models import usuariocuenta
-from analitica.acciones import log_accion_ver
+from analitica.acciones import log_accion_ver, log_accion_registro, log_accion_login, log_accion_logout
 
 def games(request):
     personas = [
@@ -49,6 +49,7 @@ def perfil(request):
             'listausuarios':views.usuariosgrupo(request.POST.get('sometext')),
             'saldo':saldo.dinerocuenta
             }
+            log_accion_ver(request.mongo_db, request.user.username, 'perfil')
             return render(request,'hom.html',context)
         else:
 
@@ -58,9 +59,11 @@ def perfil(request):
             'saldo':saldo.dinerocuenta
 
             }
+            log_accion_ver(request.mongo_db, request.user.username, 'perfil')
             return render(request,'hom.html',context)
 
 def log_out(request):
+    log_accion_logout(request.mongo_db, request.user.username)
     logout(request)
     return redirect('index')
 
@@ -91,6 +94,7 @@ def pLogin(request):
             if user is not None:
                 login(request, user)
                 #request.session.set_expiry(3600)
+                log_accion_login(request.mongo_db, user.username)
                 return redirect('perfil/')
             else:
                 context = {
@@ -122,6 +126,7 @@ def pRegistro(request):
                 user.save();
                 cuenta=usuariocuenta(usuario=raw_username,dinerocuenta=10)
                 cuenta.save();
+                log_accion_registro(request.mongo_db, user.username)
                 context['estadoregistro']='Registrado correctamente'
                 print('dd')
                 return render(request,'index.html',context)

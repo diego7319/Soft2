@@ -3,6 +3,7 @@ from django.contrib.auth.models import User #, Group
 from grupos.models import grupo,Invitacion
 from django.shortcuts import redirect
 from users import views
+from analitica.acciones import log_accion_invitar, log_accion_crear_grupo, log_accion_rpta_invitacion
 
 
 
@@ -25,6 +26,7 @@ def invitarusuario(request):
     elif admingrupos(username,grp)==True and invitadoexiste==1:
         invit=Invitacion(invitado=invi,grupo=grp)
         invit.save()
+        log_accion_invitar(request.mongo_db, username, invi, grupo)
         return HttpResponse("<script>alert('Se envio invitacion');document.location.href='/perfil';</script>")
     else:
         return HttpResponse("<script>alert('Usuario o grupo no existe');document.location.href='/perfil';</script>")
@@ -46,6 +48,7 @@ def agregargrupo(request):
         db_registro.save()
         inv= Invitacion(invitado=username,owner=username,estado='aceptado',grupo=gr)
         inv.save()
+        log_accion_crear_grupo(request.mongo_db, username, gr)
         #return views.perfil(request)
         return HttpResponse("<script>alert('Grupo creado');document.location.href='/perfil';</script>")
 
@@ -61,8 +64,10 @@ def responderinvitacion(request):
     obj.estado=rpta
     obj.save()
     if rpta=='aceptado':
+        log_accion_rpta_invitacion(request.mongo_db, ruser, rgrupo, True)
         return HttpResponse("<script>alert('Grupo aceptado');document.location.href='/perfil';</script>")
     else:
+        log_accion_rpta_invitacion(request.mongo_db, ruser, rgrupo, False)
         return HttpResponse("<script>alert('Grupo rechazado');document.location.href='/perfil';</script>")
 
 
