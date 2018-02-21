@@ -8,11 +8,8 @@
 <link rel="stylesheet" href="{% static '/css/equipoideal.css' %}">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-
 <body onload="obtenerdatos()">
-
 <h1 style="text-align:center;margin:1%">Equipo Ideal</h1>
-
 <div class="row" >
   <div class="col-8" style='position:relative;height:60%'>
     <img src="{% static '/img/campo.png' %}"  style='width:70%;height:70%'>
@@ -28,11 +25,9 @@
     <div id="carrileroD"><label><br><br><br><p id="rcarrileroD">Carrilero Derecho</p><br></label><input name="selection" type="radio" id="carrileroD" ></div>
     <div id="mediapunta"><label><br><br><br><br><p id="rmediapunta">Media Punta</p></label><input name="selection" type="radio" id="mediapunta" ></div>
     <div id="delantero"><label><br><p id="rdelantero">Delantero</p></label><input name="selection" type="radio" id="delantero" ></div>
-
 </form>
     </div>
     <div class="col-4" >
-
         <div id='selecciondejugadores' style="margin:20%;margin-left:-30%">
 <form >
   <div class="form-group">
@@ -47,18 +42,12 @@
 <p id='info'>Seleccione una posicion para agregar</p>
   <button type=button onclick='return agregarjugador()' id='botonagregar'>Agregar Jugador</button>
 </div>
-
-        </div>
+      </div>
   </form>
     </div>
   </div>
-
-
-
 </body>
-<script>
 
-</script>
 <style>
 .campo{
   background-image: url('../static/img/campo.png');

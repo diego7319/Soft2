@@ -25,8 +25,6 @@ $.ajaxSetup({
      }
 });
 
-
-
 function botondeuda(estado,usuario,grupo,sala){
   if(estado=='deuda'){
     id=estado+usuario+grupo+sala
@@ -111,7 +109,7 @@ function Ajaxobtenersalas(){
   parametros={'usuario':user()};
   $.ajax({
             type: "POST",
-            url: '../obtenerSalas/',
+            url: '../obtenerSalasEI/',
             data: parametros,
 
             success: function(data)
