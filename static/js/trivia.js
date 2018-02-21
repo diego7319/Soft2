@@ -87,7 +87,7 @@ function guardarresultado(pocentaje){
             data: parametros,
 
             success: function(data)
-            {console.log(data);
+            {if (data.rpta=="Ya haz jugado esta sala"){};
 
 }}
 
