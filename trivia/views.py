@@ -86,6 +86,10 @@ def crearjuego(request):
             }
             return render(request,'configurartrivia.html',context)
 
+def guardarscore(request):
+    rpta={}
+
+    return JsonResponse(rpta)
 
 def templatetrivia(request):
     context={
@@ -108,6 +112,14 @@ def iniciarjuego(request):
     }
     return render(request,'holi.html',context)
 
+def iniciarjuegopracticatrivia(request):
+
+    #cantpreg=salatrivia.objects.get(nombreJuego=nombrejuego,grupo=grupo).cantpreguntas
+    context={
+    'cantpreg':10,
+    'user':request.user.username
+    }
+    return render(request,'juegopractica.html',context)
 
 def pagar_sala(request):
     info=request.POST

@@ -1,0 +1,65 @@
+{%load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<title>Juego de {{ user.get_username }}</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="{% static '/css/perfil.css' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<body onload='obtenerpregunta()' style="background-image:url('http://superk800.com/wp-content/uploads/2017/10/unnamed-1.png'); text-align:center;">
+
+<!-- Top menu on small screens -->
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<br><br>
+  <h1  id ='pregunta'></h1>
+  <h3><br>Escoja una respuesta</h3>
+  <br>
+  <h2 id='tiemporestante'></h2>
+  <div style="w3-center;align-items: center;" >
+   <button id='d1' class="btn btn-primary option" onClick="reply_click(this.id);return false;" style="width:200px; background-color: green; border-color:green;"></button>
+   <br><br>
+   <button id='d3' class="btn btn-primary option" onClick="reply_click(this.id);return false;" style="width:200px; background-color: green; border-color:green;"></button>
+   <br><br>
+   <button id='d2' class="btn btn-primary option"  onClick="reply_click(this.id);return false;" style="width:200px; background-color: green; border-color:green;"></button>
+   <br><br>
+   <button id='d0' class="btn btn-primary option" onClick="reply_click(this.id);return false;" style="width:200px; background-color: green; border-color:green;"></button>
+
+<br>
+<p class="alert alert-success" id='rpta'></p><br>
+     <strong id='home'> </strong>
+
+
+
+
+
+   </div>
+<br>
+<button id='home' value='' class="btn btn-primary option"  onClick="window.location.href='../'">Regresar a tu perfil</button>
+
+ </body>
+
+<script>
+function cantpreg(){
+return 10
+}
+function user(){return '{{user}}'}
+function sala(){return '{{salatrivia}}'}
+function grupo(){return '{{grupo}}'}
+</script>
+  <script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
+  <script src= "{% static '/js/trivia.js' %}"></script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -72,6 +72,25 @@ def obtenerSalasEI(request):
     return JsonResponse(jsonrespuesta)
 
 
+def pagar_salaEI(request):
+    info=request.POST
+    rusuario=info['jugarusuario']
+    rnombrejuego=info['jugarsala']
+    rgrupo=info['jugargrupo']
+    cantpagar=salatrivia.objects.get(nombreJuego=rnombrejuego,grupo=rgrupo).pago
+    saldouser=usuariocuenta.objects.get(usuario=rusuario)
+    if int(cantpagar) > int(saldouser.dinerocuenta):
+        print (int(cantpagar) > int(saldouser.dinerocuenta))
+        return JsonResponse({"rpta": "No hay saldo suficiente en tu cuenta"})
+    else:
+        nuevosaldouser=saldouser.dinerocuenta-cantpagar
+        cambiarestado=PagoSala.objects.get(nombreJuego=rnombrejuego,grupo=rgrupo,user=rusuario)
+        saldouser.dinerocuenta=nuevosaldouser
+        saldouser.save()
+        cambiarestado.estadopago='pagado'
+        cambiarestado.save()
+        return JsonResponse({"rpta": "Pago realizado"})
+
 #metodos de apoyo
 def jugador_paisToJson():
     cont=0;

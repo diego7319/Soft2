@@ -79,7 +79,29 @@ function tiemporestante(segundo){
   document.getElementById("tiemporestante").innerHTML=segundo
 
 }
+function guardarresultado(pocentaje){
+  parametros={'sala':sala(),'usuario':user()}
+  $.ajax({
+            type: "POST",
+            url: '../guardarscore/',
+            data: parametros,
 
+            success: function(data)
+            {console.log(data);
+              preguntas=preguntas+"-"+data.id
+      document.getElementById("pregunta").innerHTML = data.pregunta;
+        document.getElementById("d0").innerHTML=data.d0
+        document.getElementById("d1").innerHTML=data.d1
+        document.getElementById("d2").innerHTML=data.d2
+        document.getElementById("d3").innerHTML=data.d3
+tiempo=10;
+botonactivado();cantidadPreguntas=cantidadPreguntas+1;
+document.getElementById("rpta").innerHTML='';
+}}
+
+)
+
+}
 
 function reply_click(id){
 
