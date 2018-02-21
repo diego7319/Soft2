@@ -9,7 +9,7 @@ class grupo(models.Model):
         return "%s" % (self.nombre)
 
 class Invitacion(models.Model):
-    invitado = models.CharField(max_length=10)
+    invitado = models.CharField(max_length=30)
     owner = models.CharField(max_length=30)
     grupo=models.CharField(max_length=30)
     estado=models.CharField(max_length=11,default='pendiente')
