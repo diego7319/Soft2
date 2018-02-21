@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from grupos import views
 from users.models import usuariocuenta
+from analitica.acciones import log_accion_ver
 
 def games(request):
     personas = [
@@ -15,6 +16,7 @@ def games(request):
     variables = {
         'lista_personas' : personas
     }
+    log_accion_ver(request.mongo_db, None, 'games')
     return render(request, 'games.html', variables)
 
 def index(request):
@@ -30,6 +32,7 @@ def index(request):
             'formaL': formaLogin,
             'formaS': formaRegistro
             }
+            log_accion_ver(request.mongo_db, None, 'index')
             return render(request,'index.html', context)
 
 def perfil(request):
