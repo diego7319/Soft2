@@ -1,0 +1,2534 @@
+[33mcommit 709446453d05094732bf1e1cb5b5b4ca6cfa0d2e[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Feb 20 11:54:32 2018 -0500
+
+    fechas partidos -> polla
+
+[33mcommit cf14e4b3e65080bd2a73acf4826e98e3f9b0a2a0[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Mon Feb 19 14:58:41 2018 -0500
+
+    json rest
+
+[33mcommit e68bdc287a95fd122f6d55cad5e443eef14bc8ec[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Mon Feb 19 00:43:28 2018 -0500
+
+    campo listo
+
+[33mcommit 2df04cd6c732d81bfaaef3ef1a24162e1c458ed2[m
+Merge: 63065b7 68279a1
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sun Feb 18 19:10:47 2018 -0500
+
+    Merge branch 'master' of https://github.com/diego7319/Soft2
+
+[33mcommit 63065b76fbac4d3c4c84e1b9eeb1eaa30af2cab1[m
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sun Feb 18 19:10:00 2018 -0500
+
+    fixture para la polla en CSV
+
+[33mcommit 68279a1ada286124e85c7acea114c1310f258d95[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Feb 18 18:44:18 2018 -0500
+
+    r
+
+[33mcommit ffc43d187bf9f3f4bd8460b2a7e5895a812e778d[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Feb 18 18:42:23 2018 -0500
+
+    a
+
+[33mcommit 3d7c5e0498d4cd2a998be6f275198e5164bfe42a[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Feb 18 18:42:14 2018 -0500
+
+    cargar partidos
+
+[33mcommit 3e217bce40435f9339b563e09c4439dae9d17bcb[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Feb 18 18:41:17 2018 -0500
+
+    partidos agregados
+
+[33mcommit 7477cddccdd7cea72ca3be5b2e8a1147671684c7[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Feb 18 17:06:36 2018 -0500
+
+    modelo partidos
+
+[33mcommit b23e63f23eed1807bf098a6ec8f2b55ae7836e36[m
+Merge: 90c3aee 19e1e65
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Feb 18 16:59:58 2018 -0500
+
+    Merge branch 'master' of https://github.com/diego7319/Soft2
+
+[33mcommit 90c3aeea16b7909e4edbcffe5bbacdbe5df50d13[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Feb 18 16:59:45 2018 -0500
+
+    imagen equipoideal
+
+[33mcommit 19e1e65a5f8b255d7f68ffcf577c25902a9b3f30[m
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sun Feb 18 16:45:41 2018 -0500
+
+    datos de los partidos para la polla
+
+[33mcommit 73547a4a74d77b7f7c669473c3250b941b2f7a72[m
+Merge: 19268ac 14d0d12
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sun Feb 18 02:20:33 2018 -0500
+
+    Merge pull request #9 from diego7319/templates
+    
+    nueva ruta /games para juegos
+
+[33mcommit 14d0d12fe1de666f45a4286d215220bb78ca5748[m
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sun Feb 18 02:19:32 2018 -0500
+
+    nueva ruta /games para juegos
+
+[33mcommit 19268ac62d8f73a6840495ec7014fed8ee40e75f[m
+Merge: d7e74c0 a538bb8
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sun Feb 18 00:06:25 2018 -0500
+
+    Merge pull request #8 from diego7319/templates
+    
+    Templates
+
+[33mcommit a538bb8f45d5ea126a880c7dd627694b668d6ad9[m
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sun Feb 18 00:04:54 2018 -0500
+
+    cambio colores y estilos en home
+
+[33mcommit 2946edd661b883f118aded8696740dcd8ee2e307[m
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sat Feb 17 23:36:27 2018 -0500
+
+    cambio colores y estilos en home[A
+
+[33mcommit fa89ce533f14091743d3c40bd6660f827b7ec7f3[m
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sat Feb 17 22:34:44 2018 -0500
+
+    cambio colores y estilos en home[A
+
+[33mcommit 6afee82664648cf7b45ba8aad887a3a57aba164d[m
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sat Feb 17 22:10:51 2018 -0500
+
+    cambio colores y estilos en home[A
+
+[33mcommit 8cdfd30a6f04261a00b6279562c55e19ff2aac78[m
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sat Feb 17 20:50:13 2018 -0500
+
+    cambio colores y estilos en home
+
+[33mcommit 72fc3ef1353677a1eb370f7811c5850e77515839[m
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sat Feb 17 19:29:27 2018 -0500
+
+    cambio colores y estilos en home
+
+[33mcommit d7e74c0b1194111fb5980df98969af7bb93e2fd4[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sat Feb 17 01:06:02 2018 -0500
+
+    Jugadores agregado a db
+
+[33mcommit c84f27a29d5c7bf1a61ba2f8ec1b6911bb079ea7[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Thu Feb 15 13:36:23 2018 -0500
+
+    trivia
+
+[33mcommit 70a2565fa97477dcd3e7be1e2b778ec98f8e7f50[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Thu Feb 15 12:59:12 2018 -0500
+
+    estilos
+
+[33mcommit ca1effeb99d1c4f88887686f47c1d43b46f99683[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Feb 13 01:59:50 2018 -0500
+
+    try
+
+[33mcommit b4e8038297138a510e97a8c90225f07b9f9b0b1b[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Feb 13 01:54:41 2018 -0500
+
+    funciona+
+
+[33mcommit d49a67e08f59432730c798fca88eb68a9cc37ce9[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Feb 13 01:47:05 2018 -0500
+
+    funciona (maso)
+
+[33mcommit 80c0c91ddb8daeeb966fdc088249b821ed2b2728[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Mon Feb 12 23:51:05 2018 -0500
+
+    fix
+
+[33mcommit 48dd66b0ed702c5a7ca234f30c141d5e8aca5cd2[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Mon Feb 12 23:16:11 2018 -0500
+
+    aun no funcion a
+
+[33mcommit d5619ca51bc482bd64546a2dbee64270d4367ce3[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Mon Feb 12 21:08:23 2018 -0500
+
+    rest framework installed
+
+[33mcommit 09d28e44b965a402baab1f9c9650c35c2ad044c3[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Mon Feb 12 17:05:31 2018 -0500
+
+    fix
+
+[33mcommit 306d7cf2d0f3f651b5403973de8f895a453151f1[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Mon Feb 12 17:04:16 2018 -0500
+
+    fix
+
+[33mcommit 727ad9d4d5589513b1a371b762587dfaec3afb9d[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Mon Feb 12 16:28:16 2018 -0500
+
+    fix
+
+[33mcommit 8c9c7626c45b444e89f603b2146cbe466ef6f161[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Mon Feb 12 14:54:01 2018 -0500
+
+    agregado boton salas iniciar juego
+
+[33mcommit 72ff53373a2ae6124ebe4c5e21304a3598be07c1[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Mon Feb 12 14:19:14 2018 -0500
+
+    eliminado app juegos
+
+[33mcommit f0b3307838ecff96e22a602bc2539bc38379224a[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Mon Feb 12 13:43:11 2018 -0500
+
+    fix model trivia
+
+[33mcommit a38266ad7e7fd22c3173466beff03a100465ab56[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Mon Feb 12 12:21:40 2018 -0500
+
+    a
+
+[33mcommit 6a486bfa7af7b24842ea39273ac6de27769ef06f[m
+Merge: 0cf4fd9 736aadf
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Mon Feb 12 11:37:31 2018 -0500
+
+    Merge branch 'master' of https://github.com/diego7319/Soft2
+
+[33mcommit 0cf4fd9c02dc9e7d2ec91dad052394783705509b[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Mon Feb 12 11:36:54 2018 -0500
+
+    estilos bstrap configtrvia
+
+[33mcommit 736aadf908020e9d4491ced93456629d4b9f93db[m
+Author: W3230 <W3230@lab.aca>
+Date:   Mon Feb 12 07:28:38 2018 -0500
+
+    tabla inverse
+
+[33mcommit 76ce0b69c988cadcb3e4b4dacae8eb9af90c806f[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Mon Feb 12 00:37:46 2018 -0500
+
+    mostrar salas listo
+
+[33mcommit 754e7b8dbd579c3a0c285a0dee020c55ba8a8c61[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Mon Feb 12 00:08:31 2018 -0500
+
+    ajax salas funciona
+
+[33mcommit b3cc4d5018313b66cdb83398c2ff86622ee6fefa[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 23:39:08 2018 -0500
+
+    error csfr obtenersalas
+
+[33mcommit dbf713f9b4173dd0e10bab362404f7013303efe2[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 23:15:59 2018 -0500
+
+    f
+
+[33mcommit caa37099c0722863155380533831fd00c0b92faf[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 11 23:14:59 2018 -0500
+
+    h3
+
+[33mcommit 5ad80d06c2edafcf3cc2f7d1402dceba130b6b21[m
+Merge: 383d9ff 62fb7c5
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 11 23:12:04 2018 -0500
+
+    Merge branch 'master' of https://github.com/diego7319/Soft2
+
+[33mcommit 383d9ffd8d308ee76df9721d02e46e91c2719016[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 11 23:11:45 2018 -0500
+
+    adds
+
+[33mcommit 62fb7c5f6ebd24ab792a14702e7a520ddaba9a56[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 23:11:43 2018 -0500
+
+    f
+
+[33mcommit 490c690682fc6a415f37ffae7282edbe6f344506[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 23:05:21 2018 -0500
+
+    nuevas urls
+
+[33mcommit a516ee2b67a9d1c4fa7016d7d4f6bc28876d9c80[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 11 22:59:37 2018 -0500
+
+    mapa
+
+[33mcommit 39ad5971cbc3a5f30a28e6d61bafa59fde2bb324[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 22:44:37 2018 -0500
+
+    fix
+
+[33mcommit 8065bdd29f0d2cfa2960e6ebcddadd3bfa23c80a[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 11 22:19:03 2018 -0500
+
+    css
+
+[33mcommit bb2c0bed56712361eedb5e36f658208e385fcbf2[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 11 22:17:14 2018 -0500
+
+    bckg
+
+[33mcommit 300037536c9132b2fb5884208e4687dd4d9ce9d3[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 11 21:57:35 2018 -0500
+
+    nwbckgrnd
+
+[33mcommit 776ad0c4e307965ab13b654cb385e7259a78ba6f[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 11 21:52:08 2018 -0500
+
+    latbr
+
+[33mcommit 41fdccba1f21b0db4802cd37353e6d90dc4a4930[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 11 21:50:38 2018 -0500
+
+    fnlconf
+
+[33mcommit e133c5a73847a017436347c4aebe5b08924d1515[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 11 21:38:00 2018 -0500
+
+    crear trivia html
+
+[33mcommit d7bc84ea420d08188104c9b6f6e15d22deb9dac1[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 11 21:10:44 2018 -0500
+
+    diego no lo borres
+
+[33mcommit 173d02a35b0cfe3a2e3cf8a9e00d895900dab541[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 11 21:06:42 2018 -0500
+
+    btns
+
+[33mcommit a7510e02cbf1734db0f69fd8a88a62470754f0de[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 11 21:00:33 2018 -0500
+
+    botones
+
+[33mcommit a40725dfa42482a5cadf0c5c3862383dcb7abb0d[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 20:29:08 2018 -0500
+
+    crear conexion a api jugadores
+
+[33mcommit 953a9beadea92eefef3718fa4a9d194a849b71aa[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 20:25:41 2018 -0500
+
+    fix model
+
+[33mcommit b8b2f4866471725d58d07ce3e1b020f9da958c55[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 20:23:44 2018 -0500
+
+    nuevo modelo pago
+
+[33mcommit 90c79db5b9dee6e8353a092fe93c86779435779d[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 11 19:56:05 2018 -0500
+
+    nwbck
+
+[33mcommit 8cc2ca1984d24ccf6068cfd3ee0722f9646b171d[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 11 19:34:28 2018 -0500
+
+    brdrgreen
+
+[33mcommit 1ef5acbe5d6241acaeb62de341783fe16f6d08c6[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 11 19:33:18 2018 -0500
+
+    green
+
+[33mcommit a9106b357743a45300f84c04b571bdcf4ed558a7[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 11 19:28:38 2018 -0500
+
+    espacios
+
+[33mcommit 1b35abaf8d211b15709b2dad267a7535cb42fdc8[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 11 19:26:31 2018 -0500
+
+    wdth200
+
+[33mcommit 2d39c18fd53b6b17ceb6104121659c118b64553c[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 11 19:24:35 2018 -0500
+
+    chngs
+
+[33mcommit 9da883fbc167f0bda5a2fc243dec8e0ab3913eb9[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 11 19:20:24 2018 -0500
+
+    arreglos
+
+[33mcommit a5b646b65124586dba88ef1960bd818489b526e1[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 11 19:18:04 2018 -0500
+
+    cntr
+
+[33mcommit 9940fa12a9375f8fb761f86f8146fb5b0fa96e2b[m
+Merge: 5364015 799949e
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 11 19:14:16 2018 -0500
+
+    Merge branch 'master' of https://github.com/diego7319/Soft2
+
+[33mcommit 536401532e5bdab4e1bd8b74f857120915e0fb15[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 11 19:13:43 2018 -0500
+
+    background
+
+[33mcommit 799949e0160c3abf6821e4b04e4e7df535ff5f67[m
+Merge: b16dcba 9e1392a
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 19:08:19 2018 -0500
+
+    Merge branch 'master' of https://github.com/diego7319/Soft2
+
+[33mcommit 9e1392a1e0b189cb50759d367430a53aeb8a5c9c[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 11 19:08:03 2018 -0500
+
+    fix redirect
+
+[33mcommit b16dcbab50b8f4f3e43aae30a96954aea4339f76[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 18:52:25 2018 -0500
+
+    fix
+
+[33mcommit 464f732da8d3e8903407deed1a118ddcf0521b4d[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 18:04:23 2018 -0500
+
+    js configurartrivia
+
+[33mcommit d44168e410adff84b9a4b801754a7a08b40f9acb[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 17:19:44 2018 -0500
+
+    funcioniniciarjuego
+
+[33mcommit 1c02f18fd9eae7e9af203c79789a063fad1f882d[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 17:14:38 2018 -0500
+
+    fix triviajs
+
+[33mcommit ec29377364d92a951d138cf67bfbfc0b20c08da4[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 15:54:50 2018 -0500
+
+    fix fix
+
+[33mcommit 7bb590f7be026c3136930846f5fd1d9cfd7cb590[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 15:36:34 2018 -0500
+
+    fix urls
+
+[33mcommit 1b1229370c483b8bc57813db5a49395f152e4dfa[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 15:35:23 2018 -0500
+
+    fix
+
+[33mcommit 1e7c5d7f79badff72a45fcd71a44d5e8cd0121b7[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 15:35:11 2018 -0500
+
+    admin salatrivia
+
+[33mcommit 3dd1f015a50dc1bee91963fb5e19decf256571ef[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 15:25:22 2018 -0500
+
+    fix models
+
+[33mcommit 56efe8e94cf4e520e0013099e11ad0b6457530cc[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 14:44:13 2018 -0500
+
+    fix models trivia
+
+[33mcommit 8230df49663785a07025f56ab005cb8a98605049[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 14:31:40 2018 -0500
+
+    fx
+
+[33mcommit f2d374fd34d902135158724360da8565b88a8627[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 11:49:40 2018 -0500
+
+    fix configurar trivia
+
+[33mcommit 83c439533f70a96fcc85253555d2ddb5d9ea6567[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 11:42:05 2018 -0500
+
+    fix
+
+[33mcommit 83789620569ae2ff689b8ac20d634470cad12da0[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 04:15:20 2018 -0500
+
+    creado directorio equipoideal
+
+[33mcommit 486a94136981e75f3ea88efdfbbb0e24f281d097[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 04:14:33 2018 -0500
+
+    en proceso
+
+[33mcommit 7d5737e48701fe797cd97be2cb47b89eed6a9688[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 04:06:36 2018 -0500
+
+    creacion form configurar trivia
+
+[33mcommit 323773ffe5116a083efeb164e5448f820b1805b3[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 03:33:53 2018 -0500
+
+    cuenta y agregar saldo listo
+
+[33mcommit cdf106355505ad9feb9b065485a0ee743e30eb85[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sun Feb 11 01:09:43 2018 -0500
+
+    desactivado tiempo session.set_exp
+
+[33mcommit 9c9a0c688b1f5f600ee072b1d07c894f4b268251[m
+Author: JoaquinCMuchotrigo <jcasanovam11@gmail.com>
+Date:   Sat Feb 10 23:35:42 2018 -0500
+
+    f
+
+[33mcommit 1a39c4d9e1061088f7566a609123d037e9ff863d[m
+Author: JoaquinCMuchotrigo <jcasanovam@gmail.com>
+Date:   Sat Feb 10 23:05:19 2018 -0500
+
+    fix trivia
+
+[33mcommit 21e53b3ae0f1a52038358dd4bc466dc004ce8966[m
+Author: JoaquinCMuchotrigo <jcasanovam@gmail.com>
+Date:   Sat Feb 10 20:16:39 2018 -0500
+
+    fix
+
+[33mcommit ec54ec57432ee0a5121b05da1d91bdd574c2f5ce[m
+Author: JoaquinCMuchotrigo <diego7319@gmail.com>
+Date:   Sat Feb 10 20:15:42 2018 -0500
+
+    fix
+
+[33mcommit cce8f81fb33fbce87ec079a3a532824c84b92705[m
+Author: Reptarking <diego7319@gmail.com>
+Date:   Sat Feb 10 20:01:20 2018 -0500
+
+    render perfil saldo
+
+[33mcommit c0e026c19e666bfdc67be6c5391fef30dfa5a7db[m
+Author: Reptarking <diego7319@gmail.com>
+Date:   Sat Feb 10 16:41:08 2018 -0500
+
+    arreglado imagenes perfil
+
+[33mcommit 64cdff7f811bcfe65ced3465c7412484d7afc1a3[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:18:53 2018 -0500
+
+    slider.css
+
+[33mcommit aab867cc38c46d6db635c3d9c78329c1a0ff35d0[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:18:12 2018 -0500
+
+    ef1212
+
+[33mcommit 85812a2698b1c99299b5203705b8f0ecdeeb6d88[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:18:02 2018 -0500
+
+    ef12
+
+[33mcommit 23707e580efd74e7c322491470ca25da709e9cc8[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:17:45 2018 -0500
+
+    ef1111
+
+[33mcommit 551062078d12492d550621c5514b4ebc9870c212[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:17:35 2018 -0500
+
+    ef11
+
+[33mcommit 601a589b22e2ed4352416b3082987a4471a21e46[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:17:23 2018 -0500
+
+    1fe01
+
+[33mcommit a6dfa6329840cc36ecd34e434796e045ee8bc08a[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:17:07 2018 -0500
+
+    ef10
+
+[33mcommit 182588dc785c4612e6a5f4db37d2514b66997e84[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:16:55 2018 -0500
+
+    ef99
+
+[33mcommit 9797a0e034d7140bcd0a6f5d86f626c5f4086d62[m
+Merge: cee9318 7f2950c
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:11:01 2018 -0500
+
+    Merge branch 'master' of https://github.com/diego7319/Soft2
+
+[33mcommit cee93180393f867736575c72d519ef5e2f8cf1c3[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:10:54 2018 -0500
+
+    ef9
+
+[33mcommit 4d84cd026f5ace616c73ebbb99411ae1fafd586e[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:09:51 2018 -0500
+
+    ef88
+
+[33mcommit 0f21985a11ccd0a920a8178aefe8ed3d605df2f9[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:09:39 2018 -0500
+
+    ef8
+
+[33mcommit 662f1434275f55df47aab0991a4b52d2abb11b8f[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:09:34 2018 -0500
+
+    ef77
+
+[33mcommit ad801f395aa93f7a82cde8999cfaab2df7cedea8[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:09:12 2018 -0500
+
+    ef7
+
+[33mcommit 42648695a3ef86d1f778315980b2795d8c4d2b40[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:09:00 2018 -0500
+
+    ef66
+
+[33mcommit b6f8ab9f9c2bb988fcfb7a847b3aaceb012095d9[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:08:50 2018 -0500
+
+    ef6
+
+[33mcommit 09cd849e2ece40f8d5bb66c6997c7fea289376e2[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:08:40 2018 -0500
+
+    ef55
+
+[33mcommit cb1f9d0e99ebabbeb345c9d38f16784469b78db6[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:08:28 2018 -0500
+
+    ef5
+
+[33mcommit 45acc85b11d1d689881a92968e597866a99938c3[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:08:17 2018 -0500
+
+    ef44
+
+[33mcommit 2862aea02570b146ce7dec8dc3cbe49b02493837[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:08:08 2018 -0500
+
+    ef4
+
+[33mcommit 52c3ca05acd327b45cd43e3da370262eb366970b[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:07:55 2018 -0500
+
+    ef33
+
+[33mcommit 832d7174e1006b2ed9591227ab12ea9f93b5487b[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:07:42 2018 -0500
+
+    ef3
+
+[33mcommit e3b837550106ced026a99275ba61ffe89c4218eb[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:07:31 2018 -0500
+
+    ef22
+
+[33mcommit 7c7698227dc54e16cc7757f41820659ee7f37e5d[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:07:20 2018 -0500
+
+    ef2
+
+[33mcommit 1d41517313492edadf51232b579ac3b45857377b[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:07:07 2018 -0500
+
+    im1
+
+[33mcommit b9c8f32b52a107b08ec706d7e9bbfb30f0449df7[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:06:52 2018 -0500
+
+    0
+
+[33mcommit b6bfddc1d1b82fa2083b601df94f4d4bd502ce8c[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:06:35 2018 -0500
+
+    kf
+
+[33mcommit 0308a54860aafce461e22b5c64d49fd9bb0b4a7c[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:06:23 2018 -0500
+
+    wd100
+
+[33mcommit 431c22833668b4e276e541d0038968421f8be438[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:06:12 2018 -0500
+
+    sldimg
+
+[33mcommit 1f6b54777bb348e4da2d0277f2f8fcdc81b6d9af[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:05:59 2018 -0500
+
+    list style
+
+[33mcommit def803999efbca29400097b890efb3f4f5855202[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:05:46 2018 -0500
+
+    wd100
+
+[33mcommit 1680458dc02bb9c094114720d0b4b7fd78aad891[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:05:34 2018 -0500
+
+    cssli
+
+[33mcommit b45fd6b7a835679269e00c92e87999f6bf80afc5[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:05:20 2018 -0500
+
+    animation
+
+[33mcommit 79f2899b2a881908b5bcde4273a0f31c0c89014c[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:04:33 2018 -0500
+
+    wd1200
+
+[33mcommit c453a3d0d9501f8737438264eb92733b0d20f2df[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:04:03 2018 -0500
+
+    w500
+
+[33mcommit 8ce7b78a3db0ec75b7a5159b366f101379ef202d[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:03:43 2018 -0500
+
+    pad
+
+[33mcommit 880704928140d6f701cb3aecb8cb519178364a52[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:03:34 2018 -0500
+
+    dsp
+
+[33mcommit 41644125c269cee541982852d0a4aefc7a2081b4[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:03:22 2018 -0500
+
+    ul
+
+[33mcommit 98b8dce3254e5becdf5419e073155e1dae56cc29[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:03:10 2018 -0500
+
+    of
+
+[33mcommit 2a2b68c81264eb70ca300319ace864910c2c359e[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:03:00 2018 -0500
+
+    at
+
+[33mcommit c4603071c2ede04241bc98174885e59bc3e3dd51[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:02:47 2018 -0500
+
+    wdt
+
+[33mcommit eb993af0e17fe2b3a09d9a150415ab7a3fef56f6[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:02:23 2018 -0500
+
+    pckgs
+
+[33mcommit cdd0cbed05d700e40a427bc359334d706d824a0e[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:01:32 2018 -0500
+
+    srcf
+
+[33mcommit 923a025095bc803673e6a7a43a37b9a9cb20ca4e[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:01:22 2018 -0500
+
+    src11
+
+[33mcommit 333b0bf93543eab08552a48b73d5f59839059375[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:01:15 2018 -0500
+
+    src10
+
+[33mcommit cbab6d28adc31d4922d093f36c2b82df2d5faa45[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:01:06 2018 -0500
+
+    src9
+
+[33mcommit c710e5faaee5d4e14fb3ecb63e33c974c4c784e8[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:00:57 2018 -0500
+
+    src8
+
+[33mcommit 7a65630d6755750e25ef3994530c45837371398d[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:00:49 2018 -0500
+
+    src7
+
+[33mcommit f7911cb36cf5f146e7857d521aab3cac260d0d08[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:00:34 2018 -0500
+
+    src5
+
+[33mcommit db10420dbbfa6b6910fa511bdca8232f5a527bf1[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:00:26 2018 -0500
+
+    src44
+
+[33mcommit d4b516f31388c86e59ae3dd2f52b1ee4e1bc2251[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:00:18 2018 -0500
+
+    src4
+
+[33mcommit 9ce9b30e1f429d81b86375334c39a45c44921a33[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 14:00:08 2018 -0500
+
+    src3
+
+[33mcommit 17be0bfccf731357d3462a97c52529554bd6f20b[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 13:59:58 2018 -0500
+
+    spc2
+
+[33mcommit 3903ee2188f7ec9e181ac83f67488c7a85425e4d[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 13:59:35 2018 -0500
+
+    esp1
+
+[33mcommit 0f8efadf99dc97129be6ff4a07ab5599b84d74f6[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 13:53:11 2018 -0500
+
+    spc
+
+[33mcommit 5a3372ae939f891cbae38eb91800f4cebf7e6f24[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 13:52:41 2018 -0500
+
+    fli12
+
+[33mcommit 263c638b0340c94efdac353844c56c82d3a4dbdd[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 13:52:22 2018 -0500
+
+    11li
+
+[33mcommit b6938e8fc638dd29ae8b36cf9887f543a498b23d[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 13:52:10 2018 -0500
+
+    10li
+
+[33mcommit 87a7665f43d9521b28938887693f8baa9de7f435[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 13:51:51 2018 -0500
+
+    9li
+
+[33mcommit da5b304ed5455a63ae9136812f75e729e984d513[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 13:51:33 2018 -0500
+
+    8li
+
+[33mcommit abc3633e929fd002989c70d29febd47b712c208b[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 13:51:18 2018 -0500
+
+    7li
+
+[33mcommit 52ef2020afbc7d7bb89c70b83f1bfef111126cc9[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 13:51:03 2018 -0500
+
+    6li
+
+[33mcommit 18efa1fab1f0f597488dd778aa436c94e0e10c46[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 13:50:50 2018 -0500
+
+    5li
+
+[33mcommit 2de832396e77e16ee11b22a02e7c46d23bec4c38[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 13:50:34 2018 -0500
+
+    4li
+
+[33mcommit 5a0ded6f1d9a57310fa997ebb5df03d032d33db8[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 13:50:19 2018 -0500
+
+    3li
+
+[33mcommit 9859f602cfb070c57f220396f29d8887684060b2[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 13:49:58 2018 -0500
+
+    2li
+
+[33mcommit 6471aab4a80530715aa7a409156eafd919138076[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 13:49:36 2018 -0500
+
+    1li
+
+[33mcommit ead1c771316654c1d74a74050d71d0ba2128b122[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 13:48:57 2018 -0500
+
+    clss
+
+[33mcommit dee4670412a0e3a6986d2c4853935925b37dac57[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 13:47:44 2018 -0500
+
+    hs
+
+[33mcommit 7f2950cc8caf70ce6dbebaa328a3c73bdab61bab[m
+Author: Reptarking <diego7319@gmail.com>
+Date:   Sat Feb 10 12:08:36 2018 -0500
+
+    a
+
+[33mcommit 201bbcb4775a276133b96e45d9beb453eb93fa50[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 10:29:27 2018 -0500
+
+    estadios
+
+[33mcommit 85b8f369ac7d2016f163aac2a1e68406fce0552a[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 10:26:46 2018 -0500
+
+    icono
+
+[33mcommit 524e6d743cf75dbc81bc56bb9ad292e3e4475e96[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 10:21:01 2018 -0500
+
+    margen
+
+[33mcommit 05a7f2ce7ef1af19821a26a4eff3b76ebbb316d9[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 10:20:42 2018 -0500
+
+    padding
+
+[33mcommit 5b75d700a2fcfb36186f86eed078144eabd4b45b[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 10:20:07 2018 -0500
+
+    alto
+
+[33mcommit ebe0672af0fddafc3f2cc8357ffb44cb343faee9[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 10:19:43 2018 -0500
+
+    ancho
+
+[33mcommit 956c47fc8c4348153faaa6b9da0441d76cddae08[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 10:19:17 2018 -0500
+
+    centrado
+
+[33mcommit 88c1d1be16d20e95db6ceb1311dd7bd6308315d9[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 10:18:51 2018 -0500
+
+    position
+
+[33mcommit ffc91f9b2ddd9c94a84ea1f779841c527412e22e[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 10:13:20 2018 -0500
+
+    Fondo
+
+[33mcommit e43a417a52483aac3bdd9438881a2098d9e4b4c8[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 10:11:08 2018 -0500
+
+    class bd
+
+[33mcommit f74f71ae5c93530641d60a0cee256f62f3804cc8[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Feb 10 10:08:09 2018 -0500
+
+    setting id
+
+[33mcommit 40d47860ad622dd9bfddf17a6b389332a210001d[m
+Author: Reptarking <diego7319@gmail.com>
+Date:   Sat Feb 10 00:35:34 2018 -0500
+
+    view crearjuego creado
+
+[33mcommit ac870a2195cb59f6dc1f8ddac211df8e9cba9a36[m
+Author: Reptarking <diego7319@gmail.com>
+Date:   Fri Feb 9 23:43:33 2018 -0500
+
+    fix model
+
+[33mcommit 322590bf25051b4fe1b21de8614af98da5b79031[m
+Author: Reptarking <diego7319@gmail.com>
+Date:   Fri Feb 9 23:24:11 2018 -0500
+
+    fix
+
+[33mcommit 000a481966244691865e394027862de24100d3a0[m
+Author: Reptarking <diego7319@gmail.com>
+Date:   Fri Feb 9 23:22:37 2018 -0500
+
+    agregado cuenta a registro
+
+[33mcommit 212101991041207721f90e9376232fc445777505[m
+Author: Reptarking <diego7319@gmail.com>
+Date:   Fri Feb 9 23:20:52 2018 -0500
+
+    modelo usuariocuenta creado
+
+[33mcommit 0984d530e91243f17a722f42b8f14f10858b89b2[m
+Author: Reptarking <diego7319@gmail.com>
+Date:   Fri Feb 9 22:52:43 2018 -0500
+
+    migrations fix
+
+[33mcommit 852cf901743cff82d2c3e9f177015c5717718795[m
+Author: Reptarking <diego7319@gmail.com>
+Date:   Fri Feb 9 22:38:46 2018 -0500
+
+    agregado apps a settings.py
+
+[33mcommit 7002545fabe389ceba78fc8d1e946adfa353d85e[m
+Author: Reptarking <diego7319@gmail.com>
+Date:   Fri Feb 9 22:34:58 2018 -0500
+
+    agregado tabla cuenta de usuario a admin
+
+[33mcommit e4ce0b96e2fc8cf609786ff89d6ffe16d6a0f0b2[m
+Author: Reptarking <diego7319@gmail.com>
+Date:   Fri Feb 9 22:31:03 2018 -0500
+
+    app de juegos polla y equipoideal creados
+
+[33mcommit 3636566507f06bad6d8ff7a9fb6f20d2ab1439f3[m
+Author: Reptarking <diego7319@gmail.com>
+Date:   Thu Feb 8 16:54:21 2018 -0500
+
+    fix login
+
+[33mcommit e608856189a3287a7e9cdad393516da4c689a48a[m
+Author: Reptarking <diego7319@gmail.com>
+Date:   Thu Feb 8 16:52:47 2018 -0500
+
+    fix login
+
+[33mcommit ac7248b5d818eee17b0d7f02352aa2e9784729e0[m
+Author: Reptarking <diego7319@gmail.com>
+Date:   Thu Feb 8 16:50:53 2018 -0500
+
+    login usuario incorrecto
+
+[33mcommit 822a439dba387f46a6bccae493a5328c528a6be0[m
+Author: Reptarking <diego7319@gmail.com>
+Date:   Thu Feb 8 13:51:40 2018 -0500
+
+    cambio de nombres de templates en trivia
+
+[33mcommit 49baa8567c9677209a1d6b71ab1b9c49a7db589c[m
+Author: Reptarking <diego7319@gmail.com>
+Date:   Thu Feb 8 12:05:42 2018 -0500
+
+    borrado trivia grupo
+
+[33mcommit c41ecce7f25799360c0292da28b6f57040b92996[m
+Author: Reptarking <diego7319@gmail.com>
+Date:   Thu Feb 8 12:04:37 2018 -0500
+
+    users view ordenado
+
+[33mcommit ad074c30e8015f5e17de370148eeaf09c38d8992[m
+Author: Reptarking <diego7319@gmail.com>
+Date:   Thu Feb 8 12:00:00 2018 -0500
+
+    restriccion de usuario en sesion  en views
+
+[33mcommit 307cdbd0a0059cff37063eecdfd0a2df76c43463[m
+Author: Reptarking <diego7319@gmail.com>
+Date:   Thu Feb 8 11:54:55 2018 -0500
+
+    fix views
+
+[33mcommit 5da11e1275879f2479081420e3234ca25c7d2e00[m
+Author: Reptarking <diego7319@gmail.com>
+Date:   Thu Feb 8 11:31:33 2018 -0500
+
+    Registro mensaje de rspuesta arreglado.
+    Falta login
+
+[33mcommit 586c743e3ba31aab0154d093a5f623a9edae0900[m
+Author: Reptarking <jdsaquico@hotmail.com>
+Date:   Wed Feb 7 17:13:29 2018 -0500
+
+    backup
+
+[33mcommit 81c0861ae2b9d743a84c9c08712711e73ecdeabf[m
+Author: Reptarking <jdsaquico@hotmail.com>
+Date:   Wed Feb 7 16:34:14 2018 -0500
+
+    cambio mensaje de registro
+
+[33mcommit e2668ae6e2a875745c6311fc08cfc36d001c44dd[m
+Author: Reptarking <jdsaquico@hotmail.com>
+Date:   Wed Feb 7 16:17:08 2018 -0500
+
+    test index fix
+
+[33mcommit 379597df3b3198b62c851c9b3e5b8cc24850c977[m
+Author: Reptarking <jdsaquico@hotmail.com>
+Date:   Wed Feb 7 16:14:21 2018 -0500
+
+    d
+
+[33mcommit 1fdb5f269d5330b389d5806ca80863ef75ae4f16[m
+Author: Reptarking <jdsaquico@hotmail.com>
+Date:   Wed Feb 7 16:13:05 2018 -0500
+
+    borrado boton siguiente
+
+[33mcommit 758e87cf2dd7ebc1f04a4a8776d7e7fe478f7d4c[m
+Author: Reptarking <jdsaquico@hotmail.com>
+Date:   Tue Feb 6 22:22:54 2018 -0500
+
+    nuevos templates
+
+[33mcommit 308cee5f2b5afb9048f026720ecbde2cb62a3ebe[m
+Author: Reptarking <jdsaquico@hotmail.com>
+Date:   Tue Feb 6 19:48:14 2018 -0500
+
+    trivia funcion cronometro
+
+[33mcommit df02c72315540c5bd08ff69f526860aaad3e99ef[m
+Author: Reptarking <jdsaquico@hotmail.com>
+Date:   Mon Feb 5 15:27:42 2018 -0500
+
+    admin model
+
+[33mcommit 96c6ef75d33fad262b3b4f775716665b99e22515[m
+Author: Reptarking <jdsaquico@hotmail.com>
+Date:   Mon Feb 5 01:19:50 2018 -0500
+
+    funciona todo
+
+[33mcommit 3a116ad99443a193fd0ff48f81bc1ba247db43fc[m
+Author: Reptarking <jdsaquico@hotmail.com>
+Date:   Mon Feb 5 01:14:58 2018 -0500
+
+    fix models
+
+[33mcommit 1e474fc9025d9d0ab5332172d3a8a8b828206166[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Mon Feb 5 00:21:06 2018 -0500
+
+    Fondo en trivia
+
+[33mcommit 2e66e0da76491d1bd8fb472c9c37cb737016ea95[m
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Mon Feb 5 00:08:56 2018 -0500
+
+    mejor estilo perfil
+
+[33mcommit feb17423d7c9f673615dbc9304cfefc98909cf53[m
+Merge: 7fb3f4c f0b634e
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Mon Feb 5 00:05:57 2018 -0500
+
+    Merge branch 'master' of https://github.com/diego7319/Soft2
+
+[33mcommit 7fb3f4c224c327c23bf52efd4e6fb7308d60c910[m
+Merge: 29a62aa 9d3931b
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Mon Feb 5 00:05:37 2018 -0500
+
+    Merge branch 'master' of https://github.com/diego7319/Soft2
+
+[33mcommit 29a62aaec5c88185fad8e907018792cefc34130c[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Mon Feb 5 00:05:35 2018 -0500
+
+    separación de grupo
+
+[33mcommit f0b634edc9b0d25360cbdf9b16559ad2b99296bf[m
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Mon Feb 5 00:05:33 2018 -0500
+
+    mejor estilo perfil
+
+[33mcommit 9d3931bd6e0bc99d459f8aba21ed3f9c1c12fb15[m
+Merge: 4129baf c646460
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Mon Feb 5 00:04:26 2018 -0500
+
+    Merge branch 'master' of https://github.com/diego7319/Soft2
+
+[33mcommit c646460fbdd8e1228acf734ec0f3c360c999c527[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Mon Feb 5 00:03:08 2018 -0500
+
+    eliminación powered
+
+[33mcommit 4129baf50967a32d0bafa6b99057cf15cc8a133a[m
+Merge: 84de09d 3237544
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Mon Feb 5 00:02:04 2018 -0500
+
+    Merge branch 'master' of https://github.com/diego7319/Soft2
+
+[33mcommit 32375444b530d4be302af2a0b7a0c330610801b0[m
+Merge: 6269c84 7521967
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Mon Feb 5 00:01:55 2018 -0500
+
+    Merge branch 'master' of https://github.com/diego7319/Soft2
+
+[33mcommit 752196756d3fae1be23b7eb0eba14367601a3242[m
+Author: Reptarking <jdsaquico@hotmail.com>
+Date:   Mon Feb 5 00:01:42 2018 -0500
+
+    fix estilos
+
+[33mcommit 6269c84f2588f0f659425e6a8cbb2cd379ad53d1[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Mon Feb 5 00:01:40 2018 -0500
+
+    espaciado botones jugar
+
+[33mcommit 84de09d192d41492ad6d26d4c479fc0f8232aa47[m
+Merge: f15f75e 7533985
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Mon Feb 5 00:00:53 2018 -0500
+
+    Merge branch 'master' of https://github.com/diego7319/Soft2
+
+[33mcommit f15f75e330ddd98e1dec553ad335cbd3bd88e0d1[m
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Mon Feb 5 00:00:18 2018 -0500
+
+    mejora de estilo en perfil
+
+[33mcommit 7533985443c593276458af226c431dd82f4cf0ef[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 4 23:58:18 2018 -0500
+
+    Elimación de cuadros
+
+[33mcommit a40d92ef20a726ea8d8294a06efbf80103d22c37[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 4 23:56:45 2018 -0500
+
+    Eliminación de datos
+
+[33mcommit 8f4bbbecc3f61ba8df143a08228b297be1ae3fae[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 4 23:54:51 2018 -0500
+
+    ancho de imágenes
+
+[33mcommit 531c2a98ac5cf827c6e76aa537054e13a2a272bd[m
+Merge: 3bdd7e1 dd363da
+Author: Reptarking <jdsaquico@hotmail.com>
+Date:   Sun Feb 4 23:53:41 2018 -0500
+
+    Merge branch 'master' of https://github.com/diego7319/Soft2
+
+[33mcommit 3bdd7e14f979af57f621247a7002aab6cb26f4f5[m
+Merge: 2f1df9f f079c37
+Author: Reptarking <jdsaquico@hotmail.com>
+Date:   Sun Feb 4 23:53:23 2018 -0500
+
+    Merge branch 'master' of https://github.com/diego7319/Soft2
+
+[33mcommit dd363da2d5de51e6ef7726882b72441bdd58cec8[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 4 23:53:22 2018 -0500
+
+    espaciados
+
+[33mcommit 2f1df9fb405744713dfecd1135d05e121af62b7c[m
+Author: Reptarking <jdsaquico@hotmail.com>
+Date:   Sun Feb 4 23:52:50 2018 -0500
+
+    asd
+
+[33mcommit f079c37caea0584027a170d719b58b6e71603df8[m
+Merge: eb26d7a c9203dc
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 4 23:51:29 2018 -0500
+
+    Merge branch 'master' of https://github.com/diego7319/Soft2
+
+[33mcommit eb26d7a8d97acc8af48276d72d6f1adaa7775a24[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Feb 4 23:51:16 2018 -0500
+
+    agregación bts
+
+[33mcommit c9203dced378d0fbd1bf123cf6b94c6287ae4cb9[m
+Author: Reptarking <jdsaquico@hotmail.com>
+Date:   Sun Feb 4 23:41:24 2018 -0500
+
+    delete  migrations
+
+[33mcommit 3150417e0b3132ae6b757a23a7cd33f870a95267[m
+Merge: 95c64ee d98b4c1
+Author: Reptarking <jdsaquico@hotmail.com>
+Date:   Sun Feb 4 23:39:56 2018 -0500
+
+    Merge branch 'master' of https://github.com/diego7319/Soft2
+
+[33mcommit 95c64ee8219aa35af1fac2e3431b2eb0ed4a0bb9[m
+Author: Reptarking <jdsaquico@hotmail.com>
+Date:   Sun Feb 4 23:39:05 2018 -0500
+
+    a
+
+[33mcommit d98b4c186744dd0283faddfbc1bc71d8747ca1ea[m
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sun Feb 4 23:36:43 2018 -0500
+
+    fixed trivia.js
+
+[33mcommit 172238fd5528e0538602d25bdb1c05cfef6dc9f3[m
+Merge: a5d8c5e 57832e2
+Author: Reptarking <jdsaquico@hotmail.com>
+Date:   Sun Feb 4 23:35:56 2018 -0500
+
+    Merge branch 'master' of https://github.com/diego7319/Soft2
+
+[33mcommit a5d8c5ed51976541bc64f618b6e8f290849aa970[m
+Author: Reptarking <jdsaquico@hotmail.com>
+Date:   Sun Feb 4 23:33:59 2018 -0500
+
+    guardar db score funciona
+
+[33mcommit 57832e269dd1e55f5ba38382e06ee7720c4b6d37[m
+Merge: 89768ff 1db1a02
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sun Feb 4 23:23:55 2018 -0500
+
+    Merge pull request #7 from diego7319/templates
+    
+    estilos agregados a trivia
+
+[33mcommit 1db1a020cd00df70e3ff8c7692303a8261c179e9[m
+Merge: ca4a854 89768ff
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sun Feb 4 23:23:45 2018 -0500
+
+    Merge branch 'master' into templates
+
+[33mcommit ca4a85470f411f70ee7dfb82ebb5c96b7c2227b1[m
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sun Feb 4 23:20:47 2018 -0500
+
+    estilos agregados a trivia
+
+[33mcommit 89768ffa9458beefe5729b5d4851dc7a2469cdbc[m
+Author: Reptarking <jdsaquico@hotmail.com>
+Date:   Sun Feb 4 23:01:23 2018 -0500
+
+    trivia.js test
+
+[33mcommit 47c69a470d6336caed7443ef9cdabbcbef9ce8de[m
+Author: Reptarking <jdsaquico@hotmail.com>
+Date:   Sun Feb 4 22:43:13 2018 -0500
+
+    migrate score
+
+[33mcommit 634d07c8b7ef3f456e00a792af2e130692b2ed11[m
+Author: Reptarking <jdsaquico@hotmail.com>
+Date:   Sun Feb 4 22:26:35 2018 -0500
+
+    descomentar modelscoretrivia
+
+[33mcommit bab17b6674c87081fdabaf68f35abaf76141d727[m
+Author: Antony395 <20131796@aloe.ulima.edu.pe>
+Date:   Sun Feb 4 21:46:36 2018 -0500
+
+    mostrar pregunta funciona, falta css
+
+[33mcommit 2250201b2ae05b4161ee8f4d3c8b6a38905c1f9f[m
+Author: Antony395 <20131796@aloe.ulima.edu.pe>
+Date:   Sun Feb 4 21:39:44 2018 -0500
+
+    js , holihtml fix
+
+[33mcommit 3ab43e640d249987528ebc8fe52affb73cd27bd5[m
+Merge: 4b0b76e 0e513bd
+Author: Antony395 <20131796@aloe.ulima.edu.pe>
+Date:   Sun Feb 4 21:26:25 2018 -0500
+
+    Merge branch 'master' of https://github.com/diego7319/Soft2
+
+[33mcommit 4b0b76ed925bfe2e4bd1dee96498146b74fc616f[m
+Author: Antony395 <20131796@aloe.ulima.edu.pe>
+Date:   Sun Feb 4 21:26:05 2018 -0500
+
+    fix
+
+[33mcommit 0e513bd8a424889511192fea5a253fcd7f9ddea7[m
+Merge: 6659c41 ec59240
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sun Feb 4 21:16:36 2018 -0500
+
+    Merge pull request #6 from diego7319/trivia
+    
+    carpeta Datos con data y scripts para la trivia
+
+[33mcommit ec592406bfab5934498a4387432dabcb0a432103[m
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sun Feb 4 21:14:30 2018 -0500
+
+    carpeta Datos con data y scripts para la trivia
+
+[33mcommit 6659c419414ab4f7b747c8e018f727b89ee74a96[m
+Merge: 10e399b 902cacb
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sun Feb 4 21:04:31 2018 -0500
+
+    trivia.models class score
+
+[33mcommit 10e399b112d372961353e642a6dac8fc2f5d944c[m
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sun Feb 4 21:00:08 2018 -0500
+
+    ejemplo de insert row en tabla preguntatrivia
+
+[33mcommit 902cacb8596e3783ef0ca59cae457af8273b8e7c[m
+Author: Antony395 <20131796@aloe.ulima.edu.pe>
+Date:   Sun Feb 4 20:40:54 2018 -0500
+
+    fix
+
+[33mcommit d796e4618f27da731cd03bef7c1d86ef8f07691b[m
+Author: Antony395 <20131796@aloe.ulima.edu.pe>
+Date:   Sun Feb 4 20:03:40 2018 -0500
+
+    mostrarpregunta test
+
+[33mcommit da6e329289ff7f6508294479de7d1fc03de178a2[m
+Author: Antony395 <20131796@aloe.ulima.edu.pe>
+Date:   Sun Feb 4 19:58:43 2018 -0500
+
+    mostrarpregunta completo
+
+[33mcommit 2b15166c374f193e8572b7b083ac9b11826779ac[m
+Author: Antony395 <20131796@aloe.ulima.edu.pe>
+Date:   Sun Feb 4 19:48:34 2018 -0500
+
+    views pregunta
+
+[33mcommit 4e12ab0ecb4a4eb25fe9537452cc0db338246d47[m
+Author: Antony395 <20131796@aloe.ulima.edu.pe>
+Date:   Sun Feb 4 19:38:18 2018 -0500
+
+    fix scoretrivia
+
+[33mcommit 7aa87e9fb04c31d51e0961aa4a23aafaca603f13[m
+Author: Antony395 <20131796@aloe.ulima.edu.pe>
+Date:   Sun Feb 4 19:37:13 2018 -0500
+
+    fix
+
+[33mcommit 84dee7855e6cb13bb35dd179025eb5672d7550e9[m
+Author: Antony395 <20131796@aloe.ulima.edu.pe>
+Date:   Sun Feb 4 19:36:26 2018 -0500
+
+    modelo score user grupo
+
+[33mcommit 0c195e69ca80b46478e1284dafbbb01c81d12926[m
+Author: Antony395 <20131796@aloe.ulima.edu.pe>
+Date:   Sun Feb 4 19:32:11 2018 -0500
+
+    migrate
+
+[33mcommit 6c6177ab5234c43ee6e6f6cb326371bb5cd1819c[m
+Author: Antony395 <20131796@aloe.ulima.edu.pe>
+Date:   Sun Feb 4 19:30:41 2018 -0500
+
+    settings trivia
+
+[33mcommit 13b9147012560020e746e05b775fbc6e6f0661f7[m
+Author: Antony395 <20131796@aloe.ulima.edu.pe>
+Date:   Sun Feb 4 19:29:06 2018 -0500
+
+    tabla PreguntaTrivia
+
+[33mcommit 26609699910fb4c0c92141933609af3d07265ebf[m
+Author: Antony395 <20131796@aloe.ulima.edu.pe>
+Date:   Sun Feb 4 19:19:33 2018 -0500
+
+    db autoincrement pregunta
+
+[33mcommit 98ca1a7d3833bee4c345f9b0b3daaea860dc8e8b[m
+Author: Antony395 <20131796@aloe.ulima.edu.pe>
+Date:   Sun Feb 4 19:13:36 2018 -0500
+
+    comentario
+
+[33mcommit 745176466144aa76834bfa905a5ee9f42ca44b8f[m
+Author: diego <diego7319@gmail.com>
+Date:   Sun Feb 4 19:01:21 2018 -0500
+
+    fix urls trivia
+
+[33mcommit cb90c2c1e987dd248fdd74306b46c6ab1bfa890c[m
+Author: diego <diego7319@gmail.com>
+Date:   Sun Feb 4 18:56:26 2018 -0500
+
+    trivia url path fix
+
+[33mcommit 034ffd6d5eb7e6b12299f3bf0f5c9e9857db2e36[m
+Merge: f2911d2 003a554
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sun Feb 4 18:32:48 2018 -0500
+
+    Merge pull request #5 from diego7319/trivia
+    
+    modelo de trivia con score sin conexion a db en /trivia
+
+[33mcommit 003a554a588065034ff2e01403b3e1b3dc0eec67[m
+Merge: 3e7b6f2 f2911d2
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sun Feb 4 18:30:17 2018 -0500
+
+    Merge branch 'master' into trivia
+
+[33mcommit 3e7b6f2378d9e3cb6a846ca5c9aa80e8c029b0ad[m
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sun Feb 4 18:09:35 2018 -0500
+
+    modelo de trivia con score sin conexion a db en /trivia
+
+[33mcommit f2911d27676edd6c3dd1444314e25827953b00f2[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Feb 4 17:09:32 2018 -0500
+
+    trivia , url agregado, web base
+
+[33mcommit 1351252ff1989a9ceba66645fa3b81d5011d0eaa[m
+Merge: f8ba562 e3f7e28
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sun Feb 4 13:39:10 2018 -0500
+
+    Merge pull request #4 from diego7319/trivia
+    
+    nueva app trivia creada con carpeta templates
+
+[33mcommit e3f7e28ad8decb001b0ed5f514a8e5441fb3cf98[m
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sun Feb 4 13:29:54 2018 -0500
+
+    nueva app trivia creada con carpeta templates
+
+[33mcommit f8ba56280ff3a12bf58cd440bd4729f08cc61d9a[m
+Merge: 7c787bc 9eb625d
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sun Feb 4 13:03:30 2018 -0500
+
+    Merge pull request #3 from diego7319/templates
+    
+    listado de usuarios y constraseñas tipo password
+
+[33mcommit 9eb625d591fb7c0ab801649536e1c527d730fe1e[m
+Author: KyouX <kmatsukawa96@gmail.com>
+Date:   Sun Feb 4 12:49:50 2018 -0500
+
+    listado de usuarios y constraseña tipo password
+
+[33mcommit 7c787bc42aedfde31c09eb89586aa95e20a3c46f[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 28 17:25:28 2018 -0500
+
+    entregable 3 listo
+
+[33mcommit 0c852915f2761ae232d963bc764f3f30e42a1bc2[m
+Merge: ad2996b 648e01d
+Author: diego7319 <diego7319@users.noreply.github.com>
+Date:   Sun Jan 28 17:21:08 2018 -0500
+
+    Merge pull request #2 from diego7319/Features
+    
+    Features
+
+[33mcommit 648e01d4a930fe53b4ec1d42e3e5bb863469a8ed[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 28 17:15:53 2018 -0500
+
+    entregable 3 listo
+
+[33mcommit fa5800f48f9dbe891ed0225f881f1b39348cd09a[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 28 14:22:11 2018 -0500
+
+    fix del panel hom.html
+
+[33mcommit c64e17580f749d5ff395779f98de2b7b8bf22dc7[m
+Merge: 477f601 c1ced38
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 28 13:56:09 2018 -0500
+
+    Merge branch 'Features' of https://github.com/diego7319/Soft2 into Features
+
+[33mcommit 477f6010b0bd09345d28276ee5b71e65882cbce8[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 28 13:56:05 2018 -0500
+
+    select group
+
+[33mcommit c1ced3830143032525c0d8179e24de78f502b18f[m
+Merge: 00d3c64 ea5af91
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Jan 28 12:58:15 2018 -0500
+
+    Merge branch 'Features' of https://github.com/diego7319/Soft2 into Features
+
+[33mcommit 00d3c640892a6b89c708e0f42ebcbdc70b528f45[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Jan 28 12:53:28 2018 -0500
+
+    Html + botones
+
+[33mcommit 22741da976c66589a0c9977477e26ebc037f9ea3[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 28 12:00:16 2018 -0500
+
+    fix
+
+[33mcommit 49845ff1d28b576545275bfe0cf8367c8aa15b14[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Jan 28 11:59:19 2018 -0500
+
+    Trivia
+
+[33mcommit ea5af9134bd47d6c5ac6ef31bd5acb7d070dce3b[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 28 11:57:40 2018 -0500
+
+    fix
+
+[33mcommit 7d65e07e59e52f32f1d81cbe40eb2224984a6c0a[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 28 11:57:36 2018 -0500
+
+    fix grupos views
+
+[33mcommit deb924af328c7cd2516f7b37ca9cb345dfd3eaa7[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Jan 28 11:56:23 2018 -0500
+
+    Imagen
+
+[33mcommit e60b436212019ecfd1d04a9026a743dd3b744c33[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sun Jan 28 11:53:10 2018 -0500
+
+    .idea borrado
+
+[33mcommit 6e6558ea93a4bf1b6c64b0e419d348a19a929ca9[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 28 11:32:42 2018 -0500
+
+    respuesta notificaion
+
+[33mcommit 472b9e4ee605367cd608c5f815876923834a3727[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 28 04:12:10 2018 -0500
+
+    crear grupo e invitar usuari oa grupo, listo
+
+[33mcommit fed91ca922532ae3871206b3ed9fadd6b741dafe[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sat Jan 27 23:06:18 2018 -0500
+
+    modelos grupo
+
+[33mcommit ad2996bf01cfb9dac71acf9a2b19771547a23cee[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Jan 27 22:42:07 2018 -0500
+
+    PC-2017.3.2 <Jorge@toshiba Create vcs.xml
+
+[33mcommit 4cce693eb8f5fffc416644e7ce08befb0dc6cac2[m
+Author: Luis Carbajal <luis.crb.inf@gmail.com>
+Date:   Sat Jan 27 18:41:12 2018 -0500
+
+    PC-2017.3.2 <Jorge@toshiba Create git.xml, filetypes.xml, editor.codeinsight.xml, colors.scheme.xml, laf.xml, Default.xml, debugger.xml
+
+[33mcommit 71f55070ba87c1a2b682fbad8148fe30aa723086[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Fri Jan 26 14:03:31 2018 -0500
+
+    templates user final
+
+[33mcommit c51234ecde710a2ee951404bdc538e5d23b813c3[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Wed Jan 24 17:33:54 2018 -0500
+
+    hom.html username
+
+[33mcommit 907446a811659c965580260804a3f8c6efea1c2c[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Wed Jan 24 16:45:47 2018 -0500
+
+    gzip
+
+[33mcommit c210462a989677a99fb1a66e8a0113b4fa4d4ce6[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Wed Jan 24 16:42:37 2018 -0500
+
+    fix req
+
+[33mcommit 6a20e83b13bdb321e061def29999c1b56ff44d46[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Wed Jan 24 16:40:28 2018 -0500
+
+    Procfile
+
+[33mcommit 7677286c789c82fe9a18d4c6370991fd2b7d4ea0[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Wed Jan 24 16:39:47 2018 -0500
+
+    waitress
+
+[33mcommit 394b3381c9381efbfc23c72528cd94bfd2682170[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Wed Jan 24 16:21:39 2018 -0500
+
+    startapp juegos-grupos
+
+[33mcommit 5213315a0656ec68da3041b6e2ca906fe798d1b0[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Wed Jan 24 15:58:01 2018 -0500
+
+    responsive index
+
+[33mcommit a089491c335cfce644b434b4338a377002785c10[m
+Author: W3130 <W3130@lab.aca>
+Date:   Wed Jan 24 07:20:13 2018 -0500
+
+    perfil css
+
+[33mcommit c91608f30d1fded25878b7f4729fb8638ce96c4a[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 23:38:17 2018 -0500
+
+    patch import model
+
+[33mcommit d07ff09b2f591ec8d98b30fd11152fa9f22684e3[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 23:36:36 2018 -0500
+
+    borrar custom model
+
+[33mcommit 08fa2f53a818190e030e06e02c8046b0882a88ad[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 23:35:34 2018 -0500
+
+    borrar codigo comentado index()
+
+[33mcommit 677f2d971657afd6f6a0f2557afc0beadb19cd9f[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 23:35:06 2018 -0500
+
+    borrar comentario index
+
+[33mcommit 7859a43c5174487c3443df62dc13aad13c8bc994[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 23:32:41 2018 -0500
+
+    perfil
+
+[33mcommit c646840f3e119503b016f791272eb7c3c5d16e84[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 22:59:43 2018 -0500
+
+    Arreglar index()
+
+[33mcommit e21a8049913944b2a15c5cc7232f970bd6e37361[m
+Merge: 9dc5465 60921fd
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 22:48:52 2018 -0500
+
+    Merge branch 'Features' of https://github.com/diego7319/Soft2 into Features
+
+[33mcommit 9dc5465bb774379a6d74cfe2feba95b084e9d8d8[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 22:44:16 2018 -0500
+
+    colores cremas
+
+[33mcommit 60921fd3917c829d4d3461d0085758b0702bc785[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 22:44:16 2018 -0500
+
+    colores cremas
+
+[33mcommit c42b5e6c8a471bc2231ac95afee1cb584257379f[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 22:30:41 2018 -0500
+
+    perfil
+
+[33mcommit 70e408c708b61dbf894b4a5ee8559ed3668cf36c[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 22:01:33 2018 -0500
+
+    css perfil
+
+[33mcommit 9d343e20f867d4ae2ab867174186e162359ff200[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 21:50:49 2018 -0500
+
+    Perfil
+
+[33mcommit 9a4b84774778913f035ba9a0448e54d1de38d2b1[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 21:14:27 2018 -0500
+
+    funciona log in registr
+
+[33mcommit 72c133cb605f1ea1a3abe0f01878b1d89390ccdb[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 20:41:00 2018 -0500
+
+    d
+
+[33mcommit aca65ac53b2b5a7b7272f0f5bc67c86fc9ee2d2b[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 20:38:54 2018 -0500
+
+    expir
+
+[33mcommit 8c0ce189f4fce03fda8e19ce3d1bd8a27ac31c87[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 20:38:35 2018 -0500
+
+    debug
+
+[33mcommit f69090b6393122908a7cd8bc5d206525865706f4[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 20:35:24 2018 -0500
+
+    fix login
+
+[33mcommit 640f4aad27c0c6001962759df76dd1f7990bc64f[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 20:33:12 2018 -0500
+
+    tiempo login
+
+[33mcommit 29a3b6e514d33b5a666321e6b8fcdcc4fb9768f7[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 20:26:50 2018 -0500
+
+    patch try catch
+
+[33mcommit 436a6b0e0277dcd3eb4cdeaf611c2e8c3ae53598[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 20:25:26 2018 -0500
+
+    try catch patch
+
+[33mcommit 8225159e53a27763d1089025c0afee124b3cdd0c[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 20:24:58 2018 -0500
+
+    try catch user
+
+[33mcommit ee636577638d020e5a1f3f4fb4056cd81a5d8f4a[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 20:19:35 2018 -0500
+
+    patch form
+
+[33mcommit caff5a672e7022e25f962b9d710e11d35dacbde3[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 20:13:24 2018 -0500
+
+    debug
+
+[33mcommit b98788d59c30463417034b4f9e35327b050c9719[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 20:11:23 2018 -0500
+
+    debu
+
+[33mcommit 5aa2c0d05be106ec189fe32aa95989795c6944b4[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 20:08:56 2018 -0500
+
+    patch save() reg
+
+[33mcommit d94bf9969bf999396524095e16a44c9a8be7e3b0[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 20:04:51 2018 -0500
+
+    funciona login y registro
+
+[33mcommit f0fe048a139e400b1ca634708568f0d364c76c68[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 19:53:11 2018 -0500
+
+    asd
+
+[33mcommit 58be13bfda4df896ca4a87641f39c2b49385e452[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 19:35:58 2018 -0500
+
+    gggg
+
+[33mcommit 6e3a5b78578efc6436fe5c9567e8cad5e9a5488c[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 18:44:33 2018 -0500
+
+    implementacion metodo save
+
+[33mcommit 7b9035ca78c1e3d332b3bf57290c3b2590017f3f[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 16:29:15 2018 -0500
+
+    indexloginreg
+
+[33mcommit 36bbdee21d50949d0350115f5891fa72cc5e283f[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 15:55:23 2018 -0500
+
+    'index ->signup sign in'
+
+[33mcommit 911b588ebed1e6b0b9d7574aaccb48aa25b890aa[m
+Author: W3230 <W3230@lab.aca>
+Date:   Tue Jan 23 08:39:50 2018 -0500
+
+    'viewsindex'
+
+[33mcommit aa36247bc15629814d18775d7363ee2e14e0722a[m
+Author: W3230 <W3230@lab.aca>
+Date:   Tue Jan 23 08:36:52 2018 -0500
+
+    'login'
+
+[33mcommit bcc6f8e8992c620563d560c9f359cd50696acd4d[m
+Author: W3230 <W3230@lab.aca>
+Date:   Tue Jan 23 08:35:36 2018 -0500
+
+    'viewsindex'
+
+[33mcommit f5cdaf0d22da9859412703b7c758e4b93520f8e1[m
+Author: W3230 <W3230@lab.aca>
+Date:   Tue Jan 23 08:33:59 2018 -0500
+
+    'viewsindex'
+
+[33mcommit 0df6f93c76183646c47950119fcf74c889258f0f[m
+Author: W3230 <W3230@lab.aca>
+Date:   Tue Jan 23 08:32:13 2018 -0500
+
+    'login'
+
+[33mcommit 447113d71f1876f26e5c52ebfd9e6c25dd4e9aa2[m
+Author: W3230 <W3230@lab.aca>
+Date:   Tue Jan 23 08:29:08 2018 -0500
+
+    'login'
+
+[33mcommit fb513ac876caf2e5598b759fcd57edb238b39dfc[m
+Author: W3230 <W3230@lab.aca>
+Date:   Tue Jan 23 08:22:37 2018 -0500
+
+    'viewsindex'
+
+[33mcommit 9ce8cc8e82ae8b34c7eff168f8b517eabb7cdeac[m
+Author: W3230 <W3230@lab.aca>
+Date:   Tue Jan 23 08:07:22 2018 -0500
+
+    'login'
+
+[33mcommit bd870d50c9a6e627dc3a7026fb92020c9b87d3cd[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Tue Jan 23 00:11:07 2018 -0500
+
+    'loginnf'
+
+[33mcommit f0f92d386878dc4d7e1ce42e800cc15642093265[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Mon Jan 22 23:58:15 2018 -0500
+
+    'nuevologin'
+
+[33mcommit 03ae44eb896d977f92bc841b3f45a681021c46dc[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Mon Jan 22 23:55:54 2018 -0500
+
+    'nuevologin'
+
+[33mcommit f59a919732a2000604f5f7987e70dd5d3f3656e9[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Mon Jan 22 23:52:59 2018 -0500
+
+    'nuevologin'
+
+[33mcommit cff58f52e9fe76e67eef533357ed48bd81727ba7[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Mon Jan 22 23:51:13 2018 -0500
+
+    'nuevologin'
+
+[33mcommit 844b30287e5570e73cf7b0e9544d8a788cfb91a0[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Mon Jan 22 23:49:03 2018 -0500
+
+    'nuevologin'
+
+[33mcommit 50614d02d643867980054b90966e19266c47ce40[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Mon Jan 22 17:40:59 2018 -0500
+
+    'configdb'
+
+[33mcommit a1166145e2643e25d09453b4f7d1cdb731a85ef6[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Mon Jan 22 17:39:42 2018 -0500
+
+    'index-signupview'
+
+[33mcommit 8bcb83a234212b008f8a9aabb4f4aa4cd53a4850[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Mon Jan 22 17:11:02 2018 -0500
+
+    'configdb'
+
+[33mcommit fffc1ec88e962b21dfb459a41586cefcc29c722d[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Mon Jan 22 17:03:13 2018 -0500
+
+    postgr setting
+
+[33mcommit 669e7334f96515abaa18b8c7c671ad76a782a4ae[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Mon Jan 22 16:41:18 2018 -0500
+
+    postgr setting
+
+[33mcommit 10f9a00ef192223df383536e9bf6c867114d5f32[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Mon Jan 22 16:19:10 2018 -0500
+
+    'configdb'
+
+[33mcommit 4340a0ca289ba9b4daa5d539999cf58ae9a39f07[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Mon Jan 22 15:40:04 2018 -0500
+
+    postgr setting
+
+[33mcommit 9bba2a080337beb4fcf1c43f9f16d1ffd07553d4[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Mon Jan 22 15:33:54 2018 -0500
+
+    postgr setting
+
+[33mcommit bd3783a1055771176e259c60005120063efdfa72[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Mon Jan 22 14:31:19 2018 -0500
+
+    nuevo fondo u
+
+[33mcommit a061065e2115b93a6a761453e1a6e4b5438d618f[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Mon Jan 22 14:30:45 2018 -0500
+
+    nuevo fondo u
+
+[33mcommit 18fc19fc1d8f788e8f83ce81a6a189e0032d0255[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Mon Jan 22 14:28:52 2018 -0500
+
+    nuevo fondo u
+
+[33mcommit baa527227a0f9540a0276f698d8df41d41ec6fa6[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 21 22:21:00 2018 -0500
+
+    'forms0
+
+[33mcommit 8dcaf8af390b25b1535847e73e24c209a60d9a22[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 21 21:30:03 2018 -0500
+
+    static fix
+
+[33mcommit a6b784a9ea0abc739eca957c602727bad9b13e60[m
+Merge: 6f51b20 af7853b
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 21 21:20:28 2018 -0500
+
+    Merge branch 'dev'
+    
+    # Conflicts:
+    #       Soft2/settings.py
+
+[33mcommit af7853b98a8a9f159fcc844be57ca36ee680dcc1[m
+Merge: 16d1234 9095df6
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 21 21:19:56 2018 -0500
+
+    Merge branch 'Features' into dev
+
+[33mcommit 9095df6eba3aab18cdeac3c6ec317910ee460787[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 21 21:19:16 2018 -0500
+
+    static fix
+
+[33mcommit b36369537ad99d517628c4e7856c8af3cf1bc03b[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 21 21:18:45 2018 -0500
+
+    static fix
+
+[33mcommit 6f51b207f5a4c3aab1f348ef4c8b0dc58eafae44[m
+Merge: 2c078f6 0c38573
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 21 20:14:54 2018 -0500
+
+    Merge branch 'dev'
+    
+    # Conflicts:
+    #       static/css/style.css
+
+[33mcommit 0c38573adf50dda198a8c9ce354becb9b93c5f1e[m
+Merge: fc739f1 2720d31
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 21 20:14:21 2018 -0500
+
+    Merge branch 'Features' into dev
+
+[33mcommit 2720d3187c367a3d769dd1fa856f667ba0491645[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 21 20:14:14 2018 -0500
+
+    bg body
+
+[33mcommit 087897465da9a3d5ea0b1a966df6800e4ef150e0[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 21 20:05:07 2018 -0500
+
+    bg body
+
+[33mcommit 2c078f6999100e46d401b6f4b29a77b2e33e7616[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 21 19:43:27 2018 -0500
+
+    bg body
+
+[33mcommit 8c0b6602df7f31194b5932bf4d0fd0cc1b4beaa5[m
+Merge: a386577 fc739f1
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 21 19:39:00 2018 -0500
+
+    Merge branch 'dev'
+
+[33mcommit fc739f129fe259609834771ef032be3c65e92cba[m
+Merge: 16d1234 c736c74
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 21 19:38:46 2018 -0500
+
+    Merge branch 'Features' into dev
+    
+    # Conflicts:
+    #       static/css/style.css
+    #       users/urls.py
+
+[33mcommit c736c744fcc0049764975f50207cbdd044483b13[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 21 19:36:40 2018 -0500
+
+    bg body
+
+[33mcommit 16d1234f604166529c078319d8445be9f2062779[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 21 00:07:19 2018 -0500
+
+    img background index
+
+[33mcommit a38657711657d820fe00f17dbc6d9b4bfad21fc9[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sat Jan 20 23:41:01 2018 -0500
+
+    ' . gitignore .idea ide'
+
+[33mcommit 7fab4a996bc6e72acb39dae34a009ea9747bc9f0[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Mon Jan 15 00:41:02 2018 -0500
+
+    ingles-> español
+
+[33mcommit fdba334fb4ba40d7d43d55d8eac15ca1709af8fb[m
+Merge: 509aa7b a761ac8
+Author: diego7319 <diego7319@gmail.com>
+Date:   Mon Jan 15 00:37:58 2018 -0500
+
+    Merge branch 'dev'
+
+[33mcommit a761ac8ac69ba5b295d0587091b7a65f5784fb02[m
+Merge: 551247a e2bc042
+Author: diego7319 <diego7319@gmail.com>
+Date:   Mon Jan 15 00:35:12 2018 -0500
+
+    Merge branch 'Features' into dev
+
+[33mcommit e2bc0423b286b2b3f0394d82612b7e0b9b2cc9d6[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Mon Jan 15 00:34:41 2018 -0500
+
+    mejora de css
+
+[33mcommit 509aa7b5adf0de3cabeedf229187d25f059f0ceb[m
+Merge: 1670b26 551247a
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 14 15:31:36 2018 -0500
+
+    Merge branch 'dev'
+
+[33mcommit 551247a2e01cc3460705b6a09be9a860da40c9a8[m
+Merge: 28979e6 5d4a7c8
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 14 15:26:26 2018 -0500
+
+    Merge branch 'Features' into dev
+
+[33mcommit 28979e6f1aaebbaaac76b34867317ce3e0f43443[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 14 15:25:55 2018 -0500
+
+    V 0.1, login y signup funcionando, falta agregar estilos
+
+[33mcommit 5d4a7c869445a648ff5fec07a5c9fc432718543a[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 14 15:24:39 2018 -0500
+
+    V 0.1, login y signup funcionando, falta agregar estilos
+
+[33mcommit 1670b26e71c1f0d4593f5fb983a72084c9e372ed[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 14 15:19:31 2018 -0500
+
+    V 0.1, login y signup funcionando, falta agregar estilos
+
+[33mcommit 66f456a1d765b5e89801320ac64f99c2e5e6f9b3[m
+Merge: dc28132 3ce517d
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 14 15:17:58 2018 -0500
+
+    Merge branch 'dev'
+    
+    # Conflicts:
+    #       users/templates/index.html
+
+[33mcommit 3ce517d0183b0a466f60e64137948a2c34c6ff6b[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 14 15:12:27 2018 -0500
+
+    V 0.1, login y signup funcionando, falta agregar estilos
+
+[33mcommit bc948628459f608aea7c36620c479c6766c25c9d[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 14 15:12:03 2018 -0500
+
+    V 0.1, login y signup funcionando, falta agregar estilos
+
+[33mcommit e12df2851dbb74c1e8206811e78a45d17b81284b[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 14 15:03:15 2018 -0500
+
+    V 0.1, login y signup funcionando, falta agregar estilos
+
+[33mcommit dc281324adced6a5360e3702e2369657db230425[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 14 03:05:58 2018 -0500
+
+    js efecto index
+
+[33mcommit bc8a01763e00011de8572acc524481d7536ed58f[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 14 02:49:51 2018 -0500
+
+    whitenose static files
+
+[33mcommit f964014ca280512c1ced276c58ee7a7bc6916435[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 14 02:44:49 2018 -0500
+
+    whitenose static files
+
+[33mcommit d2d4049207cd72bda573662aa915a902da4b4a9c[m
+Merge: de85373 75fbaef
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 14 02:34:52 2018 -0500
+
+    Merge branch 'dev' into Features
+    
+    # Conflicts:
+    #       requirements.txt
+    #       users/templates/index.html
+
+[33mcommit de8537322afc4e04c67a9e63152c264477cdb24e[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 14 02:32:14 2018 -0500
+
+    whitenose static files
+
+[33mcommit 75fbaef1316c553546389851d182d0182fbdbac6[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 14 02:24:15 2018 -0500
+
+    links httpS
+
+[33mcommit bd50208235219e01c1524c0c87250f9799928d09[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 14 02:18:21 2018 -0500
+
+    links httpS
+
+[33mcommit 48b267e79831e73204cb1ab50c3d188bac190464[m
+Merge: 6f41b19 f86dd2a
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 14 02:14:52 2018 -0500
+
+    Merge branch 'dev'
+
+[33mcommit f86dd2a21cfb59fb8060dc7fd83cccc1b50dc654[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 14 02:08:42 2018 -0500
+
+    Front end log in
+
+[33mcommit 1625876bed45d3b64649ca40693fd118d4872dee[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sun Jan 14 01:35:14 2018 -0500
+
+    Creacion de aplicacion de log in
+
+[33mcommit 6f41b19435ebe31e23328b452c3c09083e8e01ef[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sat Jan 13 20:53:37 2018 -0500
+
+    allowed hosts creado
+
+[33mcommit b2137d3ad4893c255eaf7b4582c3d66070f7f312[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sat Jan 13 20:52:22 2018 -0500
+
+    allowed hosts creado
+
+[33mcommit d263fe340a6dc6455ebbdd04a1e7c9c712176e82[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sat Jan 13 20:43:15 2018 -0500
+
+    Cambio procfile compatible con heroku
+
+[33mcommit e7774757dd797872a6c88610838657c89e767569[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sat Jan 13 20:40:54 2018 -0500
+
+    Cambio procfile compatible con heroku
+
+[33mcommit 5a431dbc7ded309a9ca8e101bf6a117860dca31d[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sat Jan 13 20:38:08 2018 -0500
+
+    Cambio procfile compatible con heroku
+
+[33mcommit ba21fa4ede087da2891af25703165f2aa2e27457[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sat Jan 13 20:32:52 2018 -0500
+
+    Cambio procfile compatible con heroku
+
+[33mcommit a76243224de34660ef36333598c4d5ce1a7a3a46[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sat Jan 13 20:20:45 2018 -0500
+
+    Cambio procfile compatible con heroku
+
+[33mcommit 9e46d8bbebc85a791b55e233bee577640582697c[m
+Merge: fe590da 30d2d57
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sat Jan 13 20:16:20 2018 -0500
+
+    Proyecto inicial
+
+[33mcommit fe590da5533f75ce8d4f9cea7a2a34d28f3246f9[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sat Jan 13 20:15:38 2018 -0500
+
+    Prueba heroku local
+
+[33mcommit 96430d4f09b9d30bffc9aeddd8ac221a0cc64e9e[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sat Jan 13 20:08:39 2018 -0500
+
+    Creacion Procfile local
+
+[33mcommit 30d2d570d55684ba3bf07d66d53fce4b3eaa1e2e[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sat Jan 13 20:06:13 2018 -0500
+
+    Proyecto creado
+
+[33mcommit b4426329fe39c5cd66a0f4811a8a48c103032f85[m
+Author: diego7319 <diego7319@gmail.com>
+Date:   Sat Jan 13 19:52:21 2018 -0500
+
+    Proyecto creado
