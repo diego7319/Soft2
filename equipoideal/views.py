@@ -33,7 +33,7 @@ def retornarjugadores(request):
         return jugador_paisToJson()
 
 #creacion de sala
-def crearsala(request):
+def crearsalaEI(request):
     if not request.user.is_authenticated:
         return redirect('index')
     else:
@@ -86,6 +86,10 @@ def jugador_paisToJson():
         cont+=1
     return JsonResponse(pais_jugadordict)
 #
+def estadopago(rsala,rgrupo,ruser):
+    estado=PagoSalaEquipoIdeal.objects.get(nombreJuego=rsala,grupo=rgrupo,user=ruser).estadopago
+    return estado
+
 def grupoexiste(nombre):
     existe=''
     cant=salaequipoideal.objects.filter(nombreJuego=nombre).count()

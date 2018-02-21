@@ -7,6 +7,8 @@ urlpatterns = [
     path('juegoequipoideal/', views.JuegoEquipoIdeal, name='juegoequipoideal'),
     path('jugadores/', views.retornarjugadores, name='retornarjugadores'),
     path('crearequipoideal/',views.templateequipoideal,name='templateequipoideal'),
-    path('obtenerSalasEI/',views.obtenerSalasEI,name='obtenerSalasEI')
+    path('obtenerSalasEI/',views.obtenerSalasEI,name='obtenerSalasEI'),
+    path('crearsalaEI/',views.crearsalaEI,name='crearsalaEI'),
+
 
     ]
