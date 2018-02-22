@@ -1,0 +1,33 @@
+{%load staticfiles %}
+<html style="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script src="https://unpkg.com/sweetalert2@7.12.11/dist/sweetalert2.all.js"></script>
+<link rel="stylesheet" href="{% static '/css/analitica.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.12.11/sweetalert2.css">
+
+<h1 class="display-2" style="text-align: center;">Analitica</h1>
+<div class="container" style="width: 600px; height: 600px">
+    <canvas id="myChart" width="200" height="200"></canvas>
+</div>
+
+<script>
+    function user() {
+        return '{{usuario}}'
+    }
+</script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+<script src="{% static '/js/analitica.js' %}"></script>
+
+</body>
+
+
+</html>
