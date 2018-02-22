@@ -6,5 +6,5 @@ class GruposAdmin(admin.ModelAdmin):
 admin.site.register(grupo,GruposAdmin)
 
 class InvitacionAdmin(admin.ModelAdmin):
-    list_display = ('invitado','estado')
+    list_display = ('invitado','estado','grupo')
 admin.site.register(Invitacion,InvitacionAdmin)
