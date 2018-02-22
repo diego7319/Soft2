@@ -6,14 +6,23 @@
 <script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
-
 <script src="https://unpkg.com/sweetalert2@7.12.11/dist/sweetalert2.all.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
 <link rel="stylesheet" href="{% static '/css/polla.css' %}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.12.11/sweetalert2.css">
-<h1>Listar partidos usuario para apostar</h1>
 
+
+<h1 class="display-1" style="text-align: center;" >Polla</h1>
 <div class="container">
+    <div class="alert alert-info" role="alert">
+        <h4 class="alert-heading">Instrucciones</h4>
+        <p>Se listaran los partidos que esten habilitados para postar, los cuales se pueden diferenciar
+            por grupo. Se muestra los multiplicadores de ganancia para cada uno, los cuales se
+            multiplicaran con el monto a apostar para determinar la posible ganancia
+        </p>
+        <hr>
+        <p class="mb-0">Seleccionar su opcion de preferencia</p>
+    </div>
     <div id="contenido" class="row">
 
     </div>
