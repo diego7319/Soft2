@@ -100,6 +100,17 @@ def guardarscore(request):
 #return JsonResponse({'rpta':'error en guardar score'})
         return JsonResponse({'rpta':'Guardado correctamente'})
 
+
+def notificacionestrivia(rusuario):
+    datos=[]
+    notif=notificaciones.objects.filter(user=rusuario,ganador="si",sala=rsala)
+    pass
+
+
+
+
+
+
 def templatetrivia(request):
     context={
     'misgrupos':useradmingroup(request.user.username),
@@ -109,7 +120,6 @@ def templatetrivia(request):
 
 def Admin_calcularganador(request):
     rsala=request.POST.get("sala")
-
     sala_vacia=desactivarsala(rsala)
     if sala_vacia==None:
         context={
@@ -117,12 +127,12 @@ def Admin_calcularganador(request):
         'misgrupos':useradmingroup(request.user.username),
         'usuario':request.user.username
         }
-        return render(request,'configurartrivia.html',context)
+        return HttpResponse("asd")
     else:
         winers,losers=calculo_ganador_perdedor(rsala)
         monto=calcular_pozo_sala(rsala,winers)
-        notificacionganadores(winers,monto)
-        notificacionperdedores(losers)
+        notificacionganadores(winers,monto,rsala)
+        notificacionperdedores(losers,rsala)
         return HttpResponse("<script>window.location.href = window.location.href;</script>")
 
 
@@ -239,29 +249,38 @@ def calculo_ganador_perdedor(rsala):
 
 def estadopago(rsala,rgrupo,ruser):
     estado=PagoSala.objects.get(nombreJuego=rsala,grupo=rgrupo,user=ruser).estadopago
+    print ("estadopago")
+    print ("sala: "+rsala +"-grupo: "+rgrupo+"-usuario: "+ruser)
     return estado
 
 def calcular_pozo_sala(sala,ganadores):
     monto=Pozo_sala.objects.get(nombreJuego=sala).dinero
     return (monto/len(ganadores))
 
-def notificacionganadores(ganadores,monto):
+def notificacionganadores(ganadores,monto,rsala):
     for i in ganadores:
-        notif=notificaciones(user=i,ganador="si")
+        notif=notificaciones(user=i,ganador="si",sala=rsala)
+        print ("notificacion win SI"+i )
         notif.save()
+        recargar(i,monto)
 
-def notificacionperdedores(perdedores):
+def notificacionperdedores(perdedores,rsala):
     for i in perdedores:
-        notif=notificaciones(user=i,ganador="no")
+        notif=notificaciones(user=i,ganador="no",sala=rsala)
+        print ("notificacion win NO"+i )
         notif.save()
 
 def desactivarsala(sala):
+    print ("Nombre sala: %s" %(sala))
     objsala=salatrivia.objects.get(nombreJuego=sala)
     scorsala=Scorejuego.objects.filter(nombreJuego=sala)
     if scorsala.count()==0:
+        print ("count none")
         objsala.estado="desactivado"
+        objsala.save()
         return None
     else:
+        print ("count else")
         objsala.estado="desactivado"
         objsala.save()
         return "200"

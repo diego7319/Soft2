@@ -75,4 +75,5 @@ class notificaciones(models.Model):
     user=models.CharField(max_length=20)
     #se muestran  en notificaciones estado='0'
     estado=models.CharField(max_length=1,default='1')
+    sala=models.CharField(max_length=30,default="")
     ganador=models.CharField(max_length=2,default='no')

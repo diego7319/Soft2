@@ -26,7 +26,7 @@ def invitarusuario(request):
     elif admingrupos(username,grp)==True and invitadoexiste==1:
         invit=Invitacion(invitado=invi,grupo=grp)
         invit.save()
-        log_accion_invitar(request.mongo_db, username, invi, grupo)
+        log_accion_invitar(request.mongo_db, username, invi, grp)
         return HttpResponse("<script>alert('Se envio invitacion');document.location.href='/perfil';</script>")
     else:
         return HttpResponse("<script>alert('Usuario o grupo no existe');document.location.href='/perfil';</script>")
@@ -112,7 +112,6 @@ def misgrupos(ruser):
     lista= Invitacion.objects.filter(invitado=ruser,estado='aceptado')
     for i in lista:
         if i.estado=='aceptado':
-
             rpta.append(i.grupo)
     return rpta
 #retorna usuarios de un grupo

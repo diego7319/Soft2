@@ -51,7 +51,8 @@ def perfil(request):
             'grupos': views.useradmingroup(request.user.username),
             'misgrupos':views.misgrupos(request.user.username),
             'listausuarios':views.usuariosgrupo(request.POST.get('sometext')),
-            'saldo':saldo.dinerocuenta
+            'saldo':saldo.dinerocuenta,
+            'notificacionesTrivia':{}
             }
             log_accion_ver(request.mongo_db, request.user.username, 'perfil')
             return render(request,'hom.html',context)

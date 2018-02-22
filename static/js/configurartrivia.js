@@ -79,9 +79,6 @@ function restPago(usuario, grupo, sala) {
 
 }
 
-
-
-
 function datosPOSTJuego(usuario, grupo, sala, habilitado) {
     if (habilitado == 'si') {
         csrftoken = getCookie('csrftoken');
@@ -102,11 +99,10 @@ function datosPOSTJuego(usuario, grupo, sala, habilitado) {
 function datosPOSTJuegoadmin(sala) {
 
     csrftoken = getCookie('csrftoken');
-    t0 = " <form method='POST' action='../obtenerganador/'>";
-    t0 = t0 + "<input type='hidden' name='csrfmiddlewaretoken' value='" + csrftoken + "'>";
-    t3 = "<input  value='" + sala + "' id='" + sala + "' name='" + sala + "' hidden></input>";
-    t4 = "<input class='btn btn-primary'  type='submit' value='Obtener Ganador'></form>";
-    return t0 + t3 + t4
+    sala= '"'+sala+'"'
+    t0 =  "<input type='hidden' name='csrfmiddlewaretoken' value='" + csrftoken + "'>";
+    t4 = "<input class='btn btn-primary' onclick='Calcularganador("+sala+")' type='submit' value='Obtener Ganador'>";
+    return  t4
 }
 
 
@@ -215,15 +211,32 @@ function AjaxAgregarsala() {
             console.log(data);
             switch (data.rpta) {
                 case 'Sala ya existe':
+                    document.getElementById('msj').className="alert alert-danger"
+                    document.getElementById('msj').setAttribute("role", "alert");
                     document.getElementById('Resultado').innerHTML = 'Sala ya existe.'
+                    $('#msj').removeAttr('hidden')
                     break;
                 default:
                     Ajaxobtenersalas(); Ajaxobtenersalasadmin()
+                    document.getElementById('msj').className="alert alert-success alert-dismissible fade show"
                     document.getElementById('Resultado').innerHTML = 'Sala creada.'
-
+                    $('#msj').removeAttr('hidden')
             }
-
         }
-    });
+    });}
 
-}
+
+    function Calcularganador(sala) {
+      console.log(sala)
+        parametros = { 'sala':sala };
+        $.ajax({
+            type: "POST",
+            url: '../obtenerganador/',
+            data: parametros,
+            success: function (data) {
+
+Ajaxobtenersalasadmin()
+            }
+        });
+
+    }

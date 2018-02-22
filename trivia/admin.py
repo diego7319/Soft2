@@ -26,5 +26,5 @@ class Pozo_salaadmin(admin.ModelAdmin):
 admin.site.register(Pozo_sala,Pozo_salaadmin)
 
 class notificacionesadmin(admin.ModelAdmin):
-    list_display = ('user','ganador','estado')
+    list_display = ('user','ganador','estado','sala')
 admin.site.register(notificaciones,notificacionesadmin)
