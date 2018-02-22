@@ -22,7 +22,7 @@ def mostrarpregunta(request):
         return redirect('index')
     username = request.POST.get('username', None)
     arreglousado=request.POST.get('usado')
-    print (arreglousado)
+
     pregjson={}
     records = PreguntaTrivia.objects.all()
     #pregjson se retorna al html
@@ -57,6 +57,7 @@ def score(request):
     if objpregunta.respuesta==respuesta:
         rpuntaje='1'
         jsonrespuesta['resultado']='Respuesta correcta'
+
     return JsonResponse(jsonrespuesta)
 
 def crearjuego(request):
@@ -66,26 +67,25 @@ def crearjuego(request):
         info=request.POST
         estado='activo'
         nombresala=info.get('nombresala')
-        nombregrupo=info.get('grupo','')
+        nombregrupo=info.get('grupo')
         cantpreg=int(info.get('cantpreg'))
         rpago=int(info.get('pago'))
+        rusuario=info.get('usuario')
         nombreusado={}
         if grupoexiste(nombresala)=='El nombre de la sala ya existe':
             nombreusado['existe']='El nombre de la sala ya existe,use otro nombre'
             nombreusado['misgrupos']=useradmingroup(request.user.username)
             nombreusado['usuario']=request.user.username
-            return render(request,'configurartrivia.html',nombreusado)
+            print ("EXISTE")
+            return JsonResponse({'rpta':'Sala ya existe'})
         else:
             salaobj=salatrivia(nombreJuego=nombresala,grupo=nombregrupo,cantpreguntas=cantpreg,
-            estado='activo',pago=rpago)
-            salaobj.save()
-            Pozo_sala(nombreJuego=nombresala,dinero=0).save()
-            GenerarPago(nombresala,rpago,nombregrupo)
-            context={'misgrupos':useradmingroup(request.user.username),
-            'existe':'Sala de juego creada',
-            'usuario':request.user.username
-            }
-            return render(request,'configurartrivia.html',context)
+            estado='activo',pago=rpago);
+            salaobj.save();
+            Pozo_sala(nombreJuego=nombresala,dinero=0).save();
+            GenerarPago(nombresala,rpago,nombregrupo);
+            print ("CREADO")
+            return JsonResponse({'existe':'Sala de juego creada'})
 
 def guardarscore(request):
     rsala=request.POST.get('sala')
@@ -103,13 +103,13 @@ def guardarscore(request):
 def templatetrivia(request):
     context={
     'misgrupos':useradmingroup(request.user.username),
-    'usuario':request.user.username
-    }
+    'usuario':request.user.username,
+        }
     return render(request,'configurartrivia.html',context)
 
 def Admin_calcularganador(request):
     rsala=request.POST.get("sala")
-    print (rsala)
+
     sala_vacia=desactivarsala(rsala)
     if sala_vacia==None:
         context={
@@ -192,7 +192,7 @@ def obtenerSalasadmin(request):
     for i in salagrupo:
         jsonrespuesta[str(cont)]={'sala':i.split('-')[0],'grupo':i.split('-')[1]}
         cont+=1
-    print (jsonrespuesta)
+
     return JsonResponse(jsonrespuesta)
 
 #funciones de apoyo
@@ -214,15 +214,13 @@ def getSalasdeGrupo(rgrupos):
     return rpta
 
 #genera los pedidos de pago al usuario al crear una sala
-def GenerarPago(sala,pago,grupo):
-    rsala=sala;rgrupo=grupo;
+def GenerarPago(sala,pago,rgrupo):
+    rsala=sala;
     usuarios=Invitacion.objects.filter(grupo=rgrupo,estado='aceptado')
-    print ('cant'+str(usuarios.count()))
     for i in usuarios:
+        print ("generando pago a "+i.invitado)
         gpago=PagoSala(nombreJuego=rsala,grupo=rgrupo,estadopago='deuda',user=i.invitado)
-        print ('creadndo pago sala'+ rsala+"-Grupo"+rgrupo+"-usuario"+i.invitado)
         gpago.save()
-    return None
 
 def calculo_ganador_perdedor(rsala):
     ganadores=[];perdedores=[]
