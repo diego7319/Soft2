@@ -2,10 +2,11 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.http import JsonResponse
 from users.models import usuariocuenta
-from trivia.models import PreguntaTrivia,scoretrivia,salatrivia,PagoSala
+from trivia.models import PreguntaTrivia,resultados,scoretrivia,salatrivia,PagoSala,Scorejuego
 from random import randint,shuffle,choice
 from grupos.views import misgrupos,useradmingroup
 from grupos.models import Invitacion
+from users.views import recargarcuentaCustom as recargar
 # Create your views here.
 from rest_framework.decorators import api_view
 
@@ -28,7 +29,6 @@ def mostrarpregunta(request):
     repetido=True
     while repetido==True:
         random_record = choice(records)
-        print (arreglousado.split('-'))
         if str(random_record.idPregunta) in arreglousado.split('-'):
             repetido=True
         else:
@@ -87,6 +87,18 @@ def crearjuego(request):
             }
             return render(request,'configurartrivia.html',context)
 
+def guardarscore(request):
+    rsala=request.POST.get('sala')
+    rusuario=request.POST.get('usuario')
+    rgrupo=request.POST.get('grupo')
+    rresultado=request.POST.get('resultado')
+    if (Scorejuego.objects.filter(nombreJuego=rsala,grupo=rgrupo,user=rusuario).count()>=1):
+        return JsonResponse({"rpta":"Ya haz jugado esta sala"})
+    else:
+        d=Scorejuego(nombreJuego=rsala,grupo=rgrupo,user=rusuario,resultado=rresultado)
+        d.save()
+#return JsonResponse({'rpta':'error en guardar score'})
+        return JsonResponse({'rpta':'Guardado correctamente'})
 
 def templatetrivia(request):
     context={
@@ -105,10 +117,19 @@ def iniciarjuego(request):
     context={
     'cantpreg':cantpreg,
     'salatrivia':nombrejuego,
-    'user':usuario
+    'user':usuario,
+    'grupo':grupo
     }
     return render(request,'holi.html',context)
 
+def iniciarjuegopracticatrivia(request):
+
+    #cantpreg=salatrivia.objects.get(nombreJuego=nombrejuego,grupo=grupo).cantpreguntas
+    context={
+    'cantpreg':10,
+    'user':request.user.username
+    }
+    return render(request,'juegopractica.html',context)
 
 def pagar_sala(request):
     info=request.POST
@@ -129,7 +150,14 @@ def pagar_sala(request):
         cambiarestado.save()
         return JsonResponse({"rpta": "Pago realizado"})
 
-
+def calcularganador(request):
+    rsala=requst.POST.get("sala")
+    sala_vacia=desactivarsala()
+    if sala_vacia==None:
+        return JsonResponse({'rpta':'sala vacia'})
+    else:
+        ganadores=calcularGanador(rsala)
+        return (calcularGanador(rsala))
 
 def obtenerSalas(request):
     jsonrespuesta={}
@@ -147,13 +175,17 @@ def obtenerSalas(request):
 def obtenerSalasadmin(request):
     jsonrespuesta={}
     ruser=request.POST.get('usuario')
-    listagrupos=misgrupos(ruser)
+    listagrupos=useradmingroup(ruser)
     salagrupo= getSalasdeGrupo(listagrupos)
     cont=0
     for i in salagrupo:
-        jsonrespuesta[str(cont)]={'sala':i.split('-')[0],'grupo':i.split('-')[1],'estado':estadopago(i.split('-')[0],i.split('-')[1],ruser)}
+        jsonrespuesta[str(cont)]={'sala':i.split('-')[0],'grupo':i.split('-')[1]}
         cont+=1
     return JsonResponse(jsonrespuesta)
+
+def notificacion_cobrarganadores(request):
+    pass
+
 #funciones de apoyo
 def grupoexiste(nombre):
     existe=''
@@ -182,9 +214,35 @@ def GenerarPago(sala,pago,grupo):
         print ('creadndo pago sala'+ rsala+"-Grupo"+rgrupo+"-usuario"+i.invitado)
         gpago.save()
     return None
-def MayorPuntaje(rsala,rgrupo):
-    pass
+
+def MayorPuntaje(rsala):
+    puntajes=[]
+    jugadas=Scorejuego.objects.filter(nombreJuego=rsala)
+    for juego in jugadas:
+        puntajes.append(juego.resultado)
+    return max(puntajes)
+
 
 def estadopago(rsala,rgrupo,ruser):
     estado=PagoSala.objects.get(nombreJuego=rsala,grupo=rgrupo,user=ruser).estadopago
     return estado
+
+def calcular_pozo_sala(sala):
+    monto=resultados.objects.filter(nombreJuego=sala)
+    result=0
+    topscore=MayorPuntaje(sala)
+    for i in monto:
+        i.resultado
+        pass
+
+def notificacionganadores(ganadores,ganador,montoganado):
+    pass
+
+def desactivarsala(request):
+    rsala=salatrivia.objects.get(nombreJuego=sala)
+    if rsala.count()==0:
+        return None
+    else:
+        estado.estado="desactivado"
+        rsala.save()
+        return "200"

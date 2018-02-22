@@ -26,6 +26,7 @@ $.ajaxSetup({
 
 
 
+<<<<<<< HEAD
 function botondeuda(estado, usuario, grupo, sala) {
     if (estado == 'deuda') {
         id = estado + usuario + grupo + sala
@@ -34,6 +35,16 @@ function botondeuda(estado, usuario, grupo, sala) {
         return t0
     }
     else { return 'Habilitado para Jugar' }
+=======
+function botondeuda(estado,usuario,grupo,sala){
+  if(estado=='deuda'){
+    id2=usuario+grupo+sala
+    id=estado+usuario+grupo+sala
+    func="restPago('"+usuario+"','"+grupo+"','"+sala+"');"
+t0='<input class="btn btn-primary" id='+id2+' type="submit" value="Pagar Aqui" onclick="'+func+'">';
+  return t0}
+  else {return 'Habilitado para Jugar'}
+>>>>>>> 5abb5659e9da6fafe212e2589257d41e52be7a18
 
 }
 
@@ -45,11 +56,23 @@ function restPago(usuario, grupo, sala) {
         url: '../pagar_sala/',
         data: parametros,
 
+<<<<<<< HEAD
         success: function (data) {
 
             if (data.rpta == 'No hay saldo suficiente en tu cuenta') { }
         }
     });
+=======
+          success: function(data)
+          {
+console.log(data)
+            if (data.rpta=='No hay saldo suficiente en tu cuenta'){
+              document.getElementById(id).setAttribute('value',"Saldo insuficiente")
+            }else{location.reload();
+}
+          }
+      });
+>>>>>>> 5abb5659e9da6fafe212e2589257d41e52be7a18
 
 }
 function datosPOSTJuego(usuario, grupo, sala, habilitado) {
@@ -108,12 +131,34 @@ function llenartabla(datos) {
 
 }
 
+<<<<<<< HEAD
 function Ajaxobtenersalas() {
     parametros = { 'usuario': user() };
     $.ajax({
         type: "POST",
         url: '../obtenerSalas/',
         data: parametros,
+=======
+
+function llenartablaadmin(datos){
+  contador=0
+  for (i in datos)
+  {contador=contador+1
+    sala=datos[i].sala
+    grupo=datos[i].grupo
+    estado=datos[i].estado
+agregarrow(grupo,sala,i,contador,estado)
+                }
+
+}
+
+function Ajaxobtenersalas(){
+  parametros={'usuario':user()};
+  $.ajax({
+            type: "POST",
+            url: '../obtenerSalas/',
+            data: parametros,
+>>>>>>> 5abb5659e9da6fafe212e2589257d41e52be7a18
 
         success: function (data) {
             console.log(data);
@@ -123,6 +168,25 @@ function Ajaxobtenersalas() {
     });
 
 }
+
+function Ajaxobtenersalasadmin(){
+  parametros={'usuario':user()};
+  $.ajax({
+            type: "POST",
+            url: '../obtenerSalasadmin/',
+            data: parametros,
+
+            success: function(data)
+            {
+console.log(data);
+
+
+            }
+        });
+
+}
+
+
 
 
 function pagar() { }

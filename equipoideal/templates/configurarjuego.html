@@ -13,7 +13,7 @@
         font-family: sans-serif;"><h2 style="
     color:  white;
     font-family:  cursive;
-">Crear y configurar trivia</h2> <br>
+">Crear y configurar Equipo Ideal</h2> <br>
 <p style="font-family:  Arial; class"="text-muted; color:white; font-size:20px;">
      Solo podras crear una sala en el grupo que eres administrador</p></div>
 </div>
@@ -21,7 +21,7 @@
 
 <p id='Resultado'></p>
 <div style='margin:10%'>
-     <form method="POST" action="../crearjuego/">
+     <form method="POST" action="../crearsalaEI/">
       {% csrf_token %}
       <div class="form-group">
         <label style="
@@ -37,22 +37,12 @@
           <option value={{t}}> {{t}} </option>
           {% endfor %}
         </select></div>
-  <div class="form-group">
-
-<label style="
-    font-family:  monospace; font-size:18px; color:white;
-">Cantidad de preguntas</label>
-<select class="form-control" id='cantpreg' name='cantpreg' class="reg_input" required>
-      <option value=5> 5 preguntas </option>
-      <option value=10> 10 preguntas </option>
-      <option value=15> 15 preguntas </option>
-</select></div>
 
 <div class="form-group">
 
 <label style="
   font-family:  monospace; font-size:18px; color:white;
-">Apuesta Minima</label>
+">Apuesta</label>
 <input min="0" id='pago' type='number' required class="form-control"
 name='pago' size=10></input></div>
 

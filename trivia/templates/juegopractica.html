@@ -45,13 +45,14 @@
  </body>
 
 <script>
-function cantpreg(){return {{cantpreg}}}
+function cantpreg(){return 10}
+function grupo(){return '{{grupo}}'}
 function user(){return '{{user}}'}
-function rrgrupo(){return '{{grupo}}'}
 function sala(){return '{{salatrivia}}'}
+
 </script>
   <script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
-  <script src= "{% static '/js/trivia.js' %}"></script>
+  <script src= "{% static '/js/triviapractica.js' %}"></script>
 
 
 

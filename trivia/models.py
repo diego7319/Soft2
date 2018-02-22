@@ -51,8 +51,8 @@ class SalaApuestas(models.Model):
     nombreJuego=models.CharField(max_length=30)
     grupo=models.CharField(max_length=30)
 
-class GanadorPozo(models.Model):
-    idjuego=models.AutoField(primary_key=True)
+class resultados(models.Model):
+    idresultado=models.AutoField(primary_key=True)
     nombreJuego=models.CharField(max_length=30)
     grupo=models.CharField(max_length=30)
     user=models.CharField(max_length=20)
@@ -63,3 +63,11 @@ class Scorejuego(models.Model):
     user=models.CharField(max_length=20)
     grupo=models.CharField(max_length=30)
     nombreJuego=models.CharField(max_length=30)
+    resultado=models.FloatField(default=0)
+
+class notificaciones(models.Model):
+    idnotificacion=models.AutoField(primary_key=True)
+    user=models.CharField(max_length=20)
+    #se muestran  en notificaciones estado='0'
+    estado=models.CharField(max_length=1,default='1')
+    ganador=models.CharField(max_length=2,default='no')

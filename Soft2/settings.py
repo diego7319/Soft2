@@ -55,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'analitica.middleware.MongodbMiddleware',
 ]
 
 ROOT_URLCONF = 'Soft2.urls'
@@ -96,13 +97,20 @@ DATABASES = {
         'NAME': 'dblsrhhtmborgr',
         'USER': 'amsohvzikeflij',
         'PASSWORD': 'b39fcc59216bcf1f75bed2c955dd6b5ff0b01ba6d25cc75cd06230747accc498',
-
         'PORT': 5432
-
-
     }
-
 }
+
+MONGODB_DATABASES = {
+    'default': {
+        'HOST': 'ds225078.mlab.com',
+        'NAME': 'heroku_9mlt0mlb',
+        'USER': 'heroku_9mlt0mlb',
+        'PASSWORD': 'heroku123456',
+        'PORT': 25078
+    }
+}
+
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)

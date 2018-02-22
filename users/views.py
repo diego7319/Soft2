@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from grupos import views
 from users.models import usuariocuenta
+from analitica.acciones import log_accion_ver, log_accion_registro, log_accion_login, log_accion_logout
 
 def games(request):
     personas = [
@@ -15,6 +16,7 @@ def games(request):
     variables = {
         'lista_personas' : personas
     }
+    log_accion_ver(request.mongo_db, None, 'games')
     return render(request, 'games.html', variables)
 
 def index(request):
@@ -30,6 +32,7 @@ def index(request):
             'formaL': formaLogin,
             'formaS': formaRegistro
             }
+            log_accion_ver(request.mongo_db, None, 'index')
             return render(request,'index.html', context)
 
 def perfil(request):
@@ -46,6 +49,7 @@ def perfil(request):
             'listausuarios':views.usuariosgrupo(request.POST.get('sometext')),
             'saldo':saldo.dinerocuenta
             }
+            log_accion_ver(request.mongo_db, request.user.username, 'perfil')
             return render(request,'hom.html',context)
         else:
 
@@ -55,9 +59,11 @@ def perfil(request):
             'saldo':saldo.dinerocuenta
 
             }
+            log_accion_ver(request.mongo_db, request.user.username, 'perfil')
             return render(request,'hom.html',context)
 
 def log_out(request):
+    log_accion_logout(request.mongo_db, request.user.username)
     logout(request)
     return redirect('index')
 
@@ -70,6 +76,17 @@ def recargarcuenta(request):
     user.dinerocuenta=(saldoactual+cantidadrecarga)
     user.save()
     return redirect('perfil')
+
+def recargarcuentaCustom(ruser,cantidad):
+    user= usuariocuenta.objects.get(usuario=ruser)
+    saldoactual=user.dinerocuenta
+    cantidadrecarga=cantidad
+    user.dinerocuenta=(saldoactual+cantidadrecarga)
+    try:
+        user.save()
+    except Exception as e:
+        print ("Error en recargar cuenta : Usuario --> %s cantidad--> %s" % (ruser,cantidad))
+
 
 
 """ Funciones de apoyo """
@@ -88,6 +105,7 @@ def pLogin(request):
             if user is not None:
                 login(request, user)
                 #request.session.set_expiry(3600)
+                log_accion_login(request.mongo_db, user.username)
                 return redirect('perfil/')
             else:
                 context = {
@@ -119,6 +137,7 @@ def pRegistro(request):
                 user.save();
                 cuenta=usuariocuenta(usuario=raw_username,dinerocuenta=10)
                 cuenta.save();
+                log_accion_registro(request.mongo_db, user.username)
                 context['estadoregistro']='Registrado correctamente'
                 print('dd')
                 return render(request,'index.html',context)

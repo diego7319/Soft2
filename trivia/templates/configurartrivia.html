@@ -6,7 +6,7 @@
 <script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<body onload='Ajaxobtenersalas()'>
+<body onload='Ajaxobtenersalas();Ajaxobtenersalasadmin()'>
   <div class='row'>
     <div class='row col-md-4'></div>
     <div class='col-md-4' style="
@@ -19,8 +19,9 @@
 </div>
 </b>
 
-<p id='Resultado'></p>
+
 <div style='margin:10%'>
+  <p class="alert alert-danger" id='Resultado'></p>
      <form method="POST" action="../crearjuego/">
       {% csrf_token %}
       <div class="form-group">
@@ -85,8 +86,26 @@ name='pago' size=10></input></div>
 
 <div>
 
-<h1 style="font-family: sans-serif;color:  white;">Salas donde eres Administrador</h1>
+<h1 style="font-family: sans-serif;color:  white;">Generar Ganador de Sala</h1>
 </div>
+
+
+<div style='margin:auto'>
+  <h1 style="font-family: sans-serif;color:  white;"> </h1>
+<table class='table table-responsive table-inverse' style="color:white;">
+  <thead>
+<tr> <th>Grupo</th>
+    <th>Sala</th>
+    <th>Obtener Ganador</th>
+
+<tr>
+</thead>
+<tbody id='missalasadmin' ></tbody>
+</table>
+
+</div>
+
+
 <button id='home' value='' class="btn btn-success"  onClick="window.location.href='../'" style="
 
     color: white;
