@@ -107,6 +107,18 @@ def templatetrivia(request):
     }
     return render(request,'configurartrivia.html',context)
 
+def Admin_calcularganador(request):
+    rsala=request.POST.get("sala")
+    sala_vacia=desactivarsala()
+    if sala_vacia==None:
+        return JsonResponse({'rpta':'sala vacia'})
+    else:
+        winers,losers=calculo_ganador_perdedor(rsala)
+        monto=calcular_pozo_sala(rsala,winers)
+        notificacionganadores(winers,monto)
+        notificacionperdedores(losers)
+        return None
+
 
 def iniciarjuego(request):
     info=request.POST
@@ -139,7 +151,6 @@ def pagar_sala(request):
     cantpagar=salatrivia.objects.get(nombreJuego=rnombrejuego,grupo=rgrupo).pago
     saldouser=usuariocuenta.objects.get(usuario=rusuario)
     if int(cantpagar) > int(saldouser.dinerocuenta):
-        print (int(cantpagar) > int(saldouser.dinerocuenta))
         return JsonResponse({"rpta": "No hay saldo suficiente en tu cuenta"})
     else:
         nuevosaldouser=saldouser.dinerocuenta-cantpagar
@@ -151,14 +162,7 @@ def pagar_sala(request):
         cambiarestado.save()
         return JsonResponse({"rpta": "Pago realizado"})
 
-def Admin_calcularganador(request):
-    rsala=requst.POST.get("sala")
-    sala_vacia=desactivarsala()
-    if sala_vacia==None:
-        return JsonResponse({'rpta':'sala vacia'})
-    else:
-        ganadores=calcularGanador(rsala)
-        return (calcularGanador(rsala))
+
 
 def obtenerSalas(request):
     jsonrespuesta={}
@@ -182,6 +186,7 @@ def obtenerSalasadmin(request):
     for i in salagrupo:
         jsonrespuesta[str(cont)]={'sala':i.split('-')[0],'grupo':i.split('-')[1]}
         cont+=1
+    print (jsonrespuesta)
     return JsonResponse(jsonrespuesta)
 
 #funciones de apoyo
@@ -220,15 +225,20 @@ def calculo_ganador_perdedor(rsala):
     for juego in jugadas:
         puntajes.append(juego.resultado)
     puntajeganador= max(puntajes)
-    return None
+    for usuario in jugadas:
+        if usuario.resultado==puntajeganador:
+            ganadores.append(usuario.user)
+        else:
+            perdedores.append(usuario.user)
+    return ganadores,perdedores
 
 def estadopago(rsala,rgrupo,ruser):
     estado=PagoSala.objects.get(nombreJuego=rsala,grupo=rgrupo,user=ruser).estadopago
     return estado
 
-def calcular_pozo_sala(sala):
+def calcular_pozo_sala(sala,ganadores):
     monto=Pozo_sala.objects.get(nombreJuego=sala).dinero
-    return (monto)
+    return (monto/ganadores)
 
 def notificacionganadores(ganadores,monto):
     for i in ganadores:

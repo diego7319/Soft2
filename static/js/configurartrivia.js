@@ -26,16 +26,7 @@ $.ajaxSetup({
 
 
 
-<<<<<<< HEAD
-function botondeuda(estado, usuario, grupo, sala) {
-    if (estado == 'deuda') {
-        id = estado + usuario + grupo + sala
-        func = "restPago('" + usuario + "','" + grupo + "','" + sala + "');"
-        t0 = '<input class="btn btn-primary" id=' + "id" + ' type="submit" value="Pagar Aqui" onclick="' + func + '">';
-        return t0
-    }
-    else { return 'Habilitado para Jugar' }
-=======
+
 function botondeuda(estado,usuario,grupo,sala){
   if(estado=='deuda'){
     id2=usuario+grupo+sala
@@ -44,9 +35,22 @@ function botondeuda(estado,usuario,grupo,sala){
 t0='<input class="btn btn-primary" id='+id2+' type="submit" value="Pagar Aqui" onclick="'+func+'">';
   return t0}
   else {return 'Habilitado para Jugar'}
->>>>>>> 5abb5659e9da6fafe212e2589257d41e52be7a18
+
 
 }
+
+function botondeudaadmin(estado,usuario,grupo,sala){
+  if(estado=='deuda'){
+    id2=usuario+grupo+sala
+    id=estado+usuario+grupo+sala
+    func="restPagoadmin('"+sala+"');"
+t0='<input class="btn btn-primary" id='+id2+' type="submit" value="Pagar Aqui" onclick="'+func+'">';
+  return t0}
+
+
+
+}
+
 
 function restPago(usuario, grupo, sala) {
     id = usuario + grupo + sala
@@ -56,25 +60,21 @@ function restPago(usuario, grupo, sala) {
         url: '../pagar_sala/',
         data: parametros,
 
-<<<<<<< HEAD
         success: function (data) {
 
-            if (data.rpta == 'No hay saldo suficiente en tu cuenta') { }
+            if (data.rpta == 'No hay saldo suficiente en tu cuenta')
+            {document.getElementById(id).setAttribute('value',"Saldo insuficiente")}
+        else{window.location.href = window.location.href;  }
+
         }
     });
-=======
-          success: function(data)
-          {
-console.log(data)
-            if (data.rpta=='No hay saldo suficiente en tu cuenta'){
-              document.getElementById(id).setAttribute('value',"Saldo insuficiente")
-            }else{location.reload();
-}
-          }
-      });
->>>>>>> 5abb5659e9da6fafe212e2589257d41e52be7a18
 
-}
+
+          }
+
+
+
+
 function datosPOSTJuego(usuario, grupo, sala, habilitado) {
     if (habilitado == 'si') {
         csrftoken = getCookie('csrftoken');
@@ -92,16 +92,24 @@ function datosPOSTJuego(usuario, grupo, sala, habilitado) {
     }
 }
 
+function datosPOSTJuegoadmin(sala) {
 
-var table = document.getElementById("missalas");
+        csrftoken = getCookie('csrftoken');
+        t0 = " <form method='POST' action='../obtenerganador/'>";
+        t0 = t0 + "<input type='hidden' name='csrfmiddlewaretoken' value='" + csrftoken + "'>";
+        t3 = "<input  value='" + sala + "' id='jugarsala' name='jugarsala' hidden></input>";
+        t4 = "<input class='btn btn-primary'  type='submit' value='Obtener Ganador'></form>";
+        return t0 + t3 + t4
+    }
+
+
+
+
 function agregarrow(grupo, sala, posic, contador, estado) {
-
+  var table = document.getElementById("missalas");
     var row = table.insertRow(posic);
-
-
     cell1 = row.insertCell(0).innerHTML = grupo;
     cell1 = row.insertCell(1).innerHTML = sala;
-
     x = botondeuda(estado, user(), grupo, sala);
     if (x == 'Habilitado para Jugar') {
         cell1 = row.insertCell(2).innerHTML = x;
@@ -117,28 +125,27 @@ function agregarrow(grupo, sala, posic, contador, estado) {
 }
 
 
+function agregarrowadmin(grupo, sala, posic, contador) {
+  var tableadmin = document.getElementById("missalasadmin");
+    var row = tableadmin.insertRow(posic);
+    cell1 = row.insertCell(0).innerHTML = grupo;
+    cell1 = row.insertCell(1).innerHTML = sala;
+    cell1 = row.insertCell(2).innerHTML = datosPOSTJuegoadmin(sala);
+    }
+
 
 
 function llenartabla(datos) {
     contador = 0
     for (i in datos) {
-        contador = contador + 1
-        sala = datos[i].sala
-        grupo = datos[i].grupo
-        estado = datos[i].estado
-        agregarrow(grupo, sala, i, contador, estado)
+        contador = contador + 1;
+        sala = datos[i].sala;
+        grupo = datos[i].grupo;
+        estado = datos[i].estado;
+        agregarrow(grupo, sala, i, contador, estado);
     }
 
 }
-
-<<<<<<< HEAD
-function Ajaxobtenersalas() {
-    parametros = { 'usuario': user() };
-    $.ajax({
-        type: "POST",
-        url: '../obtenerSalas/',
-        data: parametros,
-=======
 
 function llenartablaadmin(datos){
   contador=0
@@ -146,8 +153,8 @@ function llenartablaadmin(datos){
   {contador=contador+1
     sala=datos[i].sala
     grupo=datos[i].grupo
-    estado=datos[i].estado
-agregarrow(grupo,sala,i,contador,estado)
+
+agregarrowadmin(grupo,sala,i,contador)
                 }
 
 }
@@ -158,10 +165,9 @@ function Ajaxobtenersalas(){
             type: "POST",
             url: '../obtenerSalas/',
             data: parametros,
->>>>>>> 5abb5659e9da6fafe212e2589257d41e52be7a18
-
         success: function (data) {
-            console.log(data);
+  console.log('salas')
+  console.log(data)
             llenartabla(data)
 
         }
@@ -175,18 +181,13 @@ function Ajaxobtenersalasadmin(){
             type: "POST",
             url: '../obtenerSalasadmin/',
             data: parametros,
-
             success: function(data)
             {
-console.log(data);
+              console.log('admin')
+                console.log(data)
+  llenartablaadmin(data)
 
-
-            }
+          }
         });
 
 }
-
-
-
-
-function pagar() { }
