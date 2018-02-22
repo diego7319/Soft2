@@ -64,7 +64,13 @@ function restPago(usuario, grupo, sala) {
 
             if (data.rpta == 'No hay saldo suficiente en tu cuenta')
             {document.getElementById(id).setAttribute('value',"Saldo insuficiente")}
-        else{window.location.href = window.location.href;  }
+        else{
+
+
+          window.location = window.location.href.split("?")[0];
+
+
+          }
 
         }
     });
@@ -97,7 +103,7 @@ function datosPOSTJuegoadmin(sala) {
         csrftoken = getCookie('csrftoken');
         t0 = " <form method='POST' action='../obtenerganador/'>";
         t0 = t0 + "<input type='hidden' name='csrfmiddlewaretoken' value='" + csrftoken + "'>";
-        t3 = "<input  value='" + sala + "' id='jugarsala' name='jugarsala' hidden></input>";
+        t3 = "<input  value='" + sala + "' id='"+sala+"' name='"+sala+"' hidden></input>";
         t4 = "<input class='btn btn-primary'  type='submit' value='Obtener Ganador'></form>";
         return t0 + t3 + t4
     }
@@ -186,6 +192,36 @@ function Ajaxobtenersalasadmin(){
               console.log('admin')
                 console.log(data)
   llenartablaadmin(data)
+
+          }
+        });
+
+}
+
+function AjaxAgregarsala(){
+nombresala=document.getElementById('nombresala').value
+grupo=$("#grupo :selected").val();
+cantpreg=$("#cantpreg :selected").val();
+cantpago=document.getElementById('pago').value
+parametros={'usuario':user(),'nombresala':nombresala,
+'grupo':grupo,'cantpreg':cantpreg,'pago':cantpago
+};
+  $.ajax({
+            type: "POST",
+            url: '../crearjuego/',
+            data: parametros,
+            success: function(data)
+            {
+console.log(data);
+switch (data.rpta) {
+  case 'Sala ya existe':
+    document.getElementById('Resultado').innerHTML='Sala ya existe.'
+    break;
+  default:
+  Ajaxobtenersalas();Ajaxobtenersalasadmin()
+  document.getElementById('Resultado').innerHTML='Sala creada.'
+
+}
 
           }
         });

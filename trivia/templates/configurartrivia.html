@@ -22,8 +22,8 @@
 
 <div style='margin:10%'>
   <p class="alert alert-danger" id='Resultado'></p>
-     <form method="POST" action="../crearjuego/">
-      {% csrf_token %}
+
+
       <div class="form-group">
         <label style="
         font-family:  monospace; font-size:18px; color:white;">Nombre de sala: </label>
@@ -57,11 +57,11 @@
 <input min="0" id='pago' type='number' required class="form-control"
 name='pago' size=10></input></div>
 
-<input class="btn btn-primary"  type="submit" value="Crear sala" style="
+<input class="btn btn-primary"  onclick="AjaxAgregarsala();" type="submit" value="Crear sala" style="
     color: w3-hover-white;
     border:  none;
 "/>
-</form>
+
 
 </div>
 <!-- Salas creadas -->

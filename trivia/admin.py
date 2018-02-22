@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import PreguntaTrivia,salatrivia,PagoSala,Scorejuego,Pozo_sala
+from .models import PreguntaTrivia,notificaciones,salatrivia,PagoSala,Scorejuego,Pozo_sala
 from django.contrib import admin
 # Register your models here.
 
@@ -24,3 +24,7 @@ admin.site.register(Scorejuego,ScoreSaladmin)
 class Pozo_salaadmin(admin.ModelAdmin):
     list_display = ('nombreJuego','dinero')
 admin.site.register(Pozo_sala,Pozo_salaadmin)
+
+class notificacionesadmin(admin.ModelAdmin):
+    list_display = ('user','ganador','estado')
+admin.site.register(notificaciones,notificacionesadmin)
