@@ -220,7 +220,7 @@ def calculo_ganador_perdedor(rsala):
     for juego in jugadas:
         puntajes.append(juego.resultado)
     puntajeganador= max(puntajes)
-    pass
+    return None
 
 def estadopago(rsala,rgrupo,ruser):
     estado=PagoSala.objects.get(nombreJuego=rsala,grupo=rgrupo,user=ruser).estadopago
