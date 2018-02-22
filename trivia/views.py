@@ -108,7 +108,7 @@ def templatetrivia(request):
     return render(request,'configurartrivia.html',context)
 
 def Admin_calcularganador(request):
-    rsala=requst.POST.get("sala")
+    rsala=request.POST.get("sala")
     sala_vacia=desactivarsala()
     if sala_vacia==None:
         return JsonResponse({'rpta':'sala vacia'})
