@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.http import JsonResponse
 from users.models import usuariocuenta
-from trivia.models import PreguntaTrivia,Pozo_sala,resultados,scoretrivia,salatrivia,PagoSala,Scorejuego
+from trivia.models import PreguntaTrivia,Pozo_sala,scoretrivia,salatrivia,PagoSala,Scorejuego
 from random import randint,shuffle,choice
 from grupos.views import misgrupos,useradmingroup
 from grupos.models import Invitacion
@@ -220,7 +220,7 @@ def calculo_ganador_perdedor(rsala):
     for juego in jugadas:
         puntajes.append(juego.resultado)
     puntajeganador= max(puntajes)
-    for user in jugadas
+    pass
 
 def estadopago(rsala,rgrupo,ruser):
     estado=PagoSala.objects.get(nombreJuego=rsala,grupo=rgrupo,user=ruser).estadopago
