@@ -64,7 +64,7 @@ function restPago(usuario, grupo, sala) {
 
             if (data.rpta == 'No hay saldo suficiente en tu cuenta')
             {document.getElementById(id).setAttribute('value',"Saldo insuficiente")}
-        else{location.reload();  }
+        else{window.location.href = window.location.href;  }
 
         }
     });
