@@ -1,0 +1,50 @@
+{%load staticfiles %}
+<html style="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+<script src="https://unpkg.com/sweetalert2@7.12.11/dist/sweetalert2.all.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+<link rel="stylesheet" href="{% static '/css/polla.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.12.11/sweetalert2.css">
+
+
+<h1 class="display-1" style="text-align: center;">Prueba de la polla</h1>
+<div class="container">
+
+    <a href="../perfil" class="btn btn-outline-primary">Menu Principal</a>
+    <br>
+    <br>
+    <div class="alert alert-info" role="alert">
+        <h4 class="alert-heading">Instrucciones</h4>
+        <p>Esta es una simulacion del juego de la polla. Para jugar seguir los siguientes pasos</br>
+            - Selecciona la opcion de preferencia</br>
+            - Ingresar el monto a postar</br>
+            - Esperar la confirmacion del resultado</br>
+        </p>
+        <hr>
+        <p class="mb-0">Buena suerte :)</p>
+    </div>
+    <div id="contenido" class="row">
+
+    </div>
+</div>
+
+<script>
+    function user() {
+        return '{{usuario}}'
+    }
+</script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+<script src="{% static '/js/juegopartidos.js' %}"></script>
+
+</body>
+
+
+</html>

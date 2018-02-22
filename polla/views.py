@@ -57,3 +57,10 @@ def saveApuesta(request):
     apuesta.save()
 
     return JsonResponse(jsonrespuesta)
+
+
+def templatejuegopartidos(request):
+    context={
+    'usuario':request.user.username
+    }
+    return render(request,'juegopartidos.html',context)

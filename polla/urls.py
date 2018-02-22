@@ -1,4 +1,4 @@
-from polla.views import templatepolla,obtenerPartidos,updatePartido,templatepollaApostar,saveApuesta
+from polla.views import templatepolla,obtenerPartidos,updatePartido,templatepollaApostar,saveApuesta,templatejuegopartidos
 from django.urls import path
 
 urlpatterns = [
@@ -8,4 +8,5 @@ urlpatterns = [
     path('updatePartido/',updatePartido,name='updatePartido'),
     path('mostrarpartidosApostar/',templatepollaApostar,name='mostrarpartidosApostar'),
     path('saveApuesta/',saveApuesta,name='saveApuesta'),
+    path('mostratjuegopolla/',templatejuegopartidos,name='mostratjuegopolla'),
     ]
