@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.http import JsonResponse
 from users.models import usuariocuenta
-from trivia.models import PreguntaTrivia,resultados,scoretrivia,salatrivia,PagoSala,Scorejuego
+from trivia.models import PreguntaTrivia,Pozo_sala,scoretrivia,salatrivia,PagoSala,Scorejuego
 from random import randint,shuffle,choice
 from grupos.views import misgrupos,useradmingroup
 from grupos.models import Invitacion
@@ -67,7 +67,6 @@ def crearjuego(request):
         estado='activo'
         nombresala=info.get('nombresala')
         nombregrupo=info.get('grupo','')
-        print (info.get('cantpreg'))
         cantpreg=int(info.get('cantpreg'))
         rpago=int(info.get('pago'))
         nombreusado={}
@@ -80,6 +79,7 @@ def crearjuego(request):
             salaobj=salatrivia(nombreJuego=nombresala,grupo=nombregrupo,cantpreguntas=cantpreg,
             estado='activo',pago=rpago)
             salaobj.save()
+            Pozo_sala(nombreJuego=nombresala,dinero=0).save()
             GenerarPago(nombresala,rpago,nombregrupo)
             context={'misgrupos':useradmingroup(request.user.username),
             'existe':'Sala de juego creada',
@@ -146,11 +146,12 @@ def pagar_sala(request):
         cambiarestado=PagoSala.objects.get(nombreJuego=rnombrejuego,grupo=rgrupo,user=rusuario)
         saldouser.dinerocuenta=nuevosaldouser
         saldouser.save()
+        agregar_dinero_Pozo(rnombrejuego,cantpagar)
         cambiarestado.estadopago='pagado'
         cambiarestado.save()
         return JsonResponse({"rpta": "Pago realizado"})
 
-def calcularganador(request):
+def Admin_calcularganador(request):
     rsala=requst.POST.get("sala")
     sala_vacia=desactivarsala()
     if sala_vacia==None:
@@ -183,9 +184,6 @@ def obtenerSalasadmin(request):
         cont+=1
     return JsonResponse(jsonrespuesta)
 
-def notificacion_cobrarganadores(request):
-    pass
-
 #funciones de apoyo
 def grupoexiste(nombre):
     existe=''
@@ -215,34 +213,42 @@ def GenerarPago(sala,pago,grupo):
         gpago.save()
     return None
 
-def MayorPuntaje(rsala):
-    puntajes=[]
+def calculo_ganador_perdedor(rsala):
+    ganadores=[];perdedores=[]
+    puntajeganador=0
     jugadas=Scorejuego.objects.filter(nombreJuego=rsala)
     for juego in jugadas:
         puntajes.append(juego.resultado)
-    return max(puntajes)
-
+    puntajeganador= max(puntajes)
+    return None
 
 def estadopago(rsala,rgrupo,ruser):
     estado=PagoSala.objects.get(nombreJuego=rsala,grupo=rgrupo,user=ruser).estadopago
     return estado
 
 def calcular_pozo_sala(sala):
-    monto=resultados.objects.filter(nombreJuego=sala)
-    result=0
-    topscore=MayorPuntaje(sala)
-    for i in monto:
-        i.resultado
-        pass
+    monto=Pozo_sala.objects.get(nombreJuego=sala).dinero
+    return (monto)
 
-def notificacionganadores(ganadores,ganador,montoganado):
-    pass
+def notificacionganadores(ganadores,monto):
+    for i in ganadores:
+        notif=notificaciones(user=i,ganador="si")
 
-def desactivarsala(request):
-    rsala=salatrivia.objects.get(nombreJuego=sala)
-    if rsala.count()==0:
+def notificacionperdedores(perdedores):
+    for i in perdedores:
+        notif=notificaciones(user=i,ganador="no")
+
+def desactivarsala(sala):
+    objsala=salatrivia.objects.get(nombreJuego=sala)
+    if objsala.count()==0:
+        objsala.estado="desactivado"
         return None
     else:
-        estado.estado="desactivado"
+        objsala.estado="desactivado"
         rsala.save()
         return "200"
+
+def agregar_dinero_Pozo(rsala,rdinero):
+    obj=Pozo_sala.objects.get(nombreJuego=rsala)
+    obj.dinero=obj.dinero+rdinero
+    obj.save()
