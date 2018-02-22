@@ -56,5 +56,4 @@ def saveApuesta(request):
     usuariocuenta.objects.filter(usuario=request.user.username).update(dinerocuenta=F('dinerocuenta')-monto)
     apuesta.save()
 
-
     return JsonResponse(jsonrespuesta)
