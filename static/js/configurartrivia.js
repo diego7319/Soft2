@@ -27,25 +27,27 @@ $.ajaxSetup({
 
 
 
-function botondeuda(estado,usuario,grupo,sala){
-  if(estado=='deuda'){
-    id2=usuario+grupo+sala
-    id=estado+usuario+grupo+sala
-    func="restPago('"+usuario+"','"+grupo+"','"+sala+"');"
-t0='<input class="btn btn-primary" id='+id2+' type="submit" value="Pagar Aqui" onclick="'+func+'">';
-  return t0}
-  else {return 'Habilitado para Jugar'}
+function botondeuda(estado, usuario, grupo, sala) {
+    if (estado == 'deuda') {
+        id2 = usuario + grupo + sala
+        id = estado + usuario + grupo + sala
+        func = "restPago('" + usuario + "','" + grupo + "','" + sala + "');"
+        t0 = '<input class="btn btn-primary" id=' + id2 + ' type="submit" value="Pagar Aqui" onclick="' + func + '">';
+        return t0
+    }
+    else { return 'Habilitado para Jugar' }
 
 
 }
 
-function botondeudaadmin(estado,usuario,grupo,sala){
-  if(estado=='deuda'){
-    id2=usuario+grupo+sala
-    id=estado+usuario+grupo+sala
-    func="restPagoadmin('"+sala+"');"
-t0='<input class="btn btn-primary" id='+id2+' type="submit" value="Pagar Aqui" onclick="'+func+'">';
-  return t0}
+function botondeudaadmin(estado, usuario, grupo, sala) {
+    if (estado == 'deuda') {
+        id2 = usuario + grupo + sala
+        id = estado + usuario + grupo + sala
+        func = "restPagoadmin('" + sala + "');"
+        t0 = '<input class="btn btn-primary" id=' + id2 + ' type="submit" value="Pagar Aqui" onclick="' + func + '">';
+        return t0
+    }
 
 
 
@@ -62,21 +64,20 @@ function restPago(usuario, grupo, sala) {
 
         success: function (data) {
 
-            if (data.rpta == 'No hay saldo suficiente en tu cuenta')
-            {document.getElementById(id).setAttribute('value',"Saldo insuficiente")}
-        else{
+            if (data.rpta == 'No hay saldo suficiente en tu cuenta') { document.getElementById(id).setAttribute('value', "Saldo insuficiente") }
+            else {
 
 
-          window.location = window.location.href.split("?")[0];
+                window.location = window.location.href.split("?")[0];
 
 
-          }
+            }
 
         }
     });
 
 
-          }
+}
 
 
 
@@ -100,19 +101,19 @@ function datosPOSTJuego(usuario, grupo, sala, habilitado) {
 
 function datosPOSTJuegoadmin(sala) {
 
-        csrftoken = getCookie('csrftoken');
-        t0 = " <form method='POST' action='../obtenerganador/'>";
-        t0 = t0 + "<input type='hidden' name='csrfmiddlewaretoken' value='" + csrftoken + "'>";
-        t3 = "<input  value='" + sala + "' id='"+sala+"' name='"+sala+"' hidden></input>";
-        t4 = "<input class='btn btn-primary'  type='submit' value='Obtener Ganador'></form>";
-        return t0 + t3 + t4
-    }
+    csrftoken = getCookie('csrftoken');
+    t0 = " <form method='POST' action='../obtenerganador/'>";
+    t0 = t0 + "<input type='hidden' name='csrfmiddlewaretoken' value='" + csrftoken + "'>";
+    t3 = "<input  value='" + sala + "' id='" + sala + "' name='" + sala + "' hidden></input>";
+    t4 = "<input class='btn btn-primary'  type='submit' value='Obtener Ganador'></form>";
+    return t0 + t3 + t4
+}
 
 
 
 
 function agregarrow(grupo, sala, posic, contador, estado) {
-  var table = document.getElementById("missalas");
+    var table = document.getElementById("missalas");
     var row = table.insertRow(posic);
     cell1 = row.insertCell(0).innerHTML = grupo;
     cell1 = row.insertCell(1).innerHTML = sala;
@@ -132,12 +133,12 @@ function agregarrow(grupo, sala, posic, contador, estado) {
 
 
 function agregarrowadmin(grupo, sala, posic, contador) {
-  var tableadmin = document.getElementById("missalasadmin");
+    var tableadmin = document.getElementById("missalasadmin");
     var row = tableadmin.insertRow(posic);
     cell1 = row.insertCell(0).innerHTML = grupo;
     cell1 = row.insertCell(1).innerHTML = sala;
     cell1 = row.insertCell(2).innerHTML = datosPOSTJuegoadmin(sala);
-    }
+}
 
 
 
@@ -153,27 +154,27 @@ function llenartabla(datos) {
 
 }
 
-function llenartablaadmin(datos){
-  contador=0
-  for (i in datos)
-  {contador=contador+1
-    sala=datos[i].sala
-    grupo=datos[i].grupo
+function llenartablaadmin(datos) {
+    contador = 0
+    for (i in datos) {
+        contador = contador + 1
+        sala = datos[i].sala
+        grupo = datos[i].grupo
 
-agregarrowadmin(grupo,sala,i,contador)
-                }
+        agregarrowadmin(grupo, sala, i, contador)
+    }
 
 }
 
-function Ajaxobtenersalas(){
-  parametros={'usuario':user()};
-  $.ajax({
-            type: "POST",
-            url: '../obtenerSalas/',
-            data: parametros,
+function Ajaxobtenersalas() {
+    parametros = { 'usuario': user() };
+    $.ajax({
+        type: "POST",
+        url: '../obtenerSalas/',
+        data: parametros,
         success: function (data) {
-  console.log('salas')
-  console.log(data)
+            console.log('salas')
+            console.log(data)
             llenartabla(data)
 
         }
@@ -181,49 +182,48 @@ function Ajaxobtenersalas(){
 
 }
 
-function Ajaxobtenersalasadmin(){
-  parametros={'usuario':user()};
-  $.ajax({
-            type: "POST",
-            url: '../obtenerSalasadmin/',
-            data: parametros,
-            success: function(data)
-            {
-              console.log('admin')
-                console.log(data)
-  llenartablaadmin(data)
+function Ajaxobtenersalasadmin() {
+    parametros = { 'usuario': user() };
+    $.ajax({
+        type: "POST",
+        url: '../obtenerSalasadmin/',
+        data: parametros,
+        success: function (data) {
+            console.log('admin')
+            console.log(data)
+            llenartablaadmin(data)
 
-          }
-        });
-
-}
-
-function AjaxAgregarsala(){
-nombresala=document.getElementById('nombresala').value
-grupo=$("#grupo :selected").val();
-cantpreg=$("#cantpreg :selected").val();
-cantpago=document.getElementById('pago').value
-parametros={'usuario':user(),'nombresala':nombresala,
-'grupo':grupo,'cantpreg':cantpreg,'pago':cantpago
-};
-  $.ajax({
-            type: "POST",
-            url: '../crearjuego/',
-            data: parametros,
-            success: function(data)
-            {
-console.log(data);
-switch (data.rpta) {
-  case 'Sala ya existe':
-    document.getElementById('Resultado').innerHTML='Sala ya existe.'
-    break;
-  default:
-  Ajaxobtenersalas();Ajaxobtenersalasadmin()
-  document.getElementById('Resultado').innerHTML='Sala creada.'
+        }
+    });
 
 }
 
-          }
-        });
+function AjaxAgregarsala() {
+    nombresala = document.getElementById('nombresala').value
+    grupo = $("#grupo :selected").val();
+    cantpreg = $("#cantpreg :selected").val();
+    cantpago = document.getElementById('pago').value
+    parametros = {
+        'usuario': user(), 'nombresala': nombresala,
+        'grupo': grupo, 'cantpreg': cantpreg, 'pago': cantpago
+    };
+    $.ajax({
+        type: "POST",
+        url: '../crearjuego/',
+        data: parametros,
+        success: function (data) {
+            console.log(data);
+            switch (data.rpta) {
+                case 'Sala ya existe':
+                    document.getElementById('Resultado').innerHTML = 'Sala ya existe.'
+                    break;
+                default:
+                    Ajaxobtenersalas(); Ajaxobtenersalasadmin()
+                    document.getElementById('Resultado').innerHTML = 'Sala creada.'
+
+            }
+
+        }
+    });
 
 }
