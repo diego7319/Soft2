@@ -97,7 +97,7 @@ function datosPOSTJuegoadmin(sala) {
         csrftoken = getCookie('csrftoken');
         t0 = " <form method='POST' action='../obtenerganador/'>";
         t0 = t0 + "<input type='hidden' name='csrfmiddlewaretoken' value='" + csrftoken + "'>";
-        t3 = "<input  value='" + sala + "' id='jugarsala' name='jugarsala' hidden></input>";
+        t3 = "<input  value='" + sala + "' id='sala' name='sala' hidden></input>";
         t4 = "<input class='btn btn-primary'  type='submit' value='Obtener Ganador'></form>";
         return t0 + t3 + t4
     }

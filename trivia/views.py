@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.http import JsonResponse
 from users.models import usuariocuenta
-from trivia.models import PreguntaTrivia,Pozo_sala,scoretrivia,salatrivia,PagoSala,Scorejuego
+from trivia.models import notificaciones,PreguntaTrivia,Pozo_sala,scoretrivia,salatrivia,PagoSala,Scorejuego
 from random import randint,shuffle,choice
 from grupos.views import misgrupos,useradmingroup
 from grupos.models import Invitacion
@@ -109,15 +109,21 @@ def templatetrivia(request):
 
 def Admin_calcularganador(request):
     rsala=request.POST.get("sala")
-    sala_vacia=desactivarsala()
+    print (rsala)
+    sala_vacia=desactivarsala(rsala)
     if sala_vacia==None:
-        return JsonResponse({'rpta':'sala vacia'})
+        context={
+        'existe':'No hubo juegos en la sala',
+        'misgrupos':useradmingroup(request.user.username),
+        'usuario':request.user.username
+        }
+        return render(request,'configurartrivia.html',context)
     else:
         winers,losers=calculo_ganador_perdedor(rsala)
         monto=calcular_pozo_sala(rsala,winers)
         notificacionganadores(winers,monto)
         notificacionperdedores(losers)
-        return None
+        return HttpResponse("<script>window.location.href = window.location.href;</script>")
 
 
 def iniciarjuego(request):
@@ -221,6 +227,7 @@ def GenerarPago(sala,pago,grupo):
 def calculo_ganador_perdedor(rsala):
     ganadores=[];perdedores=[]
     puntajeganador=0
+    puntajes=[]
     jugadas=Scorejuego.objects.filter(nombreJuego=rsala)
     for juego in jugadas:
         puntajes.append(juego.resultado)
@@ -238,24 +245,27 @@ def estadopago(rsala,rgrupo,ruser):
 
 def calcular_pozo_sala(sala,ganadores):
     monto=Pozo_sala.objects.get(nombreJuego=sala).dinero
-    return (monto/ganadores)
+    return (monto/len(ganadores))
 
 def notificacionganadores(ganadores,monto):
     for i in ganadores:
         notif=notificaciones(user=i,ganador="si")
+        notif.save()
 
 def notificacionperdedores(perdedores):
     for i in perdedores:
         notif=notificaciones(user=i,ganador="no")
+        notif.save()
 
 def desactivarsala(sala):
     objsala=salatrivia.objects.get(nombreJuego=sala)
-    if objsala.count()==0:
+    scorsala=Scorejuego.objects.filter(nombreJuego=sala)
+    if scorsala.count()==0:
         objsala.estado="desactivado"
         return None
     else:
         objsala.estado="desactivado"
-        rsala.save()
+        objsala.save()
         return "200"
 
 def agregar_dinero_Pozo(rsala,rdinero):
