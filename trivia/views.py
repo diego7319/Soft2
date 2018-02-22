@@ -6,6 +6,7 @@ from trivia.models import PreguntaTrivia,resultados,scoretrivia,salatrivia,PagoS
 from random import randint,shuffle,choice
 from grupos.views import misgrupos,useradmingroup
 from grupos.models import Invitacion
+from users.views import recargarcuentaCustom as recargar
 # Create your views here.
 from rest_framework.decorators import api_view
 
@@ -155,6 +156,7 @@ def calcularganador(request):
     if sala_vacia==None:
         return JsonResponse({'rpta':'sala vacia'})
     else:
+        ganadores=calcularGanador(rsala)
         return (calcularGanador(rsala))
 
 def obtenerSalas(request):
@@ -181,6 +183,8 @@ def obtenerSalasadmin(request):
         cont+=1
     return JsonResponse(jsonrespuesta)
 
+def notificacion_cobrarganadores(request):
+    pass
 
 #funciones de apoyo
 def grupoexiste(nombre):
@@ -212,20 +216,27 @@ def GenerarPago(sala,pago,grupo):
     return None
 
 def MayorPuntaje(rsala):
+    puntajes=[]
     jugadas=Scorejuego.objects.filter(nombreJuego=rsala)
     for juego in jugadas:
-        pass
+        puntajes.append(juego.resultado)
+    return max(puntajes)
 
 
 def estadopago(rsala,rgrupo,ruser):
     estado=PagoSala.objects.get(nombreJuego=rsala,grupo=rgrupo,user=ruser).estadopago
     return estado
 
-def resultadoganador(sala):
+def calcular_pozo_sala(sala):
     monto=resultados.objects.filter(nombreJuego=sala)
+    result=0
+    topscore=MayorPuntaje(sala)
     for i in monto:
+        i.resultado
         pass
 
+def notificacionganadores(ganadores,ganador,montoganado):
+    
 
 def desactivarsala(request):
     rsala=salatrivia.objects.get(nombreJuego=sala)

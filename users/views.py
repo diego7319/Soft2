@@ -77,6 +77,17 @@ def recargarcuenta(request):
     user.save()
     return redirect('perfil')
 
+def recargarcuentaCustom(ruser,cantidad):
+    user= usuariocuenta.objects.get(usuario=ruser)
+    saldoactual=user.dinerocuenta
+    cantidadrecarga=cantidad
+    user.dinerocuenta=(saldoactual+cantidadrecarga)
+    try:
+        user.save()
+    except Exception as e:
+        print ("Error en recargar cuenta : Usuario --> %s cantidad--> %s" % (ruser,cantidad))
+
+
 
 """ Funciones de apoyo """
 """ Funcion de login"""
