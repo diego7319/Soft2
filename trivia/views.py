@@ -236,7 +236,7 @@ def calcular_pozo_sala(sala):
         pass
 
 def notificacionganadores(ganadores,ganador,montoganado):
-    
+        pass
 
 def desactivarsala(request):
     rsala=salatrivia.objects.get(nombreJuego=sala)
