@@ -43,11 +43,11 @@ $(document).ready(function () {
                         <div id="${obj[i].pk}" titulo="${obj[i].fields.equipo1} vs ${obj[i].fields.equipo2}" class="col-sm-6" style="text-align: center;">
                             <div class="partidos">
                                 <div class="btn-group btn-group-lg" role="group" aria-label="...">
-                                    <button type="button" class="apuesta btn btn-default">${obj[i].fields.equipo1}
+                                    <button type="button" class="apuesta btn btn-light">${obj[i].fields.equipo1}
                                         <br> ${Number(obj[i].fields.monto1).toFixed(2)}</button>
-                                    <button type="button" class="apuesta btn btn-default">E
+                                    <button type="button" class="apuesta btn btn-primary">E
                                         <br> ${Number(obj[i].fields.montoempate).toFixed(2)}</button>
-                                    <button type="button" class="apuesta btn btn-default">${obj[i].fields.equipo2}
+                                    <button type="button" class="apuesta btn btn-danger">${obj[i].fields.equipo2}
                                         <br> ${Number(obj[i].fields.monto2).toFixed(2)}</button>
                                 </div>
                             </div>

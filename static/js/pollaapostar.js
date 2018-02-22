@@ -40,18 +40,19 @@ $(document).ready(function () {
             for (var i = 0; i < obj.length; i++) {
                 $("#contenido").append(
                     `
-                    <div class ="col-sm-2" style="padding-top: 3.5%;"> 
-                    <h3> GRUPO ${obj[i].fields.Grupo} </h3>
-                    </div>    
-                    <div id="${obj[i].pk}" titulo="${obj[i].fields.equipo1} vs ${obj[i].fields.equipo2}" class="col-sm-4" >
-                        <div class="partidos">
-                            <div class="btn-group btn-group" role="group" aria-label="...">
-                                <button pro="L" type="button" class="apuesta btn btn-default">${obj[i].fields.equipo1}
-                                    <br> ${Number(obj[i].fields.monto1).toFixed(2)}</button>
-                                <button pro="E" type="button" class="apuesta btn btn-default">E
-                                    <br> ${Number(obj[i].fields.montoempate).toFixed(2)}</button>
-                                <button pro="V" type="button" class="apuesta btn btn-default">${obj[i].fields.equipo2}
-                                    <br> ${Number(obj[i].fields.monto2).toFixed(2)}</button>
+                    <div class="en_marco col-sm-4 no_margen row" >
+                        <div class="marco" >
+                            <div id="${obj[i].pk}" titulo="${obj[i].fields.equipo1} vs ${obj[i].fields.equipo2}" class="col-sm-12 no_margen" >
+                            <h3 class="blockquote-footer tx_center"> GRUPO ${obj[i].fields.Grupo} </h3>    
+                            <div class="partidos tx_center">
+                                    <div class="btn-group btn-group" role="group" aria-label="...">
+                                        <button pro="L" type="button" class="apuesta btn btn-light">${obj[i].fields.equipo1}
+                                            <br> ${Number(obj[i].fields.monto1).toFixed(2)}</button>
+                                        <button pro="E" type="button" class="apuesta btn btn-primary">E
+                                            <br> ${Number(obj[i].fields.montoempate).toFixed(2)}</button>
+                                        <button pro="V" type="button" class="apuesta btn btn-danger">${obj[i].fields.equipo2}
+                                            <br> ${Number(obj[i].fields.monto2).toFixed(2)}</button>
+                                    </div>
                             </div>
                         </div>
                     </div>
