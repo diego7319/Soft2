@@ -62,8 +62,13 @@ class Scorejuego(models.Model):
     idjuego=models.AutoField(primary_key=True)
     user=models.CharField(max_length=20)
     grupo=models.CharField(max_length=30)
-    nombreJuego=models.CharField(max_length=30)
     resultado=models.FloatField(default=0)
+    nombreJuego=models.CharField(max_length=30)
+
+class Pozo_sala(models.Model):
+    idjuego=models.AutoField(primary_key=True)
+    nombreJuego=models.CharField(max_length=30)
+    dinero=models.FloatField()
 
 class notificaciones(models.Model):
     idnotificacion=models.AutoField(primary_key=True)

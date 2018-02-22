@@ -40,7 +40,7 @@ def updatePartido(request):
     apuestas = Apuestas.objects.filter(partido=partido, pronostico=ganador)
     for apu in apuestas:
         usuario = usuariocuenta.objects.filter(usuario=apu.user.username).update(dinerocuenta=F('dinerocuenta')+apu.ganancia)
-        
+
     return JsonResponse(jsonrespuesta)
 
 
@@ -55,6 +55,6 @@ def saveApuesta(request):
     apuesta = Apuestas(partido= partido, monto=monto, ganancia=ganancia, pronostico=pronostico, user=user)
     usuariocuenta.objects.filter(usuario=request.user.username).update(dinerocuenta=F('dinerocuenta')-monto)
     apuesta.save()
-    
+
 
     return JsonResponse(jsonrespuesta)
