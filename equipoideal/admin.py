@@ -8,7 +8,7 @@ class jugpaisadmin(admin.ModelAdmin):
 admin.site.register(JugadorPais,jugpaisadmin)
 
 class salaEIadmin(admin.ModelAdmin):
-    list_display = ('nombreJuego','grupo','estado','cantpreguntas','pago','estado')
+    list_display = ('nombreJuego','grupo','estado','pago','estado')
 admin.site.register(salaEI,salaEIadmin)
 
 class PagoSaladmin(admin.ModelAdmin):

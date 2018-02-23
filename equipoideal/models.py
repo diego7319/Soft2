@@ -19,7 +19,6 @@ class salaEI(models.Model):
     idjuego=models.AutoField(primary_key=True)
     nombreJuego=models.CharField(max_length=30)
     grupo=models.CharField(max_length=30)
-    cantpreguntas=models.IntegerField()
     #activo o desactivado
     estado=models.CharField(max_length=11)
     pago=models.IntegerField(default=0)
@@ -56,6 +55,7 @@ class Pozo_salaEI(models.Model):
     idjuego=models.AutoField(primary_key=True)
     nombreJuego=models.CharField(max_length=30)
     dinero=models.FloatField()
+
 
 class notificacionesEI(models.Model):
     idnotificacion=models.AutoField(primary_key=True)

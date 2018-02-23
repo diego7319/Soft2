@@ -68,7 +68,7 @@ function restPago(usuario, grupo, sala) {
             else {
 
 
-                window.location = window.location.href.split("?")[0];
+                Ajaxobtenersalas()
 
 
             }
@@ -163,6 +163,7 @@ function llenartablaadmin(datos) {
 }
 
 function Ajaxobtenersalas() {
+  $('#missalas').empty();
     parametros = { 'usuario': user() };
     $.ajax({
         type: "POST",
@@ -179,6 +180,7 @@ function Ajaxobtenersalas() {
 }
 
 function Ajaxobtenersalasadmin() {
+  $('#missalasadmin').empty();
     parametros = { 'usuario': user() };
     $.ajax({
         type: "POST",
@@ -234,8 +236,8 @@ function AjaxAgregarsala() {
             url: '../obtenerganador/',
             data: parametros,
             success: function (data) {
-
-Ajaxobtenersalasadmin()
+Ajaxobtenersalas();
+Ajaxobtenersalasadmin();
             }
         });
 

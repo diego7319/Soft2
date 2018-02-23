@@ -40,10 +40,23 @@
   <select class="form-control" id="jugador">
   </select>
 <p id='info'>Seleccione una posicion para agregar</p>
-  <button type=button onclick='return agregarjugador()' id='botonagregar'>Agregar Jugador</button>
+  <button type=button class="btn btn-primary" onclick='return agregarjugador()' id='botonagregar'>Agregar Jugador</button><br>
+  <button type=button class="btn btn-secondary" onclick='return confirmarjugadores()' id='botonagregar'>Calcular Puntaje</button>
+<br>
+<div id='gg' hidden class="alert alert-success">
+<p id='g2'>  </p>
+</div>
+<br>
+
 </div>
       </div>
   </form>
+  <button id='home' value='' class="btn btn-success" onClick="window.location.href='javascript:history.back()'" style="color: white;border:none; margin: 50px;">Regresar a tu perfil</button>
+<br>
+  <div id='gg' hidden class="alert alert-success">
+  <p id='g2'> </p>  </div>
+
+
     </div>
   </div>
 </body>
@@ -60,6 +73,11 @@ background-repeat: no-repeat;
 background-size: auto;
 }
 </style>
+<script>
+function user(){return '{{user}}'};
+function rrgrupo(){return '{{grupo}}'};
+function sala(){return '{{salatrivia}}'};
+</script>
 <script src= "{% static '/js/equipoidealjuego.js' %}"></script>
 
 </html>

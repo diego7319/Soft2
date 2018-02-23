@@ -8,7 +8,6 @@ from grupos.views import misgrupos,useradmingroup
 from grupos.models import Invitacion
 from users.views import recargarcuentaCustom as recargar
 # Create your views here.
-from rest_framework.decorators import api_view
 
 def templated(request):
     if not request.user.is_authenticated:
@@ -46,7 +45,7 @@ def mostrarpregunta(request):
 
     return JsonResponse(pregjson)
 
-#guarda la respuesta en la base de datos
+#comprueba la respuesta de la pregunta con la db
 def score(request):
     if not request.user.is_authenticated:
         return redirect('index')
@@ -122,11 +121,12 @@ def Admin_calcularganador(request):
     rsala=request.POST.get("sala")
     sala_vacia=desactivarsala(rsala)
     if sala_vacia==None:
+        """
         context={
         'existe':'No hubo juegos en la sala',
         'misgrupos':useradmingroup(request.user.username),
         'usuario':request.user.username
-        }
+        }"""
         return HttpResponse("asd")
     else:
         winers,losers=calculo_ganador_perdedor(rsala)
@@ -202,7 +202,6 @@ def obtenerSalasadmin(request):
     for i in salagrupo:
         jsonrespuesta[str(cont)]={'sala':i.split('-')[0],'grupo':i.split('-')[1]}
         cont+=1
-
     return JsonResponse(jsonrespuesta)
 
 #funciones de apoyo
