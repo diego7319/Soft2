@@ -6,6 +6,7 @@ from rest_framework.decorators import api_view,permission_classes
 from rest_framework.response import Response
 from rest_framework import permissions
 from django.http import JsonResponse
+from users.views import recargarcuentaCustom as recargar
 import json
 from grupos.views import misgrupos,useradmingroup
 from .models import notificacionesEI,Pozo_salaEI,scoreEI,salaEI,PagoSalaEI,ScorejuegoEI
@@ -93,16 +94,15 @@ def obtenerSalasEI(request):
     listagrupos=misgrupos(ruser)
     salagrupo= getSalasdeGrupo(listagrupos)
     cont=0
-    print ("  -")
-    print (listagrupos)
-    print (ruser)
-    print (salagrupo)
-    print ("  -")
     for i in salagrupo:
-        print (i)
-        jsonrespuesta[str(cont)]={'sala':i.split('-')[0],'grupo':i.split('-')[1],'estado':estadopago(i.split('-')[0],i.split('-')[1],ruser)}
-        cont+=1
-
+        try:
+            jsonrespuesta[str(cont)]={'sala':i.split('-')[0],'grupo':i.split('-')[1],'estado':estadopago(i.split('-')[0],i.split('-')[1],ruser)}
+            cont+=1
+        except :
+            PagoSalaEI(nombreJuego=rsala,grupo=rgrupo,user=ruser,estadopago='deuda')
+            PagoSalaEI.save()
+            jsonrespuesta[str(cont)]={'sala':i.split('-')[0],'grupo':i.split('-')[1],'estado':estadopago(i.split('-')[0],i.split('-')[1],ruser)}
+            cont+=1
     return JsonResponse(jsonrespuesta)
 
 #devuelve las salas dodne eres administrador
@@ -215,13 +215,7 @@ def getSalasdeGrupo(rgrupos):
     return rpta
 #verifica si un usuario ha pagado la sala
 def estadopago(rsala,rgrupo,ruser):
-    print ("Estado Pago:")
-    print ("Sala:  "+rsala)
-    print ("user:  "+ruser)
-    print ("grupo:  "+rgrupo)
-    print ((PagoSalaEI.objects.filter(user=ruser).count()))
     estado=PagoSalaEI.objects.get(nombreJuego=rsala,grupo=rgrupo,user=ruser).estadopago
-
     return estado
 
 def agregar_dinero_Pozo(rsala,rdinero):
