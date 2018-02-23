@@ -77,7 +77,7 @@ def guardarscore(request):
     rresultado=randint(70,120)
     buscarscore=ScorejuegoEI.objects.filter(nombreJuego=rsala,grupo=rgrupo,user=rusuario)
     if (buscarscore.count()>=1):
-        p="Ya haz jugado esta sala. Puntaje: "+str(bucsarscore[0].resultado)
+        p="Ya haz jugado esta sala. Puntaje: "+str(buscarscore[0].resultado)
         return JsonResponse({"rpta":p,'t':'0'})
     else:
         d=ScorejuegoEI(nombreJuego=rsala,grupo=rgrupo,user=rusuario,resultado=rresultado)
