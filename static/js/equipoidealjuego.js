@@ -113,13 +113,15 @@ jugadoresusados = jugadoresusados.filter(item => item !== jugadoranterior)
 pais=$("#pais option:selected").val();
 jugador=$("#jugador option:selected").val();
 tmp="r"+jugadorid
-
+$("#jugador").empty();
 if (jugador==null){}else{
 document.getElementById(tmp).innerHTML=jugador;
-final[tmp]=jugador
+final[tmp]=jugador;
+console.log('0000')
+jugadoresusados.push(jugador);
+document.getElementById("pais").selectedIndex = "0";
+$("#jugador").empty();}
 
-jugadoresusados.push(jugador)
-document.getElementById("pais").selectedIndex = "0";}
 return false;
 }
 

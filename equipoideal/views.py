@@ -87,14 +87,22 @@ def guardarscore(request):
 
 #obtener salas para usuario
 def obtenerSalasEI(request):
+    print ("obtenersalas EI")
     jsonrespuesta={}
     ruser=request.POST.get('usuario')
     listagrupos=misgrupos(ruser)
     salagrupo= getSalasdeGrupo(listagrupos)
     cont=0
+    print ("  -")
+    print (listagrupos)
+    print (ruser)
+    print (salagrupo)
+    print ("  -")
     for i in salagrupo:
+        print (i)
         jsonrespuesta[str(cont)]={'sala':i.split('-')[0],'grupo':i.split('-')[1],'estado':estadopago(i.split('-')[0],i.split('-')[1],ruser)}
         cont+=1
+
     return JsonResponse(jsonrespuesta)
 
 #devuelve las salas dodne eres administrador
@@ -107,6 +115,7 @@ def obtenerSalasEIadmin(request):
     for i in salagrupo:
         jsonrespuesta[str(cont)]={'sala':i.split('-')[0],'grupo':i.split('-')[1]}
         cont+=1
+
     return JsonResponse(jsonrespuesta)
 
 #Paga la sala (ajax)
@@ -200,14 +209,19 @@ def getSalasdeGrupo(rgrupos):
     for j in rgrupos:
         salas=salaEI.objects.filter(grupo=j,estado='activo')
         for i in salas:
+            print (i)
             dato=i.nombreJuego+'-'+j
             rpta.append(dato)
     return rpta
 #verifica si un usuario ha pagado la sala
 def estadopago(rsala,rgrupo,ruser):
+    print ("Estado Pago:")
+    print ("Sala:  "+rsala)
+    print ("user:  "+ruser)
+    print ("grupo:  "+rgrupo)
+    print ((PagoSalaEI.objects.filter(user=ruser).count()))
     estado=PagoSalaEI.objects.get(nombreJuego=rsala,grupo=rgrupo,user=ruser).estadopago
-    print ("estadopago")
-    print ("sala: "+rsala +"-grupo: "+rgrupo+"-usuario: "+ruser)
+
     return estado
 
 def agregar_dinero_Pozo(rsala,rdinero):

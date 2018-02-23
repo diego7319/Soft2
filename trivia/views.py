@@ -181,6 +181,7 @@ def pagar_sala(request):
 
 
 def obtenerSalas(request):
+
     jsonrespuesta={}
     ruser=request.POST.get('usuario')
     listagrupos=misgrupos(ruser)
@@ -248,8 +249,7 @@ def calculo_ganador_perdedor(rsala):
 
 def estadopago(rsala,rgrupo,ruser):
     estado=PagoSala.objects.get(nombreJuego=rsala,grupo=rgrupo,user=ruser).estadopago
-    print ("estadopago")
-    print ("sala: "+rsala +"-grupo: "+rgrupo+"-usuario: "+ruser)
+
     return estado
 
 def calcular_pozo_sala(sala,ganadores):
