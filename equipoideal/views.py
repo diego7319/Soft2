@@ -99,7 +99,7 @@ def obtenerSalasEI(request):
             jsonrespuesta[str(cont)]={'sala':i.split('-')[0],'grupo':i.split('-')[1],'estado':estadopago(i.split('-')[0],i.split('-')[1],ruser)}
             cont+=1
         except :
-            PagoSalaEI(nombreJuego=rsala,grupo=rgrupo,user=ruser,estadopago='deuda')
+            PagoSalaEI(nombreJuego=i.split('-')[0],grupo=i.split('-')[1],user=ruser,estadopago='deuda')
             PagoSalaEI.save()
             jsonrespuesta[str(cont)]={'sala':i.split('-')[0],'grupo':i.split('-')[1],'estado':estadopago(i.split('-')[0],i.split('-')[1],ruser)}
             cont+=1
