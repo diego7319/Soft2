@@ -149,7 +149,7 @@ body {padding-top: 0; margin-top: 0}
                 {% csrf_token %}
                 <label>Ingresa el nombre</label>
                 <div class="input-group mb-3">
-                <input class="form-control" type="text" size=15 name="nombregrupo" id="nombregrupo" maxlength="25"
+                <input id="nombregrupo" class="form-control" type="text" size=15 name="nombregrupo" id="nombregrupo" maxlength="25"
                   onkeyup="nospaces(this)" required="">
                     <div class="input-group-append">
                     <button type="submit" class="btn btn-primary btn-outline-secondary" name='submit' value="signup"
