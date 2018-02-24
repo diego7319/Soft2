@@ -5,6 +5,7 @@ from django.shortcuts import redirect
 from users import views
 from analitica.acciones import log_accion_invitar, log_accion_crear_grupo, log_accion_rpta_invitacion
 
+from django.http import JsonResponse
 
 
 # Create your views here.
@@ -14,22 +15,24 @@ def invitarusuario(request):
     if not request.user.is_authenticated:
         return redirect('index')
     info = request.POST
-    invi=info.get('invitado','')
-    grp=info.get('grupo','')
+    invi=info.get('invitado')
+    grp=info.get('grupo')
     username = request.user.username
     invitadoexiste= User.objects.filter(username=invi).count()
     obj= 0
-    obj = Invitacion.objects.filter(grupo=grp,invitado=invi).count()
-
+    obj = Invitacion.objects.filter(grupo=grp,invitado=invi)
+    print (obj.query)
+    obj=obj.count()
+    print (obj)
     if obj>=1:
-        return HttpResponse("<script>alert('invitacion ya existe');document.location.href='/perfil';</script>")
+        return JsonResponse({'rpta': 'El usuario ya recibio la invitacion','tipo':'0'})
     elif admingrupos(username,grp)==True and invitadoexiste==1:
         invit=Invitacion(invitado=invi,grupo=grp)
         invit.save()
         log_accion_invitar(request.mongo_db, username, invi, grp)
-        return HttpResponse("<script>alert('Se envio invitacion');document.location.href='/perfil';</script>")
+        return JsonResponse({'rpta': 'Se envio invitacion.','tipo':'1'})
     else:
-        return HttpResponse("<script>alert('Usuario o grupo no existe');document.location.href='/perfil';</script>")
+        return JsonResponse({'rpta': 'Usuario no existe.','tipo':'0'})
 
 def agregargrupo(request):
     if not request.user.is_authenticated:
@@ -41,7 +44,8 @@ def agregargrupo(request):
     if lista ==1:
         #messages.info(request, 'Grupo ya existe')
         #return views.perfil(request)
-        return HttpResponse("<script>alert('Grupo ya existe');document.location.href='/perfil';</script>")
+        rpta="Grupo %s ya existe." % (gr)
+        return JsonResponse({'rpta':rpta})
 
     else:
         db_registro = grupo(nombre=gr,owner=username);
@@ -50,7 +54,8 @@ def agregargrupo(request):
         inv.save()
         log_accion_crear_grupo(request.mongo_db, username, gr)
         #return views.perfil(request)
-        return HttpResponse("<script>alert('Grupo creado');document.location.href='/perfil';</script>")
+        rpta="Grupo %s creado correctamente." % (gr)
+        return JsonResponse({'rpta': rpta,'tipo':'1'})
 
 #aceptar o rechazar invitacion
 def responderinvitacion(request):

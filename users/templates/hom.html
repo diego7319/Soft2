@@ -5,12 +5,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{% static '/css/perfil.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <link rel="stylesheet" href="{% static '/css/slider.css' %}">
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans" >
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
 <style>
@@ -109,7 +111,7 @@ body {padding-top: 0; margin-top: 0}
       {% endfor %}
     </table><br>
           <div id = 'invitarusuarioagrupo' class="form-group">
-              <form method="post" action='../invitarusuario/' >
+              <form>
                 {% csrf_token %}
                 <b>Enviar una Invitación</b>
                 <hr>
@@ -124,7 +126,7 @@ body {padding-top: 0; margin-top: 0}
                   <input class="form-control" type="text" size=15 name="invitado" id="invitado" maxlength="25" onkeyup="nospaces(this)"
                   required="" placeholder="Ingrese el nombre del usuario" style="padding-right:5px;">
                   <div class="input-group-append">
-                  <button type="submit" class="btn btn-info btn-outline-secondary" name='submit' value="signup"
+                  <button type="submit" onclick="return invitar()" class="btn btn-info btn-outline-secondary" name='submit' value="signup"
                     style="color: #004085;
                     background-color: #e9ecef;
                     border: none;"/> <i class="fa fa-send"></i>
@@ -132,6 +134,7 @@ body {padding-top: 0; margin-top: 0}
                   </div>
                 </div>
                   </form>
+                  <div id='invita'></div>
               <br>
           </div>
 
@@ -145,14 +148,14 @@ body {padding-top: 0; margin-top: 0}
       <br>
         <b>Crear grupo</b>
         <hr>
-            <form method="post" action='../agregargrupo/' >
+            <form >
                 {% csrf_token %}
                 <label>Ingresa el nombre</label>
                 <div class="input-group mb-3">
                 <input id="nombregrupo" class="form-control" type="text" size=15 name="nombregrupo" id="nombregrupo" maxlength="25"
                   onkeyup="nospaces(this)" required="">
                     <div class="input-group-append">
-                    <button type="submit" class="btn btn-primary btn-outline-secondary" name='submit' value="signup"
+                    <button type="submit" onclick="return creargrupo()" class="btn btn-primary btn-outline-secondary" name='submit' value="signup"
                       style="
                       color: #004085;
                       background-color: #e9ecef;
@@ -161,8 +164,9 @@ body {padding-top: 0; margin-top: 0}
                     </button>
                   </div>
                   </div>
-            </form>
 
+            </form>
+            <div id='agregargrupo'></div>
             <b> Tus grupos</b>
             <hr>
             <form method="post" action='/perfil/' >
